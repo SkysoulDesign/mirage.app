@@ -1,0 +1,12 @@
+<Page android:actionBarHidden="true" loaded="pageloaded">
+	<GridLayout rows="*, *" >
+		<Image src="~/image/soap.png" stretch="fill" />
+		<GridLayout row="1" rows="*, auto, auto, *" columns="*, *, *, *, *, *, *, *" >
+			<Button id="English" text="English" row="1" col="1" colSpan="2" tap="chooseLanguage"/>
+			<Button id="Japanese" text="日本語" row="1" col="3" colSpan="2" tap="chooseLanguage"/>
+			<Button id="Korean" text="한국어" row="1" col="5" colSpan="2" tap="chooseLanguage"/>
+			<Button id="Traditional" text="繁體字" row="2" col="2" colSpan="2" tap="chooseLanguage"/>
+			<Button id="Chinese" text="简体字" row="2" col="4" colSpan="2" tap="chooseLanguage"/>
+		</GridLayout>
+	</GridLayout>
+</Page>

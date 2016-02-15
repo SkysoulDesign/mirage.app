@@ -1,0 +1,32 @@
+<page loaded="pageloaded">
+<!-- 	<gridLayout rows="*,*">
+		<image row="0" src="{{product-image}}" /> -->
+		<GridLayout  rows="2*,*,*">
+			<Image row="0" src="{{ productimage }}" /> 
+			<GridLayout row="1" rows="auto,auto">
+				<GridLayout row="1" rows="auto,auto,auto,auto">
+					<Image row="0" src="{{  }}" />
+					<Label row="1" text="你已成功扫描蝙蝠侠的二维码" />
+					<!-- <Label row="2" text="Mirage Collectoble: Accessories Series Batman v Superman Batarang" id="label1" /> -->
+					<!-- <Label row="2" text="Batman v Superman Batarang" /> -->
+					<Label row="2" text="请输入说明书上15位的注册吗并按注册" />
+				</GridLayout>
+			</GridLayout>
+			<GridLayout row="2" rows="auto,auto,auto,*">
+				<Label row="0" text="注册码认证" cssClass="lable-big" />
+				<GridLayout row="1" columns="*,*,*,*,*,*,*,*,*,*,*,*,*">
+					<TextField col="1" text="{{text1}}" colSpan="2" id="text1" />
+					<Label col="3" text="-" cssClass="lable-1" />
+					<TextField col="4" text="{{text2}}" colSpan="2" id="text2" />
+					<Label col="6" text="-" cssClass="lable-1" />
+					<TextField col="7" text="{{text3}}" colSpan="2" id="text3" />
+					<Label col="9" text="-" cssClass="lable-1" />
+					<TextField col="10" text="{{text4}}" colSpan="2" id="text4" />
+				</GridLayout>
+				<GridLayout row="2" columns="*,auto,*">
+					<Button col="1" text="注册" tap="tapRegister" />
+				</GridLayout>
+			</GridLayout>
+		</GridLayout>
+	<!-- </gridLayout> -->
+</page>

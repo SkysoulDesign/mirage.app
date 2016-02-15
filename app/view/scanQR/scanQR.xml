@@ -1,0 +1,9 @@
+<Page loaded="pageLoaded" actionBarHidden="true" >
+<!--   <StackLayout>
+    <Label text="Tap the button"/>
+    <Button text="start scan" tap="startscan"/>
+    <Button text="play audio" tap="playaudio"/>
+    <Button text="play vedio" tap="playvideo"/>
+    <Image id="imagemovie"/>
+  </StackLayout> -->
+</Page>

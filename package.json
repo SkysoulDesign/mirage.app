@@ -1,0 +1,33 @@
+{
+	"name": "MyTestProject",
+	"version": "1.0.0",
+	"description": "MyTestProject",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nativescript/sample-Groceries.git"
+	},
+	"keywords": [
+		"NativeScript"
+	],
+	"author": "TJ VanToll <tj.vantoll@gmail.com> (http://tjvantoll.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nativescript/sample-Groceries/issues"
+	},
+	"homepage": "https://github.com/nativescript/sample-Groceries/groceries",
+	"nativescript": {
+		"id": "org.nativescript.MyTestProject",
+		"tns-ios": {
+			"version": "1.5.2"
+		},
+		"tns-android": {
+			"version": "1.5.1"
+		}
+	},
+	"dependencies": {
+		"email-validator": "^1.0.3",
+		"nativescript-barcodescanner": "^1.2.0",
+		"nativescript-openurl": "^1.0.2",
+		"tns-core-modules": "1.5.1"
+	}
+}

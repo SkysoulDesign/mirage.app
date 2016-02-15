@@ -1,0 +1,23 @@
+<Document>
+<!-- 	<First attr1=\"attribute1\" attr2=\"attribute2\">I am first</First>
+	<Second>I am second</Second> -->
+	<movie id="0" name="movie1" icon="">
+		<modeltype id="0" name="player" icon="">
+			<model id="0" name="MF001" identifier="MF001" icon="" movieUrl="" image1="" image2="" />
+			<model id="1" name="MF002" identifier="MF002" icon="" movieUrl="" image1="" image2="" />
+			<model id="2" name="MF003" identifier="MF003" icon="" movieUrl="" image1="" image2="" />
+			<model id="3" name="MF004" identifier="MF004" icon="" movieUrl="" image1="" image2="" />
+			<model id="4" name="MF004" identifier="MF005" icon="" movieUrl="" image1="" image2="" />
+			<model id="5" name="MF006" identifier="MF006" icon="" movieUrl="" image1="" image2="" />
+		</modeltype>
+		<modeltype id="1" name="weapon">
+			
+		</modeltype>
+		<modeltype id="2" name="head">
+			
+		</modeltype>
+		<modeltype id="3" name="car">
+			
+		</modeltype>
+	</movie>
+</Document>

@@ -1,0 +1,47 @@
+Page {
+	background-color: white;
+	font-size: 15;
+}
+Label{
+	margin-left:20;
+}
+Button{
+	border-color: #9e9f9f;
+	color: black;
+	margin-bottom: 4;
+	margin-top: -8;
+}
+TextField{
+	margin-bottom: 11;
+	margin-top: -15;
+}
+.longbutton{
+	/*padding: 53;*/
+}
+.okbutton{
+	background-color: yellow;
+	color: white;
+	font-size: 30;
+	margin-bottom: 10;
+	margin-left: 60;
+	margin-right: 60;
+	margin-top: 10;
+}
+.agreelabel{
+	font-size: 13;
+}
+.termlabel{
+	color: #97d4f1;
+	font-size: 13;
+	margin: 1;
+}
+.headerlayout{
+	background-color: #9e9f9f;
+}
+.selectedlabel{
+	color: yellow;
+}
+.selectedbutton{
+	border-color: yellow;
+	color: yellow;
+}

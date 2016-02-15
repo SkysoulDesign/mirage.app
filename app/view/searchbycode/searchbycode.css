@@ -1,0 +1,47 @@
+Button{
+	color: white;
+	font-size:20;
+	width:80;
+	height:80;
+	border-width:1;
+	border-color: #E9007C;
+	border-radius:40;
+	background-color: #E9007C;
+	/*margin: 10;*/
+}
+Label{
+	color: white;
+	font-size:20;
+	width:80;
+	height:80;
+	border-width:1;
+	border-color: #E9007C;
+	border-radius:40;
+	background-color: #E9007C;
+	/*margin: 10;*/
+}
+.buttontip{
+	font-size: 20;
+}
+TextField{
+	font-size: 10;
+}
+.label-help{
+	background-color: yellow;
+	border-radius: 10;
+	border-width:1;
+	color: black;
+	font-size: 20;
+	height: 20;
+	width: 20;
+	text-align: center;/*textAlignment*/
+}
+.image-bg{
+	opacity: 0.03;
+}
+.material-icon {
+   font-family: 'Material-Design-Iconic-Font';
+}
+.awesome-icon{
+	font-family: 'fontawesome-webfont';
+}
