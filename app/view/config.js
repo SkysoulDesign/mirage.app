@@ -6,5 +6,6 @@ module.exports = {
     loginUrl: URL + "api/user/login",
     registerUrl : URL+"api/user/register",
     productUrl : URL+"api/product/",
+    contryUrl : URL+ "api/form/countries",
     token:""
 };

@@ -9,10 +9,11 @@ var validator = require("email-validator");
 var config = require("../config");
 var fetchModule = require("fetch");
 var frameModule = require("ui/frame");
-var appSettings = require("application-settings");
-var username_save = appSettings.getString("username_save", "");
-var password_save = appSettings.getString("password_save", "");
-
+var settings = require("../settings");
+var username_save = settings.GetUserName();
+var password_save = settings.GetPassword();
+var login = false;
+var _this;
 
 var SigninViewModel = (function (_super) {
     __extends(SigninViewModel, _super);
@@ -20,15 +21,20 @@ var SigninViewModel = (function (_super) {
         _super.call(this);
         this.set("username",username_save);
         this.set("password",password_save);
+        _this = this;
     }
    
     SigninViewModel.prototype.tapSignin= function() {
-        // var topmost = frameModule.topmost();
-        // topmost.navigate("view/mainpage/mainpage");
-        return this.signin();
+        if(this.isValidUsername())
+        {
+            if(this.isValidPassword())
+            {
+                return this.signin();
+            }
+        }
     }
     SigninViewModel.prototype.signin= function(){
-         this.set("isLoading",true);
+         _this.set("isLoading",true);
          return fetchModule.fetch(config.loginUrl, {
             method: "POST",
             body: JSON.stringify({
@@ -46,26 +52,42 @@ var SigninViewModel = (function (_super) {
             return response.json();
         })
         .then(function(data) {
+            if(data.token === undefined)
+            // if(data.hasOwnProperty("error"))
+            {
+                // this.set("isLoading",false);
+                dialogsModule.alert({
+                message: "invalid username or password",
+                okButtonText: "OK"
+                 });
+                throw Error(data.error);
+                // console.log(data.error);
+            }
             console.log(data.token);
+             console.log("response.json--"+JSON.stringify(data));
             config.token = data.token;
-            console.log("111");
         })
         .then(function(){
-            this.set("isLoading",false);
-            // appSettings.setString("username_save", this.get("username"));
-            // appSettings.setString("password_save", this.get("password"));
-            var topmost = frameModule.topmost();
-            // topmost.navigate("view/video/video");
-            topmost.navigate("view/mainpage/mainpage");
+            _this.set("isLoading",false);
+            console.log(_this.get("username")+_this.get("password"));
+            settings.SetUserName(_this.get("username"));
+            settings.SetPassword(_this.get("password"));
+            console.log("222");
+            // if(!login)
+            // {
+            //     login = true;
+                var topmost = frameModule.topmost();
+                topmost.navigate("view/mainpage/mainpage");
+            // }
         });
     }
      SigninViewModel.prototype.signinSuccess= function(){
-        return fetchModule.fetch(config.loginUrl + "users", {
+        return fetchModule.fetch(config.loginUrl, {
             method: "POST",
             body: JSON.stringify({
-                username: this.get("username"),
+                credential: this.get("username"),
                 password: this.get("password"),
-                grant_type: "password"
+                // grant_type: "password"
             }),
             headers: {
                 "Content-Type": "application/json"
@@ -76,12 +98,48 @@ var SigninViewModel = (function (_super) {
             return response.json();
         })
         .then(function(data) {
-            config.token = data.Result.access_token;
-        })
-        .then(function(){
-            return false;
+            if(data.hasOwnProperty("token")){
+                config.token = data.token;
+                console.log("true");
+                return true;
+            }
+            else{
+                console.log("false");
+
+                return false;
+            }
         });
      }
+     SigninViewModel.prototype.signOut= function(){
+        login = false;
+        config.token = "";
+     }
+     SigninViewModel.prototype.isValidUsername= function(){
+        if (this.get("username") != "") 
+        {
+            return true;
+        } 
+        else 
+        {
+            dialogsModule.alert({
+                message: "Enter a valid Username.",
+                okButtonText: "OK"
+            });
+        }
+    }
+    SigninViewModel.prototype.isValidPassword= function(){
+        if (this.get("password") != "") 
+        {
+            return true;
+        } 
+        else 
+        {
+            dialogsModule.alert({
+                message: "Enter a valid password.",
+                okButtonText: "OK"
+            });
+        }
+    }
     return SigninViewModel;
 })(observable.Observable);
 exports.SigninViewModel = SigninViewModel;

@@ -4,6 +4,8 @@ function pageloaded(args){
 	var page = args.object;
 	page.bindingContext = user;
 	autoLogin();
+	user.getCountries();
+	user.set("showcountrypicker",false);
 }
 exports.pageloaded = pageloaded;
 function autoLogin(){
@@ -22,7 +24,10 @@ function tapGenderFeMale(){
 	user.toggleGender(false);
 }
 exports.tapGenderFeMale = tapGenderFeMale;
-
+function tapCountry(){
+	user.set("showcountrypicker",true);
+}
+exports.tapCountry = tapCountry;
 function tapAge1()
 {
 	user.toggleAgegroup(1);

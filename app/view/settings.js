@@ -18,3 +18,21 @@ exports.SetScreensize = function(l){
 exports.GetScreensize = function(){
 	return parseFloat(appSettings.getNumber("screensize").toFixed(1));
 }
+exports.SetFirstLoadApp = function(l){
+	appSettings.setBoolean("firstLoadApp", l);
+}
+exports.GetFirstLoadApp = function(){
+	return appSettings.getBoolean("firstLoadApp", true);
+}
+exports.SetUserName = function(l){
+	appSettings.setString("username_save",l);
+}
+exports.GetUserName = function(){
+	return appSettings.getString("username_save");
+}
+exports.SetPassword = function(l){
+	appSettings.setString("password_save",l);
+}
+exports.GetPassword = function(){
+	return appSettings.getString("password_save");
+}

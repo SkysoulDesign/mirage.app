@@ -13,3 +13,7 @@ function signinSuccess(){
 	return user.signinSuccess();
 }	
 exports.signinSuccess = signinSuccess;
+
+exports.pageUnloaded = function(){
+	user.signOut();
+}

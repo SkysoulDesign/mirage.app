@@ -33,7 +33,12 @@
 			</GridLayout>
 			<GridLayout columns="3*, 4*" height="50" >
 				<Label text="Country" col="0" />
-				<TextField text="{{country}}" hint="Contry" col="1" />
+				<!-- <Label text="{{country}}" col="1" tap="tapCountry" /> -->
+				<!-- <ListPicker items="{{countries}}" selectedIndex="{{ selectedIndex }}" col="1" /> -->
+			</GridLayout>
+			<GridLayout height="150" >
+				<!-- visibility="{{ showcountrypicker ? 'visible' : 'collapsed' }}" > -->
+				<ListPicker items="{{countries}}" selectedIndex="{{ selectedIndex }}" col="1" />
 			</GridLayout>
 			<GridLayout columns="3*, 2*, 2*" rows="*, *, *, *" height="150" >
 				<Label text="Age group" col="0" />

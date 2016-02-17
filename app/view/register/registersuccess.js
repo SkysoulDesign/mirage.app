@@ -5,6 +5,6 @@ function pageLoaded(args) {
     var page = args.object;
     timer.setTimeout(function(){
     	frameModule.topmost().navigate("view/mainpage/mainpage");
-    },500);
+    },1000);
 }
 exports.pageLoaded = pageLoaded;
