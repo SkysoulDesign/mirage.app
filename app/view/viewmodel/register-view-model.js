@@ -113,7 +113,9 @@ var RegisterViewModel = (function (_super) {
                 "Content-Type": "application/json"
             }
         })
-        .then(handleErrors)
+        .then(handleErrors, function (e) {
+            console.log(e);
+        })
         .then(function(response) {
             console.log(response);
             return response.json();

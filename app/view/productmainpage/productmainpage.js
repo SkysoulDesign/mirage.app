@@ -5,8 +5,8 @@ var observableModule = require("data/observable");
 
 exports.pageLoaded = function(args){
  	var page = args.object;
-	// width = page.getMeasuredWidth();
-	// height = page.getMeasuredHeight();
+	width = page.getMeasuredWidth();
+	height = page.getMeasuredHeight();
 	// var centerX = width*0.5-r;
 	// var centerY = height*0.5-r;
 	// var tmp = new observableModule.Observable({
@@ -24,6 +24,7 @@ exports.pageLoaded = function(args){
 }
 exports.tapMirage = function(){
 	frameModel.topmost().navigate("view/productall/productall");
+	console.log("pageLoaded；；；"+height);
 };
 
 exports.tapCode = function(){

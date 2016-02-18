@@ -6,6 +6,7 @@ var appSettings = require("../settings");
 exports.pageLoaded = function(){
 	if(config.token=="")
 	{
+		console.log("config.token");
 		fetchModule.fetch(config.loginUrl, {
             method: "POST",
             body: JSON.stringify({
@@ -16,7 +17,9 @@ exports.pageLoaded = function(){
                 "Content-Type": "application/json"
             }
         })
-        .then(handleErrors)
+        .then(handleErrors,function(e){
+        	console.log(e);
+        })
         .then(function(response) {
             return response.json();
         })
@@ -40,7 +43,8 @@ exports.pageLoaded = function(){
 function navigateTo(name){
 	var navigationEntry = {
 	    moduleName: name,
-	    backstackVisible: false
+	    // backstackVisible: false,
+	    clearHistory: true
 	};
 	 frameModule.topmost().navigate(navigationEntry);
 }

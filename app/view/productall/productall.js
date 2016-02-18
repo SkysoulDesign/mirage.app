@@ -58,7 +58,6 @@ exports.pageLoaded = function(args){
     var c210 = createButton1(a - sqrt3*h, b);
     var c211 = createButton1(a - sqrt3*h, b - h);
     var c212 = createButton1(a - sqrt3*h/2, b-3*h/2);
-
     UIs.push(c01);
     UIs.push(c11);
     UIs.push(c12);
@@ -129,9 +128,9 @@ exports.pageLoaded = function(args){
 }
 function pushButton(image,product){
 	image.src = product.image;
-	image.id = product.id;
-	updateUI(image);
+	image.id = product.id.toString();
 	absoluteLayout.addChild(image);
+	updateUI(image);
 	image.on(gestures.GestureTypes.tap,function(args){
 		// frameModel.topmost().navigate("view/video/video");
 		var navigationEntry = {

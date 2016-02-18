@@ -6,8 +6,10 @@ var viewmodel = new observable.Observable({});
 exports.pageLoaded = function(args){
     var page = args.object;
     var videoContainer = page.getViewById('image_video');
-    var moviePath = NSBundle.mainBundle().pathForResourceOfType("app/test" ,"mp4");
-    var url = NSURL.fileURLWithPath(moviePath);
+    var moviePath = NSBundle.mainBundle().pathForResourceOfType("app/test111" ,"mp4");
+    console.log(moviePath);
+    // var url = NSURL.fileURLWithPath(moviePath);
+    var url = NSURL.URLWithString("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
     var playerViewController = MPMoviePlayerViewController.alloc().initWithContentURL(url);
     moviePlayer = playerViewController.moviePlayer;
     moviePlayer.scalingMode = MPMovieScalingModeAspectFit;

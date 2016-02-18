@@ -5,6 +5,7 @@ exports.chooseLanguage = function(args){
 	var page = args.object;
 	if(backToSetting){
 		frameModule.topmost().goBack();
+		console.log("buttonid...." + page.id);
 	}
 	else{
 		frameModule.topmost().navigate("view/screensize/screensize");

@@ -1,6 +1,7 @@
 // var URL = "http://223.197.27.204/";
-// var URL = "http://192.168.1.253/";
-var URL = "http://mirage.dev/";
+var URL = "http://192.168.1.253/";
+// var URL = "cms.soapstudio.com/";
+// var URL = "http://mirage.dev/";
 module.exports = { 
     apiUrl: URL,
     loginUrl: URL + "api/user/login",

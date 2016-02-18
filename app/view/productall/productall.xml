@@ -38,7 +38,4 @@
 	<!-- <absoluteLayout width="300" height="600" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
 		<image left="10" top="10" src="~/image/test.png" stretch="fill" width="100" height="100"/>
 	</absoluteLayout> -->
-	<absoluteLayout id="test">
-
-	</absoluteLayout>
 </page>

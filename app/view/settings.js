@@ -13,10 +13,10 @@ exports.GetLanguage = function(){
 	return appSettings.getString("language");
 }
 exports.SetScreensize = function(l){
-	appSettings.setNumber("screensize",l);
+	appSettings.setString("screensize",l);
 }
 exports.GetScreensize = function(){
-	return parseFloat(appSettings.getNumber("screensize").toFixed(1));
+	return parseFloat(appSettings.getString("screensize"));
 }
 exports.SetFirstLoadApp = function(l){
 	appSettings.setBoolean("firstLoadApp", l);

@@ -55,6 +55,7 @@ var SigninViewModel = (function (_super) {
             if(data.token === undefined)
             // if(data.hasOwnProperty("error"))
             {
+                 _this.set("isLoading",false);
                 // this.set("isLoading",false);
                 dialogsModule.alert({
                 message: "invalid username or password",

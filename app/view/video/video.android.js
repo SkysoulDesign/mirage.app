@@ -17,9 +17,11 @@ function createVideoView(args) {
     var mVideoView = new android.widget.VideoView(args.context);
     var mMediaController = new android.widget.MediaController(args.context);
     mMediaController.setAnchorView(mVideoView);
-        
+    var params = new android.view.ViewGroup.LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT,1); 
+    mVideoView.setLayoutParams(params);   
     // parse the uri
-    var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    // var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    var videoLink = 'rtsp://192.168.1.253:554/bunny.mp4';
     var mVideoURL = android.net.Uri.parse(videoLink);
     mVideoView.setVideoURI(mVideoURL);
     mVideoView.setMediaController(mMediaController);
