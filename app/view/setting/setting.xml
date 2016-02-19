@@ -1,4 +1,4 @@
-<page loaded="pageLoaded" >
+<page loaded="pageLoaded" android:actionBarHidden="true">
 <!-- 	<gridLayout rows="*,auto,auto,auto,*" columns="*,auto,auto,auto,*">
 		<Label row="2" col="2" text="Setting" />
 		<Button row="1" col="2" text="Account" tap="tapAccount" />

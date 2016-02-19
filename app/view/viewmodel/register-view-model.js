@@ -14,6 +14,7 @@ var http = require("http");
 var settings = require("../settings");
 var listPickerModule = require("ui/list-picker");
 var listPicker = new listPickerModule.ListPicker();
+var loader = require("nativescript-loading-indicator");
 var _this;
 var RegisterViewModel = (function (_super) {
     __extends(RegisterViewModel, _super);
@@ -94,7 +95,8 @@ var RegisterViewModel = (function (_super) {
         
     }
     RegisterViewModel.prototype.register= function(){
-        _this.set("isLoading",true);
+        // _this.set("isLoading",true);
+        loader.show();
         console.log("register");
         return fetchModule.fetch(config.registerUrl, {
             method: "POST",
@@ -121,7 +123,8 @@ var RegisterViewModel = (function (_super) {
             return response.json();
         })
         .then(function(data){
-            _this.set("isLoading",false);
+            // _this.set("isLoading",false);
+            loader.hide();
             // if(data.hasOwnProperty("token")){
             if(data.error !== undefined){
                 console.log("1 "+JSON.stringify(data.error));
@@ -340,6 +343,5 @@ function handleErrors(response) {
         console.log(JSON.stringify(response));
         throw Error(response.statusText);
     }
-    console.log("handleErrors");
     return response;
 }

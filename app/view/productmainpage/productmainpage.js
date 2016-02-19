@@ -1,4 +1,4 @@
-var frameModel = require("ui/frame");
+var frameModule = require("ui/frame");
 var width,height;
 var r = 40 , d=2.5;
 var observableModule = require("data/observable");
@@ -23,14 +23,36 @@ exports.pageLoaded = function(args){
 	// page.bindingContext = page.navigationContext;
 }
 exports.tapMirage = function(){
-	frameModel.topmost().navigate("view/productall/productall");
-	console.log("pageLoaded；；；"+height);
+	// frameModule.topmost().navigate("view/productall/productall");
+	// console.log("pageLoaded；；；"+height);
+	var searchbycode = require("../productall/productall");
+	var pageFactory = function () {
+		return searchbycode.pageLoaded();
+	};
+	var navEntry = {
+	    create: pageFactory,
+	    context: "myContext",
+	    animated: true
+	};
+	var topFrame = frameModule.topmost();
+	topFrame.navigate(navEntry);
 };
 
 exports.tapCode = function(){
-	frameModel.topmost().navigate("view/searchbycode/searchbycode");
+	// frameModule.topmost().navigate("view/searchbycode/searchbycode");
+	var searchbycode = require("../searchbycode/searchbycode");
+	var pageFactory = function () {
+		return searchbycode.createPage();
+	};
+	var navEntry = {
+	    create: pageFactory,
+	    context: "myContext",
+	    animated: true
+	};
+	var topFrame = frameModule.topmost();
+	topFrame.navigate(navEntry);
 };
 
 exports.tapMovie = function(){
-	frameModel.topmost().navigate("view/searchbymovie/searchbymovie");
+	frameModule.topmost().navigate("view/searchbymovie/searchbymovie");
 };

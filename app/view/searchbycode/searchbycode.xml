@@ -1,5 +1,4 @@
 <!-- <page loaded="pageLoaded" > -->
-<page loaded="pageLoaded" >
 	
 <!-- 	<gridLayout rows="*,auto,auto,auto,auto,auto,auto,*" columns="*,auto,auto,auto,*">
 		<gridLayout row="3" col="2" rowSpan="2" rows="*,*">
@@ -19,7 +18,7 @@
 		<Image id="icon" src="res://icon" stretch="none" />
 	</gridLayout> -->
 	<!-- <Image id="soap" src="~/image/soap.png" stretch="aspectFit" /> -->
-	<absoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
+<!-- 	<absoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
 		<Label left="110" top="110"  text="" />
 		<Label left="140" top="170" text="?" cssClass="label-help" tap="tapHelp" />
 		<TextField left="110" top="145" hint="输入产品编号"/>

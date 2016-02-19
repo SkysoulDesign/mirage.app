@@ -2,6 +2,7 @@ var frameModel = require("ui/frame");
 var absoluteLayoutModule = require("ui/layouts/absolute-layout");
 var labelModule = require("ui/label");
 var colorModule = require("color");
+var pageModule = require("ui/page");
 var ImageModule = require("ui/image");
 var gestures = require("ui/gestures");
 var enumsModule = require("ui/enums")
@@ -11,6 +12,7 @@ var productModel = require("../viewmodel/productall-view-model");
 var width,height;
 var absoluteLayout;
 var UIs;
+var app = require("application");
 
 var r = 80 ,d = 90 , num = 20;
 
@@ -19,8 +21,12 @@ exports.tapmodel = function(){
 }
 
 
-exports.pageLoaded = function(args){
-	var page = args.object;
+exports.pageLoaded = function(){
+	// var page = args.object;
+	var page = new pageModule.Page();
+	if (app.android) {
+		page.actionBarHidden = true;
+	}
 	width = page.getMeasuredWidth();
 	height = page.getMeasuredHeight();
 	console.log("pageLoaded；；；"+height);
@@ -125,6 +131,7 @@ exports.pageLoaded = function(args){
 					// translate: { x: 100, y: 100},
 				 //    duration: 5000
      //    });
+     return page;
 }
 function pushButton(image,product){
 	image.src = product.image;

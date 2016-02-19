@@ -8,5 +8,6 @@ module.exports = {
     registerUrl : URL+"api/user/register",
     productUrl : URL+"api/product/",
     contryUrl : URL+ "api/form/countries",
+    searchUrl : URL,
     token:""
 };

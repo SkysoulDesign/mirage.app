@@ -14,6 +14,7 @@ var username_save = settings.GetUserName();
 var password_save = settings.GetPassword();
 var login = false;
 var _this;
+var loader = require("nativescript-loading-indicator");
 
 var SigninViewModel = (function (_super) {
     __extends(SigninViewModel, _super);
@@ -34,7 +35,8 @@ var SigninViewModel = (function (_super) {
         }
     }
     SigninViewModel.prototype.signin= function(){
-         _this.set("isLoading",true);
+         // _this.set("isLoading",true);
+         loader.show();
          return fetchModule.fetch(config.loginUrl, {
             method: "POST",
             body: JSON.stringify({
@@ -55,7 +57,8 @@ var SigninViewModel = (function (_super) {
             if(data.token === undefined)
             // if(data.hasOwnProperty("error"))
             {
-                 _this.set("isLoading",false);
+                 // _this.set("isLoading",false);
+                 loader.hide();
                 // this.set("isLoading",false);
                 dialogsModule.alert({
                 message: "invalid username or password",
@@ -69,7 +72,8 @@ var SigninViewModel = (function (_super) {
             config.token = data.token;
         })
         .then(function(){
-            _this.set("isLoading",false);
+            // _this.set("isLoading",false);
+            loader.hide();
             console.log(_this.get("username")+_this.get("password"));
             settings.SetUserName(_this.get("username"));
             settings.SetPassword(_this.get("password"));
@@ -150,6 +154,5 @@ function handleErrors(response) {
         console.log(JSON.stringify(response));
         throw Error(response.statusText);
     }
-    console.log("handleErrors");
     return response;
 }

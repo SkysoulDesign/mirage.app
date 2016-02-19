@@ -1,4 +1,4 @@
-<page loaded="pageLoaded">
+<!-- <page loaded="pageLoaded"> -->
 <!-- 	<gridLayout rows="*,auto,auto,auto,auto,auto,auto,*" columns="*,auto,auto,auto,*">
 		<Label row="3" col="2" rowSpan="2" text="ALL" />
 		<Button row="2" col="1" rowSpan="2" text="1" tap="tapmodel" />
@@ -38,4 +38,4 @@
 	<!-- <absoluteLayout width="300" height="600" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
 		<image left="10" top="10" src="~/image/test.png" stretch="fill" width="100" height="100"/>
 	</absoluteLayout> -->
-</page>
+<!-- </page> -->

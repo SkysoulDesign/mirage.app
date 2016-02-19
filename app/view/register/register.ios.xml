@@ -1,4 +1,4 @@
-<Page loaded="pageloaded" android:actionBarHidden="true">
+<Page loaded="pageloaded">
 	<ScrollView>
 		<GridLayout rows="auto,auto">
 		<StackLayout orientation="vertical">

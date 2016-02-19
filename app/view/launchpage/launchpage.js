@@ -54,6 +54,5 @@ function handleErrors(response) {
         navigateTo("view/login/login");
         throw Error(response.statusText);
     }
-    console.log("handleErrors");
     return response;
 }
