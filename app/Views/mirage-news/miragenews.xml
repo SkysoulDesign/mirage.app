@@ -1,0 +1,25 @@
+ <Page loaded="pageLoaded">
+      <!-- <HtmlView html="{{ htmlString }}" /> -->
+
+      <GridLayout rows="auto, *" >
+        <Label text="Mirage News" row="0" cssClass="label-news" />
+        <ScrollView row="1">
+        	<Repeater items="{{ myItems }}">
+        		<Repeater.itemsLayout>
+        			<StackLayout />
+        		</Repeater.itemsLayout>
+        		<Repeater.itemTemplate>
+        			<GridLayout  columns="*,3*">
+        			  	<Label text="{{icon}}" col="0" />
+       					<GridLayout col="1" rows="*, *, 2*" >
+       					  <Label text="{{title}}" cssClass="label-title" row="0" />
+       					  <Label text="{{date}}" cssClass="label-date" row="1"  />
+       					  <Label text="{{content}}" cssClass="label-content" row="2"/>
+       					</GridLayout>
+        			</GridLayout>
+        		</Repeater.itemTemplate>
+        	</Repeater>
+        </ScrollView>
+
+      </GridLayout>
+ </Page>

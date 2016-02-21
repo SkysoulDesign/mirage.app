@@ -1,0 +1,8 @@
+<page loaded="pageLoaded" actionBarHidden="true">
+    <GridLayout>
+        <Image src="res://background" stretch="aspectFill"/>
+        <Image src="res://logo" stretch="none"/>
+        <Image src="res://fader" stretch="aspectFill"/>
+    </GridLayout>
+</page>
+

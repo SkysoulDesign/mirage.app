@@ -1,34 +1,18 @@
 {
-  "name": "MyTestProject",
-  "version": "1.0.0",
-  "description": "MyTestProject",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nativescript/sample-Groceries.git"
-  },
-  "keywords": [
-    "NativeScript"
-  ],
-  "author": "TJ VanToll <tj.vantoll@gmail.com> (http://tjvantoll.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nativescript/sample-Groceries/issues"
-  },
-  "homepage": "https://github.com/nativescript/sample-Groceries/groceries",
-  "nativescript": {
-    "id": "org.nativescript.MyTestProject",
-    "tns-ios": {
-      "version": "1.5.2"
-    },
-    "tns-android": {
-      "version": "1.5.1"
-    }
-  },
-  "dependencies": {
-    "email-validator": "^1.0.3",
-    "nativescript-barcodescanner": "^1.2.0",
-    "nativescript-loading-indicator": "^1.0.1",
-    "nativescript-openurl": "^1.0.2",
-    "tns-core-modules": "1.5.1"
-  }
+	"nativescript": {
+		"id": "com.soapstudio.cms.mirage",
+		"tns-android": {
+			"version": "1.6.1"
+		}
+	},
+	"dependencies": {
+		"nativescript-drop-down": "^1.2.1",
+		"nativescript-loading-indicator": "^1.0.1",
+		"nativescript-openurl": "^1.0.2",
+		"tns-core-modules": "1.6.0"
+	},
+	"devDependencies": {
+		"nativescript-dev-typescript": "^0.3.0",
+		"typescript": "^1.8.0"
+	}
 }

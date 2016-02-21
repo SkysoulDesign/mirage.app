@@ -1,0 +1,11 @@
+.register-login-button {
+    color: white;
+    font-size: 20;
+    width: 100;
+    height: 100;
+    border-width: 1;
+    border-color: #E9007C;
+    border-radius: 50;
+    background-color: #E9007C;
+    margin: 10;
+}

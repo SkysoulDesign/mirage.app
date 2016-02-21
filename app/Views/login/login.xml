@@ -1,0 +1,13 @@
+<Page loaded="pageLoaded">
+
+    <GridLayout rows="*, *">
+        <Image src="~/image/soap.png" stretch="fill"/>
+
+        <GridLayout row="1" columns="*, auto, auto, *" rows="*">
+            <Button text="Register" col="1" tap="{{ tapRegister }}" cssClass="register-login-button"/>
+            <Button text="Sign in" col="2" tap="{{ tapSignIn }}" cssClass="register-login-button"/>
+        </GridLayout>
+
+    </GridLayout>
+
+</Page>

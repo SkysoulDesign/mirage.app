@@ -1,0 +1,27 @@
+.label-title{
+	font-size: 30;
+	color:black;
+	margin-top: 5;
+	margin-left: 5;
+}
+.label-date{
+	font-size: 15;
+	color:#4F4A4F;
+	margin-top: 2;
+	margin-left: 5;
+}
+.label-content{
+	font-size: 20;
+	margin-top: 2;
+	margin-left: 5;
+	color:#4F4A4F;
+}
+.label-news{
+	font-size: 40;
+	color:black;
+	background-color: red;
+	/*horizontal-align: center;*/
+	text-align: center;
+	/*margin: 10;*/
+	margin-bottom: 10;
+}

@@ -1,66 +1,64 @@
-
+"use strict";
 var application = require("application");
-var config = require("./view/config");
-var appSettings = require("./view/settings");
-var signin = require("./view/Signin/Signin");
-var fetchModule = require("fetch");
-application.cssFile = "./app.css";
-if(appSettings.GetFirstLoadApp())
-{
-	console.log("GetFirstLoadApp ***"+appSettings.GetFirstLoadApp());
-	application.mainModule = "view/language/language";
-	appSettings.SetFirstLoadApp(false);
-	application.start();
-}
-else
-{
-	// if(config.token=="")
-	// {
-	// 	fetchModule.fetch(config.loginUrl, {
- //            method: "POST",
- //            body: JSON.stringify({
- //                credential: appSettings.GetUserName(),
- //                password: appSettings.GetPassword(),
- //                // grant_type: "password"
- //            }),
- //            headers: {
- //                "Content-Type": "application/json"
- //            }
- //        })
- //        .then(handleErrors)
- //        .then(function(response) {
- //            return response.json();
- //        })
- //        .then(function(data) {
- //            if(data.hasOwnProperty("token")){
- //                config.token = data.token;
- //                application.mainModule = "view/mainpage/mainpage";
- //                console.log("mainpage");
- //                application.start();
- //            }
- //            else{
- //            	application.mainModule = "view/login/login";
- //                console.log("false");
- //                application.start();
- //            }
- //        });
-	// }
-	// else
-	// {
-	// console.log("3");
-		// application.mainModule = "view/mainpage/mainpage";
-		application.mainModule = "view/launchpage/launchpage";
-		application.start();
-	// appSettings.setBoolean("firstLoadApp",true);
-	// }
-}
-application.start();
-
-function handleErrors(response) {
-    if (!response.ok) {
-        console.log(JSON.stringify(response));
-        throw Error(response.statusText);
-    }
-    console.log("handleErrors");
-    return response;
-}
+var Config_1 = require("./Modules/Config");
+var Navigator_1 = require("./Modules/Navigator");
+var Api_1 = require("./Modules/Api");
+var Database_1 = require("./Modules/Database");
+var Helpers_1 = require("./Modules/Helpers");
+/**
+ * Mirage App
+ */
+var Mirage;
+(function (Mirage) {
+    Mirage.config = new Config_1.Config();
+    /**
+     * Helpers
+     */
+    Mirage.navigate = new Navigator_1.Navigator();
+    Mirage.api = new Api_1.Api();
+    Mirage.database = new Database_1.Database();
+    /**
+     * Start The Application
+     */
+    var App = (function () {
+        function App() {
+            /**
+             * Main View Variable
+             * @type {string}
+             */
+            this.launch_view = "launch-page"; //launch-page
+        }
+        /**
+         * Initialize The Application
+         */
+        App.prototype.init = function () {
+            /**
+             * Initiate the Main App View
+             */
+            this.start(Helpers_1.view(this.launch_view));
+            /**
+             * Check if the app was lunch for the first time
+             */
+            //if (settings.getFirstLoadApp()) {
+            //    settings.setFirstLoadApp(false);
+            //    return this.start(view(this.first_launch_view));
+            //}
+            //console.log(settings.isFirstLaunch());
+        };
+        /**
+         * Start The Application
+         */
+        App.prototype.start = function (view) {
+            application.start({ moduleName: view });
+            application.cssFile = './App_Resources/css/app.css';
+        };
+        return App;
+    }());
+    Mirage.App = App;
+})(Mirage = exports.Mirage || (exports.Mirage = {}));
+/**
+ * Start App
+ * @type {Mirage.App}
+ */
+var app = (new Mirage.App()).init();
+//# sourceMappingURL=app.js.map
