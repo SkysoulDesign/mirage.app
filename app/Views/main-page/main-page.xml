@@ -6,7 +6,7 @@
                stretch="aspectFit"/>
 
         <GridLayout class="container" width="*" row="1" columns="*, 100">
-            <TextField col="0" text="Insert code"/>
+            <TextField col="0" hint="Insert code"/>
             <Image cssClass="qr-code-icon" col="1" tap="{{ tapScanQRCode }}" src="res://qr_code" stretch="aspectFit"/>
         </GridLayout>
 

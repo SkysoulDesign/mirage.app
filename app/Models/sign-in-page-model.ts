@@ -10,44 +10,24 @@ export class SignInPageModel extends Observable {
         /**
          * Set Loader Spinner
          */
-        var _this = this;
-        _this.set('isLoading', true);
+        this.set('isLoading', true);
 
-        http.request({
-            url: App.api.get('login').url,
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            content: JSON.stringify({
+        var _this = this, data = {
                 credential: this.get('username'),
-                password: this.get('password')
-            })
-        }).then(function (response) {
+                password:   this.get('password')
+            },
 
-            /**
-             * Disable Loader
-             */
-            _this.set('isLoading', false);
-
-            var result = response.content.toJSON();
-
-            /**
-             * Store Token
-             */
-            if (result.hasOwnProperty('api_token')) {
-                cache.set('user', result);
+            onSuccess = function () {
+                _this.set('isLoading', false);
                 App.navigate.to('main-page');
-            }
+            },
 
-            /**
-             * Alert Errors
-             */
-            if (result.hasOwnProperty('error')) {
-                App.api.alertErrors(result.error);
-            }
+            onError = function (errors) {
+                _this.set('isLoading', false);
+                App.api.alertErrors(errors);
+            };
 
-        }, function (e) {
-            console.log("Error occurred " + e);
-        });
+        App.api.fetch('login', data, onSuccess, onError);
 
     }
 

@@ -5,6 +5,7 @@ var Helpers_1 = require("../../Modules/Helpers");
 function pageLoaded(args) {
     var page = args.object;
     page.bindingContext = new vmModule.MainPageModel();
+    return;
     /**
      * Check if User Token is Valid.
      */

@@ -1,4 +1,3 @@
-"use strict";
 var application = require("application");
 var Config_1 = require("./Modules/Config");
 var Navigator_1 = require("./Modules/Navigator");
@@ -26,7 +25,7 @@ var Mirage;
              * Main View Variable
              * @type {string}
              */
-            this.launch_view = "launch-page";
+            this.launch_view = "launch-page"; //launch-page
         }
         /**
          * Initialize The Application
@@ -53,7 +52,7 @@ var Mirage;
             application.cssFile = './app.css';
         };
         return App;
-    }());
+    })();
     Mirage.App = App;
 })(Mirage = exports.Mirage || (exports.Mirage = {}));
 /**

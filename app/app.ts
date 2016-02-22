@@ -29,7 +29,7 @@ export namespace Mirage {
          * Main View Variable
          * @type {string}
          */
-        private launch_view:string = "launch-page";
+        private launch_view:string = "launch-page"; //launch-page
 
         /**
          * Initialize The Application

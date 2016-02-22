@@ -1,0 +1,40 @@
+.container {
+    background-color: white;
+    margin: 120px 30px 150px 30px;
+    padding: 0 10px;
+}
+
+.avatar-container {
+    margin-top: 50px;
+}
+
+.avatar {
+    /*margin: -50px;*/
+}
+
+TextField {
+    height: 70px;
+}
+
+.drop-down {
+    /*font-size: 18px;*/
+    /*margin: 15px 15px;*/
+}
+
+Label {
+    font-size: 17px;
+    margin: 15px 15px;
+}
+
+Button {
+    background-color: #177e00;
+    color: white;
+    font-size: 9;
+    /*padding: 0;*/
+    /*margin: 0;*/
+}
+
+.selectedLabel {
+    color: #177e00;
+    font-weight: bold;
+}
