@@ -26,7 +26,7 @@ var Mirage;
              * Main View Variable
              * @type {string}
              */
-            this.launch_view = "launch-page"; //launch-page
+            this.launch_view = "launch-page";
         }
         /**
          * Initialize The Application
@@ -50,7 +50,7 @@ var Mirage;
          */
         App.prototype.start = function (view) {
             application.start({ moduleName: view });
-            application.cssFile = './App_Resources/css/app.css';
+            application.cssFile = './app.css';
         };
         return App;
     }());

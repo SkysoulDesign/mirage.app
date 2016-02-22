@@ -1,8 +1,12 @@
-<page loaded="pageLoaded" actionBarHidden="true">
-    <GridLayout>
-        <Image src="res://background" stretch="aspectFill"/>
-        <Image src="res://logo" stretch="none"/>
-        <Image src="res://fader" stretch="aspectFill"/>
+<page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
+
+    <GridLayout columns="*" rows="*" width="*" height="*">
+        <Image src="res://background" stretch="aspectFill" row="0" col="0"/>
+        <Image src="res://fader" stretch="aspectFill" row="0" col="0"/>
+        <DockLayout width="*" height="120" verticalAlignment="bottom">
+            <Image src="res://logo" cssClass="logo" horizontalAlignment="center" verticalAlignment="center" stretch="aspectFit" dock="bottom"/>
+        </DockLayout>
     </GridLayout>
+
 </page>
 

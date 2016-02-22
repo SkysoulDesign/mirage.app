@@ -1,4 +1,3 @@
-"use strict";
 var app_1 = require("../app");
 var dialogs_1 = require("ui/dialogs");
 var http = require('http');
@@ -147,6 +146,6 @@ var Api = (function () {
         app_1.Mirage.database.set('api', JSON.stringify({}));
     };
     return Api;
-}());
+})();
 exports.Api = Api;
 //# sourceMappingURL=Api.js.map

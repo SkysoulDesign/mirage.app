@@ -29,7 +29,7 @@ export namespace Mirage {
          * Main View Variable
          * @type {string}
          */
-        private launch_view:string = "launch-page"; //launch-page
+        private launch_view:string = "launch-page";
 
         /**
          * Initialize The Application
@@ -60,7 +60,7 @@ export namespace Mirage {
         public start(view:string) {
 
             application.start({moduleName: view});
-            application.cssFile = './App_Resources/css/app.css';
+            application.cssFile = './app.css';
 
         }
 

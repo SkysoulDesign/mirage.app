@@ -1,4 +1,3 @@
-"use strict";
 var observable_1 = require("data/observable");
 var app_1 = require("../app");
 var OpenUrl = require("nativescript-openurl");
@@ -7,6 +6,15 @@ var MainPageModel = (function (_super) {
     function MainPageModel() {
         _super.apply(this, arguments);
     }
+    /**
+     * Open Camera to Scan QRCode
+     */
+    MainPageModel.prototype.tapScanQRCode = function () {
+        alert({
+            message: 'Scan Code',
+            okButtonText: 'okay',
+        });
+    };
     MainPageModel.prototype.tapProduct = function () {
         app_1.Mirage.navigate.to("product-main-page");
     };
@@ -28,6 +36,6 @@ var MainPageModel = (function (_super) {
     };
     ;
     return MainPageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.MainPageModel = MainPageModel;
 //# sourceMappingURL=main-page-model.js.map

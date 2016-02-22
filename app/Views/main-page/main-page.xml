@@ -1,34 +1,35 @@
-<Page actionBarHidden="true" loaded="pageLoaded" >
-	<!-- <GridLayout rows="*,auto,auto,*" columns="*,*,*,*,*,*,*,*">
-		<Button id="btn1" row="1" col="1" colSpan="2" text="Mirage" />
-		<Button id="btn1" row="1" col="3" colSpan="2" tap="tapProduct" text="产品" />
-		<Button id="btn1" row="1" col="5" colSpan="2" tap="tapSoapWeb" text="Soap" />
-		<Button id="btn1" row="2" col="1" colSpan="2" tap="tapNews" text="News" />
-		<Button id="btn1" row="2" col="3" colSpan="2" tap="tapQR" text="QRcode" />
-		<Button id="btn1" row="2" col="5" colSpan="2" tap="tapSetting" text="Setting" />
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" actionBarHidden="true" loaded="pageLoaded">
 
-	</GridLayout> -->
-	<!-- <absoluteLayout id="buttonlayout" >
-		<Button id="mirage" left="{{left1}}" top="{{top1}}" text="Mirage" />
-		<Button id="product" left="{{left2}}" top="{{top2}}" tap="tapProduct" text="Product" />
-		<Button id="soap" left="{{left3}}" top="{{top3}}" tap="tapSoap" text="Soap" />
-		<Button id="news" left="{{left4}}" top="{{top4}}" tap="tapNews" text="News" />
-		<Button id="QRcode" left="{{left5}}" top="{{top5}}" tap="tapQR" text="QRcode" />
-		<Button id="setting" left="{{left6}}" top="{{top6}}" tap="tapSetting" text="Setting" />
-	</absoluteLayout> -->
+    <GridLayout columns="*" rows="100,60,350,*" width="*" height="*">
 
-	<absoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
-<!-- 		<Label left="110" top="110" text="Product" />
-		<Button left="110" top="10" text="MyMirage" tap="tapMirage" />
-		<Button left="23.4" top="160" text="Search by code" tap="tapCode" />
-		<Button left="196.6" top="160" text="search by movie" tap="tapMovie" /> -->
+        <Image src="res://logo" cssClass="logo" horizontalAlignment="center" verticalAlignment="center"
+               stretch="aspectFit"/>
 
-		<Button id="mirage" left="110" top="110" text="Mirage" />
-		<Button id="product" left="110" top="10" tap="{{ tapProduct }}" text="Product" />
-		<Button id="soap" left="205.1" top="79.1" tap="{{ tapSoap }}" text="Soap" />
-		<Button id="news" left="168.8" top="190.9" tap="{{ tapNews }}" text="News" />
-		<Button id="QRcode" left="51.2" top="190.9" tap="{{ tapQR }}" text="QRcode" />
-		<Button id="setting" left="14.9" top="79.1" tap="{{ tapSetting }}" text="Setting" />
-	</absoluteLayout>
-	
+        <GridLayout class="container" width="*" row="1" columns="*, 100">
+            <TextField col="0" text="Insert code"/>
+            <Image cssClass="qr-code-icon" col="1" tap="{{ tapScanQRCode }}" src="res://qr_code" stretch="aspectFit"/>
+        </GridLayout>
+
+        <ScrollView orientation="horizontal" row="2">
+            <GridLayout cssClass="stage" width="*" columns="*,*,*,*,*,*,*,*,*,*">
+                <Image cssClass="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
+                <Image cssClass="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
+                <Image cssClass="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
+                <Image cssClass="background-statue" col="3" src="res://statue_superman" stretch="aspectFit"/>
+                <Image cssClass="foreground-statue" col="4" src="res://statue_batman" stretch="aspectFit"/>
+                <Image cssClass="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
+                <Image cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
+                <Image cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
+            </GridLayout>
+        </ScrollView>
+
+        <GridLayout row="3" columns="*,*,*,*">
+            <Button col="0" tap="{{ tapRegister }}" cssClass="menu-button hologram"/>
+            <Button col="1" tap="{{ tapSignIn }}" cssClass="menu-button news"/>
+            <Button col="2" tap="{{ tapSignIn }}" cssClass="menu-button soap"/>
+            <Button col="3" tap="{{ tapSignIn }}" cssClass="menu-button settings"/>
+        </GridLayout>
+
+    </GridLayout>
+
 </Page>

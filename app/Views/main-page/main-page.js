@@ -1,4 +1,3 @@
-"use strict";
 var vmModule = require("../../Models/main-page-model");
 var http = require('http');
 var app_1 = require("../../app");

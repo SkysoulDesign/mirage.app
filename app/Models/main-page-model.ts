@@ -4,6 +4,18 @@ import OpenUrl = require( "nativescript-openurl" );
 
 export class MainPageModel extends Observable {
 
+    /**
+     * Open Camera to Scan QRCode
+     */
+    public tapScanQRCode() {
+
+        alert({
+            message: 'Scan Code',
+            okButtonText: 'okay',
+        });
+        
+    }
+
     public tapProduct() {
         App.navigate.to("product-main-page");
     };
