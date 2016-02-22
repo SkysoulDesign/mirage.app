@@ -4,6 +4,8 @@ var Navigator_1 = require("./Modules/Navigator");
 var Api_1 = require("./Modules/Api");
 var Database_1 = require("./Modules/Database");
 var Helpers_1 = require("./Modules/Helpers");
+var fontModule = require("ui/styling/font");
+var platformModule = require("platform");
 /**
  * Mirage App
  */
@@ -31,6 +33,12 @@ var Mirage;
          * Initialize The Application
          */
         App.prototype.init = function () {
+            /**
+             * Register Font on Ios
+             */
+            if (platformModule.device.os === 'ios') {
+                fontModule.ios.registerFont("SourceSansPro-Regular.otf");
+            }
             /**
              * Initiate the Main App View
              */

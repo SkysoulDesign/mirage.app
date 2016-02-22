@@ -1,4 +1,3 @@
-"use strict";
 var vmModule = require("../../Models/language-page-model");
 function pageLoaded(args) {
     var page = args.object;

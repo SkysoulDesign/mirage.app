@@ -1,11 +1,34 @@
-.register-login-button {
+Page {
+    background-color: #004678;
+}
+
+Label {
+    text-align: center;
     color: white;
+    padding: 5px;
+}
+
+.logo {
+    margin: 40px;
+}
+
+.button {
+    background-color: white;
+    width: 80%;
+    margin: 5px;
+    border-radius: 2;
     font-size: 20;
-    width: 100;
-    height: 100;
-    border-width: 1;
-    border-color: #E9007C;
-    border-radius: 50;
-    background-color: #E9007C;
-    margin: 10;
+    color: #082d47;
+}
+
+.big {
+    height: 70px;
+}
+
+.small {
+    height: 50px;
+}
+
+.extra {
+    padding: 50px;
 }

@@ -1,12 +1,16 @@
-<Page loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="*, *">
-        <Image src="~/image/soap.png" stretch="fill"/>
+    <GridLayout rows="3*, 3*,5*">
 
-        <GridLayout row="1" columns="*, auto, auto, *" rows="*">
-            <Button text="Register" col="1" tap="{{ tapRegister }}" cssClass="register-login-button"/>
-            <Button text="Sign in" col="2" tap="{{ tapSignIn }}" cssClass="register-login-button"/>
-        </GridLayout>
+        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
+
+        <StackLayout row="1" orientation="vertical">
+            <Button text="LOGIN" tap="{{ tapSignIn }}" cssClass="button big"/>
+            <Button text="REGISTER" tap="{{ tapRegister }}" cssClass="button small"/>
+            <label text="Lorem ipsum dolor sit amet, consectetur."/>
+        </StackLayout>
+
+        <Image cssClass="extra" row="2" src="res://extra" stretch="aspectFit" horizontalAlign="center"/>
 
     </GridLayout>
 

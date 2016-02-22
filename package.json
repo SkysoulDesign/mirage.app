@@ -1,21 +1,23 @@
 {
-	"nativescript": {
-		"id": "com.soapstudio.cms.mirage",
-		"tns-android": {
-			"version": "1.6.1"
-		},
-		"tns-ios": {
-			"version": "1.6.0"
-		}
-	},
-	"dependencies": {
-		"nativescript-drop-down": "^1.2.1",
-		"nativescript-loading-indicator": "^1.0.1",
-		"nativescript-openurl": "^1.0.2",
-		"tns-core-modules": "1.6.0"
-	},
-	"devDependencies": {
-		"nativescript-dev-typescript": "^0.3.0",
-		"typescript": "^1.8.0"
-	}
+  "nativescript": {
+    "id": "com.soapstudio.cms.mirage",
+    "tns-android": {
+      "version": "1.6.1"
+    },
+    "tns-ios": {
+      "version": "1.6.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-drop-down": "^1.2.1",
+    "nativescript-loading-indicator": "^1.0.1",
+    "nativescript-openurl": "^1.0.2",
+    "nativescript-status-bar": "^1.0.1",
+    "nativescript-telerik-ui": "^0.2.4",
+    "tns-core-modules": "1.6.0"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "^0.3.0",
+    "typescript": "^1.8.0"
+  }
 }

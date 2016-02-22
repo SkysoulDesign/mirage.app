@@ -1,5 +1,7 @@
 <Page loaded="pageLoaded" actionBarHidden="true">
+
     <GridLayout rows="*, *">
+
         <Image src="~/image/soap.png" stretch="fill"/>
 
         <GridLayout row="1" rows="auto,auto,auto" height="200" with="200">
@@ -16,4 +18,6 @@
         </GridLayout>
 
     </GridLayout>
+
+
 </Page>

@@ -1,4 +1,3 @@
-"use strict";
 var observable_1 = require("data/observable");
 var app_1 = require("../app");
 var observable_array_1 = require("data/observable-array");
@@ -131,6 +130,6 @@ var RegisterPageModel = (function (_super) {
         this.set(name, !this.get(name));
     };
     return RegisterPageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.RegisterPageModel = RegisterPageModel;
 //# sourceMappingURL=register-page-model.js.map
