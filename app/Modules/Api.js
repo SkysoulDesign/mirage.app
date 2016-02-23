@@ -68,6 +68,8 @@ var Api = (function () {
     Api.prototype.fetch = function (name, parameters, onSuccess, onError) {
         if (parameters === void 0) { parameters = {}; }
         var _this = this, result = new observable_1.Observable({ data: this.getCache(name) }), request = this.get(name), handle = function (data) {
+            console.log("TTTTTTTTTdataTTTTTTTTTT");
+            console.dir(data);
             /**
              * Save cache on success
              */
@@ -78,9 +80,12 @@ var Api = (function () {
                  * Call Callback
                  */
                 onSuccess(data);
+                console.log("TTTTTTTTTsuccessTTTTTTTTTT");
             }
-            if (data.hasOwnProperty('error'))
+            if (data.hasOwnProperty('error')) {
                 onError(data.error);
+                console.log("TTTTTTTTTerrorTTTTTTTTTT");
+            }
         };
         console.dir(app_1.Mirage.database.setup());
         /**

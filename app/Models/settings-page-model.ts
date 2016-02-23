@@ -30,7 +30,7 @@ export class SettingsPageModel extends Observable {
      * Navigate to Screen
      */
     public tapScreen() {
-        App.navigate.to("screen-size", this.navigationEntry);
+        // App.navigate.to("screen-size", this.navigationEntry);
     };
 
 }

@@ -1,0 +1,19 @@
+<Page android:actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+	<gridLayout rows="*,*">
+  		<Placeholder row="0" creatingView="createVideoView"/>
+  		<gridLayout row="1" columns="*,2*" cssClass="grid-info" >
+			<Image src="~/image/soap.png" cssClass="image" stretch="fill" />
+			<gridLayout col="1" rows="auto,auto,*" cssClass="grid-left">
+				<label row="0" text="BATARANG Doto File" cssClass="label-name" />
+				<gridLayout row="1" rows="auto,auto,auto,auto,auto" cssClass="grid-intro" >
+					<label row="0" text="生产信息" cssClass="label-infotop" />
+					<label row="1" text="制造商：韦恩企业" cssClass="label-infochild" />
+					<label row="2" text="出场：BVS" cssClass="label-infochild" />
+					<label row="3" text="类型：投掷工具" cssClass="label-infochild" />
+					<label row="4" text="随身携带数目：4件" cssClass="label-infodown" />
+				</gridLayout>
+				<Image row="2" src="~/image/soap.png" stretch="fill" />
+			</gridLayout>
+		</gridLayout>
+  	</gridLayout>
+</Page>

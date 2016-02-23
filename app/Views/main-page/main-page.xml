@@ -24,10 +24,10 @@
         </ScrollView>
 
         <GridLayout row="3" columns="*,*,*,*">
-            <Button col="0" tap="{{ tapRegister }}" cssClass="menu-button hologram"/>
-            <Button col="1" tap="{{ tapSignIn }}" cssClass="menu-button news"/>
-            <Button col="2" tap="{{ tapSignIn }}" cssClass="menu-button soap"/>
-            <Button col="3" tap="{{ tapSignIn }}" cssClass="menu-button settings"/>
+            <Button col="0" tap="{{ tapTologram }}" cssClass="menu-button hologram"/>
+            <Button col="1" tap="{{ tapNews }}" cssClass="menu-button news"/>
+            <Button col="2" tap="{{ tapSoap }}" cssClass="menu-button soap"/>
+            <Button col="3" tap="{{ tapSetting }}" cssClass="menu-button settings"/>
         </GridLayout>
 
     </GridLayout>

@@ -1,0 +1,11 @@
+<page>
+	<gridLayout rows="*,auto,auto,auto,auto,auto,auto,*" columns="*,auto,auto,auto,*">
+		<Button row="3" col="2" rowSpan="2" text="7" tap="tapmodel" />
+		<Button row="2" col="1" rowSpan="2" text="1" tap="tapmodel" />
+		<Button row="4" col="1" rowSpan="2" text="2" tap="tapmodel" />
+		<Button row="1" col="2" rowSpan="2" text="3" tap="tapmodel" />
+		<Button row="5" col="2" rowSpan="2" text="4" tap="tapmodel" />
+		<Button row="2" col="3" rowSpan="2" text="5" tap="tapmodel" />
+		<Button row="4" col="3" rowSpan="2" text="6" tap="tapmodel" />
+	</gridLayout>
+</page>

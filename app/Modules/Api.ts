@@ -83,7 +83,8 @@ export class Api {
             result = new Observable({data: this.getCache(name)}),
             request = this.get(name),
             handle = function (data:any) {
-
+                console.log("TTTTTTTTTdataTTTTTTTTTT")
+                console.dir(data);
                 /**
                  * Save cache on success
                  */
@@ -96,10 +97,13 @@ export class Api {
                      * Call Callback
                      */
                     onSuccess(data);
+                    console.log("TTTTTTTTTsuccessTTTTTTTTTT")
                 }
 
-                if (data.hasOwnProperty('error'))
+                if (data.hasOwnProperty('error')){
                     onError(data.error);
+                    console.log("TTTTTTTTTerrorTTTTTTTTTT")
+                }
             };
         console.dir(App.database.setup());
         /**

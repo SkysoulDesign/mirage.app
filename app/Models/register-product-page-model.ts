@@ -20,6 +20,7 @@ export class RegisterproductPageModel extends Observable {
         this.set('text2', str.substr(6, 5));
         this.set('text3', str.substr(12, 5));
         this.set('text4', str.substr(18, 5));
+        _this.set('isLoading', true);
         var data = {
             product_id: _this.get("text1")
         },
@@ -28,7 +29,7 @@ export class RegisterproductPageModel extends Observable {
                 var url = data.image;
                 console.log("-----------------1------------------1");
                 console.log(url);
-                this.set('productimage', data.image);
+                _this.set('productimage', data.image.encoded);
                 // rereturns an interface App.api.get('product')
                 // that in the end means what will return if u find that
                 // _this.set('productimage', url); // this here have another contect
@@ -43,7 +44,8 @@ export class RegisterproductPageModel extends Observable {
         result.on(Observable.propertyChangeEvent, function(data: EventData) {
             console.log("-----------------2------------------2");
             console.dir(data.object.get('data'));
-            this.set('productimage', result.get('data').image);
+            _this.set('productimage', result.get('data').image.encoded);
+            console.dir(result.get('data').image);
         });
 
     }
@@ -53,6 +55,7 @@ export class RegisterproductPageModel extends Observable {
      */
     public tapRegister() {
         App.navigate.to("register-success");
+        console.log("register");
     }
 
 }

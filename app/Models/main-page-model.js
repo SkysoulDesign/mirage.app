@@ -40,22 +40,30 @@ var MainPageModel = (function (_super) {
             });
         });
     };
-    MainPageModel.prototype.tapProduct = function () {
+    /**
+     * Open Camera to hologram
+     */
+    MainPageModel.prototype.tapTologram = function () {
         app_1.Mirage.navigate.to("product-main-page");
     };
     ;
+    /**
+     * Open Camera to soap
+     */
     MainPageModel.prototype.tapSoap = function () {
         OpenUrl("http://www.soapstudio.com");
     };
     ;
+    /**
+     * Open Camera to new
+     */
     MainPageModel.prototype.tapNews = function () {
         app_1.Mirage.navigate.to("mirage-news");
     };
     ;
-    MainPageModel.prototype.tapQR = function () {
-        app_1.Mirage.navigate.to("scanQR");
-    };
-    ;
+    /**
+     * Open Camera to settings
+     */
     MainPageModel.prototype.tapSetting = function () {
         app_1.Mirage.navigate.to("settings");
     };

@@ -32,7 +32,7 @@ var SettingsPageModel = (function (_super) {
      * Navigate to Screen
      */
     SettingsPageModel.prototype.tapScreen = function () {
-        app_1.Mirage.navigate.to("screen-size", this.navigationEntry);
+        // App.navigate.to("screen-size", this.navigationEntry);
     };
     ;
     return SettingsPageModel;

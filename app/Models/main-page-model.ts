@@ -40,23 +40,27 @@ export class MainPageModel extends Observable {
             }
             );
     }
-
-    public tapProduct() {
+    /**
+     * Open Camera to hologram
+     */
+    public tapTologram() {
         App.navigate.to("product-main-page");
     };
-
+    /**
+     * Open Camera to soap
+     */
     public tapSoap() {
         OpenUrl("http://www.soapstudio.com");
     };
-
+    /**
+     * Open Camera to new
+     */
     public tapNews() {
         App.navigate.to("mirage-news");
     };
-
-    public tapQR() {
-        App.navigate.to("scanQR");
-    };
-
+    /**
+     * Open Camera to settings
+     */
     public tapSetting() {
         App.navigate.to("settings");
     };

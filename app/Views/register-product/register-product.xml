@@ -24,7 +24,7 @@
 					<TextField col="10" text="{{text4}}" colSpan="2" id="text4" />
 				</GridLayout>
 				<GridLayout row="2" columns="*,auto,*">
-					<Button col="1" text="注册" tap="tapRegister" />
+					<Button col="1" text="注册" tap="{{tapRegister}}" />
 				</GridLayout>
 			</GridLayout>
 			<ActivityIndicator busy="{{ isLoading }}" />
