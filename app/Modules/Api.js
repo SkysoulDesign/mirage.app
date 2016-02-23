@@ -78,7 +78,7 @@ var Api = (function () {
                  * Call Callback
                  */
                 onSuccess(data);
-                console.log('success //' + data.all());
+                console.log('success //' + data);
                 console.dir(data.all());
             }
             if (data.hasOwnProperty('error'))

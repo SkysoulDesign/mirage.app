@@ -96,7 +96,7 @@ export class Api {
                      * Call Callback
                      */
                     onSuccess(data);
-                    console.log('success //' + data.all());
+                    console.log('success //' + data);
                     console.dir(data.all());
                 }
 
