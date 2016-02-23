@@ -1,13 +1,13 @@
 var registerVM = require("../viewmodel/register-view-model");
 var user = registerVM.instance;
-function pageloaded(args){
+function pageLoaded(args){
 	var page = args.object;
 	page.bindingContext = user;
 	autoLogin();
 	user.getCountries();
 	user.set("showcountrypicker",false);
 }
-exports.pageloaded = pageloaded;
+exports.pageLoaded = pageLoaded;
 function autoLogin(){
 	user.toggleAutoLogin(true);
 }

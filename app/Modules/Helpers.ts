@@ -1,5 +1,7 @@
 import {Mirage as App} from "../app";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
+import {NavigationEntry} from "ui/frame";
+import {Observable} from "data/observable";
 
 /**
  * Extend Object
@@ -153,6 +155,54 @@ export class api {
      */
     public static get(name:string, secure:boolean = false):ApiUrlInterface {
         return App.api.get(name, secure);
+    }
+
+    /**
+     * Alert Errors
+     * @param errors
+     * @param okay
+     */
+    public static alertErrors(errors:{}, okay?:string):void {
+        App.api.alertErrors(errors, okay);
+    }
+
+    /**
+     * Fetch JSON data from the server
+     * @param name
+     * @param parameters
+     * @param onSuccess
+     * @param onError
+     * @param cache
+     * @returns Observable
+     */
+    public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
+        return App.api.fetch(name, parameters, onSuccess, onError, cache);
+    }
+
+}
+
+/**
+ * Database
+ * @param folder
+ * @param name
+ * @returns {string}
+ */
+export class navigate {
+
+    /**
+     * Navigate to View
+     * @param viewName
+     * @param options
+     */
+    public static to(viewName:string, options:NavigationEntry = {}):void {
+        return App.navigate.to(viewName, options);
+    }
+
+    /**
+     * Navigate back to the previous page
+     */
+    public back():void {
+        App.navigate.back();
     }
 
 }

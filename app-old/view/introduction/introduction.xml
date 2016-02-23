@@ -1,4 +1,4 @@
-<page loaded="pageloaded">
+<page loaded="pageLoaded">
 	<GridLayout rows="auto,auto,auto,auto,auto,auto,auto,*" >
 		<Label row="0" text="Introduction" cssClass="label-intro" />
 		<Label row="1" text="使用说明：" cssClass="lable-margin" />

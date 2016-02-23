@@ -1,7 +1,6 @@
 import {Observable} from "data/observable";
-import {Mirage as App} from "../app";
 import http = require("http");
-import {cache} from "../Modules/Helpers";
+import {navigate, api, cache} from "../Modules/Helpers";
 
 export class SignInPageModel extends Observable {
 
@@ -22,15 +21,15 @@ export class SignInPageModel extends Observable {
 
             onSuccess = function () {
                 _this.set('isLoading', false);
-                App.navigate.to('main-page');
+                navigate.to('main-page');
             },
 
             onError = function (errors) {
                 _this.set('isLoading', false);
-                App.api.alertErrors(errors);
+                api.alertErrors(errors);
             };
 
-        App.api.fetch('login', data, onSuccess, onError);
+        api.fetch('login', data, onSuccess, onError);
 
     }
 

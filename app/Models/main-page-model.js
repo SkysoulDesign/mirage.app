@@ -1,8 +1,7 @@
-"use strict";
 var observable_1 = require("data/observable");
-var app_1 = require("../app");
 var OpenUrl = require("nativescript-openurl");
-var barcodescanner = require("nativescript-barcodescanner");
+var barcodeScanner = require("nativescript-barcodescanner");
+var Helpers_1 = require("../Modules/Helpers");
 var MainPageModel = (function (_super) {
     __extends(MainPageModel, _super);
     function MainPageModel() {
@@ -12,30 +11,21 @@ var MainPageModel = (function (_super) {
      * Open Camera to Scan QRCode
      */
     MainPageModel.prototype.tapScanQRCode = function () {
-        // alert({
-        //     message: 'Scan Code',
-        //     okButtonText: 'okay',
-        // });
-        barcodescanner.scan({
-            cancelLabel: "Stop scanning",
-            message: "Go scan something",
+        /**
+         * Scan QRCode
+         */
+        barcodeScanner.scan({
+            cancelLabel: "Stop Scanning",
+            message: "Go Scan Something",
             preferFrontCamera: false,
             showFlipCameraButton: true // Android only, default false (on iOS it's always available) 
         }).then(function (result) {
-            console.log("Scan format: " + result.format);
-            console.log("Scan text:   " + result.text);
-            // var navigationEntry = {
-            //     moduleName: "view/registerproduct/registerproduct",
-            //     context: result.text
-            // };
-            // frameModule.topmost().navigate(navigationEntry);
-            app_1.Mirage.navigate.to('registerproduct', {
+            Helpers_1.navigate.to('register-product', {
                 context: result.text
             });
         }, function (error) {
             console.log("No scan: " + error);
-            // frameModule.topmost().goBack();
-            app_1.Mirage.navigate.to('register-product', {
+            Helpers_1.navigate.to('register-product', {
                 context: 'MF001-11111111111111111111'
             });
         });
@@ -44,7 +34,7 @@ var MainPageModel = (function (_super) {
      * Open Camera to hologram
      */
     MainPageModel.prototype.tapTologram = function () {
-        app_1.Mirage.navigate.to("product-main-page");
+        Helpers_1.navigate.to("product-main-page");
     };
     ;
     /**
@@ -58,17 +48,17 @@ var MainPageModel = (function (_super) {
      * Open Camera to new
      */
     MainPageModel.prototype.tapNews = function () {
-        app_1.Mirage.navigate.to("mirage-news");
+        Helpers_1.navigate.to("mirage-news");
     };
     ;
     /**
      * Open Camera to settings
      */
     MainPageModel.prototype.tapSetting = function () {
-        app_1.Mirage.navigate.to("settings");
+        Helpers_1.navigate.to("settings");
     };
     ;
     return MainPageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.MainPageModel = MainPageModel;
 //# sourceMappingURL=main-page-model.js.map

@@ -1,4 +1,4 @@
-<Page loaded="pageloaded" actionBarHidden="true">
+<Page loaded="pageLoaded" actionBarHidden="true">
 	<ScrollView>
 		<GridLayout rows="auto,auto">
 		<StackLayout orientation="vertical">

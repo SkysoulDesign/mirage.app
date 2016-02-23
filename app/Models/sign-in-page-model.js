@@ -1,6 +1,5 @@
-"use strict";
 var observable_1 = require("data/observable");
-var app_1 = require("../app");
+var Helpers_1 = require("../Modules/Helpers");
 var SignInPageModel = (function (_super) {
     __extends(SignInPageModel, _super);
     function SignInPageModel() {
@@ -19,14 +18,14 @@ var SignInPageModel = (function (_super) {
             password: this.get('password')
         }, onSuccess = function () {
             _this.set('isLoading', false);
-            app_1.Mirage.navigate.to('main-page');
+            Helpers_1.navigate.to('main-page');
         }, onError = function (errors) {
             _this.set('isLoading', false);
-            app_1.Mirage.api.alertErrors(errors);
+            Helpers_1.api.alertErrors(errors);
         };
-        app_1.Mirage.api.fetch('login', data, onSuccess, onError);
+        Helpers_1.api.fetch('login', data, onSuccess, onError);
     };
     return SignInPageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.SignInPageModel = SignInPageModel;
 //# sourceMappingURL=sign-in-page-model.js.map

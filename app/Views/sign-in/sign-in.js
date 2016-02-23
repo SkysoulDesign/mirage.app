@@ -1,4 +1,3 @@
-"use strict";
 var vmModule = require("../../Models/sign-in-page-model");
 var Helpers_1 = require("../../Modules/Helpers");
 function pageLoaded(args) {

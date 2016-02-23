@@ -1,4 +1,3 @@
-"use strict";
 var app_1 = require("../app");
 var dialogs_1 = require("ui/dialogs");
 var http = require('http');
@@ -63,31 +62,29 @@ var Api = (function () {
      * @param parameters
      * @param onSuccess
      * @param onError
-     * @returns string[]
+     * @param cache
+     * @returns Observable
      */
-    Api.prototype.fetch = function (name, parameters, onSuccess, onError) {
+    Api.prototype.fetch = function (name, parameters, onSuccess, onError, cache) {
         if (parameters === void 0) { parameters = {}; }
+        if (cache === void 0) { cache = true; }
         var _this = this, result = new observable_1.Observable({ data: this.getCache(name) }), request = this.get(name), handle = function (data) {
-            console.log("TTTTTTTTTdataTTTTTTTTTT");
-            console.dir(data);
             /**
              * Save cache on success
              */
             if (!data.hasOwnProperty('error')) {
-                _this.cache(request.name, data);
+                if (cache)
+                    _this.cache(request.name, data);
                 result.set('data', data);
                 /**
                  * Call Callback
                  */
                 onSuccess(data);
-                console.log("TTTTTTTTTsuccessTTTTTTTTTT");
             }
             if (data.hasOwnProperty('error')) {
                 onError(data.error);
-                console.log("TTTTTTTTTerrorTTTTTTTTTT");
             }
         };
-        console.dir(app_1.Mirage.database.setup());
         /**
          * Handle GET
          */
@@ -131,9 +128,6 @@ var Api = (function () {
      */
     Api.prototype.getCache = function (name) {
         return Helpers_1.dot(name, app_1.Mirage.database.get('api'));
-        //if (api.hasOwnProperty(name))
-        //    return api[name];
-        //return null;
     };
     /**
      * Delete Cache
@@ -153,6 +147,6 @@ var Api = (function () {
         app_1.Mirage.database.set('api', JSON.stringify({}));
     };
     return Api;
-}());
+})();
 exports.Api = Api;
 //# sourceMappingURL=Api.js.map

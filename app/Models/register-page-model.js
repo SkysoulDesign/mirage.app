@@ -1,7 +1,6 @@
-"use strict";
 var observable_1 = require("data/observable");
-var app_1 = require("../app");
 var observable_array_1 = require("data/observable-array");
+var Helpers_1 = require("../Modules/Helpers");
 var RegisterPageModel = (function (_super) {
     __extends(RegisterPageModel, _super);
     /**
@@ -55,11 +54,17 @@ var RegisterPageModel = (function (_super) {
         this.set('ages', agesArray);
         this.set('selectedAge', 3);
     };
+    /**
+     * Convert Observable to ObservableArray
+     * @param name
+     * @param setData
+     * @returns {"data/observable-array".ObservableArray}
+     */
     RegisterPageModel.prototype.getObservableAsArray = function (name, setData) {
         /**
          * Fetch Model List
          */
-        var model = app_1.Mirage.api.fetch(name);
+        var model = Helpers_1.api.fetch(name);
         var modelArray = new observable_array_1.ObservableArray();
         /**
          * Set on Startup
@@ -95,15 +100,15 @@ var RegisterPageModel = (function (_super) {
         };
         var onSuccess = function () {
             _this.set('isLoading', false);
-            app_1.Mirage.navigate.to("main-page");
+            Helpers_1.navigate.to("main-page");
         }, onError = function (e) {
             _this.set('isLoading', false);
-            app_1.Mirage.api.alertErrors(e);
+            Helpers_1.api.alertErrors(e);
         };
         /**
          * Fetch
          */
-        app_1.Mirage.api.fetch('register', data, onSuccess, onError);
+        Helpers_1.api.fetch('register', data, onSuccess, onError);
     };
     /**
      * Set Gender
@@ -132,6 +137,6 @@ var RegisterPageModel = (function (_super) {
         this.set(name, !this.get(name));
     };
     return RegisterPageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.RegisterPageModel = RegisterPageModel;
 //# sourceMappingURL=register-page-model.js.map

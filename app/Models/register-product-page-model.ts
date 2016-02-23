@@ -1,20 +1,21 @@
 import {Observable, EventData} from "data/observable";
-import {Mirage as App} from "../app";
+import {navigate, api} from "../Modules/Helpers";
 
-export class RegisterproductPageModel extends Observable {
+export class RegisterProductPageModel extends Observable {
 
     /**
-         * Constructor
-         */
+     * Constructor
+     */
     public constructor(str) {
         super();
         this.getProductInfo(str);
     }
+
     /**
      * getProductInfo
      *
      */
-    public getProductInfo(str){
+    public getProductInfo(str) {
         var _this = this;
         this.set('text1', str.substr(0, 5));
         this.set('text2', str.substr(6, 5));
@@ -22,26 +23,26 @@ export class RegisterproductPageModel extends Observable {
         this.set('text4', str.substr(18, 5));
         _this.set('isLoading', true);
         var data = {
-            product_id: _this.get("text1")
-        },
-            onSuccess = function(data) {
+                product_id: _this.get("text1")
+            },
+            onSuccess = function (data) {
                 _this.set('isLoading', false);
                 var url = data.image;
                 console.log("-----------------1------------------1");
                 console.log(url);
                 _this.set('productimage', data.image.encoded);
-                // rereturns an interface App.api.get('product')
+                // rereturns an interface api.get('product')
                 // that in the end means what will return if u find that
                 // _this.set('productimage', url); // this here have another contect
             },
-            onError = function(errors) {
-                App.api.alertErrors(errors);
+            onError = function (errors) {
+                api.alertErrors(errors);
                 _this.set('isLoading', false);
             };
-        var result = App.api.fetch('product', data, onSuccess, onError);
+        var result = api.fetch('product', data, onSuccess, onError);
         console.dir("getproduct  " + result.get('data').image);//here it will be null because fetch still didnt finish
-        
-        result.on(Observable.propertyChangeEvent, function(data: EventData) {
+
+        result.on(Observable.propertyChangeEvent, function (data:EventData) {
             console.log("-----------------2------------------2");
             console.dir(data.object.get('data'));
             _this.set('productimage', result.get('data').image.encoded);
@@ -54,7 +55,7 @@ export class RegisterproductPageModel extends Observable {
      * Navigate to Account
      */
     public tapRegister() {
-        App.navigate.to("register-success");
+        navigate.to("register-success");
         console.log("register");
     }
 

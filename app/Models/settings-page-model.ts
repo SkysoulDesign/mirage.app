@@ -1,5 +1,5 @@
 import {Observable} from "data/observable";
-import {Mirage as App} from "../app";
+import {navigate} from "../Modules/Helpers";
 
 export class SettingsPageModel extends Observable {
 
@@ -16,21 +16,21 @@ export class SettingsPageModel extends Observable {
      * Navigate to Account
      */
     public tapAccount() {
-        App.navigate.to("login", this.navigationEntry);
+        navigate.to("login", this.navigationEntry);
     };
 
     /**
      * Navigate to Language
      */
     public tapLanguage() {
-        App.navigate.to("language", this.navigationEntry);
+        navigate.to("language", this.navigationEntry);
     };
 
     /**
      * Navigate to Screen
      */
     public tapScreen() {
-        // App.navigate.to("screen-size", this.navigationEntry);
+        // navigate.to("screen-size", this.navigationEntry);
     };
 
 }

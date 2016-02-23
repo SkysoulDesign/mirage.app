@@ -1,7 +1,6 @@
-import {Observable} from "data/observable";
-import {Mirage as App} from "../app";
-import {EventData} from "data/observable";
+import {Observable, EventData} from "data/observable";
 import {ObservableArray} from "data/observable-array";
+import {api, navigate} from "../Modules/Helpers";
 
 export class RegisterPageModel extends Observable {
 
@@ -68,12 +67,18 @@ export class RegisterPageModel extends Observable {
 
     }
 
+    /**
+     * Convert Observable to ObservableArray
+     * @param name
+     * @param setData
+     * @returns {"data/observable-array".ObservableArray}
+     */
     private getObservableAsArray(name:string, setData:(data, modelArray:ObservableArray<{}>)=>void):ObservableArray<{}> {
 
         /**
          * Fetch Model List
          */
-        var model = App.api.fetch(name);
+        var model = api.fetch(name);
         var modelArray = new ObservableArray();
 
         /**
@@ -118,17 +123,17 @@ export class RegisterPageModel extends Observable {
 
         var onSuccess = function () {
                 _this.set('isLoading', false);
-                App.navigate.to("main-page");
+                navigate.to("main-page");
             },
             onError = function (e) {
                 _this.set('isLoading', false);
-                App.api.alertErrors(e);
+                api.alertErrors(e);
             };
 
         /**
          * Fetch
          */
-        App.api.fetch('register', data, onSuccess, onError)
+        api.fetch('register', data, onSuccess, onError)
 
     }
 

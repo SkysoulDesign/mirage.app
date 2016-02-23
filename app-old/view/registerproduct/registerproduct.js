@@ -3,7 +3,7 @@ var observableModule = require("data/observable");
 var config = require("../config");
 var fetchModule = require("fetch");
 // var text1,text2,text3,text4;
-exports.pageloaded = function(args){
+exports.pageLoaded = function(args){
 	var page = args.object;
 	// var label = page.getViewById("label1");
 	// label.textWrap = true;

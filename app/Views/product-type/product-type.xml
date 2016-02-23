@@ -1,0 +1,9 @@
+<Page>
+    <GridLayout rows="*,auto,auto,auto,*" columns="*,auto,auto,auto,*">
+        <Label row="2" col="2" text="BatMan"/>
+        <Button row="1" col="2" text="1" tap="tapType"/>
+        <Button row="2" col="1" text="2" tap="tapType"/>
+        <Button row="2" col="3" text="3" tap="tapType"/>
+        <Button row="3" col="2" text="4" tap="tapType"/>
+    </GridLayout>
+</Page>

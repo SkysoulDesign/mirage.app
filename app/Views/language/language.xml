@@ -1,4 +1,4 @@
-<Page loaded="pageloaded">
+<Page loaded="pageLoaded">
     <GridLayout rows="*, *">
         <Image src="~/image/soap.png" stretch="fill"/>
         <GridLayout row="1" rows="*, auto, auto, *" columns="*, *, *, *, *, *, *, *">

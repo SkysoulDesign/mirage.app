@@ -1,4 +1,3 @@
-"use strict";
 var Config = (function () {
     function Config() {
         /**
@@ -20,6 +19,6 @@ var Config = (function () {
         this.databaseName = 'mirage_db';
     }
     return Config;
-}());
+})();
 exports.Config = Config;
 //# sourceMappingURL=Config.js.map

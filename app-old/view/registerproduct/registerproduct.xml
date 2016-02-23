@@ -1,4 +1,4 @@
-<page loaded="pageloaded">
+<page loaded="pageLoaded">
 <!-- 	<gridLayout rows="*,*">
 		<image row="0" src="{{product-image}}" /> -->
 		<GridLayout  rows="2*,*,*">

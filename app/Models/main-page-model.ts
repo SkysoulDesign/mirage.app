@@ -1,7 +1,9 @@
 import {Observable} from "data/observable";
 import {Mirage as App} from "../app";
 import OpenUrl = require( "nativescript-openurl" );
-import barcodescanner = require("nativescript-barcodescanner");
+import barcodeScanner = require("nativescript-barcodescanner");
+import {navigate} from "../Modules/Helpers";
+
 export class MainPageModel extends Observable {
 
     /**
@@ -9,60 +11,54 @@ export class MainPageModel extends Observable {
      */
     public tapScanQRCode() {
 
-        // alert({
-        //     message: 'Scan Code',
-        //     okButtonText: 'okay',
-        // });
-        barcodescanner.scan({
-            cancelLabel: "Stop scanning", // iOS only, default 'Close' 
-            message: "Go scan something", // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.' 
+        /**
+         * Scan QRCode
+         */
+        barcodeScanner.scan({
+            cancelLabel: "Stop Scanning", // iOS only, default 'Close'
+            message: "Go Scan Something", // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
             preferFrontCamera: false,     // Android only, default false 
             showFlipCameraButton: true    // Android only, default false (on iOS it's always available) 
-        }).then(
-            function(result) {
-                console.log("Scan format: " + result.format);
-                console.log("Scan text:   " + result.text);
-                // var navigationEntry = {
-                //     moduleName: "view/registerproduct/registerproduct",
-                //     context: result.text
-                // };
-                // frameModule.topmost().navigate(navigationEntry);
-                App.navigate.to('registerproduct',{
+        }).then(function (result) {
+                navigate.to('register-product', {
                     context: result.text
                 });
             },
-            function(error) {
+            function (error) {
                 console.log("No scan: " + error);
-                // frameModule.topmost().goBack();
-                App.navigate.to('register-product', {
+                navigate.to('register-product', {
                     context: 'MF001-11111111111111111111'
                 });
             }
-            );
+        );
     }
+
     /**
      * Open Camera to hologram
      */
     public tapTologram() {
-        App.navigate.to("product-main-page");
+        navigate.to("product-main-page");
     };
+
     /**
      * Open Camera to soap
      */
     public tapSoap() {
         OpenUrl("http://www.soapstudio.com");
     };
+
     /**
      * Open Camera to new
      */
     public tapNews() {
-        App.navigate.to("mirage-news");
+        navigate.to("mirage-news");
     };
+
     /**
      * Open Camera to settings
      */
     public tapSetting() {
-        App.navigate.to("settings");
+        navigate.to("settings");
     };
 
 }

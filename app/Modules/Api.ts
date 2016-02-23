@@ -75,37 +75,40 @@ export class Api {
      * @param parameters
      * @param onSuccess
      * @param onError
-     * @returns string[]
+     * @param cache
+     * @returns Observable
      */
-    public fetch(name:string, parameters:{} = {}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void):Observable {
+    public fetch(name:string, parameters:{} = {}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache:boolean = true):Observable {
 
         var _this = this,
-            result = new Observable({data: this.getCache(name)}),
+            result:Observable = new Observable({data: this.getCache(name)}),
             request = this.get(name),
             handle = function (data:any) {
-                console.log("TTTTTTTTTdataTTTTTTTTTT")
-                console.dir(data);
+
                 /**
                  * Save cache on success
                  */
                 if (!data.hasOwnProperty('error')) {
 
-                    _this.cache(request.name, data);
+
+                    if (cache)
+                        _this.cache(request.name, data);
+
                     result.set('data', data);
 
                     /**
                      * Call Callback
                      */
                     onSuccess(data);
-                    console.log("TTTTTTTTTsuccessTTTTTTTTTT")
+
                 }
 
-                if (data.hasOwnProperty('error')){
+                if (data.hasOwnProperty('error')) {
                     onError(data.error);
-                    console.log("TTTTTTTTTerrorTTTTTTTTTT")
                 }
+
             };
-        console.dir(App.database.setup());
+
         /**
          * Handle GET
          */
@@ -135,6 +138,7 @@ export class Api {
                 onError(e);
             });
         }
+
         return result;
 
     }
@@ -154,14 +158,7 @@ export class Api {
      * @returns {any}
      */
     public getCache(name:string):string {
-
         return dot(name, App.database.get('api'));
-
-        //if (api.hasOwnProperty(name))
-        //    return api[name];
-
-        //return null;
-
     }
 
     /**

@@ -1,4 +1,4 @@
-<Page android:actionBarHidden="true" loaded="pageloaded" >
+<Page android:actionBarHidden="true" loaded="pageLoaded" >
 	<GridLayout rows="*, *" >
 		<Image src="~/image/soap.png" stretch="fill" />
 		<GridLayout  row="1" rows="*" >

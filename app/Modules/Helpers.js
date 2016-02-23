@@ -1,4 +1,3 @@
-"use strict";
 var app_1 = require("../app");
 /**
  * Extend Object
@@ -93,7 +92,7 @@ var cache = (function () {
         app_1.Mirage.api.resetCache();
     };
     return cache;
-}());
+})();
 exports.cache = cache;
 /**
  * Database
@@ -124,7 +123,7 @@ var database = (function () {
         app_1.Mirage.database.reset();
     };
     return database;
-}());
+})();
 exports.database = database;
 /**
  * Database
@@ -143,7 +142,54 @@ var api = (function () {
         if (secure === void 0) { secure = false; }
         return app_1.Mirage.api.get(name, secure);
     };
+    /**
+     * Alert Errors
+     * @param errors
+     * @param okay
+     */
+    api.alertErrors = function (errors, okay) {
+        app_1.Mirage.api.alertErrors(errors, okay);
+    };
+    /**
+     * Fetch JSON data from the server
+     * @param name
+     * @param parameters
+     * @param onSuccess
+     * @param onError
+     * @param cache
+     * @returns Observable
+     */
+    api.fetch = function (name, parameters, onSuccess, onError, cache) {
+        return app_1.Mirage.api.fetch(name, parameters, onSuccess, onError, cache);
+    };
     return api;
-}());
+})();
 exports.api = api;
+/**
+ * Database
+ * @param folder
+ * @param name
+ * @returns {string}
+ */
+var navigate = (function () {
+    function navigate() {
+    }
+    /**
+     * Navigate to View
+     * @param viewName
+     * @param options
+     */
+    navigate.to = function (viewName, options) {
+        if (options === void 0) { options = {}; }
+        return app_1.Mirage.navigate.to(viewName, options);
+    };
+    /**
+     * Navigate back to the previous page
+     */
+    navigate.prototype.back = function () {
+        app_1.Mirage.navigate.back();
+    };
+    return navigate;
+})();
+exports.navigate = navigate;
 //# sourceMappingURL=Helpers.js.map

@@ -14,7 +14,7 @@ exports.choosescreensize = function(args){
 	}
 }
 
-exports.pageloaded = function(args){
+exports.pageLoaded = function(args){
 	var page = args.object;
 	if(page.navigationContext=="setting")
 	{

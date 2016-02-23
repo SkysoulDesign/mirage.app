@@ -1,4 +1,3 @@
-"use strict";
 var observable_1 = require("data/observable");
 var LanguagePageModel = (function (_super) {
     __extends(LanguagePageModel, _super);
@@ -23,6 +22,6 @@ var LanguagePageModel = (function (_super) {
         //}
     };
     return LanguagePageModel;
-}(observable_1.Observable));
+})(observable_1.Observable);
 exports.LanguagePageModel = LanguagePageModel;
 //# sourceMappingURL=language-page-model.js.map
