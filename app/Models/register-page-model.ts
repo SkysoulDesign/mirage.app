@@ -96,7 +96,7 @@ export class RegisterPageModel extends Observable {
     /**
      * Tap Okay
      */
-    public tapOK() {
+    public tapRegister() {
 
         /**
          * Start Loader
@@ -118,6 +118,7 @@ export class RegisterPageModel extends Observable {
 
         var onSuccess = function () {
                 _this.set('isLoading', false);
+                App.navigate.to("main-page");
             },
             onError = function (e) {
                 _this.set('isLoading', false);

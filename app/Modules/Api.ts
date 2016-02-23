@@ -96,15 +96,12 @@ export class Api {
                      * Call Callback
                      */
                     onSuccess(data);
-                    console.log('success //' + data);
-                    console.dir(data.all());
                 }
 
                 if (data.hasOwnProperty('error'))
                     onError(data.error);
-                console.log('errors //'+data.error);
             };
-
+        console.dir(App.database.setup());
         /**
          * Handle GET
          */
@@ -126,14 +123,13 @@ export class Api {
                 url: this.get(name).url,
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                content: JSON.stringify(extend({api_token: App.database.get('api_token')}, parameters))
+                content: JSON.stringify(extend({api_token: this.getCache('login.api_token')}, parameters))
             }).then(function (response) {
                 handle(response.content.toJSON());
             }, function (e) {
                 console.log("Error occurred " + e);
                 onError(e);
             });
-
         }
         return result;
 

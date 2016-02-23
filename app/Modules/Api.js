@@ -78,13 +78,11 @@ var Api = (function () {
                  * Call Callback
                  */
                 onSuccess(data);
-                console.log('success //' + data);
-                console.dir(data.all());
             }
             if (data.hasOwnProperty('error'))
                 onError(data.error);
-            console.log('errors //' + data.error);
         };
+        console.dir(app_1.Mirage.database.setup());
         /**
          * Handle GET
          */
@@ -102,7 +100,7 @@ var Api = (function () {
                 url: this.get(name).url,
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                content: JSON.stringify(Helpers_1.extend({ api_token: app_1.Mirage.database.get('api_token') }, parameters))
+                content: JSON.stringify(Helpers_1.extend({ api_token: this.getCache('login.api_token') }, parameters))
             }).then(function (response) {
                 handle(response.content.toJSON());
             }, function (e) {

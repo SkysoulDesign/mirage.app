@@ -77,7 +77,7 @@ var RegisterPageModel = (function (_super) {
     /**
      * Tap Okay
      */
-    RegisterPageModel.prototype.tapOK = function () {
+    RegisterPageModel.prototype.tapRegister = function () {
         /**
          * Start Loader
          */
@@ -95,6 +95,7 @@ var RegisterPageModel = (function (_super) {
         };
         var onSuccess = function () {
             _this.set('isLoading', false);
+            app_1.Mirage.navigate.to("main-page");
         }, onError = function (e) {
             _this.set('isLoading', false);
             app_1.Mirage.api.alertErrors(e);
