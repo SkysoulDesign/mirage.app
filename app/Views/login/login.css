@@ -12,12 +12,16 @@ Label {
     margin: 40px;
 }
 
+.form {
+    margin: 0 30px;
+}
+
 .button {
     background-color: white;
-    width: 80%;
+    width: 100%;
     margin: 5px;
     border-radius: 2;
-    font-size: 20;
+    font-size: 20px;
     color: #082d47;
 }
 

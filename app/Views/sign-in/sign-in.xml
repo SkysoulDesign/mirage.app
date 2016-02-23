@@ -1,23 +1,16 @@
 <Page loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="*, *">
+    <GridLayout rows="3*, 2*">
 
-        <Image src="~/image/soap.png" stretch="fill"/>
+        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit"/>
 
-        <GridLayout row="1" rows="auto,auto,auto" height="200" with="200">
-            <GridLayout columns="3*, 4*" row="0">
-                <Label text="Username" col="0"/>
-                <TextField id="username" text="{{ username }}" hint="User Name" col="1"/>
-            </GridLayout>
-            <GridLayout columns="3*, 4*" row="1">
-                <Label text="Password" col="0"/>
-                <TextField text="{{ password }}" hint="Password" col="1"/>
-            </GridLayout>
-            <Button text="Sign in" row="2" tap="{{ tapSignIn }}"/>
-            <ActivityIndicator busy="{{ isLoading }}" rowSpan="3"/>
-        </GridLayout>
+        <StackLayout cssClass="form" row="1">
+            <TextField text="{{ username }}" hint="USERNAME"/>
+            <TextField text="{{ password }}" hint="PASSWORD" secure="true"/>
+            <Button text="LOGIN" row="2" tap="{{ tapSignIn }}"/>
+            <ActivityIndicator busy="{{ isLoading }}"/>
+        </StackLayout>
 
     </GridLayout>
-
 
 </Page>

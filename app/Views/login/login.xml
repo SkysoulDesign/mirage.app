@@ -1,10 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="3*, 3*,5*">
+    <GridLayout rows="3*, 3*, 5*">
 
         <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
 
-        <StackLayout row="1" orientation="vertical">
+        <StackLayout cssClass="form" row="1" orientation="vertical">
             <Button text="LOGIN" tap="{{ tapSignIn }}" cssClass="button big"/>
             <Button text="REGISTER" tap="{{ tapRegister }}" cssClass="button small"/>
             <label text="Lorem ipsum dolor sit amet, consectetur."/>
