@@ -2,7 +2,7 @@
 /lib
 /platforms
 /hooks
-/**/*.js
-/**/*.js.map
+*.js
+*.map
 /.idea
 /Resources
