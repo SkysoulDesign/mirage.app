@@ -1,6 +1,8 @@
+"use strict";
 var observable_1 = require("data/observable");
 var app_1 = require("../app");
 var OpenUrl = require("nativescript-openurl");
+var barcodescanner = require("nativescript-barcodescanner");
 var MainPageModel = (function (_super) {
     __extends(MainPageModel, _super);
     function MainPageModel() {
@@ -10,9 +12,32 @@ var MainPageModel = (function (_super) {
      * Open Camera to Scan QRCode
      */
     MainPageModel.prototype.tapScanQRCode = function () {
-        alert({
-            message: 'Scan Code',
-            okButtonText: 'okay',
+        // alert({
+        //     message: 'Scan Code',
+        //     okButtonText: 'okay',
+        // });
+        barcodescanner.scan({
+            cancelLabel: "Stop scanning",
+            message: "Go scan something",
+            preferFrontCamera: false,
+            showFlipCameraButton: true // Android only, default false (on iOS it's always available) 
+        }).then(function (result) {
+            console.log("Scan format: " + result.format);
+            console.log("Scan text:   " + result.text);
+            // var navigationEntry = {
+            //     moduleName: "view/registerproduct/registerproduct",
+            //     context: result.text
+            // };
+            // frameModule.topmost().navigate(navigationEntry);
+            app_1.Mirage.navigate.to('registerproduct', {
+                context: result.text
+            });
+        }, function (error) {
+            console.log("No scan: " + error);
+            // frameModule.topmost().goBack();
+            app_1.Mirage.navigate.to('register-product', {
+                context: 'MF001-11111111111111111111'
+            });
         });
     };
     MainPageModel.prototype.tapProduct = function () {
@@ -36,6 +61,6 @@ var MainPageModel = (function (_super) {
     };
     ;
     return MainPageModel;
-})(observable_1.Observable);
+}(observable_1.Observable));
 exports.MainPageModel = MainPageModel;
 //# sourceMappingURL=main-page-model.js.map

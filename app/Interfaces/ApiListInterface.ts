@@ -4,6 +4,7 @@ export interface ApiListInterface {
     checkLogin:{POST:string};
     register:{POST:string};
     product:{POST:string};
+    products: { POST: string };
     countries:{GET:string};
     ages:{GET:string};
 }

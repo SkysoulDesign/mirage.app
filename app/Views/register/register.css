@@ -1,40 +1,47 @@
-.container {
-    background-color: white;
-    margin: 120px 30px 150px 30px;
-    padding: 0 10px;
+Page {
+	background-color: white;
+	font-size: 15;
 }
-
-.avatar-container {
-    margin-top: 50px;
+Label{
+	margin-left:20;
 }
-
-.avatar {
-    /*margin: -50px;*/
+Button{
+	border-color: #9e9f9f;
+	color: black;
+	margin-bottom: 4;
+	margin-top: -8;
 }
-
-TextField {
-    height: 70px;
+TextField{
+	margin-bottom: 11;
+	margin-top: -15;
 }
-
-.drop-down {
-    /*font-size: 18px;*/
-    /*margin: 15px 15px;*/
+.longbutton{
+	/*padding: 53;*/
 }
-
-Label {
-    font-size: 17px;
-    margin: 15px 15px;
+.okbutton{
+	background-color: yellow;
+	color: white;
+	font-size: 30;
+	margin-bottom: 10;
+	margin-left: 60;
+	margin-right: 60;
+	margin-top: 10;
 }
-
-Button {
-    background-color: #177e00;
-    color: white;
-    font-size: 9;
-    /*padding: 0;*/
-    /*margin: 0;*/
+.agreelabel{
+	font-size: 13;
 }
-
-.selectedLabel {
-    color: #177e00;
-    font-weight: bold;
+.termlabel{
+	color: #97d4f1;
+	font-size: 13;
+	margin: 1;
+}
+.headerlayout{
+	background-color: #9e9f9f;
+}
+.selectedLabel{
+	color: yellow;
+}
+.selectedbutton{
+	border-color: yellow;
+	color: yellow;
 }

@@ -1,3 +1,4 @@
+"use strict";
 var Config = (function () {
     function Config() {
         /**
@@ -10,7 +11,8 @@ var Config = (function () {
             checkLogin: { POST: "api/auth/check" },
             countries: { GET: "api/form/countries" },
             ages: { GET: "api/form/ages" },
-            product: { POST: "api/product" }
+            product: { POST: "api/product" },
+            products: { POST: "api/products" }
         };
         /**
          * Database Name
@@ -18,6 +20,6 @@ var Config = (function () {
         this.databaseName = 'mirage_db';
     }
     return Config;
-})();
+}());
 exports.Config = Config;
 //# sourceMappingURL=Config.js.map

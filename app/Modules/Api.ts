@@ -96,12 +96,12 @@ export class Api {
                      * Call Callback
                      */
                     onSuccess(data);
-
+                    console.log('success //' + data);
                 }
 
                 if (data.hasOwnProperty('error'))
                     onError(data.error);
-
+                console.log('errors //'+data.error);
             };
 
         /**

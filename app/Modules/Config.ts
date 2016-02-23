@@ -12,7 +12,8 @@ export class Config {
         checkLogin: {POST: "api/auth/check"},
         countries: {GET: "api/form/countries"},
         ages: {GET: "api/form/ages"},
-        product: {POST: "api/product"}
+        product: {POST: "api/product"},
+        products: { POST: "api/products" }
     };
 
     /**
