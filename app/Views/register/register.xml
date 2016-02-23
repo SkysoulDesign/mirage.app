@@ -1,67 +1,55 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true" xmlns:dd="nativescript-drop-down">
-    <ScrollView>
-        <GridLayout rows="auto,auto">
-            <StackLayout orientation="vertical">
-                <GridLayout height="75" cssClass="headerlayout">
+<Page xmlns:dd="nativescript-drop-down"
+      loaded="pageLoaded"
+      xmlns="http://schemas.nativescript.org/tns.xsd"
+      android:actionBarHidden="true">
+
+    <GridLayout rows="100,*">
+
+        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
+
+        <ScrollView row="1">
+            <StackLayout cssClass="form" orientation="vertical">
+
+                <TextField text="{{ username }}" hint="USERNAME"/>
+                <TextField text="{{ password }}" hint="PASSWORD" secure="true"/>
+                <TextField text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION" secure="true"/>
+                <TextField text="{{ email }}" hint="E-MAIL"/>
+
+                <Label text="Gender"/>
+                <GridLayout orientation="horizontal" columns="*,*">
+                    <Label id="male"
+                           cssClass="{{ gender === 'male' ? 'gender-container--selected' : 'gender-container' }}"
+                           text="Male" col="0" tap="{{ setGender }}"/>
+                    <Label id="female"
+                           cssClass="{{ gender === 'female' ? 'gender-container--selected' : 'gender-container' }}"
+                           text="Female" col="1" tap="{{ setGender }}"/>
                 </GridLayout>
 
-                <GridLayout columns="3*, 4*" height="50">
-                    <Label text="User name" col="0"/>
-                    <TextField text="{{ username }}" hint="User Name" col="1"/>
-                </GridLayout>
+                <Label text="Country"/>
+                <dd:DropDown cssClass="drop-down" items="{{ countries }}" selectedIndex="{{ selectedCountry }}"/>
 
-                <GridLayout columns="3*, 4*" height="50">
-                    <Label text="Password" col="0"/>
-                    <TextField text="{{ password }}" hint="Password" col="1"/>
-                </GridLayout>
+                <Label text="Age Group"/>
+                <dd:DropDown cssClass="drop-down" items="{{ ages }}" selectedIndex="{{ selectedAge }}"/>
 
-                <GridLayout columns="3*, 4*" height="50">
-                    <Label text="Confirm Password" col="0"/>
-                    <TextField text="{{ password_confirmation }}" hint="Confirm Password" col="1"/>
-                </GridLayout>
+                <StackLayout cssClass="{{ agreement ?  'terms-container--accepted' : 'terms-container' }}"
+                             tap="{{ toggleAgreement }}">
+                    <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
+                    <Label text="I Agree with Terms and Condition."/>
+                </StackLayout>
 
-                <GridLayout columns="3*, 4*" height="50">
-                    <Label text="E-mail address" col="0"/>
-                    <TextField text="{{ email }}" hint="E-mail address" col="1"/>
-                </GridLayout>
+                <StackLayout cssClass="{{ newsletter ?  'terms-container--accepted' : 'terms-container' }}"
+                             tap="{{ toggleNewsletter }}">
+                    <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
+                    <Label text="I Prefer not to Receive any Promotion Information."/>
+                </StackLayout>
 
-                <GridLayout columns="3*, 2*, 2*" height="50">
-                    <Label text="Gender" col="0"/>
-                    <Label id="male" text="M" col="1" horizontalAlignment="center" tap="{{ setGender }}"
-                           cssClass="{{ gender === 'male' ? 'selectedLabel' : '' }}"/>
-                    <Label id="female" text="F" col="2" horizontalAlignment="center" tap="{{ setGender }}"
-                           cssClass="{{ gender === 'female' ? 'selectedLabel' : '' }}"/>
-                </GridLayout>
+                <Button text="Register" tap="{{ tapRegister }}"/>
 
-                <GridLayout columns="3*, 4*" height="50">
-                    <dd:DropDown items="{{ countries }}" selectedIndex="{{ selectedCountry }}" row="0" colSpan="2" />
-                </GridLayout>
-
-                <GridLayout columns="3*, 4*" height="50">
-                    <dd:DropDown items="{{ ages }}" selectedIndex="{{ selectedAge }}" row="0" colSpan="2" />
-                </GridLayout>
-
-                <GridLayout columns="*, 8*" height="30">
-                    <Label text="口" col="0" tap="{{ toggleAgreement }}"
-                           cssClass="{{ agreement ? 'selectedLabel' : '' }}"/>
-                    <GridLayout columns="auto, auto" col="1">
-                        <Label text="I agree with the agreement." col="0" cssClass="agreelabel"/>
-                        <Label text="Terms and condition." col="1" cssClass="termlabel"/>
-                    </GridLayout>
-                </GridLayout>
-
-                <GridLayout columns="*, 8*" height="30">
-                    <Label text="口" col="0" tap="{{ toggleNewsletter }}"
-                           cssClass="{{ newsletter ? 'selectedLabel' : '' }}"/>
-                    <Label text="I Prefer not to receive any promotion information." col="1" cssClass="agreelabel"/>
-                </GridLayout>
-
-                <GridLayout height="80">
-                    <Button text="OK" tap="{{ tapOK }}" cssClass="okbutton" orientation="horizontal"/>
-                </GridLayout>
+                <ActivityIndicator busy="{{ isLoading }}" rowSpan="2"/>
 
             </StackLayout>
-            <ActivityIndicator busy="{{ isLoading }}" rowSpan="2"/>
-        </GridLayout>
-    </ScrollView>
+
+        </ScrollView>
+    </GridLayout>
+
 </Page>

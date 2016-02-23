@@ -1,47 +1,78 @@
 Page {
-	background-color: white;
-	font-size: 15;
+    background-color: #004678;
 }
-Label{
-	margin-left:20;
+
+.logo {
+    margin: 10px
 }
-Button{
-	border-color: #9e9f9f;
-	color: black;
-	margin-bottom: 4;
-	margin-top: -8;
+
+.form {
+    background-color: white;
+    padding: 30px;
 }
-TextField{
-	margin-bottom: 11;
-	margin-top: -15;
+
+TextField {
+    font-size: 16px;
+    color: #009fe3;
+    margin: 5px 0 0 0;
+    padding: 3px;
 }
-.longbutton{
-	/*padding: 53;*/
+
+Button {
+    background-color: #009fe3;
+    width: 100%;
+    margin: 5px;
+    border-radius: 2;
+    font-size: 20px;
+    color: white;
+    height: 70px;
 }
-.okbutton{
-	background-color: yellow;
-	color: white;
-	font-size: 30;
-	margin-bottom: 10;
-	margin-left: 60;
-	margin-right: 60;
-	margin-top: 10;
+
+Label {
+    margin: 3px;
 }
-.agreelabel{
-	font-size: 13;
+
+.gender-container {
+    text-align: center;
+    padding: 10px;
+    margin: 5px 5px;
+    background-color: #efefef;
+    border-radius: 2;
+    color: #009fe3;
 }
-.termlabel{
-	color: #97d4f1;
-	font-size: 13;
-	margin: 1;
+
+.gender-container--selected {
+    text-align: center;
+    color: white;
+    background-color: #e50051;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 2;
 }
-.headerlayout{
-	background-color: #9e9f9f;
+
+.drop-down {
+    /*margin: 3px;*/
+    font-size: 20px;
 }
-.selectedLabel{
-	color: yellow;
+
+.terms-container {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #efefef;
+    border-radius: 2;
+    color: #009fe3;
 }
-.selectedbutton{
-	border-color: yellow;
-	color: yellow;
+
+.terms-container--accepted {
+    color: white;
+    background-color: #e50051;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 2;
 }
+
+.terms-label-note {
+    font-size: 8px;
+    font-weight: bold;
+}
+
