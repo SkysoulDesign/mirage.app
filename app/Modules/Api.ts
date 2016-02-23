@@ -97,6 +97,7 @@ export class Api {
                      */
                     onSuccess(data);
                     console.log('success //' + data);
+                    console.dir(data.all());
                 }
 
                 if (data.hasOwnProperty('error'))
@@ -134,7 +135,6 @@ export class Api {
             });
 
         }
-
         return result;
 
     }

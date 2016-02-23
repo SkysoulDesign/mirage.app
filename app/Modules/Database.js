@@ -1,3 +1,4 @@
+"use strict";
 var database = require('application-settings');
 var Helpers_1 = require("./Helpers");
 var app_1 = require("../app");
@@ -84,6 +85,6 @@ var Database = (function () {
         database.remove(this.databaseName);
     };
     return Database;
-})();
+}());
 exports.Database = Database;
 //# sourceMappingURL=Database.js.map

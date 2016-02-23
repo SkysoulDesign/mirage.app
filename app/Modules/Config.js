@@ -5,7 +5,7 @@ var Config = (function () {
          * List of Apis URL
          */
         this.apis = {
-            base: "cms.soapstudio.com",
+            base: "192.168.1.253",
             login: { POST: "api/user/login" },
             register: { POST: "api/user/register" },
             checkLogin: { POST: "api/auth/check" },

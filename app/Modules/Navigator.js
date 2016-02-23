@@ -1,3 +1,4 @@
+"use strict";
 var frame_1 = require("ui/frame");
 var Helpers_1 = require("./Helpers");
 var Navigator = (function () {
@@ -21,6 +22,6 @@ var Navigator = (function () {
         frame_1.topmost().goBack();
     };
     return Navigator;
-})();
+}());
 exports.Navigator = Navigator;
 //# sourceMappingURL=Navigator.js.map

@@ -79,6 +79,7 @@ var Api = (function () {
                  */
                 onSuccess(data);
                 console.log('success //' + data);
+                console.dir(data.all());
             }
             if (data.hasOwnProperty('error'))
                 onError(data.error);

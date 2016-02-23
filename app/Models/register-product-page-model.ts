@@ -26,7 +26,7 @@ export class RegisterproductPageModel extends Observable {
             onSuccess = function(data) {
                 App.navigate.to('registersuccess');
                 _this.set('isLoading', false);
-                var url = App.api.get('product') + '/' + result.get('image');
+                var url = App.api.get('product') + '/' + data.get('image');
                 console.log(url);
                 this.set('productimage', url);
             },

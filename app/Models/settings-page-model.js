@@ -1,3 +1,4 @@
+"use strict";
 var observable_1 = require("data/observable");
 var app_1 = require("../app");
 var SettingsPageModel = (function (_super) {
@@ -35,6 +36,6 @@ var SettingsPageModel = (function (_super) {
     };
     ;
     return SettingsPageModel;
-})(observable_1.Observable);
+}(observable_1.Observable));
 exports.SettingsPageModel = SettingsPageModel;
 //# sourceMappingURL=settings-page-model.js.map
