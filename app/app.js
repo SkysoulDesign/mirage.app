@@ -1,3 +1,4 @@
+"use strict";
 var application = require("application");
 var Config_1 = require("./Modules/Config");
 var Navigator_1 = require("./Modules/Navigator");
@@ -60,7 +61,7 @@ var Mirage;
             application.cssFile = './app.css';
         };
         return App;
-    })();
+    }());
     Mirage.App = App;
 })(Mirage = exports.Mirage || (exports.Mirage = {}));
 /**

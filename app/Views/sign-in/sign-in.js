@@ -1,3 +1,4 @@
+"use strict";
 var vmModule = require("../../Models/sign-in-page-model");
 var statusBar = require("nativescript-status-bar");
 function pageLoaded(args) {

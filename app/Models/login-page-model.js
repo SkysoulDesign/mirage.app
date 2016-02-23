@@ -1,3 +1,4 @@
+"use strict";
 var observable_1 = require("data/observable");
 var app_1 = require("../app");
 var LoginModel = (function (_super) {
@@ -21,6 +22,6 @@ var LoginModel = (function (_super) {
         app_1.Mirage.navigate.to('sign-in');
     };
     return LoginModel;
-})(observable_1.Observable);
+}(observable_1.Observable));
 exports.LoginModel = LoginModel;
 //# sourceMappingURL=login-page-model.js.map

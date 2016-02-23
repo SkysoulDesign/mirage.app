@@ -12,7 +12,7 @@
 					<Label row="2" text="请输入说明书上15位的注册吗并按注册" />
 				</GridLayout>
 			</GridLayout>
-			<GridLayout row="2" rows="auto,auto,auto,*">
+			<GridLayout row="2" rows="*,*,*">
 				<Label row="0" text="注册码认证" cssClass="lable-big" />
 				<GridLayout row="1" columns="*,*,*,*,*,*,*,*,*,*,*,*,*">
 					<TextField col="1" text="{{text1}}" colSpan="2" id="text1" />

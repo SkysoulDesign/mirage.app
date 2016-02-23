@@ -9,6 +9,7 @@
     }
   },
   "dependencies": {
+    "nativescript-barcodescanner": "^1.2.0",
     "nativescript-drop-down": "^1.2.1",
     "nativescript-loading-indicator": "^1.0.1",
     "nativescript-openurl": "^1.0.2",

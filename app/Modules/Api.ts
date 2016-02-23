@@ -96,7 +96,8 @@ export class Api {
                      * Call Callback
                      */
                     onSuccess(data);
-                    console.log('success //' + data);
+                    console.log('success //' + data.all());
+                    console.dir(data.all());
                 }
 
                 if (data.hasOwnProperty('error'))
@@ -134,7 +135,6 @@ export class Api {
             });
 
         }
-
         return result;
 
     }

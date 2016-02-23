@@ -1,3 +1,4 @@
+"use strict";
 var app_1 = require("../app");
 /**
  * Extend Object
@@ -92,7 +93,7 @@ var cache = (function () {
         app_1.Mirage.api.resetCache();
     };
     return cache;
-})();
+}());
 exports.cache = cache;
 /**
  * Database
@@ -123,7 +124,7 @@ var database = (function () {
         app_1.Mirage.database.reset();
     };
     return database;
-})();
+}());
 exports.database = database;
 /**
  * Database
@@ -143,6 +144,6 @@ var api = (function () {
         return app_1.Mirage.api.get(name, secure);
     };
     return api;
-})();
+}());
 exports.api = api;
 //# sourceMappingURL=Helpers.js.map

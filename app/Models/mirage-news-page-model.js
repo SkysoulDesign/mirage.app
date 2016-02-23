@@ -1,3 +1,4 @@
+"use strict";
 var observable_1 = require("data/observable");
 var MirageNewsPageModel = (function (_super) {
     __extends(MirageNewsPageModel, _super);
@@ -53,6 +54,6 @@ var MirageNewsPageModel = (function (_super) {
         });
     }
     return MirageNewsPageModel;
-})(observable_1.Observable);
+}(observable_1.Observable));
 exports.MirageNewsPageModel = MirageNewsPageModel;
 //# sourceMappingURL=mirage-news-page-model.js.map

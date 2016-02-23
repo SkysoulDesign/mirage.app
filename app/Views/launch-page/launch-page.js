@@ -1,3 +1,4 @@
+"use strict";
 var app_1 = require("../../app");
 var Helpers_1 = require("../../Modules/Helpers");
 function pageLoaded() {
