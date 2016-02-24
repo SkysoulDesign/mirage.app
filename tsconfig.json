@@ -2,7 +2,7 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "sourceMap": true,
+        "inlineSourceMap": true,
         "experimentalDecorators": true,
         "noEmitHelpers": true
     },
