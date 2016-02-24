@@ -13,7 +13,7 @@ export function pageLoaded() {
         /**
          * if Token is NOT set, Redirect to Main-Page
          */
-        if (!cache.has('user'))
+        if (!cache.has('login'))
             return App.navigate.to("login", options);
 
         /**
