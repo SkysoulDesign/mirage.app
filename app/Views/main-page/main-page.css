@@ -1,25 +1,72 @@
-Page {
-    background-color: black;
-}
-
-TextField {
-    padding: 10px;
-    font-style: normal;
-}
-
-.logo {
-    margin: 20px;
-    border: none;
-}
-
-.container {
-    margin: 0 20px;
+.drawer-container {
     background-color: white;
 }
 
-.qr-code-icon {
-    margin: 12px;
-    horizontal-align: right;
+.drawer-header {
+    height: 100px;
+    padding: 10px;
+    background-color: #027fb5;
+    color: white;
+}
+
+.drawer-header-avatar {
+    margin: 10px;
+}
+
+.drawer-menu {
+    width: 100%;
+    padding: 20px;
+    /*margin: 1px 0;*/
+}
+
+.drawer-logo {
+    margin: 40px;
+}
+
+.action-bar-container {
+    background-color: white;
+    padding: 0 20px;
+}
+
+.progress-container {
+    background-color: white;
+    padding: 20px;
+}
+
+.progress-bar {
+    background-color: #009fe3;
+    height: 3px;
+}
+
+.progress-text {
+    text-align: right;
+    margin-top: -20px;
+}
+
+.progress-overlay {
+    background-color: #e50051;
+}
+
+.mini-label {
+    font-size: 12px;
+}
+
+.large-label {
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+.menu-icon {
+    margin: 0 10px;
+}
+
+.qr_code-icon {
+    margin: 0 5px;
+}
+
+.mirage-label {
+    margin: 0 20px;
+    font-size: 30px;
 }
 
 .stage {
@@ -30,50 +77,15 @@ TextField {
 }
 
 .foreground-statue {
-    height: 220px;
-    margin-bottom: 70px;
-    margin-top: 10px;
+    height: 70%;
+    margin-bottom: 10%;
     vertical-align: bottom;
     horizontal-align: center;
 }
 
 .background-statue {
-    height: 150px;
-    margin-bottom: 100px;
-    margin-top: 10px;
+    height: 50%;
+    margin-bottom: 20%;
     vertical-align: bottom;
     horizontal-align: center;
-}
-
-.menu-button {
-    width: 75px;
-    height: 75px;
-    background-color: #00af40;
-    border-width: 5;
-    border-color: #009035;
-    border-radius: 50;
-}
-
-.hologram {
-    background-image: url('res://hologram_icon');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.news {
-    background-image: url('res://news_icon');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.soap {
-    background-image: url('res://soap_icon');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.settings {
-    background-image: url('res://settings_icon');
-    background-repeat: no-repeat;
-    background-position: center;
 }

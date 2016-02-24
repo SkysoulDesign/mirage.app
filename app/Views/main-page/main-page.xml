@@ -1,35 +1,89 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" actionBarHidden="true" loaded="pageLoaded">
+<Page loaded="pageLoaded"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns="http://www.nativescript.org/tns.xsd"
+      actionBarHidden="true">
 
-    <GridLayout columns="*" rows="100,60,350,*" width="*" height="*">
+    <drawer:RadSideDrawer id="sideDrawer">
 
-        <Image src="res://logo" cssClass="logo" horizontalAlignment="center" verticalAlignment="center"
-               stretch="aspectFit"/>
+        <drawer:RadSideDrawer.mainContent>
 
-        <GridLayout class="container" width="*" row="1" columns="*, 100">
-            <TextField col="0" hint="Insert code"/>
-            <Image cssClass="qr-code-icon" col="1" tap="{{ tapScanQRCode }}" src="res://qr_code" stretch="aspectFit"/>
-        </GridLayout>
+            <GridLayout rows="1*,*5,*2">
 
-        <ScrollView orientation="horizontal" row="2">
-            <GridLayout cssClass="stage" width="*" columns="*,*,*,*,*,*,*,*,*,*">
-                <Image cssClass="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
-                <Image cssClass="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
-                <Image cssClass="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
-                <Image cssClass="background-statue" col="3" src="res://statue_superman" stretch="aspectFit"/>
-                <Image cssClass="foreground-statue" col="4" src="res://statue_batman" stretch="aspectFit"/>
-                <Image cssClass="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
-                <Image cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
-                <Image cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
+                <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+
+                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                           horizontalAlignment="center" verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
+
+                    <Label text="MIRAGE" cssClass="mirage-label" col="1" horizontalAlignment="left"
+                           verticalAlignment="center"/>
+
+                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                           verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+
+                </GridLayout>
+
+                <ScrollView orientation="horizontal" row="1">
+                    <GridLayout cssClass="stage" columns="*,*,*,*,*,*,*,*,*,*">
+                        <Image cssClass="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image cssClass="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image cssClass="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image cssClass="background-statue" col="3" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image cssClass="foreground-statue" col="4" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image cssClass="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
+                    </GridLayout>
+                </ScrollView>
+
+                <StackLayout row="2" cssClass="progress-container">
+
+                    <Label text="BATMAN vs SUPERMAN - FIGURINE SERIES" cssClass="mini-label"/>
+                    <Label text="MY COLLECTION" cssClass="large-label"/>
+
+                    <GridLayout columns="5*,*" row="2" cssClass="progress-bar">
+                        <Label cssClass="progress-overlay" col="0"/>
+                        <Label cssClass="progress-background" col="1"/>
+                    </GridLayout>
+
+                    <Label text="12 of 20" cssClass="progress-text"/>
+
+                </StackLayout>
+
             </GridLayout>
-        </ScrollView>
 
-        <GridLayout row="3" columns="*,*,*,*">
-            <Button col="0" tap="{{ tapTologram }}" cssClass="menu-button hologram"/>
-            <Button col="1" tap="{{ tapNews }}" cssClass="menu-button news"/>
-            <Button col="2" tap="{{ tapSoap }}" cssClass="menu-button soap"/>
-            <Button col="3" tap="{{ tapSetting }}" cssClass="menu-button settings"/>
-        </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
 
-    </GridLayout>
+        <drawer:RadSideDrawer.drawerContent>
+
+            <GridLayout cssClass="drawer-container" rows="3*,*">
+
+                <StackLayout row="0">
+
+                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
+                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                        <StackLayout verticalAlignment="center">
+                            <Label text="{{ username }}"/>
+                            <Label text="{{ email }}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout cssClass="drawer-menu-content">
+                        <Label cssClass="drawer-menu" text="Products"/>
+                        <Label cssClass="drawer-menu" text="News"/>
+                        <Label cssClass="drawer-menu" text="About SOAP"/>
+                        <Label cssClass="drawer-menu" text="Settings"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+
+            </GridLayout>
+
+        </drawer:RadSideDrawer.drawerContent>
+
+    </drawer:RadSideDrawer>
 
 </Page>
