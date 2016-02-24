@@ -70,10 +70,10 @@
                     </StackLayout>
 
                     <StackLayout cssClass="drawer-menu-content">
-                        <Label cssClass="drawer-menu" text="Products"/>
-                        <Label cssClass="drawer-menu" text="News"/>
-                        <Label cssClass="drawer-menu" text="About SOAP"/>
-                        <Label cssClass="drawer-menu" text="Settings"/>
+                        <Label cssClass="drawer-menu" text="Products" tap="{{ tapHologram }}"/>
+                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="About SOAP" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
                     </StackLayout>
 
                 </StackLayout>
