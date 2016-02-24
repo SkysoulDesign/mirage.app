@@ -1,4 +1,4 @@
-<page loaded="pageLoaded" android:actionBarHidden="true">
+<Page loaded="pageLoaded" android:actionBarHidden="true">
 	<GridLayout rows="*,*,*,*,*" columns="*,*,*,*" >
 		<SearchBar row="1" colSpan="4" id="searchbar"/>
 
@@ -26,4 +26,4 @@
 		<label row="3" col="3"  text="label 19" tap="{{tapProduct}}"/>
 		<label row="4" col="3"  text="label 20" tap="{{tapProduct}}"/>
 	</GridLayout>
-</page>
+</Page>

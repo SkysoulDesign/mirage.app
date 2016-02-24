@@ -1,4 +1,4 @@
-<page loaded="pageLoaded" android:actionBarHidden="true">
+<Page loaded="pageLoaded" android:actionBarHidden="true">
 	<!-- <gridLayout rows="*,auto,auto,auto,*" columns="*,auto,auto,auto,*">
 		<Label row="2" col="2" text="Product" />
 		<Button row="1" col="2" text="MyMirage" tap="tapMirage" />
@@ -11,4 +11,4 @@
 		<Button left="23.4" top="160" text="Search by code" tap="{{tapCode}}" />
 		<Button left="196.6" top="160" text="search by movie" tap="{{tapMovie}}" />
 	</absoluteLayout>
-</page>
+</Page>

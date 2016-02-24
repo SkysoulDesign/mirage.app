@@ -1,5 +1,5 @@
-<Page xmlns:dd="nativescript-drop-down"
-      loaded="pageLoaded"
+<Page loaded="pageLoaded"
+      xmlns:dd="nativescript-drop-down"
       xmlns="http://schemas.nativescript.org/tns.xsd"
       android:actionBarHidden="true">
 

@@ -1,4 +1,4 @@
-<page loaded="pageLoaded">
+<Page loaded="pageLoaded">
 	<GridLayout rows="auto,auto,auto,auto,auto,auto,auto,*" >
 		<Label row="0" text="Introduction" cssClass="label-intro" />
 		<Label row="1" text="使用说明：" cssClass="lable-margin" />
@@ -8,4 +8,4 @@
 		<Label row="5" text="－轻轻一拍暂停" cssClass="lable-normal" />
 		<Label row="6" text="3）当电话离开Mirage后，会因为触动了水平装置而自动返回上一页" id="lable-3" cssClass="lable-margin" />
 	</GridLayout>
-</page>
+</Page>
