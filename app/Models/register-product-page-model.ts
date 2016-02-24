@@ -16,42 +16,32 @@ export class RegisterProductPageModel extends Observable {
      *
      */
     public getProductInfo(str) {
+
         var _this = this;
+
         this.set('text1', str.substr(0, 5));
         this.set('text2', str.substr(6, 5));
         this.set('text3', str.substr(12, 5));
         this.set('text4', str.substr(18, 5));
+
         _this.set('isLoading', true);
+
         var data = {
                 product_id: _this.get("text1"),
                 encode_image: true
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
-                var url = data.image;
-                console.log("-----------------1------------------1");
-                console.log(url);
-                _this.set('productimage', data.image.encoded);
-                // rereturns an interface api.get('product')
-                // that in the end means what will return if u find that
-                // _this.set('productimage', url); // this here have another contect
             },
             onError = function (errors) {
                 api.alertErrors(errors);
                 _this.set('isLoading', false);
             };
+
         var result = api.fetch('product', data, onSuccess, onError);
-        _this.set('productimage', result.get('data').image.encoded);
-        //here will use cache data. 
-        console.dir("getproduct  " + result.get('data').image);
-        //here it will be null because fetch still didnt finish
 
         result.on(Observable.propertyChangeEvent, function (data:EventData) {
-            console.log("-----------------2------------------2");
-            console.dir(data.object.get('data'));
-            _this.set('productimage', result.get('data').image.encoded);
-            //here will use new data from network when cache data are different from new data
-            console.dir(result.get('data').image);
+            _this.set('product-image', result.get('data').image.encoded);
         });
 
     }
@@ -61,7 +51,6 @@ export class RegisterProductPageModel extends Observable {
      */
     public tapRegister() {
         navigate.to("register-success");
-        console.log("register");
     }
 
 }

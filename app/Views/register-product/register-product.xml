@@ -2,7 +2,7 @@
 <!-- 	<gridLayout rows="*,*">
 		<image row="0" src="{{product-image}}" /> -->
 		<GridLayout  rows="2*,*,*">
-			<Image row="0" src="{{ productimage }}" /> 
+			<Image row="0" src="{{ product-image }}" />
 			<GridLayout row="1" rows="auto,auto">
 				<GridLayout row="1" rows="auto,auto,auto,auto">
 					<Image row="0" src="{{  }}" />

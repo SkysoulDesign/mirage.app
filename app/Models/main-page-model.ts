@@ -1,5 +1,6 @@
 import {Observable} from "data/observable";
 import OpenUrl = require( "nativescript-openurl" );
+import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
 import {navigate, cache} from "../Modules/Helpers";
 import {topmost} from "ui/frame";
@@ -16,7 +17,7 @@ export class MainPageModel extends Observable {
         /**
          * Set Defaults
          */
-        var user = cache.get('login');
+        var user:ApiUserInterface = cache.get('login');
 
         this.set('username', user.username);
         this.set('email', user.email);
@@ -56,7 +57,7 @@ export class MainPageModel extends Observable {
     public tapOpenMenu() {
 
         var sideDrawer = topmost().getViewById("sideDrawer");
-            sideDrawer.toggleDrawerState();
+        sideDrawer.toggleDrawerState();
 
     }
 

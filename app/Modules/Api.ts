@@ -99,12 +99,14 @@ export class Api {
                     /**
                      * Call Callback
                      */
-                    onSuccess(data);
+                    if (onSuccess instanceof Function)
+                        onSuccess(data);
 
                 }
 
                 if (data.hasOwnProperty('error')) {
-                    onError(data.error);
+                    if (onError instanceof Function)
+                        onError(data.error);
                 }
 
             };
@@ -116,7 +118,8 @@ export class Api {
 
             http.getJSON(request.url).then(handle, function (e) {
                 console.log(e);
-                onError(e);
+                if (onError instanceof Function)
+                    onError(e);
             });
 
         }
@@ -135,7 +138,8 @@ export class Api {
                 handle(response.content.toJSON());
             }, function (e) {
                 console.log("Error occurred " + e);
-                onError(e);
+                if (onError instanceof Function)
+                    onError(e);
             });
         }
 
