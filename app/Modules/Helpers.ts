@@ -51,9 +51,9 @@ export var view = function (folder:string, name:string = folder):string {
 /**
  * Find dot notation key in an object
  */
-export var dot = function (dot, obj):string {
+export var dot = function (dot, obj):string|boolean {
     return dot.split('.').reduce(function (a, b) {
-        return a[b];
+        return a ? a.hasOwnProperty(b) ? a[b] : false : false;
     }, obj);
 };
 
