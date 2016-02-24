@@ -23,7 +23,8 @@ export class RegisterProductPageModel extends Observable {
         this.set('text4', str.substr(18, 5));
         _this.set('isLoading', true);
         var data = {
-                product_id: _this.get("text1")
+                product_id: _this.get("text1"),
+                encode_image: true
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
@@ -40,12 +41,16 @@ export class RegisterProductPageModel extends Observable {
                 _this.set('isLoading', false);
             };
         var result = api.fetch('product', data, onSuccess, onError);
-        console.dir("getproduct  " + result.get('data').image);//here it will be null because fetch still didnt finish
+        _this.set('productimage', result.get('data').image.encoded);
+        //here will use cache data. 
+        console.dir("getproduct  " + result.get('data').image);
+        //here it will be null because fetch still didnt finish
 
         result.on(Observable.propertyChangeEvent, function (data:EventData) {
             console.log("-----------------2------------------2");
             console.dir(data.object.get('data'));
             _this.set('productimage', result.get('data').image.encoded);
+            //here will use new data from network when cache data are different from new data
             console.dir(result.get('data').image);
         });
 

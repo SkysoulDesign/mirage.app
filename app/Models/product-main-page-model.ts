@@ -6,13 +6,13 @@ export class ProductMainPageModel extends Observable {
 
 
     public tapMirage() {
-		// navigate.to("product-all");
+		navigate.to("product-all");
     }
     public tapCode(){
-		// navigate.to("search-code");
+		navigate.to("search-code");
     }
     public tapMovie(){
-		// navigate.to("search-movie");
+		navigate.to("search-movie");
     }
 
 }

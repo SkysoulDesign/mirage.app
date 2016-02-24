@@ -1,27 +1,5 @@
 
 var observable = require("data/observable");
-// var ProductallModel = (function (_super) {
-//     __extends(ProductallModel, _super);
-//     function ProductallModel() {
-//         _super.call(this);
-//         this.counter = 42;
-//         this.set("message", this.counter + " taps left");
-//     }
-//     ProductallModel.prototype.tapAction = function () {
-//         this.counter--;
-//         if (this.counter <= 0) {
-//             this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-//         }
-//         else {
-//             this.set("message", this.counter + " taps left");
-//         }
-//     };
-//     return ProductallModel;
-// })(observable.Observable);
-// exports.ProductallModel = ProductallModel;
-// exports.mainViewModel = new ProductallModel();
-
-
 var productall = {
 	product1:{
 		image:"~/image/test1.png",

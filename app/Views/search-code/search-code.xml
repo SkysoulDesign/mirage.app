@@ -1,35 +1,29 @@
-<!-- <page loaded="pageLoaded" > -->
-	
-<!-- 	<gridLayout rows="*,auto,auto,auto,auto,auto,auto,*" columns="*,auto,auto,auto,*">
-		<gridLayout row="3" col="2" rowSpan="2" rows="*,*">
-			<textField row="0" text="code" />
-			<Button text="?" row="1" tap="tapHint" cssClass="buttontip" />
-		</gridLayout>
-		<Button row="2" col="1" rowSpan="2" text="1" tap="tapmodel" />
-		<Button row="4" col="1" rowSpan="2" text="2" tap="tapmodel" />
-		<Button row="1" col="2" rowSpan="2" text="3" tap="tapmodel" />
-		<Button row="5" col="2" rowSpan="2" text="4" tap="tapmodel" />
-		<Button row="2" col="3" rowSpan="2" text="5" tap="tapmodel" />
-		<Button row="4" col="3" rowSpan="2" text="6" tap="tapmodel" />
-	</gridLayout>
-	<gridLayout>
-		
+<page loaded="pageLoaded" android:actionBarHidden="true">
+	<GridLayout rows="*,*,*,*,*" columns="*,*,*,*" >
+		<SearchBar row="1" colSpan="4" id="searchbar"/>
 
-		<Image id="icon" src="res://icon" stretch="none" />
-	</gridLayout> -->
-	<!-- <Image id="soap" src="~/image/soap.png" stretch="aspectFit" /> -->
-<!-- 	<absoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
-		<Label left="110" top="110"  text="" />
-		<Label left="140" top="170" text="?" cssClass="label-help" tap="tapHelp" />
-		<TextField left="110" top="145" hint="输入产品编号"/>
-	
-		<Button left="10" top="60" text="1"  tap="tapmodel" />
-		<Button left="10" top="160" text="2" tap="tapmodel" />
-		<Button left="110" top="210" text="3" tap="tapmodel" />
-		<Button left="210" top="160" text="4" tap="tapmodel" />
-		<Button left="210" top="60" text="5" tap="tapmodel" />
-		<Button left="110" top="10" text="6" tap="tapmodel" />
-		<Image left="0" top="0" id="image-bg" src="res://icon" width="300" height="300" cssClass="image-bg" tap="tapHideHelp" visibility="{{isvisible===0 ? 'collapse' : 'visible'}}" /> 
-		<Image left="25" top="25" id="image-help" src="~/image/soap.png"  width="250" height="250" visibility="{{isvisible===0 ? 'collapse' : 'visible'}}" /> 
-	</absoluteLayout>
+		<label row="0" col="0"  text="label 1" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="0"  text="label 2" tap="{{tapProduct}}"/> -->
+		<label row="2" col="0"  text="label 3" tap="{{tapProduct}}"/>
+		<label row="3" col="0"  text="label 4" tap="{{tapProduct}}"/>
+		<label row="4" col="0"  text="label 5" tap="{{tapProduct}}"/>
+
+		<label row="0" col="1"  text="label 6" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="1"  text="label 7" tap="{{tapProduct}}"/> -->
+		<label row="2" col="1"  text="label 8" tap="{{tapProduct}}"/>
+		<label row="3" col="1"  text="label 9" tap="{{tapProduct}}"/>
+		<label row="4" col="1"  text="label 10" tap="{{tapProduct}}"/>
+
+		<label row="0" col="2"  text="label 11" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="2"  text="label 12" tap="{{tapProduct}}"/> -->
+		<label row="2" col="2"  text="label 13" tap="{{tapProduct}}"/>
+		<label row="3" col="2"  text="label 14" tap="{{tapProduct}}"/>
+		<label row="4" col="2"  text="label 15" tap="{{tapProduct}}"/>
+
+		<label row="0" col="3"  text="label 16" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="3"  text="label 17" tap="{{tapProduct}}"/> -->
+		<label row="2" col="3"  text="label 18" tap="{{tapProduct}}"/>
+		<label row="3" col="3"  text="label 19" tap="{{tapProduct}}"/>
+		<label row="4" col="3"  text="label 20" tap="{{tapProduct}}"/>
+	</GridLayout>
 </page>
