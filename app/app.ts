@@ -6,7 +6,6 @@ import {Api} from "./Modules/Api";
 import {Database} from "./Modules/Database";
 import {view} from "./Modules/Helpers";
 import fontModule = require("ui/styling/font");
-import platformModule = require("platform");
 
 /**
  * Mirage App
@@ -41,7 +40,7 @@ export namespace Mirage {
             /**
              * Register Font on Ios
              */
-            if (platformModule.device.os === 'ios') {
+            if (application.ios) {
                 fontModule.ios.registerFont("SourceSansPro-Regular.otf");
             }
 
