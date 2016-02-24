@@ -157,7 +157,7 @@ export class Api {
      * @param name
      * @returns string|boolean
      */
-    public getCache(name:string):string|boolean {
+    public getCache(name:string):string {
         return dot(name, App.database.get('api'));
     }
 
