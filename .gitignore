@@ -6,3 +6,4 @@
 *.map
 /.idea
 /Resources
+.DS_Store

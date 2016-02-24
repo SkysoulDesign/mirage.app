@@ -1,10 +1,27 @@
 import {Observable} from "data/observable";
-import {Mirage as App} from "../app";
 import OpenUrl = require( "nativescript-openurl" );
 import barcodeScanner = require("nativescript-barcodescanner");
-import {navigate} from "../Modules/Helpers";
+import {navigate, cache} from "../Modules/Helpers";
+import {topmost} from "ui/frame";
 
 export class MainPageModel extends Observable {
+
+    /**
+     * Constructor
+     */
+    constructor() {
+
+        super();
+
+        /**
+         * Set Defaults
+         */
+        var user = cache.get('login');
+
+        this.set('username', user.username);
+        this.set('email', user.email);
+
+    }
 
     /**
      * Open Camera to Scan QRCode
@@ -34,9 +51,19 @@ export class MainPageModel extends Observable {
     }
 
     /**
+     * Open Menu
+     */
+    public tapOpenMenu() {
+
+        var sideDrawer = topmost().getViewById("sideDrawer");
+            sideDrawer.toggleDrawerState();
+
+    }
+
+    /**
      * Open Camera to hologram
      */
-    public tapTologram() {
+    public tapHologram() {
         navigate.to("product-main-page");
     };
 
