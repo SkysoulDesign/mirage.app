@@ -9,6 +9,8 @@ export function pageLoaded(args) {
     var page = <Page>args.object;
         page.bindingContext = new vmModule.MainPageModel();
 
+        return;
+
     /**
      * Check if User Token is Valid.
      * Otherwise redirect user to login page

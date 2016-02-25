@@ -17,10 +17,10 @@ export class MainPageModel extends Observable {
         /**
          * Set Defaults
          */
-        var user:ApiUserInterface = cache.get('login');
+        // var user:ApiUserInterface = cache.get('login');
 
-        this.set('username', user.username);
-        this.set('email', user.email);
+        // this.set('username', user.username);
+        // this.set('email', user.email); // i forgot cant see main page if not login ... now can try again
 
     }
 
@@ -45,7 +45,7 @@ export class MainPageModel extends Observable {
             function (error) {
                 console.log("No scan: " + error);
                 navigate.to('register-product', {
-                    context: 'MF001-11111111111111111111'
+                    context: 'MF001-11111-11111-11111'
                 });
             }
         );
@@ -86,6 +86,7 @@ export class MainPageModel extends Observable {
      * Open Camera to settings
      */
     public tapSetting() {
+        // cache.reset();// so click settings to reset cache
         navigate.to("settings");
     };
 

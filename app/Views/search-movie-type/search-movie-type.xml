@@ -5,5 +5,6 @@
         <Label row="2" col="1" text="Type 2" tap="tapType"/>
         <Label row="2" col="3" text="Type 3" tap="tapType"/>
         <Label row="3" col="2" text="Type 4" tap="tapType"/>
+        
     </GridLayout>
 </Page>

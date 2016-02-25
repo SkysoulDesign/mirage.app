@@ -10,9 +10,10 @@ export function pageLoaded(args) {
 
     var page = <Page>args.object,
 		videoContainer: View = page.getViewById('test-grid');
-
+    videoContainer.requestLayout();
     console.log("TTTTTTTTTTTTTTTTTT");
-    console.dir(videoContainer._nativeView.frame.size);
+    console.dir(videoContainer._nativeView.bounds.size);
+    console.dir(page._nativeView.frame.size);
 
 	//bug .  getViewbyId can not get view bounds.
     // console.dir(page);
