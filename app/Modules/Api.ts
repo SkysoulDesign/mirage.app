@@ -162,7 +162,7 @@ export class Api {
      * @param defaults
      * @returns string|boolean
      */
-    public getCache(name:string, defaults?:string = null):string {
+    public getCache(name:string, defaults:string = null):string {
         var result = dot(name, App.database.get('api'));
         return result ? result : defaults;
     }
@@ -173,12 +173,14 @@ export class Api {
      */
     public deleteCache(name:string):void {
 
-        var cache = App.database.get('api');
+        var cache = this.getCache(name);
 
-        if (cache.hasOwnProperty(name)) {
-            delete cache[name];
-            App.database.set('api', JSON.stringify(cache));
-        }
+        if (!cache)
+            return console.log('There is nothing cached under the key: ' + name);
+
+        delete cache[name];
+
+        App.database.set('api', JSON.stringify(cache));
 
     }
 
