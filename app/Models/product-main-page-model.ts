@@ -1,18 +1,35 @@
 import {Observable} from "data/observable";
-import http = require("http");
-import {cache, navigate} from "../Modules/Helpers";
+import {cache} from "../Modules/Helpers";
+import {topmost} from "ui/frame";
+import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 
 export class ProductMainPageModel extends Observable {
 
+    /**
+     * Constructor
+     */
+    constructor() {
 
-    public tapMirage() {
-		navigate.to("product-all");
+        super();
+
+        /**
+         * Set Defaults
+         */
+        var user:ApiUserInterface = cache.get('login');
+
+        this.set('username', user.username);
+        this.set('email', user.email);
+
     }
-    public tapCode(){
-		navigate.to("search-code");
-    }
-    public tapMovie(){
-		navigate.to("search-movie");
+
+    /**
+     * Open Menu
+     */
+    public tapOpenMenu() {
+
+        var sideDrawer = topmost().getViewById("sideDrawer");
+        sideDrawer.toggleDrawerState();
+
     }
 
 }

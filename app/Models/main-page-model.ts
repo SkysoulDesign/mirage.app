@@ -17,10 +17,10 @@ export class MainPageModel extends Observable {
         /**
          * Set Defaults
          */
-        // var user:ApiUserInterface = cache.get('login');
+        var user:ApiUserInterface = cache.get('login');
 
-        // this.set('username', user.username);
-        // this.set('email', user.email); // i forgot cant see main page if not login ... now can try again
+        this.set('username', user.username);
+        this.set('email', user.email);
 
     }
 
@@ -62,10 +62,10 @@ export class MainPageModel extends Observable {
     }
 
     /**
-     * Open Camera to hologram
+     * Open Camera to soap
      */
-    public tapHologram() {
-        navigate.to("product-main-page");
+    public tapProduct() {
+        navigate.to('product-main-page');
     };
 
     /**
@@ -86,7 +86,6 @@ export class MainPageModel extends Observable {
      * Open Camera to settings
      */
     public tapSetting() {
-        // cache.reset();// so click settings to reset cache
         navigate.to("settings");
     };
 

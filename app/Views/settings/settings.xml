@@ -2,7 +2,7 @@
 
     <GridLayout rows="1*,*5,*2">
 
-        <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+        <GridLayout class="action-bar-container" row="0" columns="80,5*,1*">
 
             <Image cssClass="menu-icon" col="0" src="res://menu_icon"
                    horizontalAlignment="center" verticalAlignment="center"

@@ -8,7 +8,6 @@ export function createVideoView(placeholder:CreateViewEventData) {
 
     var params = new android.view.ViewGroup.LayoutParams(android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1);
 
-
     // parse the uri
     var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
     // var videoLink = 'rtsp://192.168.1.253:554/bunny.mp4';
@@ -49,7 +48,9 @@ export function createVideoView(placeholder:CreateViewEventData) {
             console.log('Video Done');
         }
     });
+
     // Set the listener using the correct method
     videoView.setOnCompletionListener(completionListener);
+
 }
 

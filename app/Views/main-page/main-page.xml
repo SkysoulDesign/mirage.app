@@ -11,43 +11,43 @@
 
                 <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
 
-                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                    <Image class="menu-icon" col="0" src="res://menu_icon"
                            horizontalAlignment="center" verticalAlignment="center"
                            stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
 
-                    <Label text="MIRAGE" cssClass="mirage-label" col="1" horizontalAlignment="left"
+                    <Label text="MIRAGE" class="mirage-label" col="1" horizontalAlignment="left"
                            verticalAlignment="center"/>
 
-                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                    <Image class="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
                            verticalAlignment="center"
                            stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
 
                 </GridLayout>
 
                 <ScrollView orientation="horizontal" row="1">
-                    <GridLayout cssClass="stage" columns="*,*,*,*,*,*,*,*,*,*">
-                        <Image cssClass="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
-                        <Image cssClass="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
-                        <Image cssClass="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
-                        <Image cssClass="background-statue" col="3" src="res://statue_superman" stretch="aspectFit"/>
-                        <Image cssClass="foreground-statue" col="4" src="res://statue_batman" stretch="aspectFit"/>
-                        <Image cssClass="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
-                        <Image cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
-                        <Image cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
+                    <GridLayout class="stage" columns="*,*,*,*,*,*,*,*,*,*">
+                        <Image tap="{{ tapProduct }}" class="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="background-statue" col="3" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="foreground-statue" col="4" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
+                        <Image tap="{{ tapProduct }}" class="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
                     </GridLayout>
                 </ScrollView>
 
-                <StackLayout row="2" cssClass="progress-container">
+                <StackLayout row="2" class="progress-container">
 
-                    <Label text="BATMAN vs SUPERMAN - FIGURINE SERIES" cssClass="mini-label"/>
-                    <Label text="MY COLLECTION" cssClass="large-label"/>
+                    <Label text="BATMAN vs SUPERMAN - FIGURINE SERIES" class="mini-label"/>
+                    <Label text="MY COLLECTION" class="large-label"/>
 
-                    <GridLayout columns="5*,*" row="2" cssClass="progress-bar">
-                        <Label cssClass="progress-overlay" col="0"/>
-                        <Label cssClass="progress-background" col="1"/>
+                    <GridLayout columns="5*,*" row="2" class="progress-bar">
+                        <Label class="progress-overlay" col="0"/>
+                        <Label class="progress-background" col="1"/>
                     </GridLayout>
 
-                    <Label text="12 of 20" cssClass="progress-text"/>
+                    <Label text="12 of 20" class="progress-text"/>
 
                 </StackLayout>
 
@@ -57,28 +57,27 @@
 
         <drawer:RadSideDrawer.drawerContent>
 
-            <GridLayout cssClass="drawer-container" rows="3*,*">
+            <GridLayout class="drawer-container" rows="3*,*">
 
                 <StackLayout row="0">
 
-                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
-                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                    <StackLayout orientation="horizontal" class="drawer-header" verticalAlignment="center">
+                        <Image class="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
                         <StackLayout verticalAlignment="center">
                             <Label text="{{ username }}"/>
                             <Label text="{{ email }}"/>
                         </StackLayout>
                     </StackLayout>
 
-                    <StackLayout cssClass="drawer-menu-content">
-                        <Label cssClass="drawer-menu" text="Products" tap="{{ tapHologram }}"/>
-                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
-                        <Label cssClass="drawer-menu" text="About SOAP" tap="{{ tapSoap }}"/>
-                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+                    <StackLayout class="drawer-menu-content">
+                        <Label class="drawer-menu" text="News" tap="{{ tapNews }}"/>
+                        <Label class="drawer-menu" text="About SOAP" tap="{{ tapSoap }}"/>
+                        <Label class="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
                     </StackLayout>
 
                 </StackLayout>
 
-                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+                <Image class="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
 
             </GridLayout>
 

@@ -1,14 +1,117 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true">
-	<!-- <gridLayout rows="*,auto,auto,auto,*" columns="*,auto,auto,auto,*">
-		<Label row="2" col="2" text="Product" />
-		<Button row="1" col="2" text="MyMirage" tap="tapMirage" />
-		<Button row="3" col="1" text="Search by code" tap="tapCode" />
-		<Button row="3" col="3" text="search by movie" tap="tapMovie" />
-	</gridLayout> -->
-	<absoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
-		<Label left="110" top="110" text="Product" />
-		<Button left="110" top="10" text="MyMirage" tap="{{tapMirage}}" />
-		<Button left="23.4" top="160" text="Search by code" tap="{{tapCode}}" />
-		<Button left="196.6" top="160" text="search by movie" tap="{{tapMovie}}" />
-	</absoluteLayout>
+<Page loaded="pageLoaded"
+	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+	  xmlns="http://www.nativescript.org/tns.xsd"
+	  actionBarHidden="true">
+
+	<drawer:RadSideDrawer id="sideDrawer">
+
+		<drawer:RadSideDrawer.mainContent>
+
+			<GridLayout rows="80,3*,*3">
+
+				<GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+
+					<Image cssClass="menu-icon" col="0" src="res://menu_icon"
+						   horizontalAlignment="center" verticalAlignment="center"
+						   stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
+
+					<Label text="COLLECTION" cssClass="mirage-label" col="1" horizontalAlignment="left"
+						   verticalAlignment="center"/>
+
+					<Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+						   verticalAlignment="center"
+						   stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+
+				</GridLayout>
+
+				<GridLayout cssClass="stage" row="1">
+					<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
+				</GridLayout>
+
+				<TabView row="2">
+					<TabView.items>
+						<TabViewItem title="Extra Content">
+							<TabViewItem.view>
+
+								<ScrollView>
+									<StackLayout>
+
+										<GridLayout cssClass="card-container">
+											<Image cssClass="card-bg" row="0" src="res://extra_3" stretch="aspectFill"/>
+											<Label text="PROMOTIONAL VIDEO 3" row="0" class="card-title"/>
+											<Label class="card-description"
+												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+												   row="0"/>
+										</GridLayout>
+
+										<GridLayout cssClass="card-container">
+											<Image cssClass="card-bg" row="0" src="res://extra_1" stretch="aspectFill"/>
+											<Label text="PROMOTIONAL VIDEO 1" row="0" class="card-title"/>
+											<Label class="card-description"
+												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+												   row="0"/>
+										</GridLayout>
+
+										<GridLayout cssClass="card-container">
+											<Image cssClass="card-bg" row="0" src="res://extra_2" stretch="aspectFill"/>
+											<Label text="PROMOTIONAL VIDEO 2" row="0" class="card-title"/>
+											<Label class="card-description"
+												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+												   row="0"/>
+										</GridLayout>
+
+									</StackLayout>
+								</ScrollView>
+
+							</TabViewItem.view>
+						</TabViewItem>
+						<TabViewItem title="Details">
+							<TabViewItem.view>
+
+								<StackLayout class="details-container">
+									<StackLayout class="details-header-container">
+										<Label class="header-title" text="Batman Stand Version I"/>
+										<Label class="header-description" text="MF001-1205-9D0C-8CC7"/>
+									</StackLayout>
+								</StackLayout>
+
+							</TabViewItem.view>
+						</TabViewItem>
+					</TabView.items>
+				</TabView>
+
+			</GridLayout>
+
+		</drawer:RadSideDrawer.mainContent>
+
+		<drawer:RadSideDrawer.drawerContent>
+
+			<GridLayout cssClass="drawer-container" rows="3*,*">
+
+				<StackLayout row="0">
+
+					<StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
+						<Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+						<StackLayout verticalAlignment="center">
+							<Label text="{{ username }}"/>
+							<Label text="{{ email }}"/>
+						</StackLayout>
+					</StackLayout>
+
+					<StackLayout cssClass="drawer-menu-content">
+						<Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
+						<Label cssClass="drawer-menu" text="About SOAP" tap="{{ tapSoap }}"/>
+						<Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+					</StackLayout>
+
+				</StackLayout>
+
+				<Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+
+			</GridLayout>
+
+		</drawer:RadSideDrawer.drawerContent>
+
+	</drawer:RadSideDrawer>
+
 </Page>

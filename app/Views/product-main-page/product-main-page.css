@@ -1,23 +1,95 @@
-Button{
-	color: white;
-	font-size:10;
-	width:80;
-	height:80;
-	border-width:1;
-	border-color: #E9007C;
-	border-radius:40;
-	background-color: #E9007C;
-	/*margin: 10;*/
+.drawer-container {
+	background-color: white;
 }
-Label{
+
+.drawer-header {
+	height: 100px;
+	padding: 10px;
+	background-color: #027fb5;
 	color: white;
-	font-size:20;
-	width:80;
-	height:80;
-	border-width:1;
-	border-color: #E9007C;
-	border-radius:40;
-	background-color: #E9007C;
-	/*margin: 10;*/
+}
+
+.drawer-header-avatar {
+	margin: 10px;
+}
+
+.drawer-menu {
+	width: 100%;
+	padding: 20px;
+	/*margin: 1px 0;*/
+}
+
+.drawer-logo {
+	margin: 40px;
+}
+
+.action-bar-container {
+	background-color: white;
+	padding: 0 20px;
+}
+
+.menu-icon {
+	margin: 0 10px;
+}
+
+.qr_code-icon {
+	margin: 0 5px;
+}
+
+.mirage-label {
+	margin: 0 20px;
+	font-size: 22px;
+}
+
+.stage {
+	background-image: url('res://stage');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.statue {
+	margin: 30px;
+}
+
+.card-container {
+	background-color: white;
+	padding: 8px;
+}
+
+.card-bg {
+	border-radius: 3;
+}
+
+.card-title {
+	color: white;
+	font-size: 25px;
+	padding: 40px 25px;
+	vertical-align: bottom;
+}
+
+.card-description {
+	color: white;
+	font-size: 15px;
+	padding: 25px 25px;
+	vertical-align: bottom;
+}
+
+.details-container {
+	padding: 0px;
+}
+
+.details-header-container {
+	background-color: #027fb5;
+	padding: 20px;
+	color: white;
 	text-align: center;
+}
+
+.header-title {
+	font-size: 25px;
+}
+
+.header-description {
+	font-size: 12px;
 }
