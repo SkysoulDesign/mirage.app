@@ -9,7 +9,7 @@
 
 			<GridLayout rows="80,3*,*3">
 
-				<GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+				<GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
 
 					<Image cssClass="menu-icon" col="0" src="res://menu_icon"
 						   horizontalAlignment="center" verticalAlignment="center"
@@ -38,24 +38,24 @@
 
 										<GridLayout cssClass="card-container">
 											<Image cssClass="card-bg" row="0" src="res://extra_3" stretch="aspectFill"/>
-											<Label text="PROMOTIONAL VIDEO 3" row="0" class="card-title"/>
-											<Label class="card-description"
+											<Label text="PROMOTIONAL VIDEO 3" row="0" cssClass="card-title"/>
+											<Label cssClass="card-description"
 												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 												   row="0"/>
 										</GridLayout>
 
 										<GridLayout cssClass="card-container">
 											<Image cssClass="card-bg" row="0" src="res://extra_1" stretch="aspectFill"/>
-											<Label text="PROMOTIONAL VIDEO 1" row="0" class="card-title"/>
-											<Label class="card-description"
+											<Label text="PROMOTIONAL VIDEO 1" row="0" cssClass="card-title"/>
+											<Label cssClass="card-description"
 												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 												   row="0"/>
 										</GridLayout>
 
 										<GridLayout cssClass="card-container">
 											<Image cssClass="card-bg" row="0" src="res://extra_2" stretch="aspectFill"/>
-											<Label text="PROMOTIONAL VIDEO 2" row="0" class="card-title"/>
-											<Label class="card-description"
+											<Label text="PROMOTIONAL VIDEO 2" row="0" cssClass="card-title"/>
+											<Label cssClass="card-description"
 												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 												   row="0"/>
 										</GridLayout>
@@ -68,10 +68,10 @@
 						<TabViewItem title="Details">
 							<TabViewItem.view>
 
-								<StackLayout class="details-container">
-									<StackLayout class="details-header-container">
-										<Label class="header-title" text="Batman Stand Version I"/>
-										<Label class="header-description" text="MF001-1205-9D0C-8CC7"/>
+								<StackLayout cssClass="details-container">
+									<StackLayout cssClass="details-header-container">
+										<Label cssClass="header-title" text="Batman Stand Version I"/>
+										<Label cssClass="header-description" text="MF001-1205-9D0C-8CC7"/>
 									</StackLayout>
 								</StackLayout>
 

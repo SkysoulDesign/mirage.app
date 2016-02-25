@@ -2,32 +2,32 @@
 
     <GridLayout rows="80,*5,*2">
 
-        <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+        <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
 
-            <Image class="menu-icon" col="0" src="res://menu_icon"
+            <Image cssClass="menu-icon" col="0" src="res://menu_icon"
                    horizontalAlignment="center" verticalAlignment="center"
                    stretch="aspectFit" tap="{{ tapBack }}"/>
 
-            <Label text="SETTINGS" class="action-bar-label" col="1" horizontalAlignment="left"
+            <Label text="SETTINGS" cssClass="action-bar-label" col="1" horizontalAlignment="left"
                    verticalAlignment="center"/>
 
         </GridLayout>
 
-        <StackLayout class="settings-container" row="1">
+        <StackLayout cssClass="settings-container" row="1">
 
-            <GridLayout class="item" columns="*,*">
-                <Label class="item-content" text="Language" tap="tapLanguage" col="0"/>
-                <dd:DropDown id="dropdown" class="item-content right"
+            <GridLayout cssClass="item" columns="*,*">
+                <Label cssClass="item-content" text="Language" tap="tapLanguage" col="0"/>
+                <dd:DropDown id="dropdown" cssClass="item-content right"
                              col="1" items="{{ languages }}"
                              selectedIndex="{{ selectedLanguage }}"/>
             </GridLayout>
 
-            <GridLayout class="item" columns="*,*">
-                <Label class="item-content" text="Newsletter" col="0"/>
-                <Switch class="item-content right" checked="{{ newsletterToggle }}" col="1"/>
+            <GridLayout cssClass="item" columns="*,*">
+                <Label cssClass="item-content" text="Newsletter" col="0"/>
+                <Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>
             </GridLayout>
 
-            <Button text="LOGOUT" tap="{{ tapLogout }}" class="logout-button"/>
+            <Button text="LOGOUT" tap="{{ tapLogout }}" cssClass="logout-button"/>
 
         </StackLayout>
 
