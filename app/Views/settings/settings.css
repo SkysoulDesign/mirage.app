@@ -1,23 +1,46 @@
-Button{
-	color: white;
-	font-size:20;
-	width:80;
-	height:80;
-	border-width:1;
-	border-color: #E9007C;
-	border-radius:40;
-	background-color: #E9007C;
-	/*margin: 10;*/
+Page {
+    background-color: #ebebeb;
 }
-Label{
-	color: white;
-	font-size:20;
-	width:80;
-	height:80;
-	border-width:1;
-	border-color: #E9007C;
-	border-radius:40;
-	background-color: #E9007C;
-	/*margin: 10;*/
-	text-align: center;
+
+.action-bar-container {
+    background-color: white;
+    padding: 0 20px;
+}
+
+.menu-icon {
+    margin: 0 10px;
+}
+
+.action-bar-label {
+    margin: 0 20px;
+    font-size: 30px;
+}
+
+.item {
+    height: 50px;
+    background-color: #dedede;
+    margin-bottom: 1px;
+    padding: 0 20px;
+}
+
+.item-content {
+    vertical-align: center;
+}
+
+.right {
+    text-align: left;
+}
+
+.settings-container {
+    padding: 10px;
+}
+
+.logout-button {
+    background-color: red;
+    width: 100%;
+    margin: 5px;
+    border-radius: 2;
+    font-size: 20px;
+    color: white;
+    height: 70px;
 }

@@ -1,11 +1,36 @@
-<Page loaded="pageLoaded">
+<Page loaded="pageLoaded" android:actionBarHidden="true" xmlns:dd="nativescript-drop-down">
 
-    <AbsoluteLayout width="300" height="300" verticalAlignment="center" horizontalAlignment="center"
-                    backgroundColor="lightgray">
-        <Label left="110" top="110" text="Setting"/>
-        <Button left="110" top="10" text="Account" tap="{{ tapAccount }}"/>
-        <Button left="23.4" top="160" text="Language" tap="{{ tapLanguage }}"/>
-        <Button left="196.6" top="160" text="Screen" tap="{{ tapScreen }}"/>
-    </AbsoluteLayout>
+    <GridLayout rows="1*,*5,*2">
+
+        <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+
+            <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                   horizontalAlignment="center" verticalAlignment="center"
+                   stretch="aspectFit" tap="{{ tapBack }}"/>
+
+            <Label text="SETTINGS" cssClass="action-bar-label" col="1" horizontalAlignment="left"
+                   verticalAlignment="center"/>
+
+        </GridLayout>
+
+        <StackLayout cssClass="settings-container" row="1">
+
+            <GridLayout cssClass="item" columns="*,*">
+                <Label cssClass="item-content" text="Language" col="0"/>
+                <dd:DropDown id="dropdown" cssClass="item-content right"
+                             col="1" items="{{ languages }}"
+                             selectedIndex="{{ selectedLanguage }}"/>
+            </GridLayout>
+
+            <GridLayout cssClass="item" columns="*,*">
+                <Label cssClass="item-content" text="Newsletter" col="0"/>
+                <Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>
+            </GridLayout>
+
+            <Button text="LOGOUT" tap="{{ tapLogout }}" cssClass="logout-button"/>
+
+        </StackLayout>
+
+    </GridLayout>
 
 </Page>
