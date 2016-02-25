@@ -1,5 +1,5 @@
 import {Mirage as App} from "../../app";
-import {cache} from "../../Modules/Helpers";
+import {cache, api, navigate} from "../../Modules/Helpers";
 
 export function pageLoaded() {
 
@@ -14,12 +14,12 @@ export function pageLoaded() {
          * if Token is NOT set, Redirect to Main-Page
          */
         if (!cache.has('login'))
-            return App.navigate.to("login", options);
+            return navigate.to("login", options);
 
         /**
          * Otherwise Redirect to the main page
          */
-        App.navigate.to("main-page", options);
+        navigate.to("main-page", options);
 
     };
 
@@ -35,11 +35,11 @@ export function pageLoaded() {
      */
 
     if (!cache.has('countries')) {
-        App.api.fetch('countries', {}, onSuccess);
+        api.fetch('countries', {}, onSuccess);
     }
 
     if (!cache.has('ages')) {
-        App.api.fetch('ages', {}, onSuccess);
+        api.fetch('ages', {}, onSuccess);
     }
 
     if (cache.has('countries') && cache.has('ages')) {
