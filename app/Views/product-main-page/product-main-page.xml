@@ -1,7 +1,7 @@
 <Page loaded="pageLoaded"
 	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
 	  xmlns="http://www.nativescript.org/tns.xsd"
-	  actionBarHidden="true">
+	  android:actionBarHidden="true">
 
 	<drawer:RadSideDrawer id="sideDrawer">
 
