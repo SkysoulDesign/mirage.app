@@ -7,7 +7,7 @@
 
         <drawer:RadSideDrawer.mainContent>
 
-            <GridLayout rows="1*,*5,*2">
+            <GridLayout rows="80,*5,*2">
 
                 <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
 
