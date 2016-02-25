@@ -57,7 +57,7 @@ export class MainPageModel extends Observable {
     public tapOpenMenu() {
 
         var sideDrawer = topmost().getViewById("sideDrawer");
-        sideDrawer.toggleDrawerState();
+            sideDrawer.toggleDrawerState();
 
     }
 

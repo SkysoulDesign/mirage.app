@@ -4,6 +4,7 @@ import {topmost} from "ui/frame";
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 import {navigate} from "../Modules/Helpers";
 import barcodeScanner = require("nativescript-barcodescanner");
+import OpenUrl = require( "nativescript-openurl" );
 
 export class ProductMainPageModel extends Observable {
 
@@ -17,7 +18,7 @@ export class ProductMainPageModel extends Observable {
         /**
          * Set Defaults
          */
-        var user:ApiUserInterface = cache.get('login');
+        var user = cache.get('login');
 
         this.set('username', user.username);
         this.set('email', user.email);

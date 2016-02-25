@@ -2,7 +2,7 @@ import vmModule = require("../../Models/main-page-model");
 import {Page} from 'ui/page';
 import http = require('http');
 import {Mirage as App} from "../../app";
-import {cache, database, api, navigate} from "../../Modules/Helpers";
+import {cache, api, navigate} from "../../Modules/Helpers";
 
 export function pageLoaded(args) {
 
