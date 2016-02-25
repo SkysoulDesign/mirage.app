@@ -216,7 +216,7 @@ export class config {
      * @param defaults
      * @returns any
      */
-    public static get(key:string, defaults? = null):any {
+    public static get(key:string, defaults = null):any {
         var result = dot(key, App.config);
         return result ? result : defaults;
     }

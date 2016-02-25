@@ -1,8 +1,7 @@
 import {Observable} from "data/observable";
-import {cache} from "../Modules/Helpers";
+import {cache, navigate} from "../Modules/Helpers";
 import {topmost} from "ui/frame";
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
-import {navigate} from "../Modules/Helpers";
 import barcodeScanner = require("nativescript-barcodescanner");
 import OpenUrl = require( "nativescript-openurl" );
 
