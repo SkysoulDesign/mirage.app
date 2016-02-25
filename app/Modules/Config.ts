@@ -13,12 +13,18 @@ export class Config {
         countries: {GET: "api/form/countries"},
         ages: {GET: "api/form/ages"},
         product: {POST: "api/product"},
-        products: { POST: "api/products" }
+        products: {POST: "api/products"}
     };
- 
+
     /**
      * Database Name
      */
     public databaseName = 'mirage_db';
+
+    /**
+     * Languages
+     */
+    public languages = ['English', 'Japanese', 'Korean', 'Traditional Chinese', 'Simplified Chinese'];
+    public default_language = 'Korean';
 
 }

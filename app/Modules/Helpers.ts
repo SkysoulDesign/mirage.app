@@ -77,10 +77,11 @@ export class cache {
     /**
      * Get key from cache
      * @param key
+     * @param defaults
      * @returns string
      */
-    public static get(key:string):string {
-        return App.api.getCache(key);
+    public static get(key:string, defaults?:string):string {
+        return App.api.getCache(key, defaults);
     }
 
     /**
@@ -201,8 +202,23 @@ export class navigate {
     /**
      * Navigate back to the previous page
      */
-    public back():void {
+    public static back():void {
         App.navigate.back();
+    }
+
+}
+
+export class config {
+
+    /**
+     * Get key from config
+     * @param key
+     * @param defaults
+     * @returns any
+     */
+    public static get(key:string, defaults? = null):any {
+        var result = dot(key, App.config);
+        return result ? result : defaults;
     }
 
 }

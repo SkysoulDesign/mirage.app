@@ -159,10 +159,12 @@ export class Api {
     /**
      * Get Saved Cache value
      * @param name
+     * @param defaults
      * @returns string|boolean
      */
-    public getCache(name:string):string {
-        return dot(name, App.database.get('api'));
+    public getCache(name:string, defaults?:string = null):string {
+        var result = dot(name, App.database.get('api'));
+        return result ? result : defaults;
     }
 
     /**
