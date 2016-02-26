@@ -3,18 +3,6 @@ import {cache, api, navigate,file} from "../../Modules/Helpers";
 
 export function pageLoaded() {
 
-
-    //api.fetchImage('http://cms.soapstudio.com/image/products/MF005.png', function (image, meta) {
-    //
-    //    file.save(image, meta.filename);
-    //    console.log('finished', file.has('MF005.png'));
-    //
-    //});
-    //
-    //console.log(file.has('MF005.png'));
-    //
-    //return;
-
     var counter = 1;
 
     var onSuccess = function (hack = false) {

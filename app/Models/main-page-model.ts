@@ -19,13 +19,13 @@ export class MainPageModel extends Observable {
 
         super();
 
-        if (product_layout.getChildrenCount() > 0)
-            return;
+        //if (product_layout.getChildrenCount() > 0)
+        //    return;
 
         /**
          * Set Defaults
          */
-        var user = <ApiUserInterface>cache.get('login');
+        var user:ApiUserInterface = cache.get('login');
 
         this.set('username', user.username);
         this.set('email', user.email);

@@ -15,7 +15,7 @@
 						   horizontalAlignment="center" verticalAlignment="center"
 						   stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
 
-					<Label text="COLLECTION" cssClass="mirage-label" col="1" horizontalAlignment="left"
+					<Label text="BATMAN" cssClass="mirage-label" col="1" horizontalAlignment="left"
 						   verticalAlignment="center"/>
 
 					<Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
@@ -30,7 +30,7 @@
 
 				<TabView row="2">
 					<TabView.items>
-						<TabViewItem title="Extra Content">
+						<TabViewItem title="Video for Hologram">
 							<TabViewItem.view>
 
 								<ScrollView>
@@ -65,7 +65,7 @@
 
 							</TabViewItem.view>
 						</TabViewItem>
-						<TabViewItem title="Details">
+						<TabViewItem title="Profile">
 							<TabViewItem.view>
 
 								<StackLayout cssClass="details-container">
@@ -100,7 +100,7 @@
 
 					<StackLayout cssClass="drawer-menu-content">
 						<Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
-						<Label cssClass="drawer-menu" text="About SOAP" tap="{{ tapSoap }}"/>
+						<Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
 						<Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
 					</StackLayout>
 

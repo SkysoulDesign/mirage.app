@@ -1,5 +1,5 @@
 Page {
-    background-color: #004678;
+    background-color: white;
 }
 
 Label {
@@ -17,22 +17,29 @@ Label {
 }
 
 .button {
-    background-color: white;
+    /*background-color: white;*/
     width: 100%;
     margin: 5px;
     border-radius: 2;
     font-size: 20px;
-    color: #082d47;
+    color: white;
 }
 
 .big {
     height: 70px;
+    background-color: #39B54A
 }
 
 .small {
     height: 50px;
+    background-color: #E977AF
 }
 
 .extra {
     padding: 50px;
+}
+
+.all-rights {
+    color: black;
+    margin: 2%;
 }

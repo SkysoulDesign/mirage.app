@@ -1,9 +1,9 @@
 Page {
-    background-color: #004678;
+    background-color: #39B54A;
 }
 
 .logo {
-    margin: 10px
+    margin: 20px
 }
 
 .form {
@@ -17,13 +17,13 @@ Page {
 
 TextField {
     font-size: 16px;
-    color: #009fe3;
+    color: #39B54A;
     margin: 5px 0 0 0;
     padding: 3px;
 }
 
 Button {
-    background-color: #009fe3;
+    background-color: #39B54A;
     width: 100%;
     margin: 5px;
     border-radius: 2;
@@ -42,13 +42,13 @@ Label {
     margin: 5px 5px;
     background-color: #efefef;
     border-radius: 2;
-    color: #009fe3;
+    color: #39B54A;
 }
 
 .gender-container--selected {
     text-align: center;
     color: white;
-    background-color: #e50051;
+    background-color: #E977AF;
     padding: 10px;
     margin: 5px 0;
     border-radius: 2;
@@ -64,12 +64,12 @@ Label {
     margin: 5px 0;
     background-color: #efefef;
     border-radius: 2;
-    color: #009fe3;
+    color: #39B54A;
 }
 
 .terms-container--accepted {
     color: white;
-    background-color: #e50051;
+    background-color: #E977AF;
     padding: 10px;
     margin: 5px 0;
     border-radius: 2;

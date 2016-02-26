@@ -1,9 +1,10 @@
 import {Observable, EventData} from "data/observable";
-import {navigate, api, cache} from "../Modules/Helpers";
+import {navigate, api, cache, file} from "../Modules/Helpers";
 import textFieldModule = require("ui/text-field");
 import {Frame} from "ui/frame";
 import {Button} from "ui/button";
 import {TextField} from "ui/text-field";
+import {ImageSource} from "image-source";
 
 export class RegisterProductPageModel extends Observable {
 
@@ -27,6 +28,10 @@ export class RegisterProductPageModel extends Observable {
         var data = {
                 product_id: null,
                 encode_image: true
+            },
+            onCached = function (image:ImageSource) {
+                console.log('cached');
+                _this.set('product_image', image.toBase64String());
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
@@ -57,6 +62,13 @@ export class RegisterProductPageModel extends Observable {
                 _this.set('isLoading', true);
 
                 data.product_id = value.substr(0, 5);
+
+                /**
+                 * Check if its cached
+                 */
+                if (file.has(data.product_id + '.png')){
+                    return onCached(file.load(data.product_id + '.png'));
+                }
 
                 /**
                  * fetch product

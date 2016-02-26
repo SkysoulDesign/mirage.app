@@ -2,7 +2,7 @@
 
     <GridLayout rows="*, *">
 
-        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit"/>
+        <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit"/>
 
         <StackLayout cssClass="form" row="1">
             <TextField class="field" text="{{ username }}" hint="USERNAME"/>

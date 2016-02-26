@@ -2,13 +2,9 @@
 
     <GridLayout rows="80,*5,*2">
 
-        <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+        <GridLayout cssClass="action-bar-container" row="0" columns="*">
 
-            <Image cssClass="menu-icon" col="0" src="res://menu_icon"
-                   horizontalAlignment="center" verticalAlignment="center"
-                   stretch="aspectFit" tap="{{ tapBack }}"/>
-
-            <Label text="SETTINGS" cssClass="action-bar-label" col="1" horizontalAlignment="left"
+            <Label text="SETTINGS" cssClass="action-bar-label" horizontalAlignment="left"
                    verticalAlignment="center"/>
 
         </GridLayout>

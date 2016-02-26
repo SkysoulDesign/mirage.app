@@ -1,16 +1,17 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
 
-    <GridLayout rows="3*, 3*, 5*">
+    <GridLayout rows="3*, 3*, 5*, *">
 
-        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
+        <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit" horizontalAlign="center"/>
 
         <StackLayout cssClass="form" row="1" orientation="vertical">
             <Button text="LOGIN" tap="{{ tapSignIn }}" cssClass="button big"/>
             <Button text="REGISTER" tap="{{ tapRegister }}" cssClass="button small"/>
-            <label text="Lorem ipsum dolor sit amet, consectetur."/>
         </StackLayout>
 
         <Image cssClass="extra" row="2" src="res://extra" stretch="aspectFit" horizontalAlign="center"/>
+
+        <label row="3" class="all-rights" text="All rights reserved by Soap Studio Company Limited."/>
 
     </GridLayout>
 

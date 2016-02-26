@@ -3,13 +3,11 @@
     background-repeat: repeat-x;
     background-size: cover;
     background-position: center center;
-
     padding: 25px;
-
 }
 
 .container {
-    background-color: #009fe3;
+    background-color: #39B54A;
     padding: 30px;
 }
 
@@ -33,7 +31,7 @@
 Button {
     width: 100%;
     background-color: white;
-    color: #009fe3;
+    color: #39B54A;
     font-size: 20px;
     border-radius: 2;
     height: 25%;
