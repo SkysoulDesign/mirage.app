@@ -2,9 +2,11 @@ import {Mirage as App} from "../app";
 import {alert} from "ui/dialogs";
 import http = require('http');
 import {ApiListInterface} from "../Interfaces/ApiListInterface";
-import {extend, dot} from "./Helpers";
+import {extend, dot,parseURL} from "./Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {Observable} from "data/observable";
+import {ImageSource} from "image-source";
+import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 
 export class Api {
 
@@ -144,6 +146,28 @@ export class Api {
         }
 
         return result;
+
+    }
+
+    public fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
+
+        var image:Observable = new Observable(),
+            metaData = parseURL(url);
+
+        http.getImage(url).then(function (r) {
+            image.set('data', r);
+            if (onSuccess instanceof Function)
+                onSuccess(r, metaData)
+        }, function (e) {
+
+            console.error('Error loading image >>> ' + url);
+            console.error('Error Message >>> ' + e);
+
+            if (onError instanceof Function)
+                onError(e)
+        });
+
+        return image;
 
     }
 

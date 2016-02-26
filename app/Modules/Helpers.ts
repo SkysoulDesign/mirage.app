@@ -49,6 +49,21 @@ export var view = function (folder:string, name:string = folder):string {
 };
 
 /**
+ * Parse given URL
+ * @param url
+ * @returns {{name: string, ext: string}}
+ */
+export var parseURL = function (url:string):ImageMetaDataInterface {
+
+    url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
+    url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
+    url = url.substring(url.lastIndexOf("/") + 1, url.length);
+    url = url.split('.');
+
+    return {filename: url.join('.'), name: url[0], extension: url[1]};
+};
+
+/**
  * Find dot notation key in an object
  */
 export var dot = function (dot, obj):string {
@@ -180,7 +195,7 @@ export class api {
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
 
-    public static fetchImage(url:string, onSuccess?:(image:any)=>void, onError?:(e:any)=>void):Observable {
+    public static fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
         return App.api.fetchImage(url, onSuccess, onError);
     }
 
@@ -228,27 +243,36 @@ export class config {
 }
 
 import fs = require("file-system");
+import imageSource = require( "image-source");
+import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {ImageFormat} from "ui/enums";
 
 export class file {
 
-
-    public static save(binary, name):void {
-
-        var documents = fs.knownFolders.documents();
-        var destinationFile = documents.getFile(name);
-
-        destinationFile.writeSync(binary, function (e) {
-            console.log('error');
-        });
-
-        console.log(documents.path);
-
+    /**
+     * Save Image
+     * @param image
+     * @param filename
+     * @returns {any}
+     */
+    public static save(image:imageSource, filename:string):boolean {
+        return image.saveToFile(this.getPath(filename), ImageFormat.png);
     }
 
     /**
      * Navigate back to the previous page
      */
-    public static load():void {
+    public static load(fileName:string):imageSource {
+        return imageSource.fromFile(this.getPath(fileName));
+    }
+
+    /**
+     * Get File Path
+     * @param filename
+     * @returns {string}
+     */
+    private static getPath(filename:string) {
+        return fs.path.join(fs.knownFolders.documents().path, config.get('internal_folder_name'), filename);
     }
 
 }

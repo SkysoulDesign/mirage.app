@@ -27,4 +27,9 @@ export class Config {
     public languages = ['English', 'Japanese', 'Korean', 'Traditional Chinese', 'Simplified Chinese'];
     public default_language = 'Korean';
 
+    /**
+     * File
+     */
+    public internal_folder_name = "mirage_beta";
+
 }
