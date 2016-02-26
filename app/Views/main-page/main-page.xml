@@ -25,7 +25,7 @@
                 </GridLayout>
 
                 <ScrollView orientation="horizontal" row="1">
-                    <GridLayout cssClass="stage" columns="*,*,*,*,*,*,*,*,*,*">
+                   <!--  <GridLayout id="product_layout" cssClass="stage" columns="*,*,*,*,*,*,*,*,*,*">
                         <Image tap="{{ tapProduct }}" cssClass="foreground-statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
                         <Image tap="{{ tapProduct }}" cssClass="background-statue" col="1" src="res://statue_superman" stretch="aspectFit"/>
                         <Image tap="{{ tapProduct }}" cssClass="foreground-statue" col="2" src="res://statue_batman" stretch="aspectFit"/>
@@ -34,7 +34,10 @@
                         <Image tap="{{ tapProduct }}" cssClass="background-statue" col="5" src="res://statue_superman" stretch="aspectFit"/>
                         <Image tap="{{ tapProduct }}" cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
                         <Image tap="{{ tapProduct }}" cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
-                    </GridLayout>
+                    </GridLayout> -->
+                    <StackLayout id="product_layout" cssClass="stage" orientation="horizontal">
+                        
+                    </StackLayout>
                 </ScrollView>
 
                 <StackLayout row="2" cssClass="progress-container">

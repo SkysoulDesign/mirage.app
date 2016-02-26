@@ -52,6 +52,9 @@ export class ProductMainPageModel extends Observable {
 
     }
 
+    public tapProduct(){
+        navigate.to("video");
+    }
     /**
      * Open Menu
      */

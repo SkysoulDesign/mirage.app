@@ -194,7 +194,9 @@ export class api {
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
-
+    public static getImage(url:string,name:string){
+        return App.api.getImage(url, name);
+    }
     public static fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
         return App.api.fetchImage(url, onSuccess, onError);
     }

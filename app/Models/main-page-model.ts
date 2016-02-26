@@ -2,15 +2,16 @@ import {Observable} from "data/observable";
 import OpenUrl = require( "nativescript-openurl" );
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
-import {navigate, cache} from "../Modules/Helpers";
+import {navigate, cache, api,config} from "../Modules/Helpers";
 import {topmost} from "ui/frame";
-
+import {Image} from "ui/image";
+import {GestureTypes} from "ui/gestures";
 export class MainPageModel extends Observable {
 
     /**
      * Constructor
      */
-    constructor() {
+    constructor(product_layout) {
 
         super();
 
@@ -21,9 +22,26 @@ export class MainPageModel extends Observable {
 
         this.set('username', user.username);
         this.set('email', user.email);
+        this.init(user,product_layout);
 
     }
-
+    private init(user,product_layout) {
+        var _this = this;
+        for(var x in user.codes) {
+            product_layout.addChild(_this.createImage(user.codes[x].product.image, user.codes[x].product.code));
+        }
+    }
+    private createImage(url,name){
+        var _this = this;
+        var image = new Image();
+        // image.src = config.get("apis").base + url;
+        image.imageSource = api.getImage("http://192.168.1.253" + url, name);//"http://192.168.1.253"+url;//
+        console.log("TTTTTTTTTTTTTTT" + config.get("apis").base + url);
+        image.on(GestureTypes.tap, function(args) {
+            _this.tapProduct();
+        });
+        return image;
+    }
     /**
      * Open Camera to Scan QRCode
      */

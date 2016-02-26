@@ -5,11 +5,12 @@ var moviePlayer;
 import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view'; // what s the namei
-
+var changepage = true;
 export function pageLoaded(args) {
-
+    if (!changepage)
+        return;
     var page = <Page>args.object,
-		videoContainer: View = page.getViewById('test-grid');
+        videoContainer: View = page.getViewById('image_video');
     videoContainer.requestLayout();
     console.log("TTTTTTTTTTTTTTTTTT");
     console.dir(videoContainer._nativeView.bounds.size);
@@ -33,9 +34,10 @@ export function pageLoaded(args) {
 
     var size = page._nativeView.bounds.size;
     var origin = page._nativeView.bounds.origin;
-
-    moviePlayer.view.frame = videoContainer._nativeView.bounds;//CGRectMake(origin.x, origin.y, size.width, size.height * 0.5);
-
+    if (videoContainer._nativeView.bounds.size.width ===0)
+        moviePlayer.view.frame = CGRectMake(0, origin.y, size.width, 280);//videoContainer._nativeView.bounds;//
+    else
+        moviePlayer.view.frame = videoContainer._nativeView.bounds;//
      // console.dir(videoContainer._nativeView + "  TTTTTTTT " + moviePlayer.view);
     
     videoContainer._nativeView.addSubview(moviePlayer.view);
@@ -47,6 +49,7 @@ export function pageLoaded(args) {
 	}
 
 	var enterFullScreen = function(notification) {
+        changepage = false;
 		UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
 	}
 
@@ -68,6 +71,7 @@ export function pageLoaded(args) {
 
 export function pageUnloaded(args) {
     moviePlayer.pause();
+    changepage = true;
     console.log("unloaded");
 }
 

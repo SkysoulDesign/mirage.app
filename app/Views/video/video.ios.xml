@@ -1,7 +1,7 @@
 <Page loaded="pageLoaded" unloaded="pageUnloaded">
 	<GridLayout rows="*,*" >
 		<!-- <Image row="0" src="" stretch="fill" tap="tapInfo" id="image_video" cssClass="image-video"/> -->
-		<label id="image_video" text="TTTTTTTTTTTTTTTTTTTTTTTTTTT"/>
+		<label id="image_video" text="TTTTTTTTTTTTTTTTTTTTTTTTTTT" cssClass="grid-info"/>
 		<GridLayout row="1" columns="*,2*" cssClass="grid-info" id="test-grid" >
 			<Image src="~/image/soap.png" cssClass="image" stretch="fill" />
 			<GridLayout col="1" rows="auto,auto,*" cssClass="grid-left">

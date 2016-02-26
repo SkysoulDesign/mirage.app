@@ -2,11 +2,14 @@ import {Mirage as App} from "../app";
 import {alert} from "ui/dialogs";
 import http = require('http');
 import {ApiListInterface} from "../Interfaces/ApiListInterface";
-import {extend, dot,parseURL} from "./Helpers";
+import {extend, dot,parseURL,config} from "./Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {Observable} from "data/observable";
 import {ImageSource} from "image-source";
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {Cache} from "ui/image-cache";
+import imageSource = require("image-source");
+import fs = require("file-system");
 
 export class Api {
 
@@ -148,7 +151,40 @@ export class Api {
         return result;
 
     }
+    public getImage(url: string, name: string)
+    {
+        var cache = new Cache();
+        cache.placeholder = imageSource.fromFile(fs.path.join(fs.knownFolders.documents().path, config.get('internal_folder_name') , name));
+        cache.maxRequests = 5;
+        // Enable download while not scrolling
+        cache.enableDownload();
+        var imgSouce;
+        var url = url;
+        // Try to read the image from the cache
+        var image = cache.get(url);
+        if (image) {
+            // If present -- use it.
+            imgSouce = imageSource.fromNativeSource(image);
+            console.log("LLLLLLLLLLLLLLLLcache");
 
+        }
+        else {
+            // If not present -- request its download.
+            cache.push({
+                key: url,
+                url: url,
+                completed: function(image, key) {
+                    if (url === key) {
+                        imgSouce = imageSource.fromNativeSource(image);
+                        console.log("LLLLLLLLLLLLLLLdownload");
+                    }
+                }
+            });
+        }
+        // Disable download while scrolling
+        // cache.disableDownload();
+        return imgSouce;
+    }
     public fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
 
         var image:Observable = new Observable(),
