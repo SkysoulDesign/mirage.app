@@ -1,26 +1,28 @@
 import {Observable, EventData} from "data/observable";
 import {navigate, api, cache} from "../Modules/Helpers";
-import {getViewById} from "ui/core/view";
 import textFieldModule = require("ui/text-field");
+import {Frame} from "ui/frame";
+import {Button} from "ui/button";
+import {TextField} from "ui/text-field";
 
 export class RegisterProductPageModel extends Observable {
+
 
     /**
      * Constructor
      */
-    public constructor(str) {
+    public constructor(input:TextField, button:Button) {
         super();
-        this.getProductInfo(str);
+        this.getProductInfo(input, button);
     }
 
     /**
      * getProductInfo
      *
      */
-    public getProductInfo(str) {
+    public getProductInfo(input:TextField, button:Button) {
 
-        var _this = this,
-            input = getViewById('code_input');
+        var _this = this;
 
         var data = {
                 product_id: null,
@@ -28,42 +30,38 @@ export class RegisterProductPageModel extends Observable {
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
+                _this.set('product_image', data.image.encoded);
             },
             onError = function (errors) {
-                api.alertErrors(errors);
+                console.log('errado');
                 _this.set('isLoading', false);
+                input.editable = true;
             };
-
-        _this.set('code', 'test');
 
         this.on(textFieldModule.TextField.propertyChangeEvent, function (args:EventData) {
 
-            console.log(args.value.length);
-            console.log(args.value.toString());
+            var length = args.value.toString().length,
+                value = args.value.toString();
 
-            _this.set('code', 'hey man');
-
-            if (args.value.toString().length >= 17) {
-
-                return _this.set('code', args.value.toString().slice(0, -1));
+            if (length >= 18) {
+                return _this.set('code_text', 'Invalid Code');
             }
 
-            if (args.value.length >= 5 && _this.get('started')) {
+            if (length == 17) {
+
+                input.editable = false;
 
                 /**
                  * Disable Rechecks
                  */
-                this.set('isLoading', true);
-                _this.set('started', true);
+                _this.set('isLoading', true);
 
-                data.product_id = args.value.substr(0, 5);
-                console.log(data.product_id);
+                data.product_id = value.substr(0, 5);
 
-                var result = api.fetch('product', data, onSuccess, onError, true);
-
-                result.on(Observable.propertyChangeEvent, function (data:EventData) {
-                    _this.set('product_image', result.get('data').image.encoded);
-                });
+                /**
+                 * fetch product
+                 */
+                api.fetch('product', data, onSuccess, onError, true);
 
             }
 
@@ -75,7 +73,22 @@ export class RegisterProductPageModel extends Observable {
      * Navigate to Account
      */
     public tapRegister() {
-        navigate.to("register-success");
+
+        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17)
+            return alert('Invalid Code');
+
+        var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
+
+        var _this = this, data = {code: code},
+            onSuccess = function () {
+                navigate.to("register-success");
+            },
+            onError = function (e) {
+                alert('Invalid Code');
+            };
+
+        api.fetch('registerProduct', data, onSuccess, onError, false);
+
     }
 
 }
