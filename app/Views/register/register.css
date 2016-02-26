@@ -11,6 +11,10 @@ Page {
     padding: 30px;
 }
 
+.field{
+    height: 60px;
+}
+
 TextField {
     font-size: 16px;
     color: #009fe3;

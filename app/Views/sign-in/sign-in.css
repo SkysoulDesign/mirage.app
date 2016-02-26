@@ -29,3 +29,7 @@ Button {
     background-color: white;
     padding: 15px 30px 0 30px;
 }
+
+.field{
+    height: 60px;
+}

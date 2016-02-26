@@ -7,5 +7,5 @@ export function pageLoaded(args:observable.EventData) {
 
     var page = <Page>args.object;
         page.bindingContext = new vmModule.SignInPageModel();
-        console.dir(database.all());
+
 }
