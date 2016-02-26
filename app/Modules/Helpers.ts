@@ -180,6 +180,10 @@ export class api {
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
 
+    public static fetchImage(url:string, onSuccess?:(image:any)=>void, onError?:(e:any)=>void):Observable {
+        return App.api.fetchImage(url, onSuccess, onError);
+    }
+
 }
 
 /**
@@ -219,6 +223,32 @@ export class config {
     public static get(key:string, defaults = null):any {
         var result = dot(key, App.config);
         return result ? result : defaults;
+    }
+
+}
+
+import fs = require("file-system");
+
+export class file {
+
+
+    public static save(binary, name):void {
+
+        var documents = fs.knownFolders.documents();
+        var destinationFile = documents.getFile(name);
+
+        destinationFile.writeSync(binary, function (e) {
+            console.log('error');
+        });
+
+        console.log(documents.path);
+
+    }
+
+    /**
+     * Navigate back to the previous page
+     */
+    public static load():void {
     }
 
 }
