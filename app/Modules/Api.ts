@@ -30,7 +30,7 @@ export class Api {
      * @param secure
      * @returns {string}
      */
-    public get(name:string, secure:boolean = false):ApiUrlInterface {
+    public get(name:string, secure:boolean = true):ApiUrlInterface {
 
         var url:ApiUrlInterface;
 
@@ -38,7 +38,7 @@ export class Api {
             name: name,
             method: method,
             fragment: this.apis[name][method],
-            url: secure ? 'https' : 'http' + '://' + this.apis.base + '/' + this.apis[name][method],
+            url: (secure ? 'https' : 'http') + '://' + this.apis.base + '/' + this.apis[name][method],
             cache: cache.get(name)
         }
 
