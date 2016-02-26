@@ -267,6 +267,15 @@ export class file {
     }
 
     /**
+     * Check if file exists
+     * @param fileName
+     * @returns {boolean}
+     */
+    public static has(fileName:string):boolean {
+        return fs.File.exists(this.getPath(filename)) ? true : false;
+    }
+
+    /**
      * Get File Path
      * @param filename
      * @returns {string}
