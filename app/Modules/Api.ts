@@ -2,7 +2,7 @@ import {Mirage as App} from "../app";
 import {alert} from "ui/dialogs";
 import http = require('http');
 import {ApiListInterface} from "../Interfaces/ApiListInterface";
-import {extend, dot,parseURL} from "./Helpers";
+import {extend, dot, parseURL, cache, config} from "./Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {Observable} from "data/observable";
 import {ImageSource} from "image-source";
@@ -13,7 +13,16 @@ export class Api {
     /**
      * Api List
      */
-    private apis:ApiListInterface = App.config.apis;
+    private apis:ApiListInterface = config.get('apis');
+
+    /**
+     * Get Api full qualified URL
+     * @param secure
+     * @returns {string}
+     */
+    public getBase(secure = true):string {
+        return secure ? 'https' : 'http' + '://' + this.apis.base;
+    }
 
     /**
      * Get Api full qualified URL
@@ -30,7 +39,7 @@ export class Api {
             method: method,
             fragment: this.apis[name][method],
             url: secure ? 'https' : 'http' + '://' + this.apis.base + '/' + this.apis[name][method],
-            cache: App.database.get('api')[name]
+            cache: cache.get(name)
         }
 
         return url;
