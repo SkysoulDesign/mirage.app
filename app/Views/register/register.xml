@@ -8,12 +8,13 @@
         <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
 
         <ScrollView row="1">
-            <StackLayout cssClass="form" orientation="vertical">
 
-                <TextField text="{{ username }}" hint="USERNAME"/>
-                <TextField text="{{ password }}" hint="PASSWORD" secure="true"/>
-                <TextField text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION" secure="true"/>
-                <TextField text="{{ email }}" hint="E-MAIL"/>
+            <StackLayout cssClass="form">
+
+                <TextField cssClass="field" text="{{ username }}" hint="USERNAME"/>
+                <TextField cssClass="field" text="{{ password }}" hint="PASSWORD" secure="true"/>
+                <TextField cssClass="field" text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION" secure="true"/>
+                <TextField cssClass="field" text="{{ email }}" hint="E-MAIL"/>
 
                 <Label text="Gender"/>
                 <GridLayout orientation="horizontal" columns="*,*">
@@ -50,6 +51,7 @@
             </StackLayout>
 
         </ScrollView>
+
     </GridLayout>
 
 </Page>
