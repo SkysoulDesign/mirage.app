@@ -21,7 +21,7 @@ export class Api {
      * @returns {string}
      */
     public getBase(secure = true):string {
-        return secure ? 'https' : 'http' + '://' + this.apis.base;
+        return (secure ? 'https' : 'http') + '://' + this.apis.base;
     }
 
     /**
