@@ -59,12 +59,13 @@ export var view = function (folder:string, name:string = folder):string {
  */
 export var parseURL = function (url:string):ImageMetaDataInterface {
 
-    url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
-    url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
-    url = url.substring(url.lastIndexOf("/") + 1, url.length);
-    url = url.split('.');
+    var clone = url;
+    clone = clone.substring(0, (clone.indexOf("#") == -1) ? clone.length : clone.indexOf("#"));
+    clone = clone.substring(0, (clone.indexOf("?") == -1) ? clone.length : clone.indexOf("?"));
+    clone = clone.substring(clone.lastIndexOf("/") + 1, clone.length);
+    clone = clone.split('.');
 
-    return {filename: url.join('.'), name: url[0], extension: url[1]};
+    return {filename: clone.join('.'), full: url, name: clone[0], extension: clone[1]};
 };
 
 /**
@@ -74,6 +75,15 @@ export var dot = function (dot, obj):string {
     return dot.split('.').reduce(function (a, b) {
         return a ? a.hasOwnProperty(b) ? a[b] : null : null;
     }, obj);
+};
+
+/**
+ * check if number is even or odd
+ * @param value
+ * @returns {boolean}
+ */
+export var isEven = function (value:number):boolean {
+    return value % 2 == 0 ? true : false;
 };
 
 /**
@@ -173,9 +183,10 @@ export class api {
      * Returns Everything stored on the database
      * @returns {}
      */
-    public static getBase(secure = true): string {
+    public static getBase(secure = true):string {
         return App.api.getBase(secure);
     }
+
     public static get(name:string, secure:boolean = false):ApiUrlInterface {
         return App.api.get(name, secure);
     }
@@ -201,6 +212,7 @@ export class api {
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
+
     public static fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
         return App.api.fetchImage(url, onSuccess, onError);
     }
@@ -256,7 +268,7 @@ export class file {
      * @param fileName
      * @returns {any}
      */
-    public static save(image: imageSource, fileName: string): boolean {
+    public static save(image:imageSource, fileName:string):boolean {
         return image.saveToFile(this.getPath(fileName), ImageFormat.png);
     }
 
@@ -273,7 +285,7 @@ export class file {
      * @returns {boolean}
      */
     public static has(fileName:string):boolean {
-        return fs.File.exists(this.getPath(fileName)) ? true : false;
+        return fs.File.exists(this.getPath(fileName));
     }
 
     /**
@@ -281,8 +293,8 @@ export class file {
      * @param fileName
      * @returns {string}
      */
-    private static getPath(fileName: string) {
-        return fs.path.join(fs.knownFolders.documents().path, config.get('internal_folder_name'), fileName);
+    private static getPath(fileName:string) {
+        return fs.path.join(fs.knownFolders.documents().path, fileName);
     }
 
 }

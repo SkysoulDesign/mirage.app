@@ -2,63 +2,86 @@ import {Observable} from "data/observable";
 import OpenUrl = require( "nativescript-openurl" );
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
-import {navigate, cache, api, config, file} from "../Modules/Helpers";
+import {navigate, cache, api, config, file, parseURL, isEven} from "../Modules/Helpers";
 import {topmost} from "ui/frame";
-import {Image} from "ui/image";
-import ImageSource = require("image-source"); 
+import ImageModule = require("ui/image");
+import ImageSource = require("image-source");
 import {GestureTypes} from "ui/gestures";
+import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+
+
 export class MainPageModel extends Observable {
 
     /**
      * Constructor
      */
     constructor(product_layout) {
+
         super();
+
         if (product_layout.getChildrenCount() > 0)
             return;
+
         /**
          * Set Defaults
          */
-        var user:ApiUserInterface = cache.get('login');
+        var user = <ApiUserInterface>cache.get('login');
 
         this.set('username', user.username);
         this.set('email', user.email);
-        this.init(user,product_layout);
+
+        this.init(user, product_layout);
 
     }
-    private init(user,product_layout) {
-        var _this = this;
-        console.dir(user);
-        for(var x in user.codes) {
-            product_layout.addChild(_this.createImage(user.codes[x].product.image, user.codes[x].product.code));
+
+    /**
+     * Init
+     * @param user
+     * @param product_layout
+     */
+    private init(user, product_layout) {
+
+        for (var x in user.codes) {
+
+            var image = this.createImage(user.codes[x].product.image, user.codes[x].product.code);
+
+            image.cssClass = isEven(x) ? 'background-statue' : 'foreground-statue';
+
+            product_layout.addChild(image);
+
         }
+
     }
-    private createImage(url,name){
-        var _this = this;
-        var image = new Image();
-        if(file.has(name)){
-            image.imageSource = file.load(name);
-            console.log("has");
+
+    private createImage(url:string, name:string):ImageModule.Image {
+
+        var _this = this,
+            image = new ImageModule.Image(),
+            url = parseURL(url);
+
+        console.log(file.has(url.filename));
+
+        if (file.has(url.filename)) {
+
+            image.imageSource = file.load(url.filename);
+
+        } else {
+
+            api.fetchImage(api.getBase() + url.full, function (img, meta) {
+                image.imageSource = img;
+                file.save(img, meta.filename);
+            });
+
         }
-        else{
-            var onSuccess = function(image1, metadata) {
-                image.imageSource = image1;
-                file.save(image1.imageSource, name);
-                console.log("success");
-            }
-            var onError = function(error) {
-                alert(error);
-            }
-            console.log("fetch");
-            api.fetchImage(api.getBase(false) + url, onSuccess, onError);
-        }
-        // image.imageSource = api.getImage("http://192.168.1.253" + url, name);//"http://192.168.1.253"+url;//
-        // console.log("TTTTTTTTTTTTTTT" + api.getBase(false) + url);
-        image.on(GestureTypes.tap, function(args) {
+
+        image.on(GestureTypes.tap, function () {
             _this.tapProduct();
         });
+
         return image;
+
     }
+
     /**
      * Open Camera to Scan QRCode
      */
