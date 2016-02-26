@@ -2,6 +2,10 @@ import {Mirage as App} from "../app";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {NavigationEntry} from "ui/frame";
 import {Observable} from "data/observable";
+import fs = require("file-system");
+import imageSource = require( "image-source");
+import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {ImageFormat} from "ui/enums";
 
 /**
  * Extend Object
@@ -243,11 +247,6 @@ export class config {
     }
 
 }
-
-import fs = require("file-system");
-import imageSource = require( "image-source");
-import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
-import {ImageFormat} from "ui/enums";
 
 export class file {
 

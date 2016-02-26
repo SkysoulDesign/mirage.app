@@ -19,5 +19,4 @@ export function pageLoaded(args) {
         navigate.to('login');
     }, false);
 
-
 }

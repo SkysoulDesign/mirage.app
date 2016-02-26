@@ -64,26 +64,31 @@ export class MainPageModel extends Observable {
      */
     public tapScanQRCode() {
 
+        navigate.to('register-product');
+
+        return;
+
         /**
          * Scan QRCode
          */
-        barcodeScanner.scan({
-            cancelLabel: "Stop Scanning", // iOS only, default 'Close'
-            message: "Go Scan Something", // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
-            preferFrontCamera: false,     // Android only, default false 
-            showFlipCameraButton: true    // Android only, default false (on iOS it's always available) 
-        }).then(function (result) {
-                navigate.to('register-product', {
-                    context: result.text
-                });
-            },
-            function (error) {
-                console.log("No scan: " + error);
-                navigate.to('register-product', {
-                    context: 'MF001-11111-11111-11111'
-                });
-            }
-        );
+        //barcodeScanner.scan({
+        //    cancelLabel: "Stop Scanning", // iOS only, default 'Close'
+        //    message: "Go Scan Something", // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
+        //    preferFrontCamera: false,     // Android only, default false
+        //    showFlipCameraButton: true    // Android only, default false (on iOS it's always available)
+        //}).then(function (result) {
+        //        navigate.to('register-product', {
+        //            context: result.text
+        //        });
+        //    },
+        //    function (error) {
+        //        console.log("No scan: " + error);
+        //        navigate.to('register-product', {
+        //            context: 'MF001-11111-11111-11111'
+        //        });
+        //    }
+        //);
+
     }
 
     /**
@@ -92,7 +97,7 @@ export class MainPageModel extends Observable {
     public tapOpenMenu() {
 
         var sideDrawer = topmost().getViewById("sideDrawer");
-            sideDrawer.toggleDrawerState();
+        sideDrawer.toggleDrawerState();
 
     }
 

@@ -1,24 +1,42 @@
-Label{
-	 horizontal-align: center;
-	 margin-top: 10;
-	 margin-right: 10;
-	 margin-right: 20;
-	 margin-left: 20;
+.stage {
+    background-image: url('res://stage');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+
+    padding: 25px;
+
 }
 
-Button{
-	 horizontal-align: center;
-	 padding: 3;
-	 margin: 20;
-	 font-size: 30;
+.container {
+    background-color: #009fe3;
+    padding: 30px;
 }
-.label-1{
-	horizontal-align: center;
-	margin: 10;
-}
-.lable-big{
-	horizontal-align: center;
-	font-size: 30;
-	margin: 15;
 
+.label {
+    color: white;
+    text-align: center;
+}
+
+.top {
+    font-size: 15px;
+}
+
+.bottom {
+    font-size: 30px;
+}
+
+Button {
+    width: 100%;
+    background-color: white;
+    color: #009fe3;
+    font-size: 20px;
+    border-radius: 2;
+    height: 25%;
+    margin: 10% 0 0 0;
+}
+
+TextField {
+    text-align: center;
+    color: white;
 }

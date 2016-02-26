@@ -7,7 +7,6 @@ export function pageLoaded(args){
 	var page = <Page>args.object;
 	var str = page.navigationContext;
 
-	console.log("str////"+str.substr(0,5));
 	page.bindingContext = new vmModule.RegisterProductPageModel(str);
 
 }
