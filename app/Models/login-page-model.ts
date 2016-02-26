@@ -1,5 +1,6 @@
 import {Observable} from "data/observable";
 import {Mirage as App} from "../app";
+import {navigate} from "../Modules/Helpers";
 
 export class LoginModel extends Observable {
 
@@ -7,20 +8,14 @@ export class LoginModel extends Observable {
      * Register Button
      */
     public tapRegister() {
-
-        var navigationEntry = {
-            backstackVisible: true
-        };
-
-        App.navigate.to('register', navigationEntry);
-
+        navigate.to('register');
     }
 
     /**
      * Login Button
      */
     public tapSignIn() {
-        App.navigate.to('sign-in');
+        navigate.to('sign-in');
     }
 
 }

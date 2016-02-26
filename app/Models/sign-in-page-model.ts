@@ -16,12 +16,12 @@ export class SignInPageModel extends Observable {
 
         var _this = this, data = {
                 credential: this.get('username'),
-                password:   this.get('password')
+                password: this.get('password')
             },
 
             onSuccess = function () {
                 _this.set('isLoading', false);
-                navigate.to('main-page');
+                navigate.to('main-page', {clearHistory: true});
             },
 
             onError = function (errors) {
