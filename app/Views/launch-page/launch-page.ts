@@ -3,7 +3,12 @@ import {cache, api, navigate} from "../../Modules/Helpers";
 
 export function pageLoaded() {
 
+    var counter = 1;
+
     var onSuccess = function () {
+
+        if (counter !== 2)
+            return counter++;
 
         /**
          * Default Options
