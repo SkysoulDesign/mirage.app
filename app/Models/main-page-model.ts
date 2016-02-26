@@ -43,7 +43,7 @@ export class MainPageModel extends Observable {
         else{
             var onSuccess = function(image1, metadata) {
                 image.imageSource = image1;
-                file.save(image1, name);
+                file.save(image1.imageSource, name);
                 console.log("success");
             }
             var onError = function(error) {
