@@ -7,4 +7,5 @@ export interface ApiListInterface {
     products: { POST: string };
     countries:{GET:string};
     ages:{GET:string};
+    registerProduct:{ POST: string };
 }
