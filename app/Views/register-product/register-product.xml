@@ -14,11 +14,10 @@
                 <Label class="label bottom" row="2" text="PRODUCT CODE"/>
             </StackLayout>
 
-            <!--<GridLayout orientation="horizontal" row="1" columns="*,*,*,*">-->
-            <TextField row="1" text="{{ code }}" id="code_input"/>
-            <!--</GridLayout>-->
+            <Label class="label center" row="1" text="{{ code_text }}"/>
+            <TextField row="1" text="{{ code }}" id="code_input" hint="EX: MF001-9YHD-FFF4-XC85"/>
 
-            <Button row="2" text="REGISTER" tap="{{tapRegister}}"/>
+            <Button row="2" text="REGISTER" tap="{{tapRegister}}" id="button_register"/>
 
         </GridLayout>
 
