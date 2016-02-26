@@ -5,10 +5,11 @@ export function pageLoaded() {
 
     var counter = 1;
 
-    var onSuccess = function () {
+    var onSuccess = function (hack = false) {
 
-        if (counter !== 2)
-            return counter++;
+        if (!hack)
+            if (counter !== 2)
+                return counter++;
 
         /**
          * Default Options
@@ -48,7 +49,7 @@ export function pageLoaded() {
     }
 
     if (cache.has('countries') && cache.has('ages')) {
-        onSuccess();
+        onSuccess(true);
     }
 
 }
