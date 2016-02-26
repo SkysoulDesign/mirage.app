@@ -6,7 +6,7 @@ export class Config {
      * List of Apis URL
      */
     public apis:ApiListInterface = {
-        base: "cms.soapstudio.com",
+        base: "192.168.1.253",//cms.soapstudio.com",
         login: {POST: "api/user/login"},
         register: {POST: "api/user/register"},
         checkLogin: {POST: "api/auth/check"},

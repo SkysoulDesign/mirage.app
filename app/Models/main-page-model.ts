@@ -13,9 +13,9 @@ export class MainPageModel extends Observable {
      * Constructor
      */
     constructor(product_layout) {
-
         super();
-
+        if (product_layout.getChildrenCount() > 0)
+            return;
         /**
          * Set Defaults
          */
@@ -28,7 +28,7 @@ export class MainPageModel extends Observable {
     }
     private init(user,product_layout) {
         var _this = this;
-        console.dir(user.codes);
+        console.dir(user);
         for(var x in user.codes) {
             product_layout.addChild(_this.createImage(user.codes[x].product.image, user.codes[x].product.code));
         }
@@ -50,10 +50,10 @@ export class MainPageModel extends Observable {
                 alert(error);
             }
             console.log("fetch");
-            api.fetchImage(api.getBase() + url, onSuccess, onError);
+            api.fetchImage(api.getBase(false) + url, onSuccess, onError);
         }
         // image.imageSource = api.getImage("http://192.168.1.253" + url, name);//"http://192.168.1.253"+url;//
-        console.log("TTTTTTTTTTTTTTT" + api.getBase(true) + url);
+        // console.log("TTTTTTTTTTTTTTT" + api.getBase(false) + url);
         image.on(GestureTypes.tap, function(args) {
             _this.tapProduct();
         });

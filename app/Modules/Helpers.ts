@@ -174,7 +174,7 @@ export class api {
      * @returns {}
      */
     public static getBase(secure = true): string {
-        return App.api.getBase();
+        return App.api.getBase(secure);
     }
     public static get(name:string, secure:boolean = false):ApiUrlInterface {
         return App.api.get(name, secure);
