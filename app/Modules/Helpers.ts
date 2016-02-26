@@ -169,6 +169,9 @@ export class api {
      * Returns Everything stored on the database
      * @returns {}
      */
+    public static getBase(secure = true): string {
+        return App.api.getBase();
+    }
     public static get(name:string, secure:boolean = false):ApiUrlInterface {
         return App.api.get(name, secure);
     }
@@ -193,9 +196,6 @@ export class api {
      */
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
-    }
-    public static getImage(url:string,name:string){
-        return App.api.getImage(url, name);
     }
     public static fetchImage(url:string, onSuccess?:(image:ImageSource, meta:ImageMetaDataInterface)=>void, onError?:(e:any)=>void):Observable {
         return App.api.fetchImage(url, onSuccess, onError);
@@ -254,11 +254,11 @@ export class file {
     /**
      * Save Image
      * @param image
-     * @param filename
+     * @param fileName
      * @returns {any}
      */
-    public static save(image:imageSource, filename:string):boolean {
-        return image.saveToFile(this.getPath(filename), ImageFormat.png);
+    public static save(image: imageSource, fileName: string): boolean {
+        return image.saveToFile(this.getPath(fileName), ImageFormat.png);
     }
 
     /**
@@ -274,16 +274,16 @@ export class file {
      * @returns {boolean}
      */
     public static has(fileName:string):boolean {
-        return fs.File.exists(this.getPath(filename)) ? true : false;
+        return fs.File.exists(this.getPath(fileName)) ? true : false;
     }
 
     /**
      * Get File Path
-     * @param filename
+     * @param fileName
      * @returns {string}
      */
-    private static getPath(filename:string) {
-        return fs.path.join(fs.knownFolders.documents().path, config.get('internal_folder_name'), filename);
+    private static getPath(fileName: string) {
+        return fs.path.join(fs.knownFolders.documents().path, config.get('internal_folder_name'), fileName);
     }
 
 }
