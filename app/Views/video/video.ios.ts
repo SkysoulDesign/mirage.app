@@ -6,6 +6,7 @@ import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view'; // what s the namei
 var changepage = true;
+
 export function pageLoaded(args) {
     if (!changepage)
         return;
