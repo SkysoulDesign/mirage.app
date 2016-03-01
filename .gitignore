@@ -6,4 +6,5 @@
 *.map
 /.idea
 /Resources
+/mirage-key.keystore
 .DS_Store

@@ -21,6 +21,7 @@ export class SignInPageModel extends Observable {
 
             onSuccess = function () {
                 _this.set('isLoading', false);
+
                 navigate.to('main-page', {clearHistory: true});
             },
 

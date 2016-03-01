@@ -34,31 +34,31 @@
 							<TabViewItem.view>
 
 								<ScrollView>
-									<StackLayout>
+									<StackLayout id="extras_container">
 
-										<GridLayout cssClass="card-container">
-											<Image cssClass="card-bg" row="0" src="res://extra_3" stretch="aspectFill" tap="{{ tapProduct}}" />
-											<Label text="PROMOTIONAL VIDEO 3" row="0" cssClass="card-title"/>
-											<Label cssClass="card-description"
-												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-												   row="0"/>
-										</GridLayout>
+										<!--<GridLayout cssClass="card-container">-->
+											<!--<Image cssClass="card-bg" row="0" src="res://extra_3" stretch="aspectFill" tap="{{ tapProduct}}" />-->
+											<!--<Label text="PROMOTIONAL VIDEO 3" row="0" cssClass="card-title"/>-->
+											<!--<Label cssClass="card-description"-->
+												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
+												   <!--row="0"/>-->
+										<!--</GridLayout>-->
 
-										<GridLayout cssClass="card-container">
-											<Image cssClass="card-bg" row="0" src="res://extra_1" stretch="aspectFill"/>
-											<Label text="PROMOTIONAL VIDEO 1" row="0" cssClass="card-title"/>
-											<Label cssClass="card-description"
-												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-												   row="0"/>
-										</GridLayout>
+										<!--<GridLayout cssClass="card-container">-->
+											<!--<Image cssClass="card-bg" row="0" src="res://extra_1" stretch="aspectFill"/>-->
+											<!--<Label text="PROMOTIONAL VIDEO 1" row="0" cssClass="card-title"/>-->
+											<!--<Label cssClass="card-description"-->
+												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
+												   <!--row="0"/>-->
+										<!--</GridLayout>-->
 
-										<GridLayout cssClass="card-container">
-											<Image cssClass="card-bg" row="0" src="res://extra_2" stretch="aspectFill"/>
-											<Label text="PROMOTIONAL VIDEO 2" row="0" cssClass="card-title"/>
-											<Label cssClass="card-description"
-												   text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-												   row="0"/>
-										</GridLayout>
+										<!--<GridLayout cssClass="card-container">-->
+											<!--<Image cssClass="card-bg" row="0" src="res://extra_2" stretch="aspectFill"/>-->
+											<!--<Label text="PROMOTIONAL VIDEO 2" row="0" cssClass="card-title"/>-->
+											<!--<Label cssClass="card-description"-->
+												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
+												   <!--row="0"/>-->
+										<!--</GridLayout>-->
 
 									</StackLayout>
 								</ScrollView>

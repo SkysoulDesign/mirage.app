@@ -1,6 +1,52 @@
 import {CreateViewEventData} from "ui/placeholder";
+import {Page} from "ui/page";
+import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
+import {Placeholder} from "ui/placeholder";
+import {Image} from "ui/image";
+import {Label} from "ui/label";
 
-export function createVideoView(placeholder:CreateViewEventData) {
+export function pageLoaded(args) {
+
+    var page = <Page>args.object,
+        surfaceView:Label = page.getViewById('video_player'),
+        extras:ApiExtraInterface = page.navigationContext;
+
+    //surfaceView.requestLayout();
+
+
+    //
+    //
+    var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    var mVideoURL = android.net.Uri.parse(videoLink);
+    //
+    //
+    ////surfaceView._nativeView.addSubview(mediaPlayer);
+    ////var surfaceView = android.widget.VideoView(surfaceView._nativeView.getContext());
+    //
+    var mediaPlayer = new android.media.MediaPlayer.create(
+        surfaceView._nativeView.getContext(),
+        mVideoURL
+    );
+
+    mediaPlayer.setSurface(surfaceView._nativeView);
+
+    //,
+    //surfaceView._nativeView.getHolder()
+    mediaPlayer.prepare();
+    mediaPlayer.start();
+
+    //console.dir(mediaPlayer);
+
+    //page.bindingContext = new vmModule.ProductMainPageModel(container);
+}
+
+export function createVideoView(args:CreateViewEventData) {
+
+    var texture = new 	android.graphics.SurfaceTexture(11)
+
+    args.view = new android.view.Surface(texture);
+
+    return;
 
     var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
     var mVideoURL = android.net.Uri.parse(videoLink);

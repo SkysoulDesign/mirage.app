@@ -43,7 +43,7 @@ export class MainPageModel extends Observable {
 
         for (var x in user.codes) {
 
-            var image = this.createImage(user.codes[x].product.image, user.codes[x].product.code);
+            var image = this.createImage(user.codes[x].product.image);
 
             image.cssClass = isEven(x) ? 'background-statue' : 'foreground-statue';
 
@@ -53,26 +53,15 @@ export class MainPageModel extends Observable {
 
     }
 
-    private createImage(url:string, name:string):ImageModule.Image {
+    private createImage(url:string):ImageModule.Image {
 
         var _this = this,
             image = new ImageModule.Image(),
             url = parseURL(url);
 
-        console.log(file.has(url.filename));
-
-        if (file.has(url.filename)) {
-
-            image.imageSource = file.load(url.filename);
-
-        } else {
-
-            api.fetchImage(api.getBase() + url.full, function (img, meta) {
-                image.imageSource = img;
-                file.save(img, meta.filename);
-            });
-
-        }
+        api.fetchImage(api.getBase() + url.full, function (imageSource) {
+            image.imageSource = imageSource;
+        });
 
         image.on(GestureTypes.tap, function () {
             _this.tapProduct();

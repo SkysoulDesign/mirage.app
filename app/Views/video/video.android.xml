@@ -1,6 +1,8 @@
-<Page android:actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+<Page android:actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
     <!--<GridLayout rows="*,*">-->
-    <Placeholder row="0" creatingView="createVideoView"/>
+    <!--<Placeholder row="0" creatingView="createVideoView"/>-->
+    <!--<Placeholder row="0" creatingView="createVideoView"/>-->
+    <Placeholder id="video_player" cssClass="grid-info" creatingView="createVideoView"/>
     <!--<GridLayout row="1" columns="*,2*" cssClass="grid-info" >-->
     <!--<Image src="~/image/soap.png" cssClass="image" stretch="fill" />-->
     <!--<GridLayout col="1" rows="auto,auto,*" cssClass="grid-left">-->

@@ -2,7 +2,7 @@ import {Mirage as App} from "../app";
 import {alert} from "ui/dialogs";
 import http = require('http');
 import {ApiListInterface} from "../Interfaces/ApiListInterface";
-import {extend, dot, parseURL, cache, config} from "./Helpers";
+import {extend, dot, parseURL, cache, config, file} from "./Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {Observable} from "data/observable";
 import {ImageSource} from "image-source";
@@ -163,8 +163,27 @@ export class Api {
         var image:Observable = new Observable(),
             metaData = parseURL(url);
 
+        /**
+         * if already cached, then load it
+         */
+        if (file.has(metaData.filename)) {
+
+            image.set('data', file.load(metaData.filename));
+            onSuccess(image.get('data'), metaData);
+
+            return image;
+
+        }
+
         http.getImage(url).then(function (r) {
+
             image.set('data', r);
+
+            /**
+             * Cache it locally
+             */
+            file.save(r, metaData.filename);
+
             if (onSuccess instanceof Function)
                 onSuccess(r, metaData)
         }, function (e) {
