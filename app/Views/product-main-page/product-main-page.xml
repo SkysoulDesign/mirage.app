@@ -1,4 +1,5 @@
 <Page loaded="pageLoaded"
+	  unloaded="pageUnloaded"
 	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
 	  xmlns="http://www.nativescript.org/tns.xsd"
 	  android:actionBarHidden="true">

@@ -4,57 +4,117 @@ import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
 import {Placeholder} from "ui/placeholder";
 import {Image} from "ui/image";
 import {Label} from "ui/label";
+import StackLayout = org.nativescript.widgets.StackLayout;
+import VideoView = android.widget.VideoView;
+import application = require("application");
+import Activity = android.app.Activity;
+import orientationModule = require("nativescript-screen-orientation");
+import statusBar = require("nativescript-status-bar");
+import {api} from "../../Modules/Helpers";
+import activityIndicatorModule = require("ui/activity-indicator");
 
 export function pageLoaded(args) {
 
     var page = <Page>args.object,
-        surfaceView:Label = page.getViewById('video_player'),
-        extras:ApiExtraInterface = page.navigationContext;
+        video = page.getViewById('video_player'),
+        container = page.getViewById('container'),
+        extras = <ApiExtraInterface>page.navigationContext;
 
-    //surfaceView.requestLayout();
+    /**
+     * hide Status Bar
+     */
+    statusBar.hide();
 
+    var indicator = new activityIndicatorModule.ActivityIndicator();
+        indicator.busy = true;
+        indicator.width = 100;
+        indicator.height = 100;
+        indicator.color = 'green';
 
+    container.addChild(indicator);
+
+    orientationModule.setCurrentOrientation("landscape", function () {
+
+        var videoView:VideoView = video._nativeView,
+
+            url = api.getBase() + extras.video,
+            uri = android.net.Uri.parse(url);
+
+        var controller =  new android.widget.MediaController(videoView.getContext());
+
+        var listener = android.media.MediaPlayer.OnPreparedListener.extend({
+            onPrepared(player){
+                indicator.busy = false;
+                player.start();
+            }
+        });
+
+        videoView.setMediaController(controller);
+        videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(new listener());
+
+    });
+
+}
+
+export function onNavigatingFrom() {
+    orientationModule.orientationCleanup();
+}
+
+export function pageUnloaded(){
+    console.log('tchau')
+}
+
+export function createVideoView(args:CreateViewEventData) {
+
+    console.log('Starting Video >>>>>>');
+
+    //var texture = new android.graphics.SurfaceTexture(11);
+
+    args.view = new android.widget.VideoView(args.context);
+    //    controller = new android.widget.MediaController(args.context);
     //
+    //var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    //var mVideoURL = android.net.Uri.parse(videoLink);
     //
-    var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
-    var mVideoURL = android.net.Uri.parse(videoLink);
+    //var listener = android.media.MediaPlayer.OnPreparedListener.extend({
+    //    onPrepared(player){
+    //        console.log('ready');
+    //        player.start();
+    //    }
+    //});
+    //
+    //videoView.setMediaController(controller);
+    //videoView.setVideoURI(mVideoURL);
+    //videoView.setOnPreparedListener(new listener());
+    //videoView.bringToFront();
+    //videoView.refreshDrawableState();
+    //videoView.requestLayout();
+    //videoView.requestFocus();
+    //videoView.setTop(5);
+    //
+    //var params = new android.view.ViewGroup.LayoutParams(200,200);
+    //
+    //console.dir(videoView.setLayoutParams(params));
+    //console.dir(videoView.getMeasuredHeightAndState());
+
+
     //
     //
     ////surfaceView._nativeView.addSubview(mediaPlayer);
     ////var surfaceView = android.widget.VideoView(surfaceView._nativeView.getContext());
     //
-    var mediaPlayer = new android.media.MediaPlayer.create(
-        surfaceView._nativeView.getContext(),
-        mVideoURL
-    );
 
-    mediaPlayer.setSurface(surfaceView._nativeView);
-
-    //,
-    //surfaceView._nativeView.getHolder()
-    mediaPlayer.prepare();
-    mediaPlayer.start();
-
-    //console.dir(mediaPlayer);
-
-    //page.bindingContext = new vmModule.ProductMainPageModel(container);
-}
-
-export function createVideoView(args:CreateViewEventData) {
-
-    var texture = new 	android.graphics.SurfaceTexture(11)
-
-    args.view = new android.view.Surface(texture);
 
     return;
 
-    var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
-    var mVideoURL = android.net.Uri.parse(videoLink);
-    var mediaPlayer = new android.media.MediaPlayer.create(placeholder.context, mVideoURL);
-    mediaPlayer.start();
-
-
-    placeholder.view = mediaPlayer;
+    //var videoLink = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    //var mVideoURL = android.net.Uri.parse(videoLink);
+    //var mediaPlayer = new android.media.MediaPlayer.create(placeholder.context, mVideoURL);
+    //mediaPlayer.start();
+    //
+    //
+    //placeholder.view = mediaPlayer;
     //var videoView = new android.widget.VideoView(placeholder.context),
     //    mMediaController = new android.widget.MediaController(placeholder.context);
     //mMediaController.setAnchorView(videoView);

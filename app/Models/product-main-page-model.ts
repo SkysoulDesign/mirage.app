@@ -1,7 +1,7 @@
 import {Observable} from "data/observable";
 import {cache, navigate, api} from "../Modules/Helpers";
 import {topmost} from "ui/frame";
-import {ApiUserInterface, ApiExtraInterface} from "../Interfaces/ApiUserInterface";
+import {ApiUserInterface, ApiExtraInterface, ApiProductInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
 import OpenUrl = require( "nativescript-openurl" );
 import {StackLayout} from "ui/layouts/stack-layout";
@@ -21,26 +21,28 @@ export class ProductMainPageModel extends Observable {
     /**
      * Constructor
      */
-    constructor(container:StackLayout) {
+    constructor(container:StackLayout, product:ApiProductInterface) {
 
         super();
-
-        var _this = this;
 
         /**
          * Set Loading
          */
         this.set('isLoading', true);
 
-        api.fetch('product', {'product_id': 'MF001'}, function (data) {
+        for (var extra in product.extras) {
+            this.setupContainer(container, product.extras[extra]);
+        }
 
-            _this.counter = data.extras.length;
-
-            for (var extra in data.extras) {
-                _this.setupContainer(container, data.extras[extra]);
-            }
-
-        });
+        //api.fetch('product', {'product_id': product.id}, function (data) {
+        //
+        //    _this.counter = data.extras.length;
+        //
+        //    for (var extra in data.extras) {
+        //        _this.setupContainer(container, data.extras[extra]);
+        //    }
+        //
+        //});
 
         /**
          * Set Defaults
@@ -61,24 +63,24 @@ export class ProductMainPageModel extends Observable {
 
         var _this = this,
             grid = new GridLayout();
-            grid.className = 'card-container';
-            grid.on(GestureTypes.tap, function () {
-                navigate.to('video', { context:extra })
-            });
+        grid.className = 'card-container';
+        grid.on(GestureTypes.tap, function () {
+            navigate.to('video', {context: extra})
+        });
 
         var loading = new activityIndicatorModule.ActivityIndicator();
-            loading.busy = true;
+        loading.busy = true;
 
         var title = new LabelModule.Label();
-            title.text = extra.title;
-            title.className = "card-title";
+        title.text = extra.title;
+        title.className = "card-title";
 
         var description = new LabelModule.Label();
-            description.text = extra.description;
-            description.className = "card-description";
+        description.text = extra.description;
+        description.className = "card-description";
 
         var image = new imageModule.Image();
-            image.className = 'card-bg';
+        image.className = 'card-bg';
 
         api.fetchImage(api.getBase() + extra.image, function (imageSource) {
             image.imageSource = imageSource;

@@ -1,39 +1,51 @@
-.grid-info{
-	margin-top: 20;
-	margin-left: 5;
-	margin-right: 5;
-	margin-bottom: 10;
+Page {
+    background-color: black;
 }
-.grid-left{
-	margin: 5;
-	background-color: #65553C;
+
+.grid-info {
+    margin-top: 20;
+    margin-left: 5;
+    margin-right: 5;
+    margin-bottom: 10;
 }
-.grid-intro{
-	background-color: white;
+
+.grid-left {
+    margin: 5;
+    background-color: #65553C;
 }
-.image{
-	background-color: #65553C;
-	vertical-align: center;
+
+.grid-intro {
+    background-color: white;
 }
-.label-name{
-	background-color: #65553C;
-	font-size: 20;
-	horizontal-align: center;
+
+.image {
+    background-color: #65553C;
+    vertical-align: center;
 }
-.label-infotop{
-	font-size: 15;
-	margin-top: 10;
-	margin-left: 10;
+
+.label-name {
+    background-color: #65553C;
+    font-size: 20;
+    horizontal-align: center;
 }
-.label-infochild{
-	font-size: 15;
-	margin-left: 10;
+
+.label-infotop {
+    font-size: 15;
+    margin-top: 10;
+    margin-left: 10;
 }
-.label-infodown{
-	font-size: 15;
-	margin-left: 10;
-	margin-bottom: 10;
+
+.label-infochild {
+    font-size: 15;
+    margin-left: 10;
 }
-.image-video{
-	background-color: red;
+
+.label-infodown {
+    font-size: 15;
+    margin-left: 10;
+    margin-bottom: 10;
+}
+
+.image-video {
+    background-color: red;
 }

@@ -64,7 +64,7 @@ export class MainPageModel extends Observable {
         });
 
         image.on(GestureTypes.tap, function () {
-            _this.tapProduct();
+            _this.tapProduct(url.filename);
         });
 
         return image;
@@ -116,8 +116,8 @@ export class MainPageModel extends Observable {
     /**
      * Open Camera to soap
      */
-    public tapProduct() {
-        navigate.to('product-main-page');
+    public tapProduct(code) {
+        navigate.to('product-main-page', {context: {code: code}});
     };
 
     /**

@@ -17,3 +17,13 @@ export interface ApiExtraInterface {
     created_at: string,
     updated_at: string
 }
+
+export interface ApiProductInterface {
+    id: number,
+    name: string,
+    code: string,
+    image: string,
+    video: string,
+    extras: ApiExtraInterface
+}
+

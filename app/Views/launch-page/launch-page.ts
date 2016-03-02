@@ -1,5 +1,6 @@
 import {Mirage as App} from "../../app";
 import {cache, api, navigate,file} from "../../Modules/Helpers";
+import frameModule = require("ui/frame");
 
 export function pageLoaded() {
 
