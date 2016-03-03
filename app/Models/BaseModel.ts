@@ -16,20 +16,29 @@ export class BaseModel extends Observable implements BaseModelInterface {
     }
 
     /**
-     * Init Class only once
+     * Init Class
      */
-    public initOnce(bindings) {
+    public init(bindings) {
 
         if (bindings instanceof Object)
             this.bind(bindings);
 
+        this.setup();
+        this.initialized = true;
+
+        return this;
+
+    }
+
+    /**
+     * Init Class only once
+     */
+    public initOnce(bindings) {
+
         if (this.initialized === true)
             return this;
 
-        this.initialized = true;
-        this.init();
-
-        return this;
+        return this.init(bindings);
 
     }
 

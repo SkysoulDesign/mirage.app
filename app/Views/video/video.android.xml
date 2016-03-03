@@ -1,4 +1,6 @@
-<Page android:actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page android:actionBarHidden="true"
+      xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatedTo="pageNavigatedTo">
 
     <GridLayout id="container" width="*" height="*">
         <Placeholder id="video_player" creatingView="createVideoView"/>

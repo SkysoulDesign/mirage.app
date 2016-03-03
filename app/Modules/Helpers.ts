@@ -110,7 +110,7 @@ export class cache {
      * @param defaults
      * @returns string
      */
-    public static get(key:string, defaults?:string):string {
+    public static get(key:string, defaults?:string):string|{} {
         return App.api.getCache(key, defaults);
     }
 

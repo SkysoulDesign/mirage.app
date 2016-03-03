@@ -15,8 +15,9 @@ import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ApiCodesInterface} from "../Interfaces/ApiUserInterface";
 import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
+import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 
-export class ProductMainPageModel extends BaseModel {
+export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
     private page:Page;
     private user:ApiUserInterface;
@@ -30,16 +31,6 @@ export class ProductMainPageModel extends BaseModel {
     constructor() {
 
         super();
-
-        /**
-         * Set Defaults
-         */
-        this.user = cache.get('login');
-
-        this.set('username', this.user.username);
-        this.set('email', this.user.email);
-
-        console.log('FOII UMA VEZ PORRA')
 
         /**
          * Profile Tab
@@ -64,25 +55,42 @@ export class ProductMainPageModel extends BaseModel {
         this.components.figure.image.className = 'statue';
 
         /**
-         * Extra Content
-         * @type {{title: "ui/label".Label, description: "ui/label".Label, image: "ui/image".Image}}
+         * Extra Container
+         * @returns {{title, description, loading: activityIndicatorModule.ActivityIndicator, image, grid: org.nativescript.widgets.GridLayout}}
          */
-        this.components.extra = {
-            title: new LabelModule.Label(),
-            description: new LabelModule.Label(),
-            loading: new activityIndicatorModule.ActivityIndicator(),
-            image: new imageModule.Image(),
-            grid: new gridModule.GridLayout()
-        };
+        this.components.extra = function () {
 
-        this.components.extra.title.className = "card-title";
-        this.components.extra.description.className = "card-description";
-        this.components.extra.image.className = 'card-bg';
-        this.components.extra.grid.className = 'card-container';
+            /**
+             * Extra Content
+             * @type {{title: "ui/label".Label, description: "ui/label".Label, image: "ui/image".Image}}
+             */
+            var extra = {
+                title: new LabelModule.Label(),
+                description: new LabelModule.Label(),
+                loading: new activityIndicatorModule.ActivityIndicator(),
+                image: new imageModule.Image(),
+                grid: new gridModule.GridLayout()
+            };
+
+            extra.title.className = "card-title";
+            extra.description.className = "card-description";
+            extra.image.className = 'card-bg';
+            extra.grid.className = 'card-container';
+
+            return extra;
+
+        };
 
     }
 
-    public init() {
+    /**
+     * Setup
+     */
+    public setup() {
+
+        this.set('username', this.user.username);
+        this.set('email', this.user.email);
+        this.set('title', this.codes.product.name);
 
         var components = this.components;
 
@@ -93,39 +101,21 @@ export class ProductMainPageModel extends BaseModel {
         var figure_container = this.page.getViewById('product_container');
             figure_container.addChild(components.figure.image);
 
-        var extra_container = this.page.getViewById('extras_container');
+        var extra_container = <StackLayout>this.page.getViewById('extras_container');
 
-            components.extra.grid.addChild(components.extra.title);
-            components.extra.grid.addChild(components.extra.description);
-            components.extra.grid.addChild(components.extra.loading);
-            components.extra.grid.addChild(components.extra.image);
-
-            extra_container.addChild(components.extra.grid);
-
-
-
-
-
-        //for (var extra in this.codes.product.extras) {
-        //    this.setupContainer(this.codes.product.extras[extra]);
-        //}
-
-    }
-
-    /**
-     * Refresh Page Data
-     */
-    public refresh(){
+        for (var extra in this.codes.product.extras) {
+            this.setupContainer(extra_container, this.codes.product.extras[extra]);
+        }
 
         this.addFigureImage();
-        this.setupProfile();
+        this.setupProfileTab();
 
     }
 
     /**
      * Setup profile tab
      */
-    private setupProfile() {
+    private setupProfileTab() {
         this.components.profile.name.text = this.codes.product.name;
         this.components.profile.code.text = this.codes.code;
     }
@@ -139,24 +129,39 @@ export class ProductMainPageModel extends BaseModel {
 
     /**
      * Setup extra container viewer
+     * @param container
      * @param extra
      */
-    private setupContainer(extra:ApiExtraInterface) {
+    private setupContainer(container, extra:ApiExtraInterface) {
 
-        //this.components.extra.grid.on(GestureTypes.tap, function () {
-        //    navigate.to('video', {context: extra})
-        //});
+        var comp = this.components.extra();
 
-        this.components.extra.loading.busy = true;
-        this.components.extra.title.text = extra.title;
-        this.components.extra.description.text = extra.description;
+        comp.grid.className = 'card-container';
+        comp.grid.on(GestureTypes.tap, function () {
+            navigate.to('video', {context: extra})
+        });
 
-        var _this = this;
+        comp.loading.busy = true;
+
+        comp.title.text = extra.title;
+        comp.title.className = "card-title";
+
+        comp.description.text = extra.description;
+        comp.description.className = "card-description";
+
+        comp.image.className = 'card-bg';
 
         api.fetchImage(api.getBase() + extra.image, function (imageSource) {
-            _this.components.extra.image.imageSource = imageSource;
-            loading.busy = false;
+            comp.image.imageSource = imageSource;
+            comp.loading.busy = false;
         });
+
+        comp.grid.addChild(comp.image);
+        comp.grid.addChild(comp.title);
+        comp.grid.addChild(comp.description);
+        comp.grid.addChild(comp.loading);
+
+        container.addChild(comp.grid);
 
     }
 
@@ -164,9 +169,7 @@ export class ProductMainPageModel extends BaseModel {
      * Open Camera to Scan QRCode
      */
     public tapScanQRCode() {
-        //navigate.to('register-product');
-        navigate.to('main-page');
-        //navigate.back();
+        navigate.to('register-product');
     }
 
     public tapProduct() {

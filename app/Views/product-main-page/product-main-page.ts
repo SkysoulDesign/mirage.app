@@ -2,19 +2,20 @@ import {ProductMainPageModel} from "../../Models/product-main-page-model";
 import {Page} from 'ui/page';
 import {StackLayout} from "ui/layouts/stack-layout";
 import orientationModule = require("nativescript-screen-orientation");
-import {cache, navigate} from "../../Modules/Helpers";
+import {cache} from "../../Modules/Helpers";
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
-import {GridLayout} from "ui/layouts/grid-layout";
-import {ApiUrlInterface} from "../../Interfaces/ApiUrlInterface";
-import {observable} from "ui/core/view";
 
-var model = new ProductMainPageModel();
+export function pageNavigatedTo(args) {
 
-export function pageNavigatedTo(args:observable.EventData) {
+    if (args.isBackNavigation)
+        return;
 
     var page = <Page>args.object,
         context = page.navigationContext.url,
-        user:ApiUserInterface = cache.get('login');
+        user = <ApiUserInterface>cache.get('login');
+
+
+    var model = new ProductMainPageModel();
 
     for (var index in user.codes) {
         if (user.codes[index].product.code === context.name) {
@@ -22,24 +23,15 @@ export function pageNavigatedTo(args:observable.EventData) {
         }
     }
 
-    page.bindingContext = model.initOnce({
+    page.bindingContext = model.init({
         page: page,
         codes: codes,
-        context: context
+        context: context,
+        user: user
     });
-
-    model.refresh();
-    console.dir(model);
-
-}
-
-export function pageNavigatingTo(){
 
 }
 
 export function pageNavigatedFrom() {
-    console.log('im navigating from');
-    //orientationModule.orientationCleanup();
-    //navigate.to('main-page');
-    //navigate.to('main-page');
+    orientationModule.orientationCleanup();
 }

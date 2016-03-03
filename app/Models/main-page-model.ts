@@ -1,5 +1,4 @@
 import {Observable} from "data/observable";
-import OpenUrl = require( "nativescript-openurl" );
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
 import {navigate, cache, api, config, file, parseURL, isEven} from "../Modules/Helpers";
@@ -14,8 +13,9 @@ import {page} from "ui/builder";
 import {Page} from "ui/page";
 import application = require('application')
 import {BaseModel} from "./BaseModel";
+import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 
-export class MainPageModel extends BaseModel {
+export class MainPageModel extends BaseModelWithMainNavigation {
 
     private user:ApiUserInterface;
 
@@ -49,9 +49,9 @@ export class MainPageModel extends BaseModel {
 
 
     /**
-     * Init
+     * Setup
      */
-    private init() {
+    private setup() {
 
         var container = <Page>this.get('page').getViewById("product_layout");
 
@@ -84,51 +84,6 @@ export class MainPageModel extends BaseModel {
         return image;
 
     }
-
-    /**
-     * Open Camera to Scan QRCode
-     */
-    public tapScanQRCode() {
-        navigate.to('register-product');
-    }
-
-    /**
-     * Open Menu
-     */
-    public tapOpenMenu() {
-
-        var sideDrawer = topmost().getViewById("sideDrawer");
-        sideDrawer.toggleDrawerState();
-
-    }
-
-    /**
-     * Open Camera to soap
-     */
-    public tapProduct(url:ApiUrlInterface) {
-        navigate.to('product-main-page', {context: {url: url}});
-    };
-
-    /**
-     * Open Camera to soap
-     */
-    public tapSoap() {
-        OpenUrl("http://www.soapstudio.com");
-    };
-
-    /**
-     * Open Camera to new
-     */
-    public tapNews() {
-        navigate.to("mirage-news");
-    };
-
-    /**
-     * Open Camera to settings
-     */
-    public tapSetting() {
-        navigate.to("settings");
-    };
 
 }
 

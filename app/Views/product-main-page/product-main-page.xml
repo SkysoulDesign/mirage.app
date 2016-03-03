@@ -1,6 +1,5 @@
 <Page navigatedTo="pageNavigatedTo"
-	  navigatedFrom="pageNavigatedFrom"
-	  navigatingTo="pageNavigatingTo"
+	  navigatingFrom="pageNavigatedFrom"
 	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
 	  xmlns="http://www.nativescript.org/tns.xsd"
 	  android:actionBarHidden="true">
@@ -17,7 +16,7 @@
 						   horizontalAlignment="center" verticalAlignment="center"
 						   stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
 
-					<Label text="BATMAN" cssClass="mirage-label" col="1" horizontalAlignment="left"
+					<Label text="{{ title }}" cssClass="mirage-label" col="1" horizontalAlignment="left"
 						   verticalAlignment="center"/>
 
 					<Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
@@ -48,7 +47,7 @@
 
 								<StackLayout cssClass="details-container">
 									<StackLayout id="profile_container" cssClass="details-header-container">
-										<!--<Label cssClass="header-title" text="Batman Stand Version I"/>-->
+										<!--<Label cssClass="header-title" text="{{ test }}"/>-->
 										<!--<Label cssClass="header-description" text="MF001-1205-9D0C-8CC7"/>-->
 									</StackLayout>
 								</StackLayout>

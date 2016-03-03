@@ -1,6 +1,7 @@
 export interface BaseModelInterface {
     initialized:boolean,
     initOnce(any):this,
-    init():void,
+    init(any):this,
     bind(any):this,
+    setup():void
 }
