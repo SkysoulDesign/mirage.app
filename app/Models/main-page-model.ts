@@ -8,46 +8,60 @@ import ImageModule = require("ui/image");
 import ImageSource = require("image-source");
 import {GestureTypes} from "ui/gestures";
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
+import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
+import {page} from "ui/builder";
+import {Page} from "ui/page";
+import application = require('application')
+import {BaseModel} from "./BaseModel";
 
+export class MainPageModel extends BaseModel {
 
-export class MainPageModel extends Observable {
+    private user:ApiUserInterface;
 
     /**
      * Constructor
      */
-    constructor(product_layout) {
+    constructor() {
 
         super();
-
-        //if (product_layout.getChildrenCount() > 0)
-        //    return;
 
         /**
          * Set Defaults
          */
-        var user:ApiUserInterface = cache.get('login');
+        this.user = cache.get('login');
 
-        this.set('username', user.username);
-        this.set('email', user.email);
+        this.set('username', this.user.username);
+        this.set('email', this.user.email);
 
-        this.init(user, product_layout);
+        //this.init();
 
     }
 
     /**
-     * Init
-     * @param user
-     * @param product_layout
+     * Refresh User
      */
-    private init(user, product_layout) {
+    public refreshLogin() {
+        api.fetch('checkLogin', {}, null, function (error) {
+            navigate.to('login', {clearHistory: true});
+        }, false);
+    }
 
-        for (var x in user.codes) {
 
-            var image = this.createImage(user.codes[x].product.image);
+    /**
+     * Init
+     */
+    private init() {
+
+        var container = <Page>this.get('page').getViewById("product_layout");
+
+        for (var x in this.user.codes) {
+
+            var image = this.createImage(this.user.codes[x].product.image);
 
             image.cssClass = isEven(x) ? 'background-statue' : 'foreground-statue';
 
-            product_layout.addChild(image);
+            container.addChild(image);
 
         }
 
@@ -64,7 +78,7 @@ export class MainPageModel extends Observable {
         });
 
         image.on(GestureTypes.tap, function () {
-            _this.tapProduct(url.filename);
+            _this.tapProduct(url);
         });
 
         return image;
@@ -75,32 +89,7 @@ export class MainPageModel extends Observable {
      * Open Camera to Scan QRCode
      */
     public tapScanQRCode() {
-
         navigate.to('register-product');
-
-        return;
-
-        /**
-         * Scan QRCode
-         */
-        //barcodeScanner.scan({
-        //    cancelLabel: "Stop Scanning", // iOS only, default 'Close'
-        //    message: "Go Scan Something", // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
-        //    preferFrontCamera: false,     // Android only, default false
-        //    showFlipCameraButton: true    // Android only, default false (on iOS it's always available)
-        //}).then(function (result) {
-        //        navigate.to('register-product', {
-        //            context: result.text
-        //        });
-        //    },
-        //    function (error) {
-        //        console.log("No scan: " + error);
-        //        navigate.to('register-product', {
-        //            context: 'MF001-11111-11111-11111'
-        //        });
-        //    }
-        //);
-
     }
 
     /**
@@ -116,8 +105,8 @@ export class MainPageModel extends Observable {
     /**
      * Open Camera to soap
      */
-    public tapProduct(code) {
-        navigate.to('product-main-page', {context: {code: code}});
+    public tapProduct(url:ApiUrlInterface) {
+        navigate.to('product-main-page', {context: {url: url}});
     };
 
     /**

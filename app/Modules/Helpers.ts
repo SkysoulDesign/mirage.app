@@ -6,6 +6,7 @@ import fs = require("file-system");
 import imageSource = require( "image-source");
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ImageFormat} from "ui/enums";
+import {ImageSource} from "image-source";
 
 /**
  * Extend Object

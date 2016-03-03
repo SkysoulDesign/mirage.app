@@ -1,5 +1,6 @@
-<Page loaded="pageLoaded"
-	  unloaded="pageUnloaded"
+<Page navigatedTo="pageNavigatedTo"
+	  navigatedFrom="pageNavigatedFrom"
+	  navigatingTo="pageNavigatingTo"
 	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
 	  xmlns="http://www.nativescript.org/tns.xsd"
 	  android:actionBarHidden="true">
@@ -25,8 +26,8 @@
 
 				</GridLayout>
 
-				<GridLayout cssClass="stage" row="1">
-					<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>
+				<GridLayout id="product_container" cssClass="stage" row="1">
+					<!--<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>-->
 				</GridLayout>
 
 				<TabView row="2">
@@ -37,30 +38,6 @@
 								<ScrollView>
 									<StackLayout id="extras_container">
 
-										<!--<GridLayout cssClass="card-container">-->
-											<!--<Image cssClass="card-bg" row="0" src="res://extra_3" stretch="aspectFill" tap="{{ tapProduct}}" />-->
-											<!--<Label text="PROMOTIONAL VIDEO 3" row="0" cssClass="card-title"/>-->
-											<!--<Label cssClass="card-description"-->
-												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
-												   <!--row="0"/>-->
-										<!--</GridLayout>-->
-
-										<!--<GridLayout cssClass="card-container">-->
-											<!--<Image cssClass="card-bg" row="0" src="res://extra_1" stretch="aspectFill"/>-->
-											<!--<Label text="PROMOTIONAL VIDEO 1" row="0" cssClass="card-title"/>-->
-											<!--<Label cssClass="card-description"-->
-												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
-												   <!--row="0"/>-->
-										<!--</GridLayout>-->
-
-										<!--<GridLayout cssClass="card-container">-->
-											<!--<Image cssClass="card-bg" row="0" src="res://extra_2" stretch="aspectFill"/>-->
-											<!--<Label text="PROMOTIONAL VIDEO 2" row="0" cssClass="card-title"/>-->
-											<!--<Label cssClass="card-description"-->
-												   <!--text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."-->
-												   <!--row="0"/>-->
-										<!--</GridLayout>-->
-
 									</StackLayout>
 								</ScrollView>
 
@@ -70,9 +47,9 @@
 							<TabViewItem.view>
 
 								<StackLayout cssClass="details-container">
-									<StackLayout cssClass="details-header-container">
-										<Label cssClass="header-title" text="Batman Stand Version I"/>
-										<Label cssClass="header-description" text="MF001-1205-9D0C-8CC7"/>
+									<StackLayout id="profile_container" cssClass="details-header-container">
+										<!--<Label cssClass="header-title" text="Batman Stand Version I"/>-->
+										<!--<Label cssClass="header-description" text="MF001-1205-9D0C-8CC7"/>-->
 									</StackLayout>
 								</StackLayout>
 

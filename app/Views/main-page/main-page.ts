@@ -1,23 +1,22 @@
-import vmModule = require("../../Models/main-page-model");
+import {MainPageModel} from "../../Models/main-page-model";
 import {Page} from 'ui/page';
-import http = require('http');
-import {Mirage as App} from "../../app";
-import {cache, api, navigate, database} from "../../Modules/Helpers";
+import { api, navigate, database} from "../../Modules/Helpers";
+import {NavigatedData} from "ui/page";
 
-export function pageLoaded(args) {
+var mainPageModel = new MainPageModel();
+
+export function pageNavigatedTo(args:NavigatedData) {
 
     var page = <Page>args.object;
-    var product_layout = page.getViewById("product_layout");
-
-    page.bindingContext = new vmModule.MainPageModel(product_layout);
+        page.bindingContext = mainPageModel.initOnce({page: page});
 
     /**
      * Check if User Token is Valid.
      * Otherwise redirect user to login page
      * Use Http.request
      */
-    api.fetch('checkLogin', {}, null, function (error) {
-        navigate.to('login');
-    }, false);
+    mainPageModel.refreshLogin();
+
+    console.log('pageNavigatedTo')
 
 }

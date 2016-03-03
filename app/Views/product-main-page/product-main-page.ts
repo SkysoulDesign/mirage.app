@@ -1,39 +1,45 @@
-import vmModule = require("../../Models/product-main-page-model");
+import {ProductMainPageModel} from "../../Models/product-main-page-model";
 import {Page} from 'ui/page';
 import {StackLayout} from "ui/layouts/stack-layout";
 import orientationModule = require("nativescript-screen-orientation");
-import {cache} from "../../Modules/Helpers";
+import {cache, navigate} from "../../Modules/Helpers";
+import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
+import {GridLayout} from "ui/layouts/grid-layout";
+import {ApiUrlInterface} from "../../Interfaces/ApiUrlInterface";
+import {observable} from "ui/core/view";
 
-export function pageLoaded(args) {
+var model = new ProductMainPageModel();
 
-    /**
-     * Fix Orientation
-     */
-        //orientationModule.setCurrentOrientation("portrait");
-    orientationModule.orientationCleanup();
+export function pageNavigatedTo(args:observable.EventData) {
 
     var page = <Page>args.object,
-        container = <StackLayout>page.getViewById('extras_container'),
-        user = cache.get('login'),
-        product = null;
+        context = page.navigationContext.url,
+        user:ApiUserInterface = cache.get('login');
 
-    for (var product in user.codes) {
-        if (user.codes[product].product.code === page.navigationContext.code) {
-            var product = user.codes[product].product;
+    for (var index in user.codes) {
+        if (user.codes[index].product.code === context.name) {
+            var codes = user.codes[index];
         }
     }
 
-    console.dir(product);
+    page.bindingContext = model.initOnce({
+        page: page,
+        codes: codes,
+        context: context
+    });
 
-    if (!product) {
-        alert('product not found');
-        return;
-    }
-
-    page.bindingContext = new vmModule.ProductMainPageModel(container, product);
+    model.refresh();
+    console.dir(model);
 
 }
 
-export function pageUnloaded() {
-    orientationModule.orientationCleanup();
+export function pageNavigatingTo(){
+
+}
+
+export function pageNavigatedFrom() {
+    console.log('im navigating from');
+    //orientationModule.orientationCleanup();
+    //navigate.to('main-page');
+    //navigate.to('main-page');
 }

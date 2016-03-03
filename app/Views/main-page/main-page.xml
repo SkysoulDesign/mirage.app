@@ -1,4 +1,8 @@
-<Page loaded="pageLoaded"
+<Page
+        navigatedTo="pageNavigatedTo"
+        navigatingTo="pageNavigatingTo"
+        navigatingFrom="pageNavigatingFrom"
+        navigatedFrom="pageNavigatedFrom"
       xmlns:drawer="nativescript-telerik-ui/sidedrawer"
       xmlns="http://www.nativescript.org/tns.xsd"
       actionBarHidden="true">
