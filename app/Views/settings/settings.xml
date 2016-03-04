@@ -1,4 +1,6 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true" xmlns:dd="nativescript-drop-down">
+<Page navigatedTo="pageNavigatedTo"
+      android:actionBarHidden="true"
+      xmlns:dd="nativescript-drop-down">
 
     <GridLayout rows="80,*5,*2">
 

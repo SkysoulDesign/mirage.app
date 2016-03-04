@@ -1,11 +1,19 @@
-import observable = require("data/observable");
-import vmModule = require("../../Models/sign-in-page-model");
+import {SignInPageModel} from "../../Models/sign-in-page-model";
 import {Page} from 'ui/page';
-import {database} from "../../Modules/Helpers";
+import {NavigatedData} from "ui/page";
 
-export function pageLoaded(args:observable.EventData) {
+export function pageNavigatedTo(args:NavigatedData) {
 
-    var page = <Page>args.object;
-        page.bindingContext = new vmModule.SignInPageModel();
+    if (args.isBackNavigation)
+        return;
+
+    var page = <Page>args.object,
+        model = new SignInPageModel(),
+        loginButton = page.getViewById('login_button');
+
+        page.bindingContext = model.init({
+            page:page,
+            loginButton:loginButton
+        });
 
 }

@@ -1,13 +1,16 @@
 import {Observable} from "data/observable";
 import {Page} from 'ui/page';
 import vmModule = require("../../Models/register-product-page-model");
+import {RegisterProductPageModel} from "../../Models/register-product-page-model";
 
-export function pageLoaded(args){
+export function pageLoaded(args) {
 
-	var page = <Page>args.object;
-	var input = page.getViewById('code_input');
-	var button = page.getViewById('button_register');
+    var page = <Page>args.object,
+        input = page.getViewById('code_input'),
+        registerButton = page.getViewById('register_button');
 
-	page.bindingContext = new vmModule.RegisterProductPageModel(input,button);
+    var model = new RegisterProductPageModel();
+
+    page.bindingContext = model.init({page: page, input: input, registerButton: registerButton});
 
 }

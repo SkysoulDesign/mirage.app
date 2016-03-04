@@ -14,10 +14,13 @@ import {Page} from "ui/page";
 import application = require('application')
 import {BaseModel} from "./BaseModel";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
+import progressModule = require("ui/progress");
 
 export class MainPageModel extends BaseModelWithMainNavigation {
 
+    private page:Page;
     private user:ApiUserInterface;
+    private progress:progressModule.Progress;
 
     /**
      * Constructor
@@ -26,15 +29,8 @@ export class MainPageModel extends BaseModelWithMainNavigation {
 
         super();
 
-        /**
-         * Set Defaults
-         */
-        this.user = cache.get('login');
-
-        this.set('username', this.user.username);
-        this.set('email', this.user.email);
-
-        //this.init();
+        this.progress = new progressModule.Progress();
+        this.progress.className = 'progress-bar';
 
     }
 
@@ -42,16 +38,35 @@ export class MainPageModel extends BaseModelWithMainNavigation {
      * Refresh User
      */
     public refreshLogin() {
-        api.fetch('checkLogin', {}, null, function (error) {
+
+        api.fetch('checkLogin', {}, function (data) {
+            cache.set('login', data);
+        }, function (error) {
             navigate.to('login', {clearHistory: true});
         }, false);
-    }
 
+        api.fetch('products', {});
+
+    }
 
     /**
      * Setup
      */
     private setup() {
+
+        var progress = {
+            maxValue: cache.get('products', []).length,
+            value: this.user.codes.length
+        };
+
+        this.set('username', this.user.username);
+        this.set('email', this.user.email);
+        this.set('progress_text', progress.value + ' of ' + progress.maxValue);
+        this.progress.maxValue = progress.maxValue;
+        this.progress.value = progress.value;
+
+        var progress_container = this.page.getViewById('progress_container');
+        progress_container.addChild(this.progress);
 
         var container = <Page>this.get('page').getViewById("product_layout");
 

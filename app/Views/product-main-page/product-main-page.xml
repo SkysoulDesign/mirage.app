@@ -34,9 +34,8 @@
 						<TabViewItem title="Video for Hologram">
 							<TabViewItem.view>
 
-								<ScrollView>
+								<ScrollView height="*">
 									<StackLayout id="extras_container">
-
 									</StackLayout>
 								</ScrollView>
 

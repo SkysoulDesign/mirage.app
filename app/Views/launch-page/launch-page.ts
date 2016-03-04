@@ -1,34 +1,19 @@
-import {Mirage as App} from "../../app";
-import {cache, api, navigate,file} from "../../Modules/Helpers";
-import frameModule = require("ui/frame");
+import {cache, navigate} from "../../Modules/Helpers";
+import {NavigatedData} from "ui/page";
+import {api} from "../../Modules/Helpers";
 
-export function pageLoaded() {
+export function pageNavigatedTo(args:NavigatedData) {
 
-    var counter = 1;
+    /**
+     * if Token is NOT set, Redirect to Main-Page
+     */
+    if (!cache.has('login'))
+        return navigate.to("login", {backstackVisible: false});
 
-    var onSuccess = function (hack = false) {
-
-        if (!hack)
-            if (counter !== 2)
-                return counter++;
-
-        /**
-         * Default Options
-         */
-        var options = {clearHistory: true};
-
-        /**
-         * if Token is NOT set, Redirect to Main-Page
-         */
-        if (!cache.has('login'))
-            return navigate.to("login", options);
-
-        /**
-         * Otherwise Redirect to the main page
-         */
-        navigate.to("main-page", options);
-
-    };
+    /**
+     * Otherwise Redirect to the main page
+     */
+    navigate.to("main-page", {backstackVisible: false});
 
     /**
      * @todo
@@ -40,17 +25,16 @@ export function pageLoaded() {
      * Cache All forms api to fix a bug on dropdown menu
      * Hopefully the request will be done before user request them
      */
-
     if (!cache.has('countries')) {
-        api.fetch('countries', {}, onSuccess);
+        api.fetch('countries', {});
     }
 
     if (!cache.has('ages')) {
-        api.fetch('ages', {}, onSuccess);
+        api.fetch('ages', {});
     }
 
-    if (cache.has('countries') && cache.has('ages')) {
-        onSuccess(true);
-    }
+    //if (cache.has('countries') && cache.has('ages')) {
+    //    onSuccess(true);
+    //}
 
 }

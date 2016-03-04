@@ -1,4 +1,6 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatedTo="pageNavigatedTo"
+      actionBarHidden="true">
 
     <GridLayout rows="3*, 3*, 5*, *">
 

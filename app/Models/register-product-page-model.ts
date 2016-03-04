@@ -1,60 +1,63 @@
 import {Observable, EventData} from "data/observable";
 import {navigate, api, cache, file} from "../Modules/Helpers";
-import textFieldModule = require("ui/text-field");
 import {Frame} from "ui/frame";
 import {Button} from "ui/button";
 import {TextField} from "ui/text-field";
 import {ImageSource} from "image-source";
+import {BaseModel} from "./BaseModel";
+import {Page} from "ui/page";
 
-export class RegisterProductPageModel extends Observable {
+export class RegisterProductPageModel extends BaseModel {
 
+    private page:Page;
+    private input:TextField;
+    private registerButton:Button;
 
     /**
      * Constructor
      */
-    public constructor(input:TextField, button:Button) {
+    constructor() {
         super();
-        this.getProductInfo(input, button);
     }
 
     /**
-     * getProductInfo
-     *
+     * Setup page
      */
-    public getProductInfo(input:TextField, button:Button) {
+    public setup() {
 
-        var _this = this;
+        var _this = this,
+            image = this.page.getViewById('figure');
 
         var data = {
                 product_id: null,
                 encode_image: true
             },
-            onCached = function (image:ImageSource) {
-                console.log('cached');
-                _this.set('product_image', image.toBase64String());
+            onCached = function (img) {
+                image.imageSource = img.imageSource;
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
                 _this.set('product_image', data.image.encoded);
             },
             onError = function (errors) {
-                console.log('errado');
                 _this.set('isLoading', false);
-                input.editable = true;
+                _this.input.text = '';
+                //_this.input.editable = true;
             };
 
-        this.on(textFieldModule.TextField.propertyChangeEvent, function (args:EventData) {
+        this.on(TextField.propertyChangeEvent, function (args:EventData) {
 
             var length = args.value.toString().length,
                 value = args.value.toString();
 
-            if (length >= 18) {
+            if (length >= 18)
                 return _this.set('code_text', 'Invalid Code');
-            }
 
             if (length == 17) {
 
-                input.editable = false;
+                _this.set('code_text', 'Valid Code');
+
+                //_this.input.editable = false;
 
                 /**
                  * Disable Rechecks
@@ -66,7 +69,7 @@ export class RegisterProductPageModel extends Observable {
                 /**
                  * Check if its cached
                  */
-                if (file.has(data.product_id + '.png')){
+                if (file.has(data.product_id + '.png')) {
                     return onCached(file.load(data.product_id + '.png'));
                 }
 
@@ -86,18 +89,42 @@ export class RegisterProductPageModel extends Observable {
      */
     public tapRegister() {
 
-        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17)
+        this.registerButton.isEnabled = false;
+
+        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17){
+            this.registerButton.isEnabled = true;
             return alert('Invalid Code');
+        }
 
         var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
 
-        var _this = this, data = {code: code},
+        var _this = this,data = {code: code},
             onSuccess = function () {
-                navigate.to("register-success");
+
+                /**
+                 * Re-Fetch user info and cache it
+                 */
+                api.fetch('checkLogin', {}, function (data) {
+
+                    cache.set('login', data);
+
+                    _this.set('isLoading', false);
+
+                    alert('Product Registered Successfully');
+                    navigate.to("main-page", {clearHistory: true});
+
+                }, null, false);
+
             },
             onError = function (e) {
                 alert('Invalid Code');
+                _this.input.text = '';
+                _this.input.isEnabled = true;
+                _this.set('isLoading', false);
+                _this.registerButton.isEnabled = false;
             };
+
+        this.set('isLoading', true);
 
         api.fetch('registerProduct', data, onSuccess, onError, false);
 

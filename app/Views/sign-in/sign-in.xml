@@ -1,4 +1,5 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true">
+<Page navigatedTo="pageNavigatedTo"
+      android:actionBarHidden="true">
 
     <GridLayout rows="*, *">
 
@@ -7,7 +8,7 @@
         <StackLayout cssClass="form" row="1">
             <TextField class="field" text="{{ username }}" hint="USERNAME"/>
             <TextField class="field" text="{{ password }}" hint="PASSWORD" secure="true"/>
-            <Button text="LOGIN" row="2" tap="{{ tapSignIn }}"/>
+            <Button id="login_button" text="LOGIN" row="2" tap="{{ tapSignIn }}"/>
             <ActivityIndicator busy="{{ isLoading }}"/>
         </StackLayout>
 

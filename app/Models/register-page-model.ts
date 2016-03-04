@@ -1,16 +1,26 @@
 import {Observable, EventData} from "data/observable";
 import {ObservableArray} from "data/observable-array";
 import {api, navigate} from "../Modules/Helpers";
+import {cache} from "../Modules/Helpers";
+import {BaseModel} from "./BaseModel";
+import {Button} from "ui/button";
 
-export class RegisterPageModel extends Observable {
+export class RegisterPageModel extends BaseModel {
+
+    private page:Page;
+    private registerButton:Button;
 
     /**
      * Constructor
      */
-    public constructor() {
-
+    constructor() {
         super();
+    }
 
+    /**
+     * Setup
+     */
+    public setup(){
         /**
          * Defaults
          */
@@ -21,7 +31,6 @@ export class RegisterPageModel extends Observable {
          */
         this.bindCountries();
         this.bindAges();
-
     }
 
     /**
@@ -108,6 +117,8 @@ export class RegisterPageModel extends Observable {
          */
         this.set('isLoading', true);
 
+        this.registerButton.isEnabled = false;
+
         var _this = this,
             data = {
                 username: this.get('username'),
@@ -121,12 +132,22 @@ export class RegisterPageModel extends Observable {
                 terms: this.get('agreement'),
             };
 
-        var onSuccess = function () {
-                _this.set('isLoading', false);
-                navigate.to("main-page");
+        var onSuccess = function (data) {
+
+                /**
+                 * Cache the Data to the user info
+                 */
+                cache.set('login', data);
+                api.fetch('products', {}, function(){
+                    _this.set('isLoading', false);
+                    navigate.to("main-page", {clearHistory: true});
+                });
+
             },
             onError = function (e) {
                 _this.set('isLoading', false);
+                _this.registerButton.isEnabled = true;
+
                 api.alertErrors(e);
             };
 

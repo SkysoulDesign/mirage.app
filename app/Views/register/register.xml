@@ -44,7 +44,7 @@
                     <Label text="I Prefer not to Receive any Promotion Information."/>
                 </StackLayout>
 
-                <Button text="Register" tap="{{ tapRegister }}"/>
+                <Button id="register_btn" text="Register" tap="{{ tapRegister }}"/>
 
                 <ActivityIndicator busy="{{ isLoading }}" rowSpan="2"/>
 

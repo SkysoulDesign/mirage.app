@@ -101,7 +101,6 @@ export class Api {
                  */
                 if (!data.hasOwnProperty('error')) {
 
-
                     if (cache)
                         _this.cache(request.name, data);
 

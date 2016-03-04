@@ -2,6 +2,7 @@ import {BaseModel} from "./BaseModel";
 import {navigate} from "../Modules/Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import OpenUrl = require( "nativescript-openurl" );
+import {topmost} from "ui/frame";
 
 export class BaseModelWithMainNavigation extends BaseModel {
 

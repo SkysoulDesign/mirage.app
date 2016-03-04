@@ -1,8 +1,14 @@
 import {Observable} from "data/observable";
-import {Mirage as App} from "../app";
 import {navigate} from "../Modules/Helpers";
 
 export class LoginModel extends Observable {
+
+    /**
+     * Constructor
+     */
+    constructor() {
+        super()
+    }
 
     /**
      * Register Button

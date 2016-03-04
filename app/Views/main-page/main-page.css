@@ -34,17 +34,12 @@
 }
 
 .progress-bar {
-    background-color: #009fe3;
-    height: 3px;
+    color: #e50051
 }
 
 .progress-text {
     text-align: right;
-    margin-top: -20px;
-}
-
-.progress-overlay {
-    background-color: #e50051;
+    margin-top: -30px;
 }
 
 .mini-label {
@@ -72,8 +67,8 @@
 .stage {
     background-image: url('res://stage');
     background-repeat: repeat-x;
-    background-size: contain;
-    background-position: bottom left;
+    background-size: cover;
+    background-position: bottom center;
 }
 
 .foreground-statue {

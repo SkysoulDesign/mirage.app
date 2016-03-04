@@ -1,9 +1,13 @@
-import vmModule = require("../../Models/login-page-model");
+import {LoginModel} from "../../Models/login-page-model";
 import {Page} from 'ui/page';
+import {NavigatedData} from "ui/page";
 
-export function pageLoaded(args) {
+export function pageNavigatedTo(args:NavigatedData) {
+
+    if (args.isBackNavigation)
+        return;
 
     var page = <Page>args.object;
-        page.bindingContext = new vmModule.LoginModel();
+        page.bindingContext = new LoginModel();
 
 }

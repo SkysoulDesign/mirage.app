@@ -75,8 +75,14 @@
 	vertical-align: bottom;
 }
 
+.card-loader{
+	width: 100px;
+	height: 100px;
+	color: #39B54A;
+}
+
 .details-container {
-	padding: 0px;
+	padding: 0;
 }
 
 .details-header-container {

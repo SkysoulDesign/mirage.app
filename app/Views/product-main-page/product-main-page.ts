@@ -4,8 +4,14 @@ import {StackLayout} from "ui/layouts/stack-layout";
 import orientationModule = require("nativescript-screen-orientation");
 import {cache} from "../../Modules/Helpers";
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
+import {NavigatedData} from "ui/page";
 
-export function pageNavigatedTo(args) {
+export function pageNavigatedTo(args:NavigatedData) {
+
+    /**
+     * Clean up orientation
+     */
+    orientationModule.orientationCleanup();
 
     if (args.isBackNavigation)
         return;
@@ -13,7 +19,6 @@ export function pageNavigatedTo(args) {
     var page = <Page>args.object,
         context = page.navigationContext.url,
         user = <ApiUserInterface>cache.get('login');
-
 
     var model = new ProductMainPageModel();
 

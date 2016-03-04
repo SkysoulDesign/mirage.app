@@ -1,11 +1,13 @@
-import vmModule = require("../../Models/settings-page-model");
+import {SettingsPageModel} from "../../Models/settings-page-model";
 import {Page} from 'ui/page';
-import {DropDown} from "nativescript-drop-down";
+import {NavigatedData} from "ui/page";
 
-export function pageLoaded(args) {
+export function pageNavigatedTo(args:NavigatedData) {
+
+    if (args.isBackNavigation)
+        return;
 
     var page = <Page>args.object;
-        // dropdown = <DropDown>page.getViewById('dropdown');
-    page.bindingContext = new vmModule.SettingsPageModel();
+        page.bindingContext = new SettingsPageModel();
 
 }

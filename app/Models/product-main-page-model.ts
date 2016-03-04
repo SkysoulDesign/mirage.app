@@ -16,6 +16,7 @@ import {ApiCodesInterface} from "../Interfaces/ApiUserInterface";
 import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
+import {uppercase} from "ui/enums";
 
 export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
@@ -74,6 +75,7 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
             extra.title.className = "card-title";
             extra.description.className = "card-description";
+            extra.loading.className = "card-loader";
             extra.image.className = 'card-bg';
             extra.grid.className = 'card-container';
 
@@ -90,7 +92,7 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
         this.set('username', this.user.username);
         this.set('email', this.user.email);
-        this.set('title', this.codes.product.name);
+        this.set('title',  this.codes.product.name.toUpperCase());
 
         var components = this.components;
 

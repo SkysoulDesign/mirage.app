@@ -3,7 +3,7 @@
     <GridLayout rows="3*,4*">
 
         <GridLayout row="0" class="stage">
-            <Image row="0" src="{{ product_image }}"/>
+            <Image id="figure" row="0" src="{{ product_image }}"/>
             <ActivityIndicator busy="{{ isLoading }}"/>
         </GridLayout>
 
@@ -17,7 +17,7 @@
             <Label class="label center" row="1" text="{{ code_text }}"/>
             <TextField row="1" text="{{ code }}" id="code_input" hint="EX: MF001-9YHD-FFF4-XC85"/>
 
-            <Button row="2" text="REGISTER" tap="{{tapRegister}}" id="button_register"/>
+            <Button row="2" text="REGISTER" tap="{{tapRegister}}" id="register_button"/>
 
         </GridLayout>
 
