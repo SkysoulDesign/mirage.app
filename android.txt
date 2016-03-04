@@ -1,0 +1,1 @@
+tns build android --release --key-store-path mirage-key.keystore --key-store-password 478135 --key-store-alias-password 478135 --key-store-alias skysoul
