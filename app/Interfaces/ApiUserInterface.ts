@@ -1,11 +1,15 @@
 export interface ApiUserInterface {
+    id:number,
     username:string,
     email:string,
     gender:string,
-    api_token:string,
     country_id:number,
-    age_id:number,
+    api_token:string,
     newsletter: number,
+    age_id:number,
+    remember_token:string,
+    created_at: string,
+    updated_at: string,
     codes:ApiCodesInterface[]
 }
 
@@ -14,7 +18,7 @@ export interface ApiCodesInterface {
     product_id: number,
     user_id: number,
     code: string,
-    status: number,
+    status: string,
     created_at: string,
     updated_at: string,
     product:ApiProductInterface
@@ -25,7 +29,10 @@ export interface ApiProductInterface {
     name: string,
     code: string,
     image: string,
-    extras: ApiExtraInterface[]
+    created_at: string,
+    updated_at: string,
+    extras: ApiExtraInterface[],
+    profile: ApiProfileInterface,
 }
 
 export interface ApiExtraInterface {
@@ -39,5 +46,13 @@ export interface ApiExtraInterface {
     updated_at: string
 }
 
+export interface ApiProfileInterface {
+    id: number,
+    image: string,
+    description: string,
+    product_id: number,
+    created_at: string,
+    updated_at: string
+}
 
 

@@ -1,9 +1,11 @@
 import {Observable, EventData} from "data/observable";
 import {ObservableArray} from "data/observable-array";
-import {api, navigate} from "../Modules/Helpers";
-import {cache} from "../Modules/Helpers";
+import {api, navigate, cache,view} from "../Modules/Helpers";
 import {BaseModel} from "./BaseModel";
 import {Button} from "ui/button";
+import {Page} from "ui/page";
+import StackLayout = org.nativescript.widgets.StackLayout;
+import listPickerModule = require("ui/list-picker");
 
 export class RegisterPageModel extends BaseModel {
 
@@ -20,7 +22,7 @@ export class RegisterPageModel extends BaseModel {
     /**
      * Setup
      */
-    public setup(){
+    public setup() {
         /**
          * Defaults
          */
@@ -44,6 +46,22 @@ export class RegisterPageModel extends BaseModel {
      * Bind Countries to Model
      */
     private bindCountries() {
+
+
+        //var container = <StackLayout>this.page.getViewById('countriesContainer');
+        //var listPicker = new listPickerModule.ListPicker();
+        //listPicker.items = ['africa', 'brazil', 'china', 'uberenita'];
+        //listPicker.selectedIndex = 2;
+        //container.addChild(listPicker);
+        //
+        //var page = this.page;
+        //container.on('tap', function () {
+        //
+        //    page.showModal(view('modal-countries'), container, function () {
+        //        console.log('test')
+        //    }, false);
+        //
+        //});
 
         /**
          * Countries
@@ -138,7 +156,7 @@ export class RegisterPageModel extends BaseModel {
                  * Cache the Data to the user info
                  */
                 cache.set('login', data);
-                api.fetch('products', {}, function(){
+                api.fetch('products', {}, function () {
                     _this.set('isLoading', false);
                     navigate.to("main-page", {clearHistory: true});
                 });

@@ -13,7 +13,7 @@
 
         <Image cssClass="extra" row="2" src="res://extra" stretch="aspectFit" horizontalAlign="center"/>
 
-        <label row="3" class="all-rights" text="All rights reserved by Soap Studio Company Limited."/>
+        <label row="3" class="all-rights" textWrap="true" text="All rights reserved by Soap Studio Company Limited."/>
 
     </GridLayout>
 

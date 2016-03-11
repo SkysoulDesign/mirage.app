@@ -36,10 +36,11 @@ Label {
 }
 
 .extra {
-    padding: 50px;
+    margin: 5px;
 }
 
 .all-rights {
     color: black;
     margin: 2%;
+    font-size: 12px;
 }

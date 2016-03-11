@@ -1,5 +1,6 @@
 Page {
-    background-color: #39B54A;
+    background-color: #f0f0f5;
+    color: #E977AF;
 }
 
 .logo {
@@ -8,16 +9,15 @@ Page {
 
 .form {
     background-color: white;
-    padding: 30px;
+    padding: 15px;
 }
 
-.field{
+.field {
     height: 60px;
 }
 
 TextField {
     font-size: 16px;
-    color: #39B54A;
     margin: 5px 0 0 0;
     padding: 3px;
 }
@@ -42,7 +42,6 @@ Label {
     margin: 5px 5px;
     background-color: #efefef;
     border-radius: 2;
-    color: #39B54A;
 }
 
 .gender-container--selected {
@@ -64,7 +63,6 @@ Label {
     margin: 5px 0;
     background-color: #efefef;
     border-radius: 2;
-    color: #39B54A;
 }
 
 .terms-container--accepted {

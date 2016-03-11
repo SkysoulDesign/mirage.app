@@ -1,5 +1,5 @@
-<Page loaded="pageLoaded" unloaded="pageUnloaded">
-    <GridLayout rows="*,*">
-        <label id="image_video" text="" cssClass="grid-info"/>
+<Page actionBarHidden="true"
+      loaded="pageLoaded" unloaded="pageUnloaded">
+    <GridLayout id="container" rows="*">
     </GridLayout>
 </Page>

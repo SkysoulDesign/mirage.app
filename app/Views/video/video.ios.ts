@@ -6,14 +6,14 @@ var moviePlayer;
 import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view';
-import {api} from "../../Modules/Helpers"; // what s the namei
+import {api, navigate} from "../../Modules/Helpers";
 var changepage = true;
 
 export function pageLoaded(args) {
     if (!changepage)
         return;
     var page = <Page>args.object,
-        videoContainer:View = page.getViewById('image_video'),
+        videoContainer:View = page.getViewById('container'),
         extras = <ApiExtraInterface>page.navigationContext;
 
     videoContainer.requestLayout();
@@ -30,33 +30,34 @@ export function pageLoaded(args) {
     var url = NSURL.URLWithString(api.getBase() + extras.video);
     var playerViewController = MPMoviePlayerViewController.alloc().initWithContentURL(url);
 
-    // where MPMoviePlayerViewController comes from? nowhere just can use like this . it is native code
-
     moviePlayer = playerViewController.moviePlayer;
-    moviePlayer.scalingMode = MPMovieScalingModeAspectFit;
-    moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
+    moviePlayer.scalingMode = MPMovieScalingModeAspectFill;//MPMovieScalingModeAspectFit;
+    moviePlayer.controlStyle = MPMovieControlStyleFullscreen;//MPMovieControlStyleEmbedded;
     moviePlayer.repeatMode = MPMovieRepeatMode.MPMovieRepeatModeOne;
+    moviePlayer.fullscreen = true;
+    moviePlayer.setFullscreenAnimated(true, true);
 
-    var size = page._nativeView.bounds.size;
-    var origin = page._nativeView.bounds.origin;
-    if (videoContainer._nativeView.bounds.size.width === 0)
-        moviePlayer.view.frame = CGRectMake(0, origin.y, size.width, 280);//videoContainer._nativeView.bounds;//
-    else
-        moviePlayer.view.frame = videoContainer._nativeView.bounds;//
-    // console.dir(videoContainer._nativeView + "  TTTTTTTT " + moviePlayer.view);
+    var ui = UIApplication.sharedApplication().keyWindow.bounds.size;
 
+    //var size = page._nativeView.bounds.size;
+
+    moviePlayer.view.frame = CGRectMake(0, 0, ui.height, ui.width);//videoContainer._nativeView.bounds;//
+
+    //videoContainer._nativeView.addSubview();
     videoContainer._nativeView.addSubview(moviePlayer.view);
 
     moviePlayer.play();
 
     var exitFullScreen = function (notification) {
         UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation");
-    }
+    };
 
     var enterFullScreen = function (notification) {
         changepage = false;
         UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
-    }
+    };
+
+    enterFullScreen();
 
     var observer = app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback(notification) {
         enterFullScreen(notification);
@@ -69,9 +70,13 @@ export function pageLoaded(args) {
         console.log("MPMoviePlayerDidExitFullscreenNotification");
     });
 
+    var observer2 = app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback(notification) {
+        exitFullScreen(notification);
+        moviePlayer.stop();
+        navigate.back();
+    });
 
 }
-
 
 export function pageUnloaded(args) {
     moviePlayer.pause();

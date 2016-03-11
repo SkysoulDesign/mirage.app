@@ -1,5 +1,7 @@
 import {RegisterPageModel} from "../../Models/register-page-model";
 import {Page} from 'ui/page';
+import placeholder = require("ui/placeholder");
+import listPickerModule = require("ui/list-picker");
 
 export function pageLoaded(args) {
 

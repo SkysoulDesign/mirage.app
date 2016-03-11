@@ -4,7 +4,7 @@ import {topmost} from "ui/frame";
 import {ApiUserInterface, ApiExtraInterface, ApiProductInterface} from "../Interfaces/ApiUserInterface";
 import barcodeScanner = require("nativescript-barcodescanner");
 import OpenUrl = require( "nativescript-openurl" );
-import {StackLayout} from "ui/layouts/stack-layout";
+import stackModule = require("ui/layouts/stack-layout");
 import imageModule = require('ui/image');
 import LabelModule = require("ui/label");
 import gridModule  = require ("ui/layouts/grid-layout");
@@ -17,6 +17,9 @@ import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 import {uppercase} from "ui/enums";
+import scrollViewModule = require("ui/scroll-view");
+import {ApiProfileInterface} from "../Interfaces/ApiUserInterface";
+import textModule = require ("ui/text-view");
 
 export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
@@ -39,7 +42,13 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
          */
         this.components.profile = {
             name: new LabelModule.Label(),
-            code: new LabelModule.Label()
+            code: new LabelModule.Label(),
+            image: new imageModule.Image(),
+            description: new LabelModule.Label(),
+            scroll: new scrollViewModule.ScrollView(),
+            stack: function () {
+                return new stackModule.StackLayout();
+            },
         };
 
         this.components.profile.name.className = "header-title";
@@ -92,34 +101,62 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
 
         this.set('username', this.user.username);
         this.set('email', this.user.email);
-        this.set('title',  this.codes.product.name.toUpperCase());
+        this.set('title', this.codes.product.name.toUpperCase());
 
         var components = this.components;
 
         var profile_tab_container = this.page.getViewById('profile_container');
-            profile_tab_container.addChild(components.profile.name);
-            profile_tab_container.addChild(components.profile.code);
 
         var figure_container = this.page.getViewById('product_container');
-            figure_container.addChild(components.figure.image);
+        figure_container.addChild(components.figure.image);
 
-        var extra_container = <StackLayout>this.page.getViewById('extras_container');
+        var extra_container = <stackModule.StackLayout>this.page.getViewById('extras_container');
 
         for (var extra in this.codes.product.extras) {
             this.setupContainer(extra_container, this.codes.product.extras[extra]);
         }
 
         this.addFigureImage();
-        this.setupProfileTab();
+        this.setupProfileTab(profile_tab_container, this.codes.product.profile);
 
     }
 
     /**
-     * Setup profile tab
+     * Setup Profile Tab
      */
-    private setupProfileTab() {
-        this.components.profile.name.text = this.codes.product.name;
-        this.components.profile.code.text = this.codes.code;
+    private setupProfileTab(container, profile:ApiProfileInterface) {
+
+        console.dir(this.codes);
+
+        var stack = new stackModule.StackLayout();
+            stack.className = 'details-header-container';
+
+        var title = new LabelModule.Label();
+            title.className = 'header-title';
+            title.text = this.codes.product.name;
+
+        var sub_title = new LabelModule.Label();
+            sub_title.className = 'header-description';
+            sub_title.text = this.codes.code;
+
+        var image = new imageModule.Image();
+
+        api.fetchImage(api.getBase() + profile.image, function (imageSource) {
+            image.imageSource = imageSource;
+        });
+
+        var description = new LabelModule.Label();
+            description.className = 'content-description';
+            description.text = profile.description;
+            description.textWrap = true;
+
+        stack.addChild(title);
+        stack.addChild(sub_title);
+
+        container.addChild(image);
+        container.addChild(stack);
+        container.addChild(description);
+
     }
 
     /**
@@ -166,47 +203,5 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
         container.addChild(comp.grid);
 
     }
-
-    /**
-     * Open Camera to Scan QRCode
-     */
-    public tapScanQRCode() {
-        navigate.to('register-product');
-    }
-
-    public tapProduct() {
-        navigate.to("video");
-    }
-
-    /**
-     * Open Menu
-     */
-    public tapOpenMenu() {
-
-        var sideDrawer = topmost().getViewById("sideDrawer");
-        sideDrawer.toggleDrawerState();
-
-    }
-
-    /**
-     * Open Camera to soap
-     */
-    public tapSoap() {
-        OpenUrl("http://www.soapstudio.com");
-    };
-
-    /**
-     * Open Camera to new
-     */
-    public tapNews() {
-        navigate.to("mirage-news");
-    };
-
-    /**
-     * Open Camera to settings
-     */
-    public tapSetting() {
-        navigate.to("settings");
-    };
 
 }

@@ -5,7 +5,7 @@
 
     <GridLayout rows="100,*">
 
-        <Image row="0" cssClass="logo" src="res://logo_white" stretch="aspectFit" horizontalAlign="center"/>
+        <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit" horizontalAlign="center"/>
 
         <ScrollView row="1">
 
@@ -13,7 +13,8 @@
 
                 <TextField cssClass="field" text="{{ username }}" hint="USERNAME"/>
                 <TextField cssClass="field" text="{{ password }}" hint="PASSWORD" secure="true"/>
-                <TextField cssClass="field" text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION" secure="true"/>
+                <TextField cssClass="field" text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION"
+                           secure="true"/>
                 <TextField cssClass="field" text="{{ email }}" hint="E-MAIL"/>
 
                 <Label text="Gender"/>
@@ -27,6 +28,10 @@
                 </GridLayout>
 
                 <Label text="Country"/>
+
+                <!--<StackLayout id="countriesContainer">-->
+                <!--</StackLayout>-->
+
                 <dd:DropDown cssClass="drop-down" items="{{ countries }}" selectedIndex="{{ selectedCountry }}"/>
 
                 <Label text="Age Group"/>
@@ -35,13 +40,13 @@
                 <StackLayout cssClass="{{ agreement ?  'terms-container--accepted' : 'terms-container' }}"
                              tap="{{ toggleAgreement }}">
                     <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
-                    <Label text="I Agree with Terms and Condition."/>
+                    <Label text="I Agree with Terms and Condition." textWrap="true"/>
                 </StackLayout>
 
                 <StackLayout cssClass="{{ newsletter ?  'terms-container--accepted' : 'terms-container' }}"
                              tap="{{ toggleNewsletter }}">
                     <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
-                    <Label text="I Prefer not to Receive any Promotion Information."/>
+                    <Label text="I Prefer not to Receive any Promotion Information." textWrap="true"/>
                 </StackLayout>
 
                 <Button id="register_btn" text="Register" tap="{{ tapRegister }}"/>

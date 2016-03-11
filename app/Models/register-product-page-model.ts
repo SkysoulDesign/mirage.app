@@ -6,6 +6,7 @@ import {TextField} from "ui/text-field";
 import {ImageSource} from "image-source";
 import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
+import dialogs = require("ui/dialogs");
 
 export class RegisterProductPageModel extends BaseModel {
 
@@ -91,14 +92,14 @@ export class RegisterProductPageModel extends BaseModel {
 
         this.registerButton.isEnabled = false;
 
-        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17){
+        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17) {
             this.registerButton.isEnabled = true;
             return alert('Invalid Code');
         }
 
         var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
 
-        var _this = this,data = {code: code},
+        var _this = this, data = {code: code},
             onSuccess = function () {
 
                 /**
@@ -110,8 +111,15 @@ export class RegisterProductPageModel extends BaseModel {
 
                     _this.set('isLoading', false);
 
-                    alert('Product Registered Successfully');
-                    navigate.to("main-page", {clearHistory: true});
+                    var options = {
+                        title: "Success",
+                        message: "Product Registered Successfully",
+                        okButtonText: "OK"
+                    };
+
+                    dialogs.alert(options).then(function () {
+                        navigate.to("main-page", {clearHistory: true});
+                    });
 
                 }, null, false);
 

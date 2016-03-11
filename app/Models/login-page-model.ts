@@ -1,5 +1,7 @@
 import {Observable} from "data/observable";
 import {navigate} from "../Modules/Helpers";
+import {topmost} from "ui/frame";
+import {view} from "../Modules/Helpers";
 
 export class LoginModel extends Observable {
 
@@ -21,7 +23,7 @@ export class LoginModel extends Observable {
      * Login Button
      */
     public tapSignIn() {
-        navigate.to('sign-in');
+        topmost().navigate(view('sign-in'));
     }
 
 }

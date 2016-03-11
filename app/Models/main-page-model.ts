@@ -9,12 +9,12 @@ import {GestureTypes} from "ui/gestures";
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
-import {page} from "ui/builder";
 import {Page} from "ui/page";
 import application = require('application')
 import {BaseModel} from "./BaseModel";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 import progressModule = require("ui/progress");
+import {StackLayout} from "ui/layouts/stack-layout";
 
 export class MainPageModel extends BaseModelWithMainNavigation {
 
@@ -66,9 +66,9 @@ export class MainPageModel extends BaseModelWithMainNavigation {
         this.progress.value = progress.value;
 
         var progress_container = this.page.getViewById('progress_container');
-        progress_container.addChild(this.progress);
+            progress_container.addChild(this.progress);
 
-        var container = <Page>this.get('page').getViewById("product_layout");
+        var container = <StackLayout>this.get('page').getViewById("product_layout");
 
         for (var x in this.user.codes) {
 

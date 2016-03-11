@@ -11,6 +11,12 @@ export function pageNavigatedTo(args:NavigatedData) {
     if (args.isBackNavigation)
         return;
 
+    /**
+     * if Token is NOT set, Redirect to Main-Page
+     */
+    if (!cache.has('login'))
+        return navigate.to("login", {clearHistory: true});
+
     var mainPageModel = new MainPageModel(),
         user = cache.get('login');
 

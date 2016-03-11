@@ -1,93 +1,92 @@
-<Page navigatedTo="pageNavigatedTo"
-	  navigatingFrom="pageNavigatedFrom"
-	  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-	  xmlns="http://www.nativescript.org/tns.xsd"
-	  android:actionBarHidden="true">
+<Page xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      navigatedTo="pageNavigatedTo"
+      navigatingFrom="pageNavigatedFrom"
+      xmlns="http://www.nativescript.org/tns.xsd"
+      android:actionBarHidden="true">
 
-	<drawer:RadSideDrawer id="sideDrawer">
+    <drawer:RadSideDrawer id="sideDrawer">
 
-		<drawer:RadSideDrawer.mainContent>
+        <drawer:RadSideDrawer.mainContent>
 
-			<GridLayout rows="80,3*,*3">
+            <GridLayout rows="80,3*,*3">
 
-				<GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+                <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
 
-					<Image cssClass="menu-icon" col="0" src="res://menu_icon"
-						   horizontalAlignment="center" verticalAlignment="center"
-						   stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
+                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                           horizontalAlignment="center" verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
 
-					<Label text="{{ title }}" cssClass="mirage-label" col="1" horizontalAlignment="left"
-						   verticalAlignment="center"/>
+                    <Label text="{{ title }}" cssClass="mirage-label" col="1" horizontalAlignment="left"
+                           verticalAlignment="center"/>
 
-					<Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
-						   verticalAlignment="center"
-						   stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                           verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
 
-				</GridLayout>
+                </GridLayout>
 
-				<GridLayout id="product_container" cssClass="stage" row="1">
-					<!--<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>-->
-				</GridLayout>
+                <GridLayout id="product_container" cssClass="stage-dark" row="1">
+                    <!--<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>-->
+                </GridLayout>
 
-				<TabView row="2">
-					<TabView.items>
-						<TabViewItem title="Video for Hologram">
-							<TabViewItem.view>
+                <TabView row="2">
+                    <TabView.items>
+                        <TabViewItem title="Video for Hologram">
+                            <TabViewItem.view>
+                                <StackLayout>
+                                    <ScrollView height="*">
+                                        <StackLayout id="extras_container">
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </TabViewItem.view>
+                        </TabViewItem>
+                        <TabViewItem title="Profile">
+                            <TabViewItem.view>
+                                <StackLayout>
+                                    <ScrollView>
+                                        <StackLayout id="profile_container" cssClass="details-container">
 
-								<ScrollView height="*">
-									<StackLayout id="extras_container">
-									</StackLayout>
-								</ScrollView>
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </TabViewItem.view>
+                        </TabViewItem>
+                    </TabView.items>
+                </TabView>
 
-							</TabViewItem.view>
-						</TabViewItem>
-						<TabViewItem title="Profile">
-							<TabViewItem.view>
+            </GridLayout>
 
-								<StackLayout cssClass="details-container">
-									<StackLayout id="profile_container" cssClass="details-header-container">
-										<!--<Label cssClass="header-title" text="{{ test }}"/>-->
-										<!--<Label cssClass="header-description" text="MF001-1205-9D0C-8CC7"/>-->
-									</StackLayout>
-								</StackLayout>
+        </drawer:RadSideDrawer.mainContent>
 
-							</TabViewItem.view>
-						</TabViewItem>
-					</TabView.items>
-				</TabView>
+        <drawer:RadSideDrawer.drawerContent>
 
-			</GridLayout>
+            <GridLayout cssClass="drawer-container" rows="3*,*">
 
-		</drawer:RadSideDrawer.mainContent>
+                <StackLayout row="0">
 
-		<drawer:RadSideDrawer.drawerContent>
+                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
+                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                        <StackLayout verticalAlignment="center">
+                            <Label text="{{ username }}"/>
+                            <Label text="{{ email }}"/>
+                        </StackLayout>
+                    </StackLayout>
 
-			<GridLayout cssClass="drawer-container" rows="3*,*">
+                    <StackLayout cssClass="drawer-menu-content">
+                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+                    </StackLayout>
 
-				<StackLayout row="0">
+                </StackLayout>
 
-					<StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
-						<Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
-						<StackLayout verticalAlignment="center">
-							<Label text="{{ username }}"/>
-							<Label text="{{ email }}"/>
-						</StackLayout>
-					</StackLayout>
+                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
 
-					<StackLayout cssClass="drawer-menu-content">
-						<Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
-						<Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
-						<Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
-					</StackLayout>
+            </GridLayout>
 
-				</StackLayout>
+        </drawer:RadSideDrawer.drawerContent>
 
-				<Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
-
-			</GridLayout>
-
-		</drawer:RadSideDrawer.drawerContent>
-
-	</drawer:RadSideDrawer>
+    </drawer:RadSideDrawer>
 
 </Page>

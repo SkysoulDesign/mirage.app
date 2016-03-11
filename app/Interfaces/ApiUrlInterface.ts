@@ -3,5 +3,6 @@ export interface ApiUrlInterface {
     method:string,
     fragment:string,
     url:string,
+    full:string,
     cache:{}
 }

@@ -8,12 +8,7 @@ export function pageNavigatedTo(args:NavigatedData) {
      * if Token is NOT set, Redirect to Main-Page
      */
     if (!cache.has('login'))
-        return navigate.to("login", {backstackVisible: false});
-
-    /**
-     * Otherwise Redirect to the main page
-     */
-    navigate.to("main-page", {backstackVisible: false});
+        return navigate.to("login", {clearHistory: true});
 
     /**
      * @todo
@@ -32,6 +27,11 @@ export function pageNavigatedTo(args:NavigatedData) {
     if (!cache.has('ages')) {
         api.fetch('ages', {});
     }
+
+    /**
+     * Otherwise Redirect to the main page
+     */
+    navigate.to("main-page", {clearHistory: true});
 
     //if (cache.has('countries') && cache.has('ages')) {
     //    onSuccess(true);

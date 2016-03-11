@@ -30,7 +30,7 @@ export namespace Mirage {
          * Main View Variable
          * @type {string}
          */
-        private launch_view:string = "launch-page"; //launch-page
+        private view:string = "main-page"; //launch-page
 
         /**
          * Initialize The Application
@@ -47,18 +47,7 @@ export namespace Mirage {
             /**
              * Initiate the Main App View
              */
-            this.start(view(this.launch_view));
-
-            /**
-             * Check if the app was lunch for the first time
-             */
-            //if (settings.getFirstLoadApp()) {
-            //    settings.setFirstLoadApp(false);
-            //    return this.start(view(this.first_launch_view));
-            //}
-
-            //console.log(settings.isFirstLaunch());
-
+            this.start(view(this.view));
 
         }
 

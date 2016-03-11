@@ -1,0 +1,7 @@
+<Page loaded="pageLoaded">
+    <StackLayout id="countriesContainer">
+
+        <Button id="okay" text="Select"/>
+
+    </StackLayout>
+</Page>
