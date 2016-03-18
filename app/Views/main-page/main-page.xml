@@ -39,14 +39,14 @@
                          <Image tap="{{ tapProduct }}" cssClass="foreground-statue" col="6" src="res://statue_batman" stretch="aspectFit"/>
                          <Image tap="{{ tapProduct }}" cssClass="background-statue" col="7" src="res://statue_batman" stretch="aspectFit"/>
                      </GridLayout> -->
-                    <StackLayout id="product_layout" cssClass="stage" orientation="horizontal">
+                    <StackLayout id="product_layout" cssClass="stage-dark" orientation="horizontal">
 
                     </StackLayout>
                 </ScrollView>
 
                 <StackLayout row="2" cssClass="progress-container">
 
-                    <Label text="BATMAN vs SUPERMAN - FIGURINE SERIES" cssClass="mini-label"/>
+                    <Label text="BATMAN V SUPERMAN: DAWN OF JUSTICE" cssClass="mini-label"/>
                     <Label text="MY COLLECTION" cssClass="large-label"/>
 
                     <StackLayout id="progress_container">

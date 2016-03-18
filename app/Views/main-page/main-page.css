@@ -71,6 +71,13 @@
     background-position: bottom center;
 }
 
+.stage-dark {
+    background-image: url('res://stage_dark');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom center;
+}
+
 .foreground-statue {
     height: 70%;
     margin-bottom: 10%;

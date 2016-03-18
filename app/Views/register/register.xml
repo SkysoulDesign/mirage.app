@@ -17,37 +17,37 @@
                            secure="true"/>
                 <TextField cssClass="field" text="{{ email }}" hint="E-MAIL"/>
 
-                <Label text="Gender"/>
-                <GridLayout orientation="horizontal" columns="*,*">
-                    <Label id="male"
-                           cssClass="{{ gender === 'male' ? 'gender-container--selected' : 'gender-container' }}"
-                           text="Male" col="0" tap="{{ setGender }}"/>
-                    <Label id="female"
-                           cssClass="{{ gender === 'female' ? 'gender-container--selected' : 'gender-container' }}"
-                           text="Female" col="1" tap="{{ setGender }}"/>
-                </GridLayout>
+                <!--<Label text="Gender"/>-->
+                <!--<GridLayout orientation="horizontal" columns="*,*">-->
+                    <!--<Label id="male"-->
+                           <!--cssClass="{{ gender === 'male' ? 'gender-container&#45;&#45;selected' : 'gender-container' }}"-->
+                           <!--text="Male" col="0" tap="{{ setGender }}"/>-->
+                    <!--<Label id="female"-->
+                           <!--cssClass="{{ gender === 'female' ? 'gender-container&#45;&#45;selected' : 'gender-container' }}"-->
+                           <!--text="Female" col="1" tap="{{ setGender }}"/>-->
+                <!--</GridLayout>-->
 
-                <Label text="Country"/>
+                <!--<Label text="Country"/>-->
 
                 <!--<StackLayout id="countriesContainer">-->
                 <!--</StackLayout>-->
 
-                <dd:DropDown cssClass="drop-down" items="{{ countries }}" selectedIndex="{{ selectedCountry }}"/>
+                <!--<dd:DropDown cssClass="drop-down" items="{{ countries }}" selectedIndex="{{ selectedCountry }}"/>-->
 
-                <Label text="Age Group"/>
-                <dd:DropDown cssClass="drop-down" items="{{ ages }}" selectedIndex="{{ selectedAge }}"/>
+                <!--<Label text="Age Group"/>-->
+                <!--<dd:DropDown cssClass="drop-down" items="{{ ages }}" selectedIndex="{{ selectedAge }}"/>-->
 
-                <StackLayout cssClass="{{ agreement ?  'terms-container--accepted' : 'terms-container' }}"
-                             tap="{{ toggleAgreement }}">
-                    <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
-                    <Label text="I Agree with Terms and Condition." textWrap="true"/>
-                </StackLayout>
+                <!--<StackLayout cssClass="{{ agreement ?  'terms-container&#45;&#45;accepted' : 'terms-container' }}"-->
+                             <!--tap="{{ toggleAgreement }}">-->
+                    <!--<Label cssClass="terms-label-note" text="TAP TO SELECT"/>-->
+                    <!--<Label text="I Agree with Terms and Condition." textWrap="true"/>-->
+                <!--</StackLayout>-->
 
-                <StackLayout cssClass="{{ newsletter ?  'terms-container--accepted' : 'terms-container' }}"
-                             tap="{{ toggleNewsletter }}">
-                    <Label cssClass="terms-label-note" text="TAP TO SELECT"/>
-                    <Label text="I Prefer not to Receive any Promotion Information." textWrap="true"/>
-                </StackLayout>
+                <!--<StackLayout cssClass="{{ newsletter ?  'terms-container&#45;&#45;accepted' : 'terms-container' }}"-->
+                             <!--tap="{{ toggleNewsletter }}">-->
+                    <!--<Label cssClass="terms-label-note" text="TAP TO SELECT"/>-->
+                    <!--<Label text="I Prefer not to Receive any Promotion Information." textWrap="true"/>-->
+                <!--</StackLayout>-->
 
                 <Button id="register_btn" text="Register" tap="{{ tapRegister }}"/>
 

@@ -28,10 +28,20 @@
     text-align: center;
 }
 
-Button {
+.enabled {
     width: 100%;
     background-color: white;
     color: #E977AF;
+    font-size: 20px;
+    border-radius: 2;
+    height: 25%;
+    margin: 10% 0 0 0;
+}
+
+.disabled{
+    color: #e9cbd4;
+    background-color: #e9b1ce;
+    width: 100%;
     font-size: 20px;
     border-radius: 2;
     height: 25%;

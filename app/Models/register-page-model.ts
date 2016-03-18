@@ -26,20 +26,20 @@ export class RegisterPageModel extends BaseModel {
         /**
          * Defaults
          */
-        this.defaults();
+        //this.defaults();
 
         /**
          * Binders
          */
-        this.bindCountries();
-        this.bindAges();
+        //this.bindCountries();
+        //this.bindAges();
     }
 
     /**
      * Set the defaults
      */
     private defaults() {
-        this.set('newsletter', true);
+        //this.set('newsletter', true);
     }
 
     /**
@@ -64,15 +64,15 @@ export class RegisterPageModel extends BaseModel {
         //});
 
         /**
-         * Countries
+         * Countries USING THIS
          * @type {ObservableArray<string>}
          */
-        var countriesArray = this.getObservableAsArray('countries', function (data, countriesArray) {
-            for (var item in data) countriesArray.setItem(data[item].id, data[item].name)
-        });
-
-        this.set('countries', countriesArray);
-        this.set('selectedCountry', 45); //45 China
+        //var countriesArray = this.getObservableAsArray('countries', function (data, countriesArray) {
+        //    for (var item in data) countriesArray.setItem(data[item].id, data[item].name)
+        //});
+        //
+        //this.set('countries', countriesArray);
+        //this.set('selectedCountry', 45); //45 China
 
     }
 
@@ -85,12 +85,12 @@ export class RegisterPageModel extends BaseModel {
          * Ages
          * @type {ObservableArray<string>}
          */
-        var agesArray = this.getObservableAsArray('ages', function (data, agesArray) {
-            for (var item in data) agesArray.setItem(data[item].id, data[item].from + ' - ' + data[item].to)
-        });
-
-        this.set('ages', agesArray);
-        this.set('selectedAge', 3);
+        //var agesArray = this.getObservableAsArray('ages', function (data, agesArray) {
+        //    for (var item in data) agesArray.setItem(data[item].id, data[item].from + ' - ' + data[item].to)
+        //});
+        //
+        //this.set('ages', agesArray);
+        //this.set('selectedAge', 3);
 
     }
 
@@ -143,11 +143,11 @@ export class RegisterPageModel extends BaseModel {
                 password: this.get('password'),
                 password_confirmation: this.get('password_confirmation'),
                 email: this.get('email'),
-                gender: this.get('gender'),
-                country_id: this.get('selectedCountry'),
-                age_id: this.get('selectedAge'),
-                newsletter: this.get('newsletter'),
-                terms: this.get('agreement'),
+                //gender: this.get('gender'),
+                //country_id: this.get('selectedCountry'),
+                //age_id: this.get('selectedAge'),
+                //newsletter: this.get('newsletter'),
+                //terms: this.get('agreement'),
             };
 
         var onSuccess = function (data) {

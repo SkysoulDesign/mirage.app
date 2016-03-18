@@ -20,13 +20,13 @@ export function pageNavigatedTo(args:NavigatedData) {
      * Cache All forms api to fix a bug on dropdown menu
      * Hopefully the request will be done before user request them
      */
-    if (!cache.has('countries')) {
-        api.fetch('countries', {});
-    }
-
-    if (!cache.has('ages')) {
-        api.fetch('ages', {});
-    }
+    //if (!cache.has('countries')) {
+    //    api.fetch('countries', {});
+    //}
+    //
+    //if (!cache.has('ages')) {
+    //    api.fetch('ages', {});
+    //}
 
     /**
      * Otherwise Redirect to the main page

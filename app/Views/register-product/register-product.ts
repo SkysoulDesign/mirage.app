@@ -7,10 +7,11 @@ export function pageLoaded(args) {
 
     var page = <Page>args.object,
         input = page.getViewById('code_input'),
+        image = page.getViewById('figure'),
         registerButton = page.getViewById('register_button');
 
     var model = new RegisterProductPageModel();
 
-    page.bindingContext = model.init({page: page, input: input, registerButton: registerButton});
+    page.bindingContext = model.init({page: page, input: input, registerButton: registerButton, image: image});
 
 }

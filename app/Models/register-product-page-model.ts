@@ -11,8 +11,10 @@ import dialogs = require("ui/dialogs");
 export class RegisterProductPageModel extends BaseModel {
 
     private page:Page;
+    private image:ImageSource;
     private input:TextField;
     private registerButton:Button;
+    private invalidMessage:string = 'Invalid Code';
 
     /**
      * Constructor
@@ -26,60 +28,67 @@ export class RegisterProductPageModel extends BaseModel {
      */
     public setup() {
 
-        var _this = this,
-            image = this.page.getViewById('figure');
+        var _this = this;
+
+        /**
+         * Disable Button by Default
+         */
+        _this.disableButton();
 
         var data = {
                 product_id: null,
                 encode_image: true
             },
             onCached = function (img) {
-                image.imageSource = img.imageSource;
+                _this.image.imageSource = img.imageSource;
+                //_this.tapRegister();
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
                 _this.set('product_image', data.image.encoded);
+                //_this.tapRegister();
             },
             onError = function (errors) {
+                console.log('Ooops Error', errors);
                 _this.set('isLoading', false);
-                _this.input.text = '';
-                //_this.input.editable = true;
+                _this.disableButton();
+                alert(_this.invalidMessage);
             };
 
-        this.on(TextField.propertyChangeEvent, function (args:EventData) {
+        this.on(TextField.propertyChangeEvent, function (args) {
 
-            var length = args.value.toString().length,
-                value = args.value.toString();
+            var value = args.value.toString(),
+                length = args.value.toString().length;
 
-            if (length >= 18)
-                return _this.set('code_text', 'Invalid Code');
+            var index = value.indexOf('-') === -1;
 
-            if (length == 17) {
+            if ((length != 17 && index) || (length != 20 && !index))
+                return _this.disableButton();
 
-                _this.set('code_text', 'Valid Code');
+            /**
+             * Enable Button
+             * @type {boolean}
+             */
+            _this.enableButton();
 
-                //_this.input.editable = false;
+            /**
+             * Disable Rechecks
+             */
+            _this.set('isLoading', true);
 
-                /**
-                 * Disable Rechecks
-                 */
-                _this.set('isLoading', true);
+            data.product_id = value.substr(0, 5);
 
-                data.product_id = value.substr(0, 5);
-
-                /**
-                 * Check if its cached
-                 */
-                if (file.has(data.product_id + '.png')) {
-                    return onCached(file.load(data.product_id + '.png'));
-                }
-
-                /**
-                 * fetch product
-                 */
-                api.fetch('product', data, onSuccess, onError, true);
-
+            /**
+             * Check if its cached
+             */
+            if (file.has(data.product_id + '.png')) {
+                return onCached(file.load(data.product_id + '.png'));
             }
+
+            /**
+             * fetch product
+             */
+            api.fetch('product', data, onSuccess, onError, true);
 
         });
 
@@ -90,16 +99,33 @@ export class RegisterProductPageModel extends BaseModel {
      */
     public tapRegister() {
 
-        this.registerButton.isEnabled = false;
+        var _this = this;
+            _this.disableButton();
 
-        if (this.get('code') === undefined || !this.get('code') || this.get('code').length != 17) {
-            this.registerButton.isEnabled = true;
-            return alert('Invalid Code');
+        var code = this.get('code'),
+            length = this.get('code').length
+
+        var index = this.get('code').indexOf('-') === -1;
+
+        if ((length != 17 && index) || (length != 20 && !index)) {
+            console.log('invalid');
+            return dialogs.confirm(_this.invalidMessage).then(result => {
+                _this.disableButton();
+            });
+
         }
 
-        var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
+        /**
+         * Parse Code
+         * @type {string}
+         */
+            //var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
 
-        var _this = this, data = {code: code},
+        var final = code.replace(/-/g, '');
+
+        console.log(final);
+
+        var data = {code: final},
             onSuccess = function () {
 
                 /**
@@ -125,17 +151,30 @@ export class RegisterProductPageModel extends BaseModel {
 
             },
             onError = function (e) {
-                alert('Invalid Code');
-                _this.input.text = '';
-                _this.input.isEnabled = true;
-                _this.set('isLoading', false);
-                _this.registerButton.isEnabled = false;
+
+                dialogs.confirm(_this.invalidMessage).then(result => {
+                    _this.set('isLoading', false);
+                    _this.enableButton();
+                });
+
             };
 
         this.set('isLoading', true);
 
         api.fetch('registerProduct', data, onSuccess, onError, false);
 
+    }
+
+    public enableButton() {
+        this.registerButton.isUserInteractionEnabled = true;
+        this.registerButton.isEnabled = true;
+        this.registerButton.className = 'enabled';
+    }
+
+    public disableButton() {
+        this.registerButton.isUserInteractionEnabled = false;
+        this.registerButton.isEnabled = false;
+        this.registerButton.className = 'disabled';
     }
 
 }
