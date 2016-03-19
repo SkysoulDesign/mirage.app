@@ -41,12 +41,12 @@ export class RegisterProductPageModel extends BaseModel {
             },
             onCached = function (img) {
                 _this.image.imageSource = img.imageSource;
-                //_this.tapRegister();
+                _this.tapRegister();
             },
             onSuccess = function (data) {
                 _this.set('isLoading', false);
                 _this.set('product_image', data.image.encoded);
-                //_this.tapRegister();
+                _this.tapRegister();
             },
             onError = function (errors) {
                 console.log('Ooops Error', errors);
@@ -57,12 +57,7 @@ export class RegisterProductPageModel extends BaseModel {
 
         this.on(TextField.propertyChangeEvent, function (args) {
 
-            var value = args.value.toString(),
-                length = args.value.toString().length;
-
-            var index = value.indexOf('-') === -1;
-
-            if ((length != 17 && index) || (length != 20 && !index))
+            if (_this.validate(args.value.toString()))
                 return _this.disableButton();
 
             /**
@@ -76,7 +71,7 @@ export class RegisterProductPageModel extends BaseModel {
              */
             _this.set('isLoading', true);
 
-            data.product_id = value.substr(0, 5);
+            data.product_id = args.value.substr(0, 5);
 
             /**
              * Check if its cached
@@ -102,12 +97,9 @@ export class RegisterProductPageModel extends BaseModel {
         var _this = this;
             _this.disableButton();
 
-        var code = this.get('code'),
-            length = this.get('code').length
+        var code = this.get('code');
 
-        var index = this.get('code').indexOf('-') === -1;
-
-        if ((length != 17 && index) || (length != 20 && !index)) {
+        if (_this.validate(code)) {
             console.log('invalid');
             return dialogs.confirm(_this.invalidMessage).then(result => {
                 _this.disableButton();
@@ -119,13 +111,9 @@ export class RegisterProductPageModel extends BaseModel {
          * Parse Code
          * @type {string}
          */
-            //var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
+        //var code = this.get('code').slice(0, 5) + '-' + this.get('code').slice(5, 17).replace(/(.{4})/g, "$1-").slice(0, -1);
 
-        var final = code.replace(/-/g, '');
-
-        console.log(final);
-
-        var data = {code: final},
+        var data = {code: code.replace(/-/g, '')},
             onSuccess = function () {
 
                 /**
@@ -163,6 +151,11 @@ export class RegisterProductPageModel extends BaseModel {
 
         api.fetch('registerProduct', data, onSuccess, onError, false);
 
+    }
+
+    public validate(code:string):boolean {
+        var index = code.indexOf('-') === -1;
+        return (code.length != 17 && index) || (code.length != 20 && !index);
     }
 
     public enableButton() {

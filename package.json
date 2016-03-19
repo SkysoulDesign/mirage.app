@@ -2,10 +2,10 @@
 	"nativescript": {
 		"id": "com.soap.tumbler",
 		"tns-android": {
-			"version": "1.6.3"
+			"version": "1.7.0"
 		},
 		"tns-ios": {
-			"version": "1.6.0"
+			"version": "1.7.0"
 		}
 	},
 	"dependencies": {
@@ -15,7 +15,8 @@
 		"nativescript-screen-orientation": "^1.0.2",
 		"nativescript-status-bar": "^1.0.1",
 		"nativescript-telerik-ui": "^0.2.4",
-		"tns-core-modules": "^1.6.2"
+		"tns-core-modules": "^1.6.2",
+		"typescript": "^1.8.9"
 	},
 	"devDependencies": {
 		"nativescript-dev-typescript": "^0.3.0",
