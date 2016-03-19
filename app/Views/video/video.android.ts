@@ -7,6 +7,8 @@ import statusBar = require("nativescript-status-bar");
 import {api} from "../../Modules/Helpers";
 import activityIndicatorModule = require("ui/activity-indicator");
 
+var videoNATIVE;
+
 export function pageNavigatedTo(args) {
 
     var page = <Page>args.object,
@@ -29,7 +31,7 @@ export function pageNavigatedTo(args) {
 
     orientationModule.setCurrentOrientation("landscape", function () {
 
-        var videoView:VideoView = video._nativeView,
+        var videoView:VideoView = videoNATIVE,
 
             url = api.getBase() + extras.video,
             uri = android.net.Uri.parse(url);
@@ -45,6 +47,8 @@ export function pageNavigatedTo(args) {
 
         videoView.setMediaController(controller);
         videoView.setVideoURI(uri);
+        videoView.setZOrderOnTop(true);
+        videoView.requestFocus();
         videoView.setOnPreparedListener(new listener());
 
     });
@@ -56,6 +60,6 @@ export function onNavigatingFrom() {
 }
 
 export function createVideoView(args:CreateViewEventData) {
-    args.view = new android.widget.VideoView(args.context);
+    args.view = videoNATIVE = new android.widget.VideoView(args.context);
 }
 
