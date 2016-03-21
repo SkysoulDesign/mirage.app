@@ -21,7 +21,7 @@
 }
 
 .bottom {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .center {
@@ -34,8 +34,8 @@
     color: #E977AF;
     font-size: 20px;
     border-radius: 2;
-    height: 25%;
-    margin: 10% 0 0 0;
+    height: 20%;
+    margin: 5% 0 0 0;
 }
 
 .disabled{
@@ -44,8 +44,8 @@
     width: 100%;
     font-size: 20px;
     border-radius: 2;
-    height: 25%;
-    margin: 10% 0 0 0;
+    height: 20%;
+    margin: 5% 0 0 0;
 }
 
 TextField {

@@ -1,4 +1,4 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true">
+<Page loaded="pageLoaded" android:actionBarHidden="true" android:fitsSystemWindows="true">
 
     <GridLayout rows="3*,4*">
 
@@ -7,7 +7,7 @@
             <ActivityIndicator busy="{{ isLoading }}"/>
         </GridLayout>
 
-        <GridLayout row="1"  class="container" rows="*,2*,*">
+        <GridLayout row="1"  class="container" rows="*,*,*">
 
             <StackLayout row="0">
                 <Label class="label top" text="PLEASE INPUT THE"/>
