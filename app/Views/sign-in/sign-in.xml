@@ -6,7 +6,7 @@
         <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit"/>
 
         <StackLayout cssClass="form" row="1">
-            <TextField class="field" text="{{ username }}" hint="USERNAME"/>
+            <TextField class="field" text="{{ username }}" hint="USERNAME OR EMAIL"/>
             <TextField class="field" text="{{ password }}" hint="PASSWORD" secure="true"/>
             <Button id="login_button" text="LOGIN" row="2" tap="{{ tapSignIn }}"/>
             <ActivityIndicator busy="{{ isLoading }}"/>

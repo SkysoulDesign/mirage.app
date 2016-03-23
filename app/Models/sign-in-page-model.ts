@@ -3,6 +3,7 @@ import {navigate, api} from "../Modules/Helpers";
 import {BaseModel} from "./BaseModel";
 import {Button} from "ui/button";
 import {Page} from "ui/page";
+import dialogs = require("ui/dialogs");
 
 export class SignInPageModel extends BaseModel {
 
@@ -55,7 +56,45 @@ export class SignInPageModel extends BaseModel {
             onError = function (errors) {
                 _this.set('isLoading', false);
                 _this.loginButton.isEnabled = true;
+
+                if (errors === 'invalid_username_or_password') {
+
+                    return dialogs.confirm({
+                        title: "Error",
+                        message: "Invalid Username or Password",
+                        cancelButtonText: "Reset Password",
+                        okButtonText: "Try Again"
+                    }).then(result => {
+
+                        /**
+                         * Reset Password
+                         */
+                        if (!result) dialogs.prompt({
+                            title: "Reset Password",
+                            message: "Please input your username or email",
+                            okButtonText: "Reset",
+                            cancelButtonText: "Cancel",
+                            inputType: dialogs.inputType.text
+                        }).then(r => {
+
+                            /**
+                             * if Reset Password
+                             */
+                            if (r.result) api.fetch('resetPassword', {credential: r.text}, response => {
+                                dialogs.alert(response.status);
+                            }, error => {
+                                api.alertErrors(error);
+                            }, false);
+
+                            //console.log("Dialog result: " + r.result + ", text: " + r.text);
+
+                        });
+
+                    });
+                }
+
                 api.alertErrors(errors);
+
             };
 
         api.fetch('login', data, onSuccess, onError);

@@ -14,7 +14,8 @@ export class Config {
         ages: {GET: "api/form/ages"},
         product: {POST: "api/product"},
         products: {POST: "api/products"},
-        registerProduct: {POST: "api/product/register"}
+        registerProduct: {POST: "api/product/register"},
+        resetPassword: {POST: "api/user/reset"}
     };
 
     /**

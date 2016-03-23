@@ -8,4 +8,5 @@ export interface ApiListInterface {
     countries:{GET:string};
     ages:{GET:string};
     registerProduct:{ POST: string };
+    resetPassword:{ POST: string };
 }
