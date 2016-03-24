@@ -1,7 +1,10 @@
 import {Observable} from "data/observable";
 import {Mirage as App} from "../app";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
+import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
 
-export class MirageNewsPageModel extends Observable {
+
+export class MirageNewsPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     constructor() {
         super({
@@ -54,6 +57,14 @@ export class MirageNewsPageModel extends Observable {
 
             ]
         });
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['MIRAGE_NEWS'];
     }
 
 }

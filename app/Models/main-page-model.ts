@@ -12,11 +12,12 @@ import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
 import {Page} from "ui/page";
 import application = require('application')
 import {BaseModel} from "./BaseModel";
-import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 import progressModule = require("ui/progress");
 import {StackLayout} from "ui/layouts/stack-layout";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
+import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
 
-export class MainPageModel extends BaseModelWithMainNavigation {
+export class MainPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     private page:Page;
     private user:ApiUserInterface;
@@ -80,6 +81,14 @@ export class MainPageModel extends BaseModelWithMainNavigation {
 
         }
 
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['SETTING', 'ABOUT_SOAP', 'NEWS', 'MY_COLLECTION', 'MAIN_PAGE_TITLE'];
     }
 
     private createImage(url:string):ImageModule.Image {

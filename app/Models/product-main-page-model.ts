@@ -20,8 +20,10 @@ import {uppercase} from "ui/enums";
 import scrollViewModule = require("ui/scroll-view");
 import {ApiProfileInterface} from "../Interfaces/ApiUserInterface";
 import textModule = require ("ui/text-view");
+import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 
-export class ProductMainPageModel extends BaseModelWithMainNavigation {
+export class ProductMainPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     private page:Page;
     private user:ApiUserInterface;
@@ -119,6 +121,14 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
         this.addFigureImage();
         this.setupProfileTab(profile_tab_container, this.codes.product.profile);
 
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['VIDEO_HOLOGRAM', 'PROFILE'];
     }
 
     /**

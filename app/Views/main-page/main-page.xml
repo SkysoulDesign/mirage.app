@@ -46,8 +46,8 @@
 
                 <StackLayout row="2" cssClass="progress-container">
 
-                    <Label text="BATMAN V SUPERMAN: DAWN OF JUSTICE" cssClass="mini-label"/>
-                    <Label text="MY COLLECTION" cssClass="large-label"/>
+                    <Label text="{{ MAIN_PAGE_TITLE }}" cssClass="mini-label"/>
+                    <Label text="{{ MY_COLLECTION }}" cssClass="large-label"/>
 
                     <StackLayout id="progress_container">
 
@@ -76,9 +76,9 @@
                     </StackLayout>
 
                     <StackLayout cssClass="drawer-menu-content">
-                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
-                        <Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
-                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+                        <Label cssClass="drawer-menu" text="{{ NEWS }}" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="{{ ABOUT_SOAP }}" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="{{ SETTING }}" tap="{{ tapSetting }}"/>
                     </StackLayout>
 
                 </StackLayout>

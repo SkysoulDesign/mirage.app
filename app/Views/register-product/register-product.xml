@@ -10,14 +10,14 @@
         <GridLayout row="1"  class="container" rows="*,*,*">
 
             <StackLayout row="0">
-                <Label class="label top" text="PLEASE INPUT THE"/>
-                <Label class="label bottom" text="PASSWORD"/>
+                <Label class="label top" text="{{ INPUT_TEXT }}"/>
+                <Label class="label bottom" text="{{ PASSWORD }}"/>
                 <!--<Label class="label center" text="{{ code_text }}"/>-->
             </StackLayout>
 
             <TextField row="1" text="{{ code }}" id="code_input" hint="EX: MF001-9JZD-FXX4-XC85"/>
 
-            <Button row="2" class="enabled" text="REGISTER" tap="{{tapRegister}}" id="register_button"/>
+            <Button row="2" class="enabled" text="{{ REGISTER }}" tap="{{tapRegister}}" id="register_button"/>
 
         </GridLayout>
 

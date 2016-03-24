@@ -31,7 +31,7 @@
 
                 <TabView row="2">
                     <TabView.items>
-                        <TabViewItem title="Video for Hologram">
+                        <TabViewItem title="{{ VIDEO_HOLOGRAM }}">
                             <TabViewItem.view>
                                 <StackLayout>
                                     <ScrollView height="*">
@@ -41,7 +41,7 @@
                                 </StackLayout>
                             </TabViewItem.view>
                         </TabViewItem>
-                        <TabViewItem title="Profile">
+                        <TabViewItem title="{{ PROFILE }}">
                             <TabViewItem.view>
                                 <StackLayout>
                                     <ScrollView>

@@ -4,8 +4,10 @@ import {BaseModel} from "./BaseModel";
 import {Button} from "ui/button";
 import {Page} from "ui/page";
 import dialogs = require("ui/dialogs");
+import {LocalizedModel} from "./LocalizedModel";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 
-export class SignInPageModel extends BaseModel {
+export class SignInPageModel extends LocalizedModel implements LocalizedModelInterface {
 
     private page:Page;
     private loginButton:Button;
@@ -22,6 +24,14 @@ export class SignInPageModel extends BaseModel {
      */
     public setup() {
 
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['USER_OR_EMAIL', 'PASSWORD', 'LOGIN'];
     }
 
     /**

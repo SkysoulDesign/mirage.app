@@ -4,9 +4,10 @@ import {BaseModel} from "./BaseModel";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 import {cache, api, config, file} from "../Modules/Helpers";
 import {Localization} from "../Modules/Localization";
+import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 var platformModule = require("platform");
 
-export class LocalizedModel extends BaseModel implements LocalizedModelInterface {
+export class LocalizedModelWithNavigation extends BaseModelWithMainNavigation implements LocalizedModelInterface {
 
     /**
      * Init
@@ -24,28 +25,16 @@ export class LocalizedModel extends BaseModel implements LocalizedModelInterface
          * 2 - Initialize Localization class and call the public method corresponding to the Default/Cached Language
          *   - var english = english() {}, if(english.hasOwnProperty('LOGIN')) english.LOGIN
          */
-        var deviceLanguage = platformModule.device.language;
-        switch (deviceLanguage){
-            case 'en':
-            case 'jp':
-                break;
-            default:
-                deviceLanguage = platformModule.device.language + '_' + platformModule.device.region;
-                break;
-        }
-        /*if (deviceLanguage != 'en') {
-            deviceLanguage = platformModule.device.language + '_' + platformModule.device.region;
-        }*/
 
-        var currentLanguage = cache.get('language', deviceLanguage);
+        var currentLanguage = cache.get('language', platformModule.device.language);
 
         var localization = new Localization();
 
         var languageList = localization[currentLanguage]()
 
-        for (var index in values) {
+        for (var index in values){
             var key = values[index];
-            if (languageList.hasOwnProperty(key)) {
+            if(languageList.hasOwnProperty(key)){
                 this.set(key, languageList[key]);
             } else {
                 this.set(key, key);

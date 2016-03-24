@@ -8,8 +8,10 @@ import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import dialogs = require("ui/dialogs");
 import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
+import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 
-export class RegisterProductPageModel extends BaseModel implements BaseModelInterface{
+export class RegisterProductPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     private page:Page;
     private image:ImageSource;
@@ -88,6 +90,14 @@ export class RegisterProductPageModel extends BaseModel implements BaseModelInte
 
         });
 
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['REGISTER', 'PASSWORD', 'INPUT_TEXT'];
     }
 
     /**

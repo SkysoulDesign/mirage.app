@@ -42,7 +42,7 @@ export class RegisterPageModel extends LocalizedModel implements LocalizedModelI
      * @returns {string[]}
      */
     public localize() {
-        return ['LOGIN', 'REGISTER'];
+        return ['USERNAME', 'REGISTER', 'PASSWORD', 'PASSWORD_CONFIRM', 'EMAIL'];
     }
 
     /**
