@@ -313,7 +313,7 @@ export class lang {
      * Set Language
      * @param index
      */
-    public set(index:number) {
+    public static set(index:number) {
         cache.set('language', this.languagesCode[index]);
     }
 
@@ -321,14 +321,14 @@ export class lang {
      * Returns all available languages
      * @returns string[]
      */
-    public getLanguages() {
+    public static getLanguages() {
         return this.languages;
     }
 
     /**
      * get language Index
      */
-    public getIndex():number {
+    public static getIndex():number {
         return this.languagesCode.indexOf(this.activeLanguage());
     }
 
@@ -336,7 +336,7 @@ export class lang {
      * Returns Active Language
      * @returns string
      */
-    public activeLanguage() {
+    public static activeLanguage() {
 
         var language = this.deviceLanguage();
 
@@ -353,11 +353,11 @@ export class lang {
 
     }
 
-    public deviceLanguage() {
+    public static deviceLanguage() {
         return platformModule.device.language;
     }
 
-    public deviceRegion() {
+    public static deviceRegion() {
         return platformModule.device.region;
     }
 
