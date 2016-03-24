@@ -36,7 +36,7 @@ export class LocalizedModel extends BaseModel implements LocalizedModelInterface
             if(languageList.hasOwnProperty(key)){
                 this.set(key, languageList[key]);
             } else {
-                this.set(key, 'hello world');
+                this.set(key, key);
             }
         }
 
