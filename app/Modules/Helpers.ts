@@ -337,8 +337,16 @@ export class lang {
      * @returns string
      */
     public static activeLanguage() {
+        return cache.get('language', this.deviceLanguage());
+    }
 
-        var language = this.deviceLanguage();
+    /**
+     * Get Device Language
+     * @returns string
+     */
+    public static deviceLanguage() {
+
+        var language = platformModule.device.language;
 
         switch (language) {
             case 'en':
@@ -351,10 +359,6 @@ export class lang {
 
         return language;
 
-    }
-
-    public static deviceLanguage() {
-        return platformModule.device.language;
     }
 
     public static deviceRegion() {

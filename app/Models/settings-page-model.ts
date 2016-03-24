@@ -2,15 +2,23 @@ import {Observable, EventData} from "data/observable";
 import {navigate, cache, lang} from "../Modules/Helpers";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 import {LocalizedModel} from "./LocalizedModel";
+import {Page} from "ui/page";
 
 export class SettingsPageModel extends LocalizedModel implements LocalizedModelInterface {
+
+    private page:Page;
 
     /**
      * Constructor
      */
     public constructor() {
-
         super();
+    }
+
+    /**
+     * Setup
+     */
+    public setup() {
 
         this.set("languages", lang.getLanguages());
         this.set("selectedLanguage", lang.getIndex());
@@ -19,9 +27,6 @@ export class SettingsPageModel extends LocalizedModel implements LocalizedModelI
             lang.set(data.value);
         });
 
-    }
-
-    public setup() {
     }
 
     /**

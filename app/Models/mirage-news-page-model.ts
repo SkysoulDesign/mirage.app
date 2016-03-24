@@ -59,6 +59,10 @@ export class MirageNewsPageModel extends LocalizedModelWithNavigation implements
         });
     }
 
+    public setup() {
+
+    }
+
     /**
      * Localize Model
      * @returns {string[]}
