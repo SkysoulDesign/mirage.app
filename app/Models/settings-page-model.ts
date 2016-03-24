@@ -1,18 +1,35 @@
 import {Observable, EventData} from "data/observable";
-import {navigate, cache} from "../Modules/Helpers";
+import {navigate, cache, lang} from "../Modules/Helpers";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
+import {LocalizedModel} from "./LocalizedModel";
 
-export class SettingsPageModel extends Observable {
+export class SettingsPageModel extends LocalizedModel implements LocalizedModelInterface {
 
     /**
      * Constructor
      */
     public constructor() {
+
         super();
-        this.set("languages", ["English", "日本語", "한국어", "繁體字", "简体字"]);
-        this.set("selectedLanguage", 0);
-        this.addEventListener(Observable.propertyChangeEvent, function (pcd:EventData) {
-            console.log(pcd.eventName.toString() + " " + pcd.propertyName.toString() + " " + pcd.value.toString());
+
+        this.set("languages", lang.getLanguages());
+        this.set("selectedLanguage", lang.getIndex());
+
+        this.addEventListener(Observable.propertyChangeEvent, function (data:EventData) {
+            lang.set(data.value);
         });
+
+    }
+
+    public setup() {
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['SETTING', 'LANGUAGE', 'NEWS_LETTER', 'LOGOUT'];
     }
 
     /**
@@ -22,5 +39,12 @@ export class SettingsPageModel extends Observable {
         cache.remove('login');
         navigate.to('login', {clearHistory: true});
     };
+
+    /**
+     * Back to previous page
+     */
+    public tapBack() {
+        navigate.back();
+    }
 
 }

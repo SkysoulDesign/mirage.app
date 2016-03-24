@@ -7,6 +7,7 @@ import imageSource = require( "image-source");
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ImageFormat} from "ui/enums";
 import {ImageSource} from "image-source";
+import platformModule = require("platform");
 
 /**
  * Extend Object
@@ -299,3 +300,66 @@ export class file {
     }
 
 }
+
+/**
+ * Localization Class
+ */
+export class lang {
+
+    private languagesCode = ['en', 'zh_cn', 'zh_tw', 'jp'];
+    public languages = ["English", "简体字", "繁體字", "日本"];
+
+    /**
+     * Set Language
+     * @param index
+     */
+    public set(index:number) {
+        cache.set('language', this.languagesCode[index]);
+    }
+
+    /**
+     * Returns all available languages
+     * @returns string[]
+     */
+    public getLanguages() {
+        return this.languages;
+    }
+
+    /**
+     * get language Index
+     */
+    public getIndex():number {
+        return this.languagesCode.indexOf(this.activeLanguage());
+    }
+
+    /**
+     * Returns Active Language
+     * @returns string
+     */
+    public activeLanguage() {
+
+        var language = this.deviceLanguage();
+
+        switch (language) {
+            case 'en':
+            case 'jp':
+                break;
+            default:
+                language = language + '_' + this.deviceRegion();
+                break;
+        }
+
+        return language;
+
+    }
+
+    public deviceLanguage() {
+        return platformModule.device.language;
+    }
+
+    public deviceRegion() {
+        return platformModule.device.region;
+    }
+
+}
+
