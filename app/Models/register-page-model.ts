@@ -6,8 +6,10 @@ import {Button} from "ui/button";
 import {Page} from "ui/page";
 import StackLayout = org.nativescript.widgets.StackLayout;
 import listPickerModule = require("ui/list-picker");
+import {LocalizedModel} from "./LocalizedModel";
+import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 
-export class RegisterPageModel extends BaseModel {
+export class RegisterPageModel extends LocalizedModel implements LocalizedModelInterface {
 
     private page:Page;
     private registerButton:Button;
@@ -33,6 +35,14 @@ export class RegisterPageModel extends BaseModel {
          */
         //this.bindCountries();
         //this.bindAges();
+    }
+
+    /**
+     * Localize Model
+     * @returns {string[]}
+     */
+    public localize() {
+        return ['LOGIN', 'REGISTER'];
     }
 
     /**

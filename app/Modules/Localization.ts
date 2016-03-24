@@ -6,20 +6,24 @@ export class Localization {
     /**
      * English Localization
      */
-    public english() {
+    public en() {
         return {
             'LOGIN': 'LOGIN',
-            'REGISTER': 'REGISTER'
+            'REGISTER': 'REGISTER',
+            'USERNAME': 'USERNAME',
+            'PASSWORD': 'PASSWORD',
+            'PASSWORD_CONFIRM': 'PASSWORD CONFIRMATION',
+            'EMAIL': 'E-MAIL'
         }
     }
 
     /**
-     * English Localization
+     * Chinese Localization
      */
-    public chinese() {
+    public zh() {
         return {
-            'LOGIN': 'LOGIN',
-            'REGISTER': 'REGISTER'
+            'LOGIN': '登录',
+            'REGISTER': '注册'
         }
     }
 

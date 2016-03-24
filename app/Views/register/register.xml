@@ -11,11 +11,11 @@
 
             <StackLayout cssClass="form">
 
-                <TextField cssClass="field" text="{{ username }}" hint="USERNAME"/>
-                <TextField cssClass="field" text="{{ password }}" hint="PASSWORD" secure="true"/>
-                <TextField cssClass="field" text="{{ password_confirmation }}" hint="PASSWORD CONFIRMATION"
+                <TextField cssClass="field" text="{{ USERNAME }}" hint="{{ USERNAME }}"/>
+                <TextField cssClass="field" text="{{ PASSWORD }}" hint="{{ PASSWORD }}" secure="true"/>
+                <TextField cssClass="field" text="{{ PASSWORD_CONFIRM }}" hint="{{ PASSWORD_CONFIRM }}"
                            secure="true"/>
-                <TextField cssClass="field" text="{{ email }}" hint="E-MAIL"/>
+                <TextField cssClass="field" text="{{ EMAIL }}" hint="{{ EMAIL }}"/>
 
                 <!--<Label text="Gender"/>-->
                 <!--<GridLayout orientation="horizontal" columns="*,*">-->
