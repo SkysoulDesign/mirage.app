@@ -3,6 +3,7 @@ import {navigate, cache, lang} from "../Modules/Helpers";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 import {LocalizedModel} from "./LocalizedModel";
 import {Page} from "ui/page";
+import dialogs = require("ui/dialogs");
 
 export class SettingsPageModel extends LocalizedModel implements LocalizedModelInterface {
 
@@ -24,7 +25,16 @@ export class SettingsPageModel extends LocalizedModel implements LocalizedModelI
         this.set("selectedLanguage", lang.getIndex());
 
         this.addEventListener(Observable.propertyChangeEvent, function (data:EventData) {
-            lang.set(data.value);
+
+            dialogs.confirm("Are you sure you want to change the language to " + lang.languages[data.value] ).then(function (result) {
+
+                if (!result) return;
+
+                lang.set(data.value);
+                navigate.to('main-page');
+
+            });
+
         });
 
     }
