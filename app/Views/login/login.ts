@@ -7,7 +7,9 @@ export function pageNavigatedTo(args:NavigatedData) {
     if (args.isBackNavigation)
         return;
 
+    var model = new LoginModel();
+
     var page = <Page>args.object;
-        page.bindingContext = new LoginModel();
+        page.bindingContext = model.init({page:page});
 
 }

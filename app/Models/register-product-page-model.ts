@@ -7,8 +7,9 @@ import {ImageSource} from "image-source";
 import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import dialogs = require("ui/dialogs");
+import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
 
-export class RegisterProductPageModel extends BaseModel {
+export class RegisterProductPageModel extends BaseModel implements BaseModelInterface{
 
     private page:Page;
     private image:ImageSource;

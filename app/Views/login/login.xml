@@ -7,8 +7,8 @@
         <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit" horizontalAlign="center"/>
 
         <StackLayout cssClass="form" row="1" orientation="vertical">
-            <Button text="LOGIN" tap="{{ tapSignIn }}" cssClass="button big"/>
-            <Button text="REGISTER" tap="{{ tapRegister }}" cssClass="button small"/>
+            <Button text="{{ LOGIN }}" tap="{{ tapSignIn }}" cssClass="button big"/>
+            <Button text="{{ REGISTER }}" tap="{{ tapRegister }}" cssClass="button small"/>
         </StackLayout>
 
         <Image cssClass="extra" row="2" src="res://extra" stretch="aspectFit" horizontalAlign="center"/>
