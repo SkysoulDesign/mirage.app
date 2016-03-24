@@ -306,8 +306,8 @@ export class file {
  */
 export class lang {
 
-    private languagesCode = ['en', 'zh_cn', 'zh_tw', 'jp'];
-    public languages = ["English", "简体字", "繁體字", "日本"];
+    public static languagesCode = ['en', 'zh_cn', 'zh_tw', 'jp'];
+    public static languages = ["English", "简体字", "繁體字", "日本"];
 
     /**
      * Set Language
