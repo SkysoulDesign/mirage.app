@@ -16,17 +16,17 @@ export class LocalizedModel extends BaseModel implements LocalizedModelInterface
         var values = this.localize();
 
         var currentLanguage = lang.activeLanguage();
-        //console.dir(currentLanguage);
+        console.dir(currentLanguage);
         var localization = new Localization();
-        var languageList = localization[currentLanguage]();
+        //var languageList = localization[currentLanguage]();
 
         for (var index in values) {
             var key = values[index];
-            if (languageList.hasOwnProperty(key)) {
-                this.set(key, languageList[key]);
-            } else {
+            //if (languageList.hasOwnProperty(key)) {
+            //    this.set(key, languageList[key]);
+            //} else {
                 this.set(key, key);
-            }
+            //}
         }
 
     }

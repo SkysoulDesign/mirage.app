@@ -17,7 +17,7 @@ export class LocalizedModelWithNavigation extends BaseModelWithMainNavigation im
         var values = this.localize();
 
         var currentLanguage = lang.activeLanguage();
-        //console.dir(currentLanguage);
+        console.dir(currentLanguage);
         var localization = new Localization();
         var languageList = localization[currentLanguage]();
 

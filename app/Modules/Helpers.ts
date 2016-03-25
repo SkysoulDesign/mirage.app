@@ -306,7 +306,7 @@ export class file {
  */
 export class lang {
 
-    public static languagesCode = ['en', 'zh_cn', 'zh_tw', 'jp'];
+    public static languagesCode = ['en', 'zh', 'zh_tw', 'jp'];
     public static languages = ["English", "简体字", "繁體字", "日本"];
 
     /**
@@ -346,13 +346,11 @@ export class lang {
      */
     public static deviceLanguage() {
 
-        var language = platformModule.device.language.slice(0, 2); //en_US //en HK, TW
+        var language = platformModule.device.language.slice(0, 2);
 
         /**
          * Check if its chinese
          */
-        //console.dir(this.deviceRegion());
-
         if (language === 'zh')
             switch (this.deviceRegion()) {
                 case 'hk':
