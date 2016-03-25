@@ -348,6 +348,8 @@ export class lang {
 
         var language = platformModule.device.language;
 
+        language = language.slice(0, 2);
+
         switch (language) {
             case 'en':
             case 'jp':
