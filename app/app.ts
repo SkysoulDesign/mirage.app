@@ -61,6 +61,16 @@ export namespace Mirage {
 
         }
 
+        public shareWithIWatch() {
+
+            if (!application.ios) return;
+
+            var userDefaults = NSUserDefaults("group.com.example.My-App");
+            userDefaults.setObject(['hello', 'world'], "TestOBJ");
+            userDefaults.synchronize()
+
+        }
+
     }
 
 }
@@ -69,4 +79,6 @@ export namespace Mirage {
  * Start App
  * @type {Mirage.App}
  */
-var app = (new Mirage.App()).init();
+var app = new Mirage.App();
+app.int();
+app.shareWithIWatch();
