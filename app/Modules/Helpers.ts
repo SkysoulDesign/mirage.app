@@ -351,11 +351,13 @@ export class lang {
         /**
          * Check if its chinese
          */
+        //console.dir(this.deviceRegion());
+
         if (language === 'zh')
             switch (this.deviceRegion()) {
                 case 'hk':
                 case 'tw':
-                    language += '_' + this.deviceRegion(); //zh_tw
+                    language += '_tw'; //zh_tw
                     break;
             }
 
