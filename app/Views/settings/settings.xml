@@ -24,10 +24,10 @@
                              selectedIndex="{{ selectedLanguage }}"/>
             </GridLayout>
 
-            <GridLayout cssClass="item" columns="*,*">
-                <Label cssClass="item-content" text="{{ NEWS_LETTER }}" col="0"/>
-                <Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>
-            </GridLayout>
+            <!--<GridLayout cssClass="item" columns="*,*">-->
+                <!--<Label cssClass="item-content" text="{{ NEWS_LETTER }}" col="0"/>-->
+                <!--<Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>-->
+            <!--</GridLayout>-->
 
             <Button text="{{ LOGOUT }}" tap="{{ tapLogout }}" cssClass="logout-button"/>
 

@@ -44,7 +44,7 @@ export class SettingsPageModel extends LocalizedModel implements LocalizedModelI
      * @returns {string[]}
      */
     public localize() {
-        return ['SETTING', 'LANGUAGE', 'NEWS_LETTER', 'LOGOUT'];
+        return ['SETTING', 'LANGUAGE', 'LOGOUT']; //'NEWS_LETTER'
     }
 
     /**
