@@ -346,25 +346,29 @@ export class lang {
      */
     public static deviceLanguage() {
 
-        var language = platformModule.device.language;
+        var language = platformModule.device.language.slice(0, 2); //en_US //en HK, TW
 
-        language = language.slice(0, 2);
-
-        switch (language) {
-            case 'en':
-            case 'jp':
-                break;
-            default:
-                language = language + '_' + this.deviceRegion();
-                break;
-        }
+        /**
+         * Check if its chinese
+         */
+        if (language === 'zh')
+            switch (this.deviceRegion()) {
+                case 'hk':
+                case 'tw':
+                    language += '_' + this.deviceRegion(); //zh_tw
+                    break;
+            }
 
         return language;
 
     }
 
+    /**
+     * Get Region
+     * @returns string
+     */
     public static deviceRegion() {
-        return platformModule.device.region;
+        return platformModule.device.region.toLocaleLowerCase();
     }
 
 }

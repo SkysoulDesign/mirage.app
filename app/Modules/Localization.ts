@@ -33,7 +33,7 @@ export class Localization {
     /**
      * Chinese Simplified Localization
      */
-    public zh_cn() {
+    public zh() {
         return {
             'LOGIN': '登录',
             'REGISTER': '注册',
@@ -82,13 +82,6 @@ export class Localization {
             'NEWS_LETTER': '通讯',
             'LOGOUT': '登出'
         }
-    }
-
-    /**
-     * HongKong Chinese Localization
-     */
-    public zh_hk() {
-        return this.zh_tw();
     }
 
     /**
