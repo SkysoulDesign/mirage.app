@@ -5,6 +5,7 @@ import {cache} from "../../Modules/Helpers";
 import dialogs = require("ui/dialogs");
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 import {navigate} from "../../Modules/Helpers";
+import application = require('application');
 
 export function pageNavigatedTo(args:NavigatedData) {
 
@@ -21,7 +22,7 @@ export function pageNavigatedTo(args:NavigatedData) {
         user = cache.get('login');
 
     var page = <Page>args.object;
-        page.bindingContext = mainPageModel.init({page: page, user: user});
+    page.bindingContext = mainPageModel.init({page: page, user: user});
 
     if (user.codes.length === 0)
         dialogs.confirm({
@@ -38,5 +39,13 @@ export function pageNavigatedTo(args:NavigatedData) {
      * Use Http.request
      */
     mainPageModel.refreshLogin();
+
+    if (!application.ios) return;
+
+    var userDefaults = NSUserDefaults.alloc().initWithSuiteName("group.com.soap.tumbler.Mirage3D");
+        userDefaults.setObjectForKey("hello world", "shared");
+        userDefaults.synchronize();
+
+    console.log(userDefaults.objectForKey("shared"));
 
 }

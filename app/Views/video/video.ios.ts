@@ -21,7 +21,7 @@ export function pageLoaded(args) {
     console.dir(videoContainer._nativeView.bounds.size);
     console.dir(page._nativeView.frame.size);
 
-    //bug .  getViewbyId can not get view bounds.
+    // bug .  getViewbyId can not get view bounds.
     // console.dir(page);
     // var moviePath = NSBundle.mainBundle().pathForResourceOfType("app/test111" ,"mp4");
     // console.log(moviePath);

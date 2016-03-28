@@ -38,17 +38,15 @@ export namespace Mirage {
         public init() {
 
             /**
+             * Register Font on Ios
+             */
+            if (application.ios)
+                fontModule.ios.registerFont("SourceSansPro-Regular.otf");
+
+            /**
              * Initiate the Main App View
              */
             this.start(view(this.view));
-
-            /**
-             * Register Font on Ios
-             */
-            if (application.ios) {
-                fontModule.ios.registerFont("SourceSansPro-Regular.otf");
-                this.shareWithIWatch();
-            }
 
         }
 
@@ -61,23 +59,7 @@ export namespace Mirage {
             application.cssFile = './app.css';
 
         }
-
-        /**
-         * Share data with iWatch
-         */
-        public shareWithIWatch() {
-            console.dir('hello world');
-            console.dir(application.ios);
-            if (!application.ios) return;
-
-            var userDefaults = NSUserDefaults("group.watchviewer");
-                userDefaults.setObject(['hello', 'world'], "TestOBJ");
-                userDefaults.synchronize();
-
-            console.dir(userDefaults);
-
-        }
-
+        
     }
 
 }
