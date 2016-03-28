@@ -213,7 +213,6 @@ export class api {
      */
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
         parameters['language'] = lang.activeLanguage();
-        console.dir(parameters)
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
 
