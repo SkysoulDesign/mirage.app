@@ -212,6 +212,8 @@ export class api {
      * @returns Observable
      */
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
+        parameters['language'] = lang.activeLanguage();
+        console.dir(parameters)
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
 
@@ -306,7 +308,7 @@ export class file {
  */
 export class lang {
 
-    public static languagesCode = ['en', 'zh', 'zh_tw', 'jp'];
+    public static languagesCode = ['en', 'zh', 'zh_tw', 'ja'];
     public static languages = ["English", "简体字", "繁體字", "日本"];
 
     /**

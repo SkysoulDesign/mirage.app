@@ -87,7 +87,7 @@ export class Localization {
     /**
      * Japanese Localization
      */
-    public jp() {
+    public ja() {
         return {
             'LOGIN': 'ログイン',
             'REGISTER': '登録',
