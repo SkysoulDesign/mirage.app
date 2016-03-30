@@ -29,7 +29,7 @@
 			android:label="@string/title_activity_kimera"
 			android:windowSoftInputMode="stateHidden|adjustResize"
 			android:configChanges="keyboardHidden|orientation|screenSize"
-			android:screenOrientation="sensorPortrait">
+			android:screenOrientation="sensorPortrait" >
 
 				<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
