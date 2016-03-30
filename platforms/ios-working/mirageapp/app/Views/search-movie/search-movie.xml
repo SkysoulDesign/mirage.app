@@ -1,0 +1,11 @@
+<Page>
+	<AbsoluteLayout  width="300" height="300" verticalAlignment="center" horizontalAlignment="center" backgroundColor="lightgray">
+		<Label left="110" top="110"  text="Movie" />
+		<Label left="10" top="60" text="Movie 1" tap="tapmovie" />
+		<Label left="10" top="160" text="Movie 2" tap="tapmovie" />
+		<Label left="110" top="210" text="Movie 3" tap="tapmovie" />
+		<Label left="210" top="160" text="Movie 4" tap="tapmovie" />
+		<Label left="210" top="60" text="Movie 5" tap="tapmovie" />
+		<Label left="110" top="10" text="Movie 6" tap="tapmovie" />
+	</AbsoluteLayout>
+</Page>

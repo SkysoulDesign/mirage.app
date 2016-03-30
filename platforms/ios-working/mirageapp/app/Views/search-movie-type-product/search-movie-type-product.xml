@@ -1,0 +1,9 @@
+<Page>
+    <GridLayout rows="*,auto,auto,auto,*" columns="*,auto,auto,auto,*">
+        <Label row="2" col="2" text="Product 1" tap="tapProduct"/>
+        <Label row="1" col="2" text="Product 2" tap="tapProduct"/>
+        <Label row="2" col="1" text="Product 3" tap="tapProduct"/>
+        <Label row="2" col="3" text="Product 4" tap="tapProduct"/>
+        <Label row="3" col="2" text="Product 5" tap="tapProduct"/>
+    </GridLayout>
+</Page>

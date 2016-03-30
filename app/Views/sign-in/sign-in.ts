@@ -1,6 +1,7 @@
 import {SignInPageModel} from "../../Models/sign-in-page-model";
 import {Page} from 'ui/page';
 import {NavigatedData} from "ui/page";
+//import application = require("application");
 
 export function pageNavigatedTo(args:NavigatedData) {
 
@@ -15,5 +16,14 @@ export function pageNavigatedTo(args:NavigatedData) {
             page:page,
             loginButton:loginButton
         });
+
+    //if (!application.ios) return;
+    //
+    //if (WCSession.isSupported()) {
+    //    var session = WCSession.defaultSession();
+    //    session.delegate = this;
+    //    session.activateSession();
+    //    console.dir(session);
+    //}
 
 }

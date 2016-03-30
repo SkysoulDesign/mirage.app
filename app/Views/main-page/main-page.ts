@@ -40,12 +40,4 @@ export function pageNavigatedTo(args:NavigatedData) {
      */
     mainPageModel.refreshLogin();
 
-    if (!application.ios) return;
-
-    var userDefaults = NSUserDefaults.alloc().initWithSuiteName("group.com.soap.tumbler.Mirage3D");
-        userDefaults.setObjectForKey("hello world", "shared");
-        userDefaults.synchronize();
-
-    console.log(userDefaults.objectForKey("shared"));
-
 }
