@@ -1,0 +1,3 @@
+{ "name" : "listview",
+  "main" : "listview.js",
+  "typings" : "./listview.d.ts" }

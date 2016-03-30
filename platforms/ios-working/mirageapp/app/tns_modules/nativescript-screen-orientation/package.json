@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      "nativescript-screen-orientation@^1.0.2",
+      "/Users/Milewski/Documents/Rafael/Code/mirage-app"
+    ]
+  ],
+  "_from": "nativescript-screen-orientation@>=1.0.2 <2.0.0",
+  "_id": "nativescript-screen-orientation@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nativescript-screen-orientation",
+  "_nodeVersion": "4.2.3",
+  "_npmUser": {
+    "email": "sumeet@videospike.com",
+    "name": "bathejasumeet"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "nativescript-screen-orientation",
+    "raw": "nativescript-screen-orientation@^1.0.2",
+    "rawSpec": "^1.0.2",
+    "scope": null,
+    "spec": ">=1.0.2 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-screen-orientation/-/nativescript-screen-orientation-1.0.2.tgz",
+  "_shasum": "08ed7affa437b0e483d5ea0746c668bbbe101b52",
+  "_shrinkwrap": null,
+  "_spec": "nativescript-screen-orientation@^1.0.2",
+  "_where": "/Users/Milewski/Documents/Rafael/Code/mirage-app",
+  "author": {
+    "email": "sumeet@videospike.com",
+    "name": "Batheja Sumeet"
+  },
+  "bugs": {
+    "url": "https://github.com/VideoSpike/nativescript-screen-orientation/issues"
+  },
+  "dependencies": {},
+  "description": "A plugin to force change the orientation of a page programmatically in NativeScript. Supports both Android and iOS.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "08ed7affa437b0e483d5ea0746c668bbbe101b52",
+    "tarball": "http://registry.npmjs.org/nativescript-screen-orientation/-/nativescript-screen-orientation-1.0.2.tgz"
+  },
+  "gitHead": "6e39893facf3b481381b1d5432a9bd7027ba1996",
+  "homepage": "https://github.com/VideoSpike/nativescript-screen-orientation",
+  "keywords": [
+    "nativescript",
+    "orientation-change",
+    "force-orientation",
+    "lock-orientation"
+  ],
+  "license": "MIT",
+  "main": "screen-orientation.js",
+  "maintainers": [
+    {
+      "email": "sumeet@videospike.com",
+      "name": "bathejasumeet"
+    }
+  ],
+  "name": "nativescript-screen-orientation",
+  "nativescript": {
+    "platforms": {
+      "android": "1.5.0",
+      "ios": "1.5.0"
+    }
+  },
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VideoSpike/nativescript-screen-orientation.git"
+  },
+  "scripts": {},
+  "version": "1.0.2"
+}

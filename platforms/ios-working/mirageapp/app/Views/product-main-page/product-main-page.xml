@@ -1,0 +1,92 @@
+<Page xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      navigatedTo="pageNavigatedTo"
+      navigatingFrom="pageNavigatedFrom"
+      xmlns="http://www.nativescript.org/tns.xsd"
+      android:actionBarHidden="true">
+
+    <drawer:RadSideDrawer id="sideDrawer">
+
+        <drawer:RadSideDrawer.mainContent>
+
+            <GridLayout rows="80,3*,*3">
+
+                <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+
+                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                           horizontalAlignment="center" verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
+
+                    <Label text="{{ title }}" cssClass="mirage-label" col="1" horizontalAlignment="left"
+                           verticalAlignment="center"/>
+
+                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                           verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+
+                </GridLayout>
+
+                <GridLayout id="product_container" cssClass="stage-dark" row="1">
+                    <!--<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>-->
+                </GridLayout>
+
+                <TabView row="2">
+                    <TabView.items>
+                        <TabViewItem title="{{ VIDEO_HOLOGRAM }}">
+                            <TabViewItem.view>
+                                <StackLayout>
+                                    <ScrollView height="*">
+                                        <StackLayout id="extras_container">
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </TabViewItem.view>
+                        </TabViewItem>
+                        <TabViewItem title="{{ PROFILE }}">
+                            <TabViewItem.view>
+                                <StackLayout>
+                                    <ScrollView>
+                                        <StackLayout id="profile_container" cssClass="details-container">
+
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </TabViewItem.view>
+                        </TabViewItem>
+                    </TabView.items>
+                </TabView>
+
+            </GridLayout>
+
+        </drawer:RadSideDrawer.mainContent>
+
+        <drawer:RadSideDrawer.drawerContent>
+
+            <GridLayout cssClass="drawer-container" rows="3*,*">
+
+                <StackLayout row="0">
+
+                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
+                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                        <StackLayout verticalAlignment="center">
+                            <Label text="{{ username }}"/>
+                            <Label text="{{ email }}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout cssClass="drawer-menu-content">
+                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+
+            </GridLayout>
+
+        </drawer:RadSideDrawer.drawerContent>
+
+    </drawer:RadSideDrawer>
+
+</Page>

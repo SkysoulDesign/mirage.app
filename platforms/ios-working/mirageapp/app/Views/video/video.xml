@@ -1,0 +1,5 @@
+<Page actionBarHidden="true"
+      loaded="pageLoaded" unloaded="pageUnloaded">
+    <GridLayout id="container" rows="*">
+    </GridLayout>
+</Page>

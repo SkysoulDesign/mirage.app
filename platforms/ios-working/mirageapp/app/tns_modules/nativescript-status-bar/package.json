@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "nativescript-status-bar@^1.0.1",
+      "/Users/Milewski/Documents/Rafael/Code/mirage-app"
+    ]
+  ],
+  "_from": "nativescript-status-bar@>=1.0.1 <2.0.0",
+  "_id": "nativescript-status-bar@1.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nativescript-status-bar",
+  "_npmUser": {
+    "email": "peter.staev@gmail.com",
+    "name": "pstaev"
+  },
+  "_npmVersion": "1.4.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "nativescript-status-bar",
+    "raw": "nativescript-status-bar@^1.0.1",
+    "rawSpec": "^1.0.1",
+    "scope": null,
+    "spec": ">=1.0.1 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-status-bar/-/nativescript-status-bar-1.0.1.tgz",
+  "_shasum": "7269b5b49c7a3911fc57e2e6c2f0d4ff69be8f6b",
+  "_shrinkwrap": null,
+  "_spec": "nativescript-status-bar@^1.0.1",
+  "_where": "/Users/Milewski/Documents/Rafael/Code/mirage-app",
+  "author": {
+    "email": "peter@tangrasoft.com",
+    "name": "Peter Staev"
+  },
+  "bugs": {
+    "url": "https://github.com/PeterStaev/NativeScript-Status-Bar/issues"
+  },
+  "dependencies": {},
+  "description": "A simple NativeScript plugin for controlling status bar visibility.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7269b5b49c7a3911fc57e2e6c2f0d4ff69be8f6b",
+    "tarball": "http://registry.npmjs.org/nativescript-status-bar/-/nativescript-status-bar-1.0.1.tgz"
+  },
+  "homepage": "https://github.com/PeterStaev/NativeScript-Status-Bar",
+  "keywords": [
+    "NativeScript",
+    "StatusBar",
+    "tangra"
+  ],
+  "license": "Apache-2.0",
+  "main": "status-bar.js",
+  "maintainers": [
+    {
+      "email": "peter.staev@gmail.com",
+      "name": "pstaev"
+    }
+  ],
+  "name": "nativescript-status-bar",
+  "nativescript": {
+    "platforms": {
+      "android": "1.5.2",
+      "ios": "1.5.2"
+    }
+  },
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterStaev/NativeScript-Status-Bar.git"
+  },
+  "version": "1.0.1"
+}

@@ -1,0 +1,29 @@
+<Page loaded="pageLoaded" android:actionBarHidden="true">
+	<GridLayout rows="*,*,*,*,*" columns="*,*,*,*" >
+		<SearchBar row="1" colSpan="4" id="searchbar"/>
+
+		<label row="0" col="0"  text="label 1" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="0"  text="label 2" tap="{{tapProduct}}"/> -->
+		<label row="2" col="0"  text="label 3" tap="{{tapProduct}}"/>
+		<label row="3" col="0"  text="label 4" tap="{{tapProduct}}"/>
+		<label row="4" col="0"  text="label 5" tap="{{tapProduct}}"/>
+
+		<label row="0" col="1"  text="label 6" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="1"  text="label 7" tap="{{tapProduct}}"/> -->
+		<label row="2" col="1"  text="label 8" tap="{{tapProduct}}"/>
+		<label row="3" col="1"  text="label 9" tap="{{tapProduct}}"/>
+		<label row="4" col="1"  text="label 10" tap="{{tapProduct}}"/>
+
+		<label row="0" col="2"  text="label 11" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="2"  text="label 12" tap="{{tapProduct}}"/> -->
+		<label row="2" col="2"  text="label 13" tap="{{tapProduct}}"/>
+		<label row="3" col="2"  text="label 14" tap="{{tapProduct}}"/>
+		<label row="4" col="2"  text="label 15" tap="{{tapProduct}}"/>
+
+		<label row="0" col="3"  text="label 16" tap="{{tapProduct}}"/>
+		<!-- <label row="1" col="3"  text="label 17" tap="{{tapProduct}}"/> -->
+		<label row="2" col="3"  text="label 18" tap="{{tapProduct}}"/>
+		<label row="3" col="3"  text="label 19" tap="{{tapProduct}}"/>
+		<label row="4" col="3"  text="label 20" tap="{{tapProduct}}"/>
+	</GridLayout>
+</Page>

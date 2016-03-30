@@ -1,0 +1,47 @@
+Page {
+    background-color: #ebebeb;
+}
+
+.action-bar-container {
+    background-color: white;
+    padding: 0 20px;
+}
+
+.menu-icon {
+    margin: 0 10px;
+}
+
+.action-bar-label {
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+.item {
+    height: 50px;
+    background-color: #dedede;
+    margin-bottom: 1px;
+    padding: 0 20px;
+}
+
+.item-content {
+    vertical-align: center;
+}
+
+.right {
+    text-align: left;
+    horizontal-align: right;
+}
+
+.settings-container {
+    padding: 10px;
+}
+
+.logout-button {
+    background-color: #E977AF;
+    width: 100%;
+    margin: 5px;
+    border-radius: 2;
+    font-size: 20px;
+    color: white;
+    height: 70px;
+}

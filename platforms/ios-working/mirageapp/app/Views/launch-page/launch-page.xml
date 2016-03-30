@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatedTo="pageNavigatedTo"
+      actionBarHidden="true">
+
+    <Image src="res://logo_white" cssClass="logo" horizontalAlignment="center" verticalAlignment="center"
+           stretch="aspectFit"/>
+
+</Page>
+

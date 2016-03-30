@@ -1,0 +1,3 @@
+{ "name" : "chart",
+  "main" : "chart.js",
+  "typings" : "./chart.d.ts" }
