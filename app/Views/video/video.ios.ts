@@ -6,7 +6,7 @@ var moviePlayer;
 import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view';
-import {api, navigate} from "../../Modules/Helpers";
+import {api, navigate, platform} from "../../Modules/Helpers";
 var changepage = true;
 
 export function pageLoaded(args) {
@@ -27,7 +27,9 @@ export function pageLoaded(args) {
     // console.log(moviePath);
     // var url = NSURL.fileURLWithPath(moviePath);
 
-    var url = NSURL.URLWithString(api.getBase() + extras.video);
+    var URI = api.getBaseWithToken('video', {extra: extras.id, 'aspect': platform.getRatio()});
+
+    var url = NSURL.URLWithString(URI);
     var playerViewController = MPMoviePlayerViewController.alloc().initWithContentURL(url);
 
     moviePlayer = playerViewController.moviePlayer;

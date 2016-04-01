@@ -189,6 +189,24 @@ export class api {
         return App.api.getBase(secure);
     }
 
+    /**
+     * Get base url with user token
+     */
+    public static getBaseWithToken(path:string = '', appends:{} = {}):string {
+
+        var base = this.getBase() + (path ? '/' + path : path),
+            token = cache.get('login.api_token'),
+            params = '?api_token=' + token;
+
+        if (!token) console.error('logo not set or user not logged in');
+
+        for (var obj in appends)
+            params += '&' + obj + "=" + appends[obj]
+
+        return encodeURI(base + params);
+
+    }
+
     public static get(name:string, secure:boolean = true):ApiUrlInterface {
         return App.api.get(name, secure);
     }
@@ -301,6 +319,36 @@ export class file {
     }
 
 }
+
+
+/**
+ * Localization Class
+ */
+export class platform {
+
+    /**
+     * Find out the greatest common divisor
+     * @param a number|string
+     * @param b number|string
+     * @returns number
+     */
+    private static gcd(a:number, b:number):number {
+        return (b == 0) ? a : this.gcd(b, a % b);
+    }
+
+    /**
+     * Get device Ration ex 16:9
+     */
+    public static getRatio(divisor):string {
+        var width = platformModule.screen.mainScreen.widthPixels,
+            height = platformModule.screen.mainScreen.heightPixels,
+            gcd = this.gcd(width, height);
+
+        return height / gcd + "x" + width / gcd;
+    }
+
+}
+
 
 /**
  * Localization Class

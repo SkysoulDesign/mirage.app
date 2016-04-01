@@ -4,7 +4,7 @@ import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
 import VideoView = android.widget.VideoView;
 import orientationModule = require("nativescript-screen-orientation");
 import statusBar = require("nativescript-status-bar");
-import {api} from "../../Modules/Helpers";
+import {api, platform} from "../../Modules/Helpers";
 import activityIndicatorModule = require("ui/activity-indicator");
 
 var videoNATIVE;
@@ -32,8 +32,7 @@ export function pageNavigatedTo(args) {
     orientationModule.setCurrentOrientation("landscape", function () {
 
         var videoView:VideoView = videoNATIVE,
-
-            url = api.getBase() + extras.video,
+            url = api.getBaseWithToken('video', {extra: extras.id, 'aspect': platform.getRatio()}),
             uri = android.net.Uri.parse(url);
 
         var controller = new android.widget.MediaController(videoView.getContext());
