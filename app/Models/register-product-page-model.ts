@@ -1,16 +1,12 @@
-import {Observable, EventData} from "data/observable";
 import {navigate, api, cache, file} from "../Modules/Helpers";
-import {Frame} from "ui/frame";
 import {Button} from "ui/button";
 import {TextField} from "ui/text-field";
 import {ImageSource} from "image-source";
-import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import dialogs = require("ui/dialogs");
-import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
 import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
-import barcodescanner = require("nativescript-barcodescanner");
+import {UpdateTextTrigger} from "ui/enums";
 
 export class RegisterProductPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
@@ -19,45 +15,13 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
     private input:TextField;
     private registerButton:Button;
     private invalidMessage:string = 'Invalid Code';
-    private permissiongranted:boolean = false;
+    private scannedCode:string;
 
     /**
      * Constructor
      */
     constructor() {
         super();
-
-        barcodescanner.available().then(available => {
-
-                if (!available) {
-                    return dialogs.alert("QRCode scanning is not available on your device").then(function () {
-                        console.log("no scanning on this device");
-                    });
-                }
-
-                barcodescanner.hasCameraPermission().then(granted => {
-
-                        if (!granted) {
-
-                            barcodescanner.requestCameraPermission().then(
-                                function () {
-                                    console.log("Camera permission requested");
-                                }
-                            );
-
-                            return dialogs.alert("Alert").then(function () {
-                                console.log("You haven't granted access to the camera, entering in manual input mode");
-                            });
-
-                        }
-
-                        this.permissiongranted = true;
-
-                    }
-                );
-            }
-        );
-
     }
 
     /**
@@ -71,7 +35,6 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
          * Disable Button by Default
          */
         _this.disableButton();
-        _this.scanQRCode();
 
         var data = {
                 product_id: null,
@@ -125,33 +88,12 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
 
         });
 
-    }
-
-    /**
-     * Scan QR Code
-     */
-    public scanQRCode() {
-
-        if (!this.permissiongranted === true) return;
-
-        barcodescanner.scan({
-            // iOS only, default 'Close'
-            cancelLabel: "Stop scanning",
-            // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
-            message: "Go scan something",
-            // Start with the front cam, if available. Android only, default false
-            preferFrontCamera: false,
-            // Render a button to switch between front and back cam. Android only, default false (on iOS it's always available)
-            showFlipCameraButton: true
-        }).then(
-            function (result) {
-                console.log("Scan format: " + result.format);
-                console.log("Scan text:   " + result.text);
-            },
-            function (error) {
-                console.log('errrrrrrrrr', error);
-            }
-        );
+        if (this.scannedCode) {
+            this.input.focus();
+            this.input.updateTextTrigger = UpdateTextTrigger.textChanged;
+            this.input.text = this.scannedCode;
+            //this.input.notifyPropertyChange('text', this.scannedCode);
+        }
 
     }
 

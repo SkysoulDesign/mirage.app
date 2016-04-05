@@ -10,7 +10,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
      * Open Camera to Scan QRCode
      */
     public tapScanQRCode() {
-        navigate.to('register-product');
+        navigate.to('scanner-page');
     }
 
     /**
@@ -19,7 +19,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
     public tapOpenMenu() {
 
         var sideDrawer = topmost().getViewById("sideDrawer");
-            sideDrawer.toggleDrawerState();
+        sideDrawer.toggleDrawerState();
 
     }
 

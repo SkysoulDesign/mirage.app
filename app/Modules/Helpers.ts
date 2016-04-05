@@ -8,6 +8,7 @@ import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ImageFormat} from "ui/enums";
 import {ImageSource} from "image-source";
 import platformModule = require("platform");
+import {BackstackEntry} from "ui/frame";
 
 /**
  * Extend Object
@@ -260,8 +261,8 @@ export class navigate {
     /**
      * Navigate back to the previous page
      */
-    public static back():void {
-        App.navigate.back();
+    public static back(to?:BackstackEntry):void {
+        App.navigate.back(to);
     }
 
 }

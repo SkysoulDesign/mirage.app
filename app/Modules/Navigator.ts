@@ -1,6 +1,7 @@
 import {Mirage as App} from "../app";
 import {NavigationEntry, topmost} from "ui/frame";
 import {extend, view} from "./Helpers";
+import {BackstackEntry} from "ui/frame";
 
 export class Navigator {
 
@@ -20,8 +21,8 @@ export class Navigator {
     /**
      * Navigate back to the previous page
      */
-    public back() {
-        topmost().goBack();
+    public back(to?:BackstackEntry) {
+        topmost().goBack(to);
     }
 
 }

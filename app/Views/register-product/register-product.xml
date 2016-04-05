@@ -1,4 +1,4 @@
-<Page loaded="pageLoaded" android:actionBarHidden="true" android:fitsSystemWindows="true">
+<Page navigatedTo="pageNavigatedTo" android:actionBarHidden="true" android:fitsSystemWindows="true">
 
     <GridLayout rows="3*,4*">
 
