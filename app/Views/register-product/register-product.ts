@@ -19,7 +19,7 @@ export function pageNavigatedTo(args) {
         input: input,
         registerButton: registerButton,
         image: image,
-        scannedCode: "MF0013D15F9F45C25"
+        scannedCode: page.navigationContext
     });
 
 }

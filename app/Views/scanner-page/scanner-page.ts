@@ -35,13 +35,9 @@ export function pageNavigatedTo(args:NavigatedData) {
                     }
 
                     barcodeScanner.scan({
-                        // iOS only, default 'Close'
-                        cancelLabel: "Stop scanning",
-                        // Android only, default is 'Place a barcode inside the viewfinder rectangle to scan it.'
-                        message: "Go scan something",
-                        // Start with the front cam, if available. Android only, default false
+                        cancelLabel: "Cancel",
+                        message: "Scan Product",
                         preferFrontCamera: false,
-                        // Render a button to switch between front and back cam. Android only, default false (on iOS it's always available)
                         showFlipCameraButton: false
                     }).then(
                         result => {

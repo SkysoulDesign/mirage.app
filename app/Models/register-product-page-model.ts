@@ -6,7 +6,6 @@ import {Page} from "ui/page";
 import dialogs = require("ui/dialogs");
 import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
-import {UpdateTextTrigger} from "ui/enums";
 
 export class RegisterProductPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
@@ -90,9 +89,7 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
 
         if (this.scannedCode) {
             this.input.focus();
-            this.input.updateTextTrigger = UpdateTextTrigger.textChanged;
-            this.input.text = this.scannedCode;
-            //this.input.notifyPropertyChange('text', this.scannedCode);
+            this.set('code', this.scannedCode);
         }
 
     }
