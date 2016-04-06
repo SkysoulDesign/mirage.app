@@ -8,8 +8,6 @@ import {view} from "./Modules/Helpers";
 import fontModule = require("ui/styling/font");
 import {iWatch as Watch} from "./Modules/iWatch";
 
-var iWatch;
-
 /**
  * Mirage App
  */
@@ -23,6 +21,7 @@ export namespace Mirage {
     export var navigate = new Navigator();
     export var api = new Api();
     export var database = new Database();
+    export var iWatch = new Watch();
 
     /**
      * Start The Application
@@ -49,16 +48,8 @@ export namespace Mirage {
             /**
              * Initiate the Main App View
              */
-            this.initialize();
             this.start();
 
-        }
-
-        /**
-         * Init Classes before App Starts
-         */
-        public initialize() {
-            iWatch = new Watch();
         }
 
         /**

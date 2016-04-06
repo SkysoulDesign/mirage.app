@@ -40,7 +40,7 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
      * @param success (data) => {}
      * @param error (error) => {}
      */
-    public refreshLogin(success?:(data)=>{}, error?:(error)=>{}) {
+    public refreshLogin(success?:(data:ApiUserInterface)=>void, error?:(error:any)=>void) {
 
         api.fetch('checkLogin', {}, function (data) {
             cache.set('login', data);
