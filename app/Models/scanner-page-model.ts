@@ -108,7 +108,6 @@ export class ScannerPageModel extends LocalizedModelWithNavigation implements Lo
                         message: "Product Registered Successfully",
                         okButtonText: "OK"
                     };
-
                     dialogs.alert(options).then(function () {
                         navigate.to("main-page", {clearHistory: true});
                     });
