@@ -37,13 +37,17 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
 
     /**
      * Refresh User
+     * @param success (data) => {}
+     * @param error (error) => {}
      */
-    public refreshLogin() {
+    public refreshLogin(success?:(data)=>{}, error?:(error)=>{}) {
 
         api.fetch('checkLogin', {}, function (data) {
             cache.set('login', data);
+            success(data);
         }, function (error) {
             navigate.to('login', {clearHistory: true});
+            error(error);
         }, false);
 
         api.fetch('products', {});
@@ -67,7 +71,7 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
         this.progress.value = progress.value;
 
         var progress_container = this.page.getViewById('progress_container');
-            progress_container.addChild(this.progress);
+        progress_container.addChild(this.progress);
 
         var container = <StackLayout>this.get('page').getViewById("product_layout");
 

@@ -6,6 +6,7 @@ import dialogs = require("ui/dialogs");
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 import {navigate} from "../../Modules/Helpers";
 import application = require('application');
+import {iWatch} from "../../Modules/iWatch";
 
 export function pageNavigatedTo(args:NavigatedData) {
 
@@ -38,6 +39,9 @@ export function pageNavigatedTo(args:NavigatedData) {
      * Otherwise redirect user to login page
      * Use Http.request
      */
-    mainPageModel.refreshLogin();
+    mainPageModel.refreshLogin(function (data) {
+        //if (application.ios) iWatch.sendMessage({products: data});
+        //console.dir(data);
+    });
 
 }

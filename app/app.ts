@@ -6,6 +6,9 @@ import {Api} from "./Modules/Api";
 import {Database} from "./Modules/Database";
 import {view} from "./Modules/Helpers";
 import fontModule = require("ui/styling/font");
+import {iWatch as Watch} from "./Modules/iWatch";
+
+var iWatch;
 
 /**
  * Mirage App
@@ -28,14 +31,14 @@ export namespace Mirage {
 
         /**
          * Main View Variable
-         * @type {string}
+         * @type string
          */
         private view:string = "main-page"; //launch-page
 
         /**
          * Initialize The Application
          */
-        public init() {
+        constructor() {
 
             /**
              * Register Font on Ios
@@ -46,20 +49,28 @@ export namespace Mirage {
             /**
              * Initiate the Main App View
              */
-            this.start(view(this.view));
+            this.initialize();
+            this.start();
 
+        }
+
+        /**
+         * Init Classes before App Starts
+         */
+        public initialize() {
+            iWatch = new Watch();
         }
 
         /**
          * Start The Application
          */
-        public start(view:string) {
+        public start() {
 
-            application.start({moduleName: view});
+            application.start({moduleName: view(this.view)});
             application.cssFile = './app.css';
 
         }
-        
+
     }
 
 }
@@ -68,4 +79,4 @@ export namespace Mirage {
  * Start App
  * @type {Mirage.App}
  */
-var app = (new Mirage.App()).init();
+var app = new Mirage.App();

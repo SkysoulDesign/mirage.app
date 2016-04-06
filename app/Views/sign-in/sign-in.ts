@@ -17,23 +17,5 @@ export function pageNavigatedTo(args:NavigatedData) {
         loginButton: loginButton
     });
 
-    if (!application.ios) return;
-
-    var MyWCSessionDelegate = NSObject.extend({
-        sessionDidReceiveMessageData: function (session, message) {
-            console.log(message)
-        }
-    }, {
-        name: "MyWCSessionDelegate",
-        protocols: [WCSessionDelegate]
-    });
-
-    if (WCSession.isSupported()) {
-        var session = WCSession.defaultSession();
-        session.delegate = new MyWCSessionDelegate();
-        session.activateSession();
-        session.sendMessageReplyHandlerErrorHandler({"message": "Hello iWatch!"}, null, null);
-    }
-
 }
 
