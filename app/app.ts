@@ -21,7 +21,7 @@ export namespace Mirage {
     export var navigate = new Navigator();
     export var api = new Api();
     export var database = new Database();
-    export var iWatch = new Watch();
+    export var iWatch = application.ios ? new Watch() : null;
 
     /**
      * Start The Application

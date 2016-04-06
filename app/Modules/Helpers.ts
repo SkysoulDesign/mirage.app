@@ -9,6 +9,7 @@ import {ImageFormat} from "ui/enums";
 import {ImageSource} from "image-source";
 import platformModule = require("platform");
 import {BackstackEntry} from "ui/frame";
+import dialogs = require("ui/dialogs");
 
 /**
  * Extend Object
@@ -423,3 +424,34 @@ export class lang {
 
 }
 
+/**
+ * General Functions
+ */
+export class general {
+
+    /**
+     * To Choose Add Product Option and Load Page
+     */
+    public static getAddProductAction(){
+        dialogs.action("Please Select an option below", "Cancel", ["Scan QR Code", "Enter Code"]).then(result => {
+            switch(result){
+                case "Scan QR Code":
+                    navigate.to("scanner-page");
+                    break;
+                case "Enter Code":
+                    navigate.to("register-product");
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+
+    /**
+     *
+     */
+    public static validateCode(code:string):boolean {
+        var index = code.indexOf('-') === -1;
+        return (code.length != 17 && index) || (code.length != 20 && !index);
+    }
+}

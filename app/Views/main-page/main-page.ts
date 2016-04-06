@@ -4,7 +4,7 @@ import {NavigatedData} from "ui/page";
 import {cache} from "../../Modules/Helpers";
 import dialogs = require("ui/dialogs");
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
-import {navigate} from "../../Modules/Helpers";
+import {navigate, general} from "../../Modules/Helpers";
 import application = require('application');
 import {Mirage as App} from "../../app" ;
 
@@ -25,13 +25,16 @@ export function pageNavigatedTo(args:NavigatedData) {
     var page = <Page>args.object;
     page.bindingContext = mainPageModel.init({page: page, user: user});
 
-    if (user.codes.length === 0)
+    if (cache.has('login') && user.codes.length === 0)
         dialogs.confirm({
             title: "Attention",
             message: "You currently don't have any registered product, please add one to start using the app.",
-            okButtonText: "okay, guide me through",
-        }).then(function () {
-            navigate.to('register-product');
+            okButtonText: "Cancel",
+            cancelButtonText: "okay, guide me through"
+        }).then(result => {
+            //navigate.to('register-product');
+            if (!result)
+                general.getAddProductAction();
         });
 
     /**

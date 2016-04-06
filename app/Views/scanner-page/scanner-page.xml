@@ -1,3 +1,9 @@
-<Page navigatedTo="pageNavigatedTo">
+<Page navigatedTo="pageNavigatedTo" android:actionBarHidden="true">
 
+    <GridLayout rows="*,*,*">
+        <GridLayout row="1" class="stage">
+            <Image id="figure" row="0" src="{{ product_image }}"/>
+            <ActivityIndicator busy="{{ isLoading }}"/>
+        </GridLayout>
+    </GridLayout>
 </Page>

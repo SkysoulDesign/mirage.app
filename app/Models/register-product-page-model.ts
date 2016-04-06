@@ -1,4 +1,4 @@
-import {navigate, api, cache, file} from "../Modules/Helpers";
+import {navigate, api, cache, file, general} from "../Modules/Helpers";
 import {Button} from "ui/button";
 import {TextField} from "ui/text-field";
 import {ImageSource} from "image-source";
@@ -112,7 +112,7 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
 
         var code = this.get('code');
 
-        if (_this.validate(code)) {
+        if (general.validateCode(code)) {
             console.log('invalid');
             return dialogs.confirm(_this.invalidMessage).then(result => {
                 _this.disableButton();

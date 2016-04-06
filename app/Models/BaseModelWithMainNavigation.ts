@@ -1,5 +1,5 @@
 import {BaseModel} from "./BaseModel";
-import {navigate} from "../Modules/Helpers";
+import {navigate, general} from "../Modules/Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import OpenUrl = require( "nativescript-openurl" );
 import {topmost} from "ui/frame";
@@ -18,6 +18,13 @@ export class BaseModelWithMainNavigation extends BaseModel {
      */
     public tapRegisterProduct() {
         navigate.to('register-product');
+    }
+
+    /**
+     * Use getAddProductAction from General Helper
+     */
+    public tapAddProduct(){
+        general.getAddProductAction();
     }
 
     /**
