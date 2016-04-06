@@ -24,7 +24,7 @@
 
                     <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
                            verticalAlignment="center"
-                           stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+                           stretch="aspectFit" tap="{{ tapRegisterProduct }}"/>
 
                 </GridLayout>
 

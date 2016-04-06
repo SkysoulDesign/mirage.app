@@ -14,6 +14,13 @@ export class BaseModelWithMainNavigation extends BaseModel {
     }
 
     /**
+     * Open Register Product
+     */
+    public tapRegisterProduct() {
+        navigate.to('register-product');
+    }
+
+    /**
      * Open Menu
      */
     public tapOpenMenu() {
