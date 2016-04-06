@@ -49,11 +49,11 @@ export function pageNavigatedTo(args:NavigatedData) {
                     }).then(
                         result => {
                             //navigate.to('register-product', {context: result.text})
-                            page.bindingContext = scannerModel.init({page: page, image: image, scannedCode: result.text});
+                            scannerModel.init({page: page, image: image, scannedCode: result.text});
                         },
                         error => {
-                            navigate.to(returnDefault)
-                            //page.bindingContext = scannerModel.init({page: page, image: image, scannedCode: 'MF001-ffff-ffff-gggg'});
+                            //navigate.to(returnDefault)
+                            page.bindingContext = scannerModel.init({page: page, image: image, scannedCode: 'MF001-ffff-ffff-gggg'});
                         }
                     );
                 }
