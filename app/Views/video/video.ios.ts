@@ -27,7 +27,7 @@ export function pageLoaded(args) {
     // console.log(moviePath);
     // var url = NSURL.fileURLWithPath(moviePath);
 
-    var URI = api.getBaseWithToken('video', {extra: extras.id, 'aspect': platform.getRatio()});
+    var URI = api.getBaseWithToken('api/video', {extra: extras.id, 'aspect': platform.getRatio()});
 
     var url = NSURL.URLWithString(URI);
     var playerViewController = MPMoviePlayerViewController.alloc().initWithContentURL(url);

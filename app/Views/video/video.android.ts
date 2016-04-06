@@ -32,7 +32,7 @@ export function pageNavigatedTo(args) {
     orientationModule.setCurrentOrientation("landscape", function () {
 
         var videoView:VideoView = videoNATIVE,
-            url = api.getBaseWithToken('video', {extra: extras.id, 'aspect': platform.getRatio()}),
+            url = api.getBaseWithToken('api/video', {extra: extras.id, 'aspect': platform.getRatio()}),
             uri = android.net.Uri.parse(url);
 
         var controller = new android.widget.MediaController(videoView.getContext());

@@ -16,7 +16,6 @@ import {ApiCodesInterface} from "../Interfaces/ApiUserInterface";
 import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
-import {uppercase} from "ui/enums";
 import scrollViewModule = require("ui/scroll-view");
 import {ApiProfileInterface} from "../Interfaces/ApiUserInterface";
 import textModule = require ("ui/text-view");
