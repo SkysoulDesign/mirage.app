@@ -6,16 +6,17 @@ import {NavigatedData} from "ui/page";
 import {navigate} from "../../Modules/Helpers";
 import {EventData} from "data/observable";
 
-export function pageLoaded(args:EventData) {
+export function pageNavigatedTo(args:NavigatedData) {
 
-    var page = <Page>args.object;
+    if (args.isBackNavigation)
+        return navigate.back();
 
     barcodeScanner.available().then(available => {
 
             if (!available) {
 
                 return dialogs.alert("QRCode scanning is not available on your device").then(function () {
-                    page.closeModal()
+                    navigate.back()
                 });
 
             }
@@ -30,7 +31,7 @@ export function pageLoaded(args:EventData) {
                         );
 
                         return dialogs.alert("You haven't granted access to the camera, entering in manual input mode").then(() => {
-                            page.closeModal()
+                            navigate.to('register-product')
                         });
 
                     }
@@ -42,12 +43,13 @@ export function pageLoaded(args:EventData) {
                         showFlipCameraButton: false
                     }).then(
                         result => {
-                            page.closeModal(result.text);
+                            navigate.to('register-product', {context: result.text})
                         },
                         error => {
-                            page.closeModal()
+                            navigate.back()
                         }
                     );
+
                 }
             );
         }
