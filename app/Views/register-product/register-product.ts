@@ -1,25 +1,24 @@
-import {Observable} from "data/observable";
 import {Page} from 'ui/page';
-import vmModule = require("../../Models/register-product-page-model");
 import {RegisterProductPageModel} from "../../Models/register-product-page-model";
-import {navigate} from "../../Modules/Helpers";
+import {navigate, view} from "../../Modules/Helpers";
 import {NavigatedData} from "ui/page";
 
-export function pageNavigatedTo(args) {
+export function pageNavigatedTo(args:NavigatedData) {
 
     var page = <Page>args.object,
+        model = new RegisterProductPageModel(),
         input = page.getViewById('code_input'),
         image = page.getViewById('figure'),
         registerButton = page.getViewById('register_button');
 
-    var model = new RegisterProductPageModel();
-
-    page.bindingContext = model.init({
-        page: page,
-        input: input,
-        registerButton: registerButton,
-        image: image,
-        scannedCode: page.navigationContext
-    });
+    page.showModal(view('scanner-page'), null, function (code?:string) {
+        page.bindingContext = model.init({
+            page: page,
+            input: input,
+            registerButton: registerButton,
+            image: image,
+            scannedCode: code
+        });
+    }, true);
 
 }

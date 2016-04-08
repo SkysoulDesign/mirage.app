@@ -1,5 +1,5 @@
 import {Observable, EventData} from "data/observable";
-import {navigate, cache, lang} from "../Modules/Helpers";
+import {navigate, cache, lang, general} from "../Modules/Helpers";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 import {LocalizedModel} from "./LocalizedModel";
 import {Page} from "ui/page";
@@ -31,7 +31,10 @@ export class SettingsPageModel extends LocalizedModel implements LocalizedModelI
                 if (!result) return;
 
                 lang.set(data.value);
-                navigate.to('main-page');
+
+                general.refreshCache(data => {
+                    navigate.to('main-page');
+                });
 
             });
 

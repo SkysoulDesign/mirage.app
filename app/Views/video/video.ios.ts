@@ -1,35 +1,26 @@
 import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
-var moviePlayer;
-// var app = require("application");
-// Our new Observable view model for data binding
-
+//import orientationModule = require("nativescript-screen-orientation");
 import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view';
-import {api, navigate, platform} from "../../Modules/Helpers";
-var changepage = true;
+import {api, navigate, platform, video} from "../../Modules/Helpers";
 
-export function pageLoaded(args) {
-    if (!changepage)
+var changePage = true;
+var moviePlayer;
+
+export function pageNavigatedTo(args) {
+
+    //orientationModule.orientationCleanup();
+
+    if (!changePage)
         return;
+
     var page = <Page>args.object,
         videoContainer:View = page.getViewById('container'),
-        extras = <ApiExtraInterface>page.navigationContext;
+        url = video.getURL(page.navigationContext);
 
     videoContainer.requestLayout();
 
-    console.dir(videoContainer._nativeView.bounds.size);
-    console.dir(page._nativeView.frame.size);
-
-    // bug .  getViewbyId can not get view bounds.
-    // console.dir(page);
-    // var moviePath = NSBundle.mainBundle().pathForResourceOfType("app/test111" ,"mp4");
-    // console.log(moviePath);
-    // var url = NSURL.fileURLWithPath(moviePath);
-
-    var URI = api.getBaseWithToken('api/video', {extra: extras.id, 'aspect': platform.getRatio()});
-
-    var url = NSURL.URLWithString(URI);
     var playerViewController = MPMoviePlayerViewController.alloc().initWithContentURL(url);
 
     moviePlayer = playerViewController.moviePlayer;
@@ -41,39 +32,37 @@ export function pageLoaded(args) {
 
     var ui = UIApplication.sharedApplication().keyWindow.bounds.size;
 
-    //var size = page._nativeView.bounds.size;
+    console.log("Height: " + ui.height + " width: " + ui.width);
 
-    moviePlayer.view.frame = CGRectMake(0, 0, ui.height, ui.width);//videoContainer._nativeView.bounds;//
-
-    //videoContainer._nativeView.addSubview();
+    moviePlayer.view.frame = CGRectMake(0, 0, ui.height, ui.width);
     videoContainer._nativeView.addSubview(moviePlayer.view);
 
     moviePlayer.play();
 
-    var exitFullScreen = function (notification) {
+    var exitFullScreen = function () {
         UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation");
     };
 
-    var enterFullScreen = function (notification) {
-        changepage = false;
+    var enterFullScreen = function () {
+        changePage = false;
         UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
     };
 
     enterFullScreen();
 
-    var observer = app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback(notification) {
-        enterFullScreen(notification);
+    var observer = app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback() {
+        enterFullScreen();
         moviePlayer.play();
         console.log("MPMoviePlayerDidEnterFullscreenNotification");
     });
 
-    var observer1 = app.ios.addNotificationObserver(MPMoviePlayerWillExitFullscreenNotification, function onReceiveCallback(notification) {
-        exitFullScreen(notification);
+    var observer1 = app.ios.addNotificationObserver(MPMoviePlayerWillExitFullscreenNotification, function onReceiveCallback() {
+        exitFullScreen();
         console.log("MPMoviePlayerDidExitFullscreenNotification");
     });
 
-    var observer2 = app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback(notification) {
-        exitFullScreen(notification);
+    var observer2 = app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback() {
+        exitFullScreen();
         moviePlayer.stop();
         navigate.back();
     });
@@ -81,8 +70,8 @@ export function pageLoaded(args) {
 }
 
 export function pageUnloaded(args) {
-    moviePlayer.pause();
-    changepage = true;
+    moviePlayer.stop();
+    changePage = true;
     console.log("unloaded");
 }
 

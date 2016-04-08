@@ -1,33 +1,23 @@
 import {Observable} from "data/observable";
-import {cache, navigate, api, file} from "../Modules/Helpers";
-import {topmost} from "ui/frame";
-import {ApiUserInterface, ApiExtraInterface, ApiProductInterface} from "../Interfaces/ApiUserInterface";
-import barcodeScanner = require("nativescript-barcodescanner");
-import OpenUrl = require( "nativescript-openurl" );
+import {navigate, api, file, parseURL} from "../Modules/Helpers";
+import {ApiUserInterface, ApiExtraInterface} from "../Interfaces/ApiUserInterface";
 import stackModule = require("ui/layouts/stack-layout");
 import imageModule = require('ui/image');
 import LabelModule = require("ui/label");
 import gridModule  = require ("ui/layouts/grid-layout");
 import {GestureTypes} from "ui/gestures";
 import activityIndicatorModule = require("ui/activity-indicator");
-import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
-import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ApiCodesInterface} from "../Interfaces/ApiUserInterface";
-import {BaseModel} from "./BaseModel";
 import {Page} from "ui/page";
-import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 import scrollViewModule = require("ui/scroll-view");
 import {ApiProfileInterface} from "../Interfaces/ApiUserInterface";
-import textModule = require ("ui/text-view");
 import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 
 export class ProductMainPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     private page:Page;
-    private user:ApiUserInterface;
     private codes:ApiCodesInterface;
-    private context:ImageMetaDataInterface;
     private components:{profile:{}, figure:{}, extra:{}} = {};
 
     /**
@@ -100,16 +90,12 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
      */
     public setup() {
 
-        this.set('username', this.user.username);
-        this.set('email', this.user.email);
         this.set('title', this.codes.product.name.toUpperCase());
 
-        var components = this.components;
-
-        var profile_tab_container = this.page.getViewById('profile_container');
-
-        var figure_container = this.page.getViewById('product_container');
-        figure_container.addChild(components.figure.image);
+        var components = this.components,
+            profile_tab_container = this.page.getViewById('profile_container'),
+            figure_container = this.page.getViewById('product_container');
+            figure_container.addChild(components.figure.image);
 
         var extra_container = <stackModule.StackLayout>this.page.getViewById('extras_container');
 
@@ -172,7 +158,7 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
      * Add Toy Figure
      */
     private addFigureImage() {
-        this.components.figure.image.imageSource = file.load(this.context.filename);
+        this.components.figure.image.imageSource = file.load(parseURL(this.codes.product.image).filename);
     }
 
     /**
@@ -186,7 +172,7 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
 
         comp.grid.className = 'card-container';
         comp.grid.on(GestureTypes.tap, function () {
-            navigate.to('video', {context: extra})
+            navigate.to('video', {context: extra.id})
         });
 
         comp.loading.busy = true;

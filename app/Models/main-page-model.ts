@@ -16,11 +16,12 @@ import progressModule = require("ui/progress");
 import {StackLayout} from "ui/layouts/stack-layout";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
 import {LocalizedModelWithNavigation} from "./LocalizedModelWithNavigation";
+import {ApiProductInterface} from "../Interfaces/ApiUserInterface";
+import {ApiCodesInterface} from "../Interfaces/ApiUserInterface";
 
 export class MainPageModel extends LocalizedModelWithNavigation implements LocalizedModelInterface {
 
     private page:Page;
-    private user:ApiUserInterface;
     private progress:progressModule.Progress;
 
     /**
@@ -36,36 +37,16 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
     }
 
     /**
-     * Refresh User
-     * @param success (data) => {}
-     * @param error (error) => {}
-     */
-    public refreshLogin(success?:(data:ApiUserInterface)=>void, error?:(error:any)=>void) {
-
-        api.fetch('checkLogin', {}, function (data) {
-            cache.set('login', data);
-            success(data);
-        }, function (error) {
-            navigate.to('login', {clearHistory: true});
-            error(error);
-        }, false);
-
-        api.fetch('products', {});
-
-    }
-
-    /**
      * Setup
      */
     private setup() {
 
-        var progress = {
-            maxValue: cache.get('products', []).length,
-            value: this.user.codes.length
-        };
+        var user:ApiUserInterface = cache.get('login'),
+            progress = {
+                maxValue: cache.get('products', []).length,
+                value: user.codes.length
+            };
 
-        this.set('username', this.user.username);
-        this.set('email', this.user.email);
         this.set('progress_text', progress.value + ' of ' + progress.maxValue);
         this.progress.maxValue = progress.maxValue;
         this.progress.value = progress.value;
@@ -75,9 +56,9 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
 
         var container = <StackLayout>this.get('page').getViewById("product_layout");
 
-        for (var x in this.user.codes) {
+        for (var x in user.codes) {
 
-            var image = this.createImage(this.user.codes[x].product.image);
+            var image = this.createImage(user.codes[x]);
 
             image.cssClass = isEven(x) ? 'background-statue' : 'foreground-statue';
 
@@ -95,18 +76,18 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
         return ['SETTING', 'ABOUT_SOAP', 'NEWS', 'MY_COLLECTION', 'MAIN_PAGE_TITLE'];
     }
 
-    private createImage(url:string):ImageModule.Image {
+    private createImage(code:ApiCodesInterface):ImageModule.Image {
 
         var _this = this,
             image = new ImageModule.Image(),
-            url = parseURL(url);
+            url = parseURL(code.product.image);
 
         api.fetchImage(api.getBase() + url.full, function (imageSource) {
             image.imageSource = imageSource;
         });
 
         image.on(GestureTypes.tap, function () {
-            _this.tapProduct(url);
+            _this.tapProduct(code);
         });
 
         return image;

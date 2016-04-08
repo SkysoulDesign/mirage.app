@@ -6,6 +6,7 @@ import {cache, navigate} from "../../Modules/Helpers";
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 import {NavigatedData} from "ui/page";
 import {ApiUrlInterface} from "../../Interfaces/ApiUrlInterface";
+import {ApiCodesInterface} from "../../Interfaces/ApiUserInterface";
 
 export function pageNavigatedTo(args:NavigatedData) {
 
@@ -18,24 +19,12 @@ export function pageNavigatedTo(args:NavigatedData) {
         return;
 
     var page = <Page>args.object,
-        context = <ApiUrlInterface>page.navigationContext.url,
-        user = <ApiUserInterface>cache.get('login');
-
-    var model = new ProductMainPageModel();
-
-    for (var index in user.codes) {
-
-        if (user.codes[index].product.image === context.full) {
-            var codes = user.codes[index];
-        }
-
-    }
+        codes = <ApiCodesInterface>page.navigationContext,
+        model = new ProductMainPageModel();
 
     page.bindingContext = model.init({
         page: page,
-        codes: codes,
-        context: context,
-        user: user
+        codes: codes
     });
 
 }

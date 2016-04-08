@@ -2,7 +2,7 @@ import {Mirage as App} from "../app";
 import {alert} from "ui/dialogs";
 import http = require('http');
 import {ApiListInterface} from "../Interfaces/ApiListInterface";
-import {extend, dot, parseURL, cache, config, file} from "./Helpers";
+import {extend, dot, parseURL, cache, config, file, lang} from "./Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {Observable} from "data/observable";
 import {ImageSource} from "image-source";
@@ -139,12 +139,14 @@ export class Api {
          * Handle POST
          */
         if (request.method === 'POST') {
-
             http.request({
                 url: this.get(name).url,
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                content: JSON.stringify(extend({api_token: this.getCache('login.api_token')}, parameters))
+                content: JSON.stringify(extend({
+                    api_token: this.getCache('login.api_token'),
+                    language: lang.activeLanguage()
+                }, parameters))
             }).then(function (response) {
                 handle(response.content.toJSON());
             }, function (e) {

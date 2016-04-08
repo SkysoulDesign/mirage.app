@@ -3,13 +3,15 @@ import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {NavigationEntry} from "ui/frame";
 import {Observable} from "data/observable";
 import fs = require("file-system");
-import imageSource = require( "image-source");
+import imageSource = require("image-source");
+import application = require("application");
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ImageFormat} from "ui/enums";
 import {ImageSource} from "image-source";
 import platformModule = require("platform");
 import {BackstackEntry} from "ui/frame";
 import dialogs = require("ui/dialogs");
+import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
 
 /**
  * Extend Object
@@ -232,7 +234,6 @@ export class api {
      * @returns Observable
      */
     public static fetch(name:string, parameters?:{}, onSuccess?:(data:any)=>void, onError?:(e:any)=>void, cache?:boolean):Observable {
-        parameters['language'] = lang.activeLanguage();
         return App.api.fetch(name, parameters, onSuccess, onError, cache);
     }
 
@@ -341,12 +342,12 @@ export class platform {
     /**
      * Get device Ration ex 16:9
      */
-    public static getRatio(divisor):string {
+    public static getRatio(divisor?:string = "x"):string {
         var width = platformModule.screen.mainScreen.widthPixels,
             height = platformModule.screen.mainScreen.heightPixels,
             gcd = this.gcd(width, height);
 
-        return height / gcd + "x" + width / gcd;
+        return height / gcd + divisor + width / gcd;
     }
 
 }
@@ -432,9 +433,9 @@ export class general {
     /**
      * To Choose Add Product Option and Load Page
      */
-    public static getAddProductAction(){
+    public static getAddProductAction() {
         dialogs.action("Please Select an option below", "Cancel", ["Scan QR Code", "Enter Code"]).then(result => {
-            switch(result){
+            switch (result) {
                 case "Scan QR Code":
                     navigate.to("scanner-page");
                     break;
@@ -448,10 +449,64 @@ export class general {
     }
 
     /**
-     *
+     * validates code
+     * MF001XXXXXXXXXXXX
+     * MF001-XXXX-XXXX-XXXX
      */
     public static validateCode(code:string):boolean {
         var index = code.indexOf('-') === -1;
         return (code.length != 17 && index) || (code.length != 20 && !index);
     }
+
+    /**
+     * Refresh Cache Data
+     * @param success
+     * @param error
+     */
+    public static refreshCache(success?:(data:ApiUserInterface)=>void, error?:(error:any) => void) {
+
+        api.fetch('checkLogin', {}, function (data) {
+            cache.set('login', data);
+            success(data);
+            if (application.ios) App.iWatch.sendMessage({products: data.codes});
+
+        }, function (error) {
+            navigate.to('login', {clearHistory: true});
+            error(error);
+        }, false);
+
+    }
+
+}
+
+/**
+ * Video Helper
+ */
+export class video {
+
+    /**
+     * Return the video URL
+     * @param extraID
+     * @returns {string}
+     */
+    public static getURI(extraID:number) {
+        return api.getBaseWithToken('api/video', {extra: extraID, 'aspect': platform.getRatio()});
+    }
+
+    /**
+     * Get native URL OBject
+     * @param extraID
+     */
+    public static getURL(extraID:number):any {
+
+        var uri = this.getURI(extraID);
+
+        if (application.ios)
+            return NSURL.URLWithString(uri);
+
+        if (application.android)
+            return android.net.Uri.parse(uri);
+
+    }
+
 }

@@ -1,16 +1,30 @@
 import {BaseModel} from "./BaseModel";
-import {navigate, general} from "../Modules/Helpers";
+import {navigate, general,cache} from "../Modules/Helpers";
 import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import OpenUrl = require( "nativescript-openurl" );
 import {topmost} from "ui/frame";
+import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {ApiCodesInterface, ApiUserInterface} from "../Interfaces/ApiUserInterface";
 
 export class BaseModelWithMainNavigation extends BaseModel {
+
+    /**
+     * Initialize defaults screen names
+     */
+    constructor() {
+        super();
+
+        var user:ApiUserInterface = cache.get('login');
+
+        this.set('username', user.username);
+        this.set('email', user.email);
+    }
 
     /**
      * Open Camera to Scan QRCode
      */
     public tapScanQRCode() {
-        navigate.to('scanner-page');
+        navigate.to('register-product');
     }
 
     /**
@@ -23,7 +37,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
     /**
      * Use getAddProductAction from General Helper
      */
-    public tapAddProduct(){
+    public tapAddProduct() {
         general.getAddProductAction();
     }
 
@@ -40,8 +54,8 @@ export class BaseModelWithMainNavigation extends BaseModel {
     /**
      * Open Camera to soap
      */
-    public tapProduct(url:ApiUrlInterface) {
-        navigate.to('product-main-page', {context: {url: url}});
+    public tapProduct(code:ApiCodesInterface) {
+        navigate.to('product-main-page', {context: code});
     };
 
     /**

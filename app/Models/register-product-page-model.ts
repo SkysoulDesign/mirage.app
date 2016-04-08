@@ -87,6 +87,9 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
 
         });
 
+        /**
+         * if scannedCode is set, then automate all the process by setting the code
+         */
         if (this.scannedCode) {
             this.input.focus();
             this.set('code', this.scannedCode);
@@ -108,7 +111,7 @@ export class RegisterProductPageModel extends LocalizedModelWithNavigation imple
     public tapRegister() {
 
         var _this = this;
-        _this.disableButton();
+            _this.disableButton();
 
         var code = this.get('code');
 

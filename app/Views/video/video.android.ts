@@ -4,17 +4,21 @@ import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
 import VideoView = android.widget.VideoView;
 import orientationModule = require("nativescript-screen-orientation");
 import statusBar = require("nativescript-status-bar");
-import {api, platform} from "../../Modules/Helpers";
+import {api, platform, video as videoHelper} from "../../Modules/Helpers";
 import activityIndicatorModule = require("ui/activity-indicator");
 
 var videoNATIVE;
+
+export function pageLoaded(){
+    orientationModule.orientationCleanup();
+}
 
 export function pageNavigatedTo(args) {
 
     var page = <Page>args.object,
         video = page.getViewById('video_player'),
         container = page.getViewById('container'),
-        extras = <ApiExtraInterface>page.navigationContext;
+        id = page.navigationContext;
 
     /**
      * hide Status Bar
@@ -32,8 +36,7 @@ export function pageNavigatedTo(args) {
     orientationModule.setCurrentOrientation("landscape", function () {
 
         var videoView:VideoView = videoNATIVE,
-            url = api.getBaseWithToken('api/video', {extra: extras.id, 'aspect': platform.getRatio()}),
-            uri = android.net.Uri.parse(url);
+            uri = videoHelper.getURL(id);
 
         var controller = new android.widget.MediaController(videoView.getContext());
 

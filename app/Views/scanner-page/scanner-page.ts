@@ -1,27 +1,21 @@
 import barcodeScanner = require("nativescript-barcodescanner");
 import dialogs = require( "ui/dialogs");
 import {Page} from "ui/page";
-import {navigate} from "../../Modules/Helpers";
+import {ShownModallyData} from "ui/page";
 import {NavigatedData} from "ui/page";
-import {ScannerPageModel} from "../../Models/scanner-page-model";
+import {navigate} from "../../Modules/Helpers";
+import {EventData} from "data/observable";
 
-export function pageNavigatedTo(args:NavigatedData) {
+export function pageLoaded(args:EventData) {
 
-    if (args.isBackNavigation)
-        return navigate.back();
-
-    var returnDefault = 'main-page';
-
-    var scannerModel = new ScannerPageModel();
-    var page = <Page>args.object,
-        image = page.getViewById('figure');
+    var page = <Page>args.object;
 
     barcodeScanner.available().then(available => {
 
             if (!available) {
 
                 return dialogs.alert("QRCode scanning is not available on your device").then(function () {
-                    navigate.to(returnDefault)
+                    page.closeModal()
                 });
 
             }
@@ -36,24 +30,22 @@ export function pageNavigatedTo(args:NavigatedData) {
                         );
 
                         return dialogs.alert("You haven't granted access to the camera, entering in manual input mode").then(() => {
-                            navigate.to(returnDefault)
+                            page.closeModal()
                         });
 
                     }
 
                     barcodeScanner.scan({
                         cancelLabel: "Cancel",
-                        message: "Scan Product",
+                        message: "Scan Product QRCode",
                         preferFrontCamera: false,
                         showFlipCameraButton: false
                     }).then(
                         result => {
-                            //navigate.to('register-product', {context: result.text})
-                            scannerModel.init({page: page, image: image, scannedCode: result.text});
+                            page.closeModal(result.text);
                         },
                         error => {
-                            //navigate.to(returnDefault)
-                            page.bindingContext = scannerModel.init({page: page, image: image, scannedCode: 'MF001-ffff-ffff-gggg'});
+                            page.closeModal()
                         }
                     );
                 }
