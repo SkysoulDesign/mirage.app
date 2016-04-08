@@ -200,7 +200,7 @@ export class api {
 
         var base = this.getBase() + (path ? '/' + path : path),
             token = cache.get('login.api_token'),
-            params = '?api_token=' + token;
+            params = '?api_token=' + token + '&language=' + lang.activeLanguage();
 
         if (!token) console.error('logo not set or user not logged in');
 
@@ -342,7 +342,7 @@ export class platform {
     /**
      * Get device Ration ex 16:9
      */
-    public static getRatio(divisor?:string = "x"):string {
+    public static getRatio(divisor:string = "x"):string {
         var width = platformModule.screen.mainScreen.widthPixels,
             height = platformModule.screen.mainScreen.heightPixels,
             gcd = this.gcd(width, height);
@@ -490,7 +490,10 @@ export class video {
      * @returns {string}
      */
     public static getURI(extraID:number) {
-        return api.getBaseWithToken('api/video', {extra: extraID, 'aspect': platform.getRatio()});
+        return api.getBaseWithToken('api/video', {
+            extra: extraID,
+            'aspect': platform.getRatio()
+        });
     }
 
     /**
