@@ -11,11 +11,5 @@
 /mirage-key.keystore
 .DS_Store
 
-/platforms/ios/internal
-/platforms/ios/mirageapp
-*.xcodeproj
-*.xcworkspace
-/platforms/ios/Podfile
 *.lock
 *.xcconfig
-/platforms/ios/Pods

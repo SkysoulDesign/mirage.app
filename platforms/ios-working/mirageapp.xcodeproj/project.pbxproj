@@ -1,0 +1,1174 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03BE8DF252824D16972426D4 /* icon-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC25853996D44AFAADA03459 /* icon-83.5x83.5@2x.png */; };
+		04E8C166EEB24886B17566EA /* Default-Landscape@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AC402F2BE148AB9FFD7C57 /* Default-Landscape@3x.png */; };
+		057B35F99C1C45978EA059A4 /* iPhone 2732x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 6840B4A7FF024774B4E329E2 /* iPhone 2732x2048.png */; };
+		0624E0544A124F66AC422BA6 /* stage_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = AA367482F36E4EA1AF299574 /* stage_dark.png */; };
+		06DD46613DF04A63B1961933 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9D2B5011A4E87968F0A19 /* TelerikUI.framework */; };
+		07FB583B872E4F0FB38A2447 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B588F3A4804DC2ADAA4CB9 /* icon.png */; };
+		0B617E899ECD425D9E8C81C1 /* icon-1024x1024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1952A7625344EABEB21972 /* icon-1024x1024@2x.png */; };
+		12E6342B84B445A89A87BD91 /* icon-167x167@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49542AD592D74900B9FBFE65 /* icon-167x167@3x.png */; };
+		14A4394C34E248F2B4E23BD2 /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E8E39FBB864F6AA655E4E8 /* icon-60@2x.png */; };
+		15B1E8872ECA4E3C9AFD24F8 /* icon-167x167@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DAD03C34AA9400586B49BAB /* icon-167x167@2x.png */; };
+		1E3104A0D2C44ECF86B5213D /* extra_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23F329C1A826459BAC2BEAD7 /* extra_1.png */; };
+		2467FBE06BCF4776AA4CA626 /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 68199409B584471898AE7C0D /* icon-60.png */; };
+		24FCB1204D23488C8B44A6A3 /* qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E831AD14B3489A861B1E50 /* qr_code.png */; };
+		269C9D5EC9864FCFA77A9EBA /* icon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF068054EB664D5CBCBD19BF /* icon-29@3x.png */; };
+		27388DD2820D4EE4A4673D04 /* Default-Landscape-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C97341BA8E14F92935BCBF9 /* Default-Landscape-736h@3x.png */; };
+		29D336C6C4794ADEA3E217D6 /* logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A789F6EDB94470BB6B4B96 /* logo_white.png */; };
+		2C2BE682724F4883B06F7D0A /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED99365E7A6480AA4097746 /* icon-57.png */; };
+		2D7369543E714D69911573BE /* iPhone 2048x2732.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AEBE3C3DE4E4DC295239A9C /* iPhone 2048x2732.png */; };
+		2F954200A3A14F96BFBDD029 /* Default-Landscape-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CBE22831FC942699ACEEF8E /* Default-Landscape-568h@2x.png */; };
+		3600B12179FC49BC943B367C /* icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 407E53279BE7405184D25C9A /* icon-120x120.png */; };
+		3AB12757E98C470B869C7E67 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D16BE4652F4CC3BD5247A5 /* icon@2x.png */; };
+		448FE29D18B3470CA0C04683 /* icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A49E76F2444CD6AA99DE7E /* icon-29.png */; };
+		453661CF8D57420A8B12D206 /* icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C336319517C474D86FAA8CF /* icon-57@2x.png */; };
+		45A2F1CAD6D1461A81FBF2B6 /* iPhone 1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = C62DF303E1474C3B88CC028D /* iPhone 1024x768.png */; };
+		4A073E0438704F728DA46766 /* icon-72@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BBDF5BC69845358A02B392 /* icon-72@3x.png */; };
+		4C59CD0B943D440BB2635F33 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1129F548604531B74CFFE7 /* Default.png */; };
+		5205D893378844F3A7C4AB0F /* statue_batman.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A6F9808C3340C9A902F75B /* statue_batman.png */; };
+		527CEA1A782F43F5B5212BEF /* icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A8AAD9B8E4DBBB9A4CA33 /* icon-40@3x.png */; };
+		59C6D0E8ABF14533B3C9C9FC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EAB6F8A2B04C2B829417B5 /* logo.png */; };
+		5CEEA1ED71BA466EB00AA2ED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925F92FF2D06406787409734 /* Default@2x.png */; };
+		5EFE0A40F2D94E92AFCF0A90 /* icon-180x180@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE7F5E156B341CA98C33AE1 /* icon-180x180@3x.png */; };
+		60CADAA560484E86978AB64C /* TelerikUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9D2B5011A4E87968F0A19 /* TelerikUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		61B7AD0F014B49F7A7574883 /* extra_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 710C8CAC365842E98B9734BE /* extra_2.png */; };
+		61ECE05BAAEA443EB1686F85 /* iPhone 2048x1536.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8657A7B5B6438BACE8DB83 /* iPhone 2048x1536.png */; };
+		6652E852AEA1458BAF25AA5E /* top_fader.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF71226054140A699402097 /* top_fader.png */; };
+		69D86C2B3CD542878FC69C33 /* extra_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D9488FEBE345A1B3622C9D /* extra_3.png */; };
+		6A1E1525E4BB464098BD69A7 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E082C4CAD52E48F68C953CC9 /* icon-60@3x.png */; };
+		6DED46E04B1A4B59A30F0D0B /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A15BE19086914B4488886064 /* Icon-Small@2x.png */; };
+		6E06F2AAE09148A292C8AEE4 /* icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0D2817DF546AF9BC38652 /* icon-76@2x.png */; };
+		6EA2156703544DF99F841A5B /* avatar_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 90A5DAD6F0734190A6CE4158 /* avatar_placeholder.png */; };
+		72B7816FB7EC498EA82EB65B /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 5412FF29FEBD488F9519F440 /* Default-Portrait.png */; };
+		7345A777571146438CF3B3C8 /* statue_superman.png in Resources */ = {isa = PBXBuildFile; fileRef = D72BC9FA3DEC4AC0B38DAA27 /* statue_superman.png */; };
+		7AA0B6EC403D4D37B2C3BC96 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C745B52F5F614AC9BD0765CC /* Default-Portrait@2x.png */; };
+		828E1CBE1BF349419B82496E /* icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 74CA3FADBCE247759B572C82 /* icon-180x180.png */; };
+		82DF76476E064BA0B4F39E3F /* stage.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C1323D0B5C4E0084E05964 /* stage.png */; };
+		84ECFE8B076A4B68BF4F3387 /* icon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 04006967DA6643F481074EA5 /* icon-1024x1024.png */; };
+		858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858B833A18CA111C00AB12DE /* InfoPlist.strings */; };
+		86F92C8635344ED5ADD5A13E /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BC39FD78BF4751A10DD18F /* icon-72@2x.png */; };
+		8E315075A705494688CEA7B8 /* Fader.png in Resources */ = {isa = PBXBuildFile; fileRef = 43428E7830B04CD982987E69 /* Fader.png */; };
+		91A2F812ED6840968A44D99B /* icon-152x152@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A9FD373797455D9065D940 /* icon-152x152@2x.png */; };
+		96CE5C2690F24804911C86ED /* icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 340B49B759C14F3A88CEDDB2 /* icon-29@2x.png */; };
+		99353A6E06C14B79A44B0674 /* icon-180x180@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F69DB596CAF4FA4B32B851F /* icon-180x180@2x.png */; };
+		9A5252F9BA864778B021E8E1 /* icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1404A1FFB74D2199002167 /* icon-152x152.png */; };
+		9CA901AE782A4E4F88182ABA /* icon-167x167.png in Resources */ = {isa = PBXBuildFile; fileRef = 01223E006E29493687206EA3 /* icon-167x167.png */; };
+		A47735C41CAB732500A4BBA8 /* mirageapp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858B833918CA111C00AB12DE /* mirageapp-Info.plist */; };
+		A4ACE2771CAB6E8300B33F93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACE2751CAB6E8300B33F93 /* Images.xcassets */; };
+		A4ACE2781CAB6E8300B33F93 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACE2761CAB6E8300B33F93 /* Media.xcassets */; };
+		A4CEE1221CAA58510008BC32 /* iWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4CEE1211CAA58510008BC32 /* iWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4CEE1271CAA58510008BC32 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEE1261CAA58510008BC32 /* InterfaceController.swift */; };
+		A4CEE1291CAA58510008BC32 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEE1281CAA58510008BC32 /* ExtensionDelegate.swift */; };
+		A4CEE12F1CAA58510008BC32 /* iWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A4CEE1151CAA58500008BC32 /* iWatch.app */; };
+		A4CEE13D1CAA597F0008BC32 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEE13C1CAA597F0008BC32 /* ProductRow.swift */; };
+		A4CEE13F1CAA5A130008BC32 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CEE13E1CAA5A130008BC32 /* Interface.storyboard */; };
+		A4CEE1431CAA5E910008BC32 /* ShowProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEE1421CAA5E910008BC32 /* ShowProductController.swift */; };
+		A4CEE1491CAA83EE0008BC32 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CEE1481CAA83EE0008BC32 /* WatchConnectivity.framework */; };
+		A4CEE14B1CAA8BE00008BC32 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CEE14A1CAA8BE00008BC32 /* Pods.framework */; };
+		A517473279A04D3295A98AE9 /* iPhone 768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E36F0F3A8B4CE88BF572C7 /* iPhone 768x1024.png */; };
+		A7E0EB53D45647DCA2A134D2 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 69235996F59845DAA867BBF4 /* icon-72.png */; };
+		A84A0B978FDD409990686302 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 214EA96C45B9429A915F5CEF /* icon-76.png */; };
+		AE3FDAD902F246BAB4BD74A9 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6780643679894FE0BC65A4DF /* Background.png */; };
+		B177BAA648AD45E88A1D96FD /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D057F6B4324D4836817EED7B /* Icon-Small-50@2x.png */; };
+		B9606714EB4F40938F9157AA /* icon-120x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98B78407548450E92BD2EAF /* icon-120x120@2x.png */; };
+		B9DE926EAC704888A082D0CC /* Default-Landscape-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 479E4B04654F42E5AFA35655 /* Default-Landscape-667h@2x.png */; };
+		BD7C1608D3FB4715B6C34A02 /* icon-83.5x83.5.png in Resources */ = {isa = PBXBuildFile; fileRef = 40BDF348CC334825A4D240D7 /* icon-83.5x83.5.png */; };
+		C1E5BB0F84384D0A8C9C629B /* icon-1024x1024@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5187F3CFBA4CA19733EA8D /* icon-1024x1024@3x.png */; };
+		C20549506B3B49869CCF5DF1 /* iPhone 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E56348EDAE465B95031CAD /* iPhone 640x960.png */; };
+		C2B75621F2DE48A1822B4958 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE35E3A620A48CEA7BA6225 /* Default-Landscape.png */; };
+		C3EE5E05AD4D4A25AE1136D2 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8550671B37346EEAE642D92 /* menu_icon.png */; };
+		C51E13313861431E817626D9 /* icon-152x152@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B48D14CF5A394F549FE651A5 /* icon-152x152@3x.png */; };
+		C6846DA133A146D9894BED9F /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811EC42F37774E1D804D1F7E /* Default-667h@2x.png */; };
+		CA2A2F481CE44BD19A824A72 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D1CF120D604FC6ACB424CA /* Icon-Small-50.png */; };
+		CA4BC1A85BA0443FB4CD600F /* iPhone 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC2BBD1774D442FAADF3A98 /* iPhone 640x1136.png */; };
+		CBE8400BB3B7477D9408D1C4 /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5D699299484A3A803C6645 /* icon-40@2x.png */; };
+		CD45EE7C18DC2D5800FB50C0 /* app in Resources */ = {isa = PBXBuildFile; fileRef = CD45EE7A18DC2D5800FB50C0 /* app */; };
+		CD62955D1BB2678900AE3A93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD62955C1BB2678900AE3A93 /* main.m */; };
+		CE7FB216B6BF48EA9C1C2AA8 /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C36429ACD40A786304029 /* icon-40.png */; };
+		D48CF1620AE3410AAD948E9A /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D84A539E2CD4A6A92A1DCDB /* Default-Landscape@2x.png */; };
+		D9784E7783174D8592D7670D /* icon-76@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159F95B41DE14DEE93175882 /* icon-76@3x.png */; };
+		DCB431E5D7AB4BA4BB8214AC /* iPhone 1536x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 7371EE6EBAAE4B02B096AD3E /* iPhone 1536x2048.png */; };
+		DD2C154D668A4C30B2DBFB62 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D13363895ECD4DA7AC4C311F /* back_icon.png */; };
+		E9DBCE8D968E482F9C6208DE /* icon-120x120@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FF75B5DB764CB6A7F3DE46 /* icon-120x120@3x.png */; };
+		ED53616668544B2B85BA8D1A /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = D59E6AF97B56419ABEE13EB9 /* Icon-Small.png */; };
+		F5C708B737F444BBA4CB3F3E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F57CAB417E48F8B7B21DD3 /* Default-568h@2x.png */; };
+		F9BA3454E799443DA48A4D19 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6BC6847E5314F208A557405 /* Default-736h@3x.png */; };
+		FD319572F1454E5A886D4443 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F646287023A7467B90E92F64 /* Default-Portrait-736h@3x.png */; };
+		FD491EB0DF8C4E9094067AFB /* extra.png in Resources */ = {isa = PBXBuildFile; fileRef = A6FF6E138A7442D3922D084A /* extra.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A47735C01CAB727700A4BBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858B832618CA111C00AB12DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4CEE1141CAA58500008BC32;
+			remoteInfo = iWatch;
+		};
+		A47735C21CAB727900A4BBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858B832618CA111C00AB12DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4CEE1201CAA58510008BC32;
+			remoteInfo = "iWatch Extension";
+		};
+		A4CEE1231CAA58510008BC32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858B832618CA111C00AB12DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4CEE1201CAA58510008BC32;
+			remoteInfo = "iWatch Extension";
+		};
+		A4CEE1401CAA5B870008BC32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858B832618CA111C00AB12DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 858B83EF18CA22B800AB12DE;
+			remoteInfo = "Mirage iPhone";
+		};
+		A4CEE1461CAA61560008BC32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858B832618CA111C00AB12DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4CEE1141CAA58500008BC32;
+			remoteInfo = iWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85F5BDFC1A9363BE006B9701 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60CADAA560484E86978AB64C /* TelerikUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE1331CAA58510008BC32 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A4CEE1221CAA58510008BC32 /* iWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE1371CAA58510008BC32 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A4CEE12F1CAA58510008BC32 /* iWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01223E006E29493687206EA3 /* icon-167x167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-167x167.png"; path = "mirageapp/Resources/icon-167x167.png"; sourceTree = "<group>"; };
+		03E8E39FBB864F6AA655E4E8 /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60@2x.png"; path = "mirageapp/Resources/icon-60@2x.png"; sourceTree = "<group>"; };
+		04006967DA6643F481074EA5 /* icon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-1024x1024.png"; path = "mirageapp/Resources/icon-1024x1024.png"; sourceTree = "<group>"; };
+		04EAB6F8A2B04C2B829417B5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = mirageapp/Resources/logo.png; sourceTree = "<group>"; };
+		0FE35E3A620A48CEA7BA6225 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "mirageapp/Resources/Default-Landscape.png"; sourceTree = "<group>"; };
+		10BC39FD78BF4751A10DD18F /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72@2x.png"; path = "mirageapp/Resources/icon-72@2x.png"; sourceTree = "<group>"; };
+		159F95B41DE14DEE93175882 /* icon-76@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-76@3x.png"; path = "mirageapp/Resources/icon-76@3x.png"; sourceTree = "<group>"; };
+		214EA96C45B9429A915F5CEF /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-76.png"; path = "mirageapp/Resources/icon-76.png"; sourceTree = "<group>"; };
+		23F329C1A826459BAC2BEAD7 /* extra_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = extra_1.png; path = mirageapp/Resources/extra_1.png; sourceTree = "<group>"; };
+		2DAD03C34AA9400586B49BAB /* icon-167x167@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-167x167@2x.png"; path = "mirageapp/Resources/icon-167x167@2x.png"; sourceTree = "<group>"; };
+		340B49B759C14F3A88CEDDB2 /* icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-29@2x.png"; path = "mirageapp/Resources/icon-29@2x.png"; sourceTree = "<group>"; };
+		34E56348EDAE465B95031CAD /* iPhone 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 640x960.png"; path = "mirageapp/Resources/iPhone 640x960.png"; sourceTree = "<group>"; };
+		3A5187F3CFBA4CA19733EA8D /* icon-1024x1024@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-1024x1024@3x.png"; path = "mirageapp/Resources/icon-1024x1024@3x.png"; sourceTree = "<group>"; };
+		407E53279BE7405184D25C9A /* icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120x120.png"; path = "mirageapp/Resources/icon-120x120.png"; sourceTree = "<group>"; };
+		40BDF348CC334825A4D240D7 /* icon-83.5x83.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-83.5x83.5.png"; path = "mirageapp/Resources/icon-83.5x83.5.png"; sourceTree = "<group>"; };
+		43428E7830B04CD982987E69 /* Fader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fader.png; path = mirageapp/Resources/Fader.png; sourceTree = "<group>"; };
+		46C1323D0B5C4E0084E05964 /* stage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stage.png; path = mirageapp/Resources/stage.png; sourceTree = "<group>"; };
+		479E4B04654F42E5AFA35655 /* Default-Landscape-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape-667h@2x.png"; path = "mirageapp/Resources/Default-Landscape-667h@2x.png"; sourceTree = "<group>"; };
+		49542AD592D74900B9FBFE65 /* icon-167x167@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-167x167@3x.png"; path = "mirageapp/Resources/icon-167x167@3x.png"; sourceTree = "<group>"; };
+		4C97341BA8E14F92935BCBF9 /* Default-Landscape-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape-736h@3x.png"; path = "mirageapp/Resources/Default-Landscape-736h@3x.png"; sourceTree = "<group>"; };
+		4CF71226054140A699402097 /* top_fader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_fader.png; path = mirageapp/Resources/top_fader.png; sourceTree = "<group>"; };
+		4D84A539E2CD4A6A92A1DCDB /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "mirageapp/Resources/Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		4D8657A7B5B6438BACE8DB83 /* iPhone 2048x1536.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 2048x1536.png"; path = "mirageapp/Resources/iPhone 2048x1536.png"; sourceTree = "<group>"; };
+		4ED99365E7A6480AA4097746 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-57.png"; path = "mirageapp/Resources/icon-57.png"; sourceTree = "<group>"; };
+		4F5D699299484A3A803C6645 /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-40@2x.png"; path = "mirageapp/Resources/icon-40@2x.png"; sourceTree = "<group>"; };
+		4F69DB596CAF4FA4B32B851F /* icon-180x180@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-180x180@2x.png"; path = "mirageapp/Resources/icon-180x180@2x.png"; sourceTree = "<group>"; };
+		53A789F6EDB94470BB6B4B96 /* logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_white.png; path = mirageapp/Resources/logo_white.png; sourceTree = "<group>"; };
+		5412FF29FEBD488F9519F440 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "mirageapp/Resources/Default-Portrait.png"; sourceTree = "<group>"; };
+		54AC402F2BE148AB9FFD7C57 /* Default-Landscape@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@3x.png"; path = "mirageapp/Resources/Default-Landscape@3x.png"; sourceTree = "<group>"; };
+		61A49E76F2444CD6AA99DE7E /* icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-29.png"; path = "mirageapp/Resources/icon-29.png"; sourceTree = "<group>"; };
+		6780643679894FE0BC65A4DF /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = mirageapp/Resources/Background.png; sourceTree = "<group>"; };
+		68199409B584471898AE7C0D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60.png"; path = "mirageapp/Resources/icon-60.png"; sourceTree = "<group>"; };
+		6840B4A7FF024774B4E329E2 /* iPhone 2732x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 2732x2048.png"; path = "mirageapp/Resources/iPhone 2732x2048.png"; sourceTree = "<group>"; };
+		69235996F59845DAA867BBF4 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "mirageapp/Resources/icon-72.png"; sourceTree = "<group>"; };
+		6C336319517C474D86FAA8CF /* icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-57@2x.png"; path = "mirageapp/Resources/icon-57@2x.png"; sourceTree = "<group>"; };
+		6EE7F5E156B341CA98C33AE1 /* icon-180x180@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-180x180@3x.png"; path = "mirageapp/Resources/icon-180x180@3x.png"; sourceTree = "<group>"; };
+		710C8CAC365842E98B9734BE /* extra_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = extra_2.png; path = mirageapp/Resources/extra_2.png; sourceTree = "<group>"; };
+		7371EE6EBAAE4B02B096AD3E /* iPhone 1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 1536x2048.png"; path = "mirageapp/Resources/iPhone 1536x2048.png"; sourceTree = "<group>"; };
+		74CA3FADBCE247759B572C82 /* icon-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-180x180.png"; path = "mirageapp/Resources/icon-180x180.png"; sourceTree = "<group>"; };
+		76A9FD373797455D9065D940 /* icon-152x152@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152x152@2x.png"; path = "mirageapp/Resources/icon-152x152@2x.png"; sourceTree = "<group>"; };
+		7AEBE3C3DE4E4DC295239A9C /* iPhone 2048x2732.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 2048x2732.png"; path = "mirageapp/Resources/iPhone 2048x2732.png"; sourceTree = "<group>"; };
+		7CBE22831FC942699ACEEF8E /* Default-Landscape-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape-568h@2x.png"; path = "mirageapp/Resources/Default-Landscape-568h@2x.png"; sourceTree = "<group>"; };
+		7CD90C384CE4476EDAFBD903 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		811EC42F37774E1D804D1F7E /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "mirageapp/Resources/Default-667h@2x.png"; sourceTree = "<group>"; };
+		83A6F9808C3340C9A902F75B /* statue_batman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statue_batman.png; path = mirageapp/Resources/statue_batman.png; sourceTree = "<group>"; };
+		84D9488FEBE345A1B3622C9D /* extra_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = extra_3.png; path = mirageapp/Resources/extra_3.png; sourceTree = "<group>"; };
+		858B832E18CA111C00AB12DE /* mirageapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mirageapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		858B833918CA111C00AB12DE /* mirageapp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mirageapp-Info.plist"; sourceTree = "<group>"; };
+		858B833B18CA111C00AB12DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		858B833F18CA111C00AB12DE /* mirageapp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mirageapp-Prefix.pch"; sourceTree = "<group>"; };
+		858B843318CA22B800AB12DE /* mirageapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mirageapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A5DAD6F0734190A6CE4158 /* avatar_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar_placeholder.png; path = mirageapp/Resources/avatar_placeholder.png; sourceTree = "<group>"; };
+		925F92FF2D06406787409734 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "mirageapp/Resources/Default@2x.png"; sourceTree = "<group>"; };
+		97B588F3A4804DC2ADAA4CB9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = mirageapp/Resources/icon.png; sourceTree = "<group>"; };
+		9C8A8AAD9B8E4DBBB9A4CA33 /* icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-40@3x.png"; path = "mirageapp/Resources/icon-40@3x.png"; sourceTree = "<group>"; };
+		9F1404A1FFB74D2199002167 /* icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152x152.png"; path = "mirageapp/Resources/icon-152x152.png"; sourceTree = "<group>"; };
+		A15BE19086914B4488886064 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "mirageapp/Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		A4ACE2751CAB6E8300B33F93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A4ACE2761CAB6E8300B33F93 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		A4CEE1151CAA58500008BC32 /* iWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4CEE11C1CAA58510008BC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4CEE1211CAA58510008BC32 /* iWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4CEE1261CAA58510008BC32 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A4CEE1281CAA58510008BC32 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A4CEE12C1CAA58510008BC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4CEE1381CAA58B00008BC32 /* iWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iWatch Extension.entitlements"; sourceTree = "<group>"; };
+		A4CEE1391CAA58C20008BC32 /* iWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iWatch.entitlements; sourceTree = "<group>"; };
+		A4CEE13C1CAA597F0008BC32 /* ProductRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
+		A4CEE13E1CAA5A130008BC32 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		A4CEE1421CAA5E910008BC32 /* ShowProductController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductController.swift; sourceTree = "<group>"; };
+		A4CEE1481CAA83EE0008BC32 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		A4CEE14A1CAA8BE00008BC32 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/mirageapp-dlyljcfmnomumfbfhxcsuwuiyyso/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
+		A4E2FC791CAA4ED10008E972 /* mirageapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = mirageapp.entitlements; sourceTree = "<group>"; };
+		A5BBDF5BC69845358A02B392 /* icon-72@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72@3x.png"; path = "mirageapp/Resources/icon-72@3x.png"; sourceTree = "<group>"; };
+		A6FF6E138A7442D3922D084A /* extra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = extra.png; path = mirageapp/Resources/extra.png; sourceTree = "<group>"; };
+		A98B78407548450E92BD2EAF /* icon-120x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120x120@2x.png"; path = "mirageapp/Resources/icon-120x120@2x.png"; sourceTree = "<group>"; };
+		AA367482F36E4EA1AF299574 /* stage_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stage_dark.png; path = mirageapp/Resources/stage_dark.png; sourceTree = "<group>"; };
+		B0E831AD14B3489A861B1E50 /* qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qr_code.png; path = mirageapp/Resources/qr_code.png; sourceTree = "<group>"; };
+		B36C36429ACD40A786304029 /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-40.png"; path = "mirageapp/Resources/icon-40.png"; sourceTree = "<group>"; };
+		B48D14CF5A394F549FE651A5 /* icon-152x152@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152x152@3x.png"; path = "mirageapp/Resources/icon-152x152@3x.png"; sourceTree = "<group>"; };
+		B8550671B37346EEAE642D92 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_icon.png; path = mirageapp/Resources/menu_icon.png; sourceTree = "<group>"; };
+		B8E36F0F3A8B4CE88BF572C7 /* iPhone 768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 768x1024.png"; path = "mirageapp/Resources/iPhone 768x1024.png"; sourceTree = "<group>"; };
+		BC1952A7625344EABEB21972 /* icon-1024x1024@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-1024x1024@2x.png"; path = "mirageapp/Resources/icon-1024x1024@2x.png"; sourceTree = "<group>"; };
+		C62DF303E1474C3B88CC028D /* iPhone 1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 1024x768.png"; path = "mirageapp/Resources/iPhone 1024x768.png"; sourceTree = "<group>"; };
+		C745B52F5F614AC9BD0765CC /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x.png"; path = "mirageapp/Resources/Default-Portrait@2x.png"; sourceTree = "<group>"; };
+		CD45EE7A18DC2D5800FB50C0 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
+		CD62955C1BB2678900AE3A93 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = internal/main.m; sourceTree = SOURCE_ROOT; };
+		CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-debug.xcconfig"; sourceTree = "<group>"; };
+		CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-release.xcconfig"; sourceTree = "<group>"; };
+		CDF4743E1BA4855C0087EA85 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
+		CF068054EB664D5CBCBD19BF /* icon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-29@3x.png"; path = "mirageapp/Resources/icon-29@3x.png"; sourceTree = "<group>"; };
+		D057F6B4324D4836817EED7B /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "mirageapp/Resources/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		D13363895ECD4DA7AC4C311F /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_icon.png; path = mirageapp/Resources/back_icon.png; sourceTree = "<group>"; };
+		D59E6AF97B56419ABEE13EB9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "mirageapp/Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		D6BC6847E5314F208A557405 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-736h@3x.png"; path = "mirageapp/Resources/Default-736h@3x.png"; sourceTree = "<group>"; };
+		D72BC9FA3DEC4AC0B38DAA27 /* statue_superman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statue_superman.png; path = mirageapp/Resources/statue_superman.png; sourceTree = "<group>"; };
+		E082C4CAD52E48F68C953CC9 /* icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-60@3x.png"; path = "mirageapp/Resources/icon-60@3x.png"; sourceTree = "<group>"; };
+		E1D16BE4652F4CC3BD5247A5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "mirageapp/Resources/icon@2x.png"; sourceTree = "<group>"; };
+		E2D1CF120D604FC6ACB424CA /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "mirageapp/Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		E2FF75B5DB764CB6A7F3DE46 /* icon-120x120@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120x120@3x.png"; path = "mirageapp/Resources/icon-120x120@3x.png"; sourceTree = "<group>"; };
+		EC25853996D44AFAADA03459 /* icon-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-83.5x83.5@2x.png"; path = "mirageapp/Resources/icon-83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		F2F57CAB417E48F8B7B21DD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "mirageapp/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		F646287023A7467B90E92F64 /* Default-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait-736h@3x.png"; path = "mirageapp/Resources/Default-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		F9B8C6A31ACEDEEB00547416 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FAA0D2817DF546AF9BC38652 /* icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-76@2x.png"; path = "mirageapp/Resources/icon-76@2x.png"; sourceTree = "<group>"; };
+		FBA9D2B5011A4E87968F0A19 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../../lib/iOS/TelerikUI.framework; sourceTree = "<group>"; };
+		FBC2BBD1774D442FAADF3A98 /* iPhone 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone 640x1136.png"; path = "mirageapp/Resources/iPhone 640x1136.png"; sourceTree = "<group>"; };
+		FC1129F548604531B74CFFE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = mirageapp/Resources/Default.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		858B83F418CA22B800AB12DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4CEE14B1CAA8BE00008BC32 /* Pods.framework in Frameworks */,
+				A4CEE1491CAA83EE0008BC32 /* WatchConnectivity.framework in Frameworks */,
+				06DD46613DF04A63B1961933 /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE11E1CAA58510008BC32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7134D71131B9292683DF498A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		858B832518CA111C00AB12DE = {
+			isa = PBXGroup;
+			children = (
+				E070579D1B39A9D000214BF1 /* Resources */,
+				858B833718CA111C00AB12DE /* mirageapp */,
+				A4CEE1161CAA58510008BC32 /* iWatch */,
+				A4CEE1251CAA58510008BC32 /* iWatch Extension */,
+				858B833018CA111C00AB12DE /* Frameworks */,
+				858B832F18CA111C00AB12DE /* Products */,
+				7134D71131B9292683DF498A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		858B832F18CA111C00AB12DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				858B832E18CA111C00AB12DE /* mirageapp.app */,
+				858B843318CA22B800AB12DE /* mirageapp.app */,
+				A4CEE1151CAA58500008BC32 /* iWatch.app */,
+				A4CEE1211CAA58510008BC32 /* iWatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		858B833018CA111C00AB12DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4CEE14A1CAA8BE00008BC32 /* Pods.framework */,
+				A4CEE1481CAA83EE0008BC32 /* WatchConnectivity.framework */,
+				FBA9D2B5011A4E87968F0A19 /* TelerikUI.framework */,
+				7CD90C384CE4476EDAFBD903 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		858B833718CA111C00AB12DE /* mirageapp */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACE2751CAB6E8300B33F93 /* Images.xcassets */,
+				A4ACE2761CAB6E8300B33F93 /* Media.xcassets */,
+				A4E2FC791CAA4ED10008E972 /* mirageapp.entitlements */,
+				CD45EE7A18DC2D5800FB50C0 /* app */,
+				F9B8C6A21ACEDEEB00547416 /* LaunchScreen.xib */,
+				858B833818CA111C00AB12DE /* Supporting Files */,
+			);
+			path = mirageapp;
+			sourceTree = "<group>";
+		};
+		858B833818CA111C00AB12DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDF4743E1BA4855C0087EA85 /* build.xcconfig */,
+				CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */,
+				CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */,
+				858B833918CA111C00AB12DE /* mirageapp-Info.plist */,
+				858B833A18CA111C00AB12DE /* InfoPlist.strings */,
+				CD62955C1BB2678900AE3A93 /* main.m */,
+				858B833F18CA111C00AB12DE /* mirageapp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4CEE1161CAA58510008BC32 /* iWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A4CEE1391CAA58C20008BC32 /* iWatch.entitlements */,
+				A4CEE13E1CAA5A130008BC32 /* Interface.storyboard */,
+				A4CEE11C1CAA58510008BC32 /* Info.plist */,
+			);
+			path = iWatch;
+			sourceTree = "<group>";
+		};
+		A4CEE1251CAA58510008BC32 /* iWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4CEE1381CAA58B00008BC32 /* iWatch Extension.entitlements */,
+				A4CEE1261CAA58510008BC32 /* InterfaceController.swift */,
+				A4CEE1281CAA58510008BC32 /* ExtensionDelegate.swift */,
+				A4CEE12C1CAA58510008BC32 /* Info.plist */,
+				A4CEE13C1CAA597F0008BC32 /* ProductRow.swift */,
+				A4CEE1421CAA5E910008BC32 /* ShowProductController.swift */,
+			);
+			path = "iWatch Extension";
+			sourceTree = "<group>";
+		};
+		E070579D1B39A9D000214BF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6780643679894FE0BC65A4DF /* Background.png */,
+				F2F57CAB417E48F8B7B21DD3 /* Default-568h@2x.png */,
+				811EC42F37774E1D804D1F7E /* Default-667h@2x.png */,
+				D6BC6847E5314F208A557405 /* Default-736h@3x.png */,
+				7CBE22831FC942699ACEEF8E /* Default-Landscape-568h@2x.png */,
+				479E4B04654F42E5AFA35655 /* Default-Landscape-667h@2x.png */,
+				4C97341BA8E14F92935BCBF9 /* Default-Landscape-736h@3x.png */,
+				0FE35E3A620A48CEA7BA6225 /* Default-Landscape.png */,
+				4D84A539E2CD4A6A92A1DCDB /* Default-Landscape@2x.png */,
+				54AC402F2BE148AB9FFD7C57 /* Default-Landscape@3x.png */,
+				F646287023A7467B90E92F64 /* Default-Portrait-736h@3x.png */,
+				5412FF29FEBD488F9519F440 /* Default-Portrait.png */,
+				C745B52F5F614AC9BD0765CC /* Default-Portrait@2x.png */,
+				FC1129F548604531B74CFFE7 /* Default.png */,
+				925F92FF2D06406787409734 /* Default@2x.png */,
+				43428E7830B04CD982987E69 /* Fader.png */,
+				E2D1CF120D604FC6ACB424CA /* Icon-Small-50.png */,
+				D057F6B4324D4836817EED7B /* Icon-Small-50@2x.png */,
+				D59E6AF97B56419ABEE13EB9 /* Icon-Small.png */,
+				A15BE19086914B4488886064 /* Icon-Small@2x.png */,
+				90A5DAD6F0734190A6CE4158 /* avatar_placeholder.png */,
+				D13363895ECD4DA7AC4C311F /* back_icon.png */,
+				A6FF6E138A7442D3922D084A /* extra.png */,
+				23F329C1A826459BAC2BEAD7 /* extra_1.png */,
+				710C8CAC365842E98B9734BE /* extra_2.png */,
+				84D9488FEBE345A1B3622C9D /* extra_3.png */,
+				C62DF303E1474C3B88CC028D /* iPhone 1024x768.png */,
+				7371EE6EBAAE4B02B096AD3E /* iPhone 1536x2048.png */,
+				4D8657A7B5B6438BACE8DB83 /* iPhone 2048x1536.png */,
+				7AEBE3C3DE4E4DC295239A9C /* iPhone 2048x2732.png */,
+				6840B4A7FF024774B4E329E2 /* iPhone 2732x2048.png */,
+				FBC2BBD1774D442FAADF3A98 /* iPhone 640x1136.png */,
+				34E56348EDAE465B95031CAD /* iPhone 640x960.png */,
+				B8E36F0F3A8B4CE88BF572C7 /* iPhone 768x1024.png */,
+				04006967DA6643F481074EA5 /* icon-1024x1024.png */,
+				BC1952A7625344EABEB21972 /* icon-1024x1024@2x.png */,
+				3A5187F3CFBA4CA19733EA8D /* icon-1024x1024@3x.png */,
+				407E53279BE7405184D25C9A /* icon-120x120.png */,
+				A98B78407548450E92BD2EAF /* icon-120x120@2x.png */,
+				E2FF75B5DB764CB6A7F3DE46 /* icon-120x120@3x.png */,
+				9F1404A1FFB74D2199002167 /* icon-152x152.png */,
+				76A9FD373797455D9065D940 /* icon-152x152@2x.png */,
+				B48D14CF5A394F549FE651A5 /* icon-152x152@3x.png */,
+				01223E006E29493687206EA3 /* icon-167x167.png */,
+				2DAD03C34AA9400586B49BAB /* icon-167x167@2x.png */,
+				49542AD592D74900B9FBFE65 /* icon-167x167@3x.png */,
+				74CA3FADBCE247759B572C82 /* icon-180x180.png */,
+				4F69DB596CAF4FA4B32B851F /* icon-180x180@2x.png */,
+				6EE7F5E156B341CA98C33AE1 /* icon-180x180@3x.png */,
+				61A49E76F2444CD6AA99DE7E /* icon-29.png */,
+				340B49B759C14F3A88CEDDB2 /* icon-29@2x.png */,
+				CF068054EB664D5CBCBD19BF /* icon-29@3x.png */,
+				B36C36429ACD40A786304029 /* icon-40.png */,
+				4F5D699299484A3A803C6645 /* icon-40@2x.png */,
+				9C8A8AAD9B8E4DBBB9A4CA33 /* icon-40@3x.png */,
+				4ED99365E7A6480AA4097746 /* icon-57.png */,
+				6C336319517C474D86FAA8CF /* icon-57@2x.png */,
+				68199409B584471898AE7C0D /* icon-60.png */,
+				03E8E39FBB864F6AA655E4E8 /* icon-60@2x.png */,
+				E082C4CAD52E48F68C953CC9 /* icon-60@3x.png */,
+				69235996F59845DAA867BBF4 /* icon-72.png */,
+				10BC39FD78BF4751A10DD18F /* icon-72@2x.png */,
+				A5BBDF5BC69845358A02B392 /* icon-72@3x.png */,
+				214EA96C45B9429A915F5CEF /* icon-76.png */,
+				FAA0D2817DF546AF9BC38652 /* icon-76@2x.png */,
+				159F95B41DE14DEE93175882 /* icon-76@3x.png */,
+				40BDF348CC334825A4D240D7 /* icon-83.5x83.5.png */,
+				EC25853996D44AFAADA03459 /* icon-83.5x83.5@2x.png */,
+				97B588F3A4804DC2ADAA4CB9 /* icon.png */,
+				E1D16BE4652F4CC3BD5247A5 /* icon@2x.png */,
+				04EAB6F8A2B04C2B829417B5 /* logo.png */,
+				53A789F6EDB94470BB6B4B96 /* logo_white.png */,
+				B8550671B37346EEAE642D92 /* menu_icon.png */,
+				B0E831AD14B3489A861B1E50 /* qr_code.png */,
+				46C1323D0B5C4E0084E05964 /* stage.png */,
+				AA367482F36E4EA1AF299574 /* stage_dark.png */,
+				83A6F9808C3340C9A902F75B /* statue_batman.png */,
+				D72BC9FA3DEC4AC0B38DAA27 /* statue_superman.png */,
+				4CF71226054140A699402097 /* top_fader.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		858B83EF18CA22B800AB12DE /* Mirage iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "Mirage iPhone" */;
+			buildPhases = (
+				BFEDB3114AF77FAEE792E364 /* Check Pods Manifest.lock */,
+				C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */,
+				858B83F218CA22B800AB12DE /* Sources */,
+				CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */,
+				858B83F418CA22B800AB12DE /* Frameworks */,
+				858B842C18CA22B800AB12DE /* Resources */,
+				85F5BDFC1A9363BE006B9701 /* Embed Frameworks */,
+				CD3EAD351B05FF060042DBFC /* NativeScript PostBuild */,
+				2B02001E61B20317BE70E604 /* Embed Pods Frameworks */,
+				162FA3DC67FD4B0ED9712DDC /* Copy Pods Resources */,
+				A4CEE1371CAA58510008BC32 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A47735C31CAB727900A4BBA8 /* PBXTargetDependency */,
+				A47735C11CAB727700A4BBA8 /* PBXTargetDependency */,
+			);
+			name = "Mirage iPhone";
+			productName = JDBridgeApp;
+			productReference = 858B843318CA22B800AB12DE /* mirageapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4CEE1141CAA58500008BC32 /* iWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4CEE1341CAA58510008BC32 /* Build configuration list for PBXNativeTarget "iWatch" */;
+			buildPhases = (
+				A4CEE1131CAA58500008BC32 /* Resources */,
+				A4CEE1331CAA58510008BC32 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4CEE1241CAA58510008BC32 /* PBXTargetDependency */,
+			);
+			name = iWatch;
+			productName = iWatch;
+			productReference = A4CEE1151CAA58500008BC32 /* iWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A4CEE1201CAA58510008BC32 /* iWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4CEE1301CAA58510008BC32 /* Build configuration list for PBXNativeTarget "iWatch Extension" */;
+			buildPhases = (
+				A4CEE11D1CAA58510008BC32 /* Sources */,
+				A4CEE11E1CAA58510008BC32 /* Frameworks */,
+				A4CEE11F1CAA58510008BC32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4CEE1471CAA61560008BC32 /* PBXTargetDependency */,
+				A4CEE1411CAA5B870008BC32 /* PBXTargetDependency */,
+			);
+			name = "iWatch Extension";
+			productName = "iWatch Extension";
+			productReference = A4CEE1211CAA58510008BC32 /* iWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		858B832618CA111C00AB12DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TNS;
+				LastSwiftUpdateCheck = 730;
+				LastUpgradeCheck = 730;
+				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					858B83EF18CA22B800AB12DE = {
+						DevelopmentTeam = VQZ8ML3NVK;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					A4CEE1141CAA58500008BC32 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VQZ8ML3NVK;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A4CEE1201CAA58510008BC32 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VQZ8ML3NVK;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 858B832918CA111C00AB12DE /* Build configuration list for PBXProject "mirageapp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 858B832518CA111C00AB12DE;
+			productRefGroup = 858B832F18CA111C00AB12DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				858B83EF18CA22B800AB12DE /* Mirage iPhone */,
+				A4CEE1141CAA58500008BC32 /* iWatch */,
+				A4CEE1201CAA58510008BC32 /* iWatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		858B842C18CA22B800AB12DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD45EE7C18DC2D5800FB50C0 /* app in Resources */,
+				A47735C41CAB732500A4BBA8 /* mirageapp-Info.plist in Resources */,
+				858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */,
+				AE3FDAD902F246BAB4BD74A9 /* Background.png in Resources */,
+				F5C708B737F444BBA4CB3F3E /* Default-568h@2x.png in Resources */,
+				C6846DA133A146D9894BED9F /* Default-667h@2x.png in Resources */,
+				F9BA3454E799443DA48A4D19 /* Default-736h@3x.png in Resources */,
+				2F954200A3A14F96BFBDD029 /* Default-Landscape-568h@2x.png in Resources */,
+				B9DE926EAC704888A082D0CC /* Default-Landscape-667h@2x.png in Resources */,
+				27388DD2820D4EE4A4673D04 /* Default-Landscape-736h@3x.png in Resources */,
+				C2B75621F2DE48A1822B4958 /* Default-Landscape.png in Resources */,
+				D48CF1620AE3410AAD948E9A /* Default-Landscape@2x.png in Resources */,
+				04E8C166EEB24886B17566EA /* Default-Landscape@3x.png in Resources */,
+				FD319572F1454E5A886D4443 /* Default-Portrait-736h@3x.png in Resources */,
+				A4ACE2781CAB6E8300B33F93 /* Media.xcassets in Resources */,
+				72B7816FB7EC498EA82EB65B /* Default-Portrait.png in Resources */,
+				7AA0B6EC403D4D37B2C3BC96 /* Default-Portrait@2x.png in Resources */,
+				4C59CD0B943D440BB2635F33 /* Default.png in Resources */,
+				5CEEA1ED71BA466EB00AA2ED /* Default@2x.png in Resources */,
+				8E315075A705494688CEA7B8 /* Fader.png in Resources */,
+				CA2A2F481CE44BD19A824A72 /* Icon-Small-50.png in Resources */,
+				B177BAA648AD45E88A1D96FD /* Icon-Small-50@2x.png in Resources */,
+				ED53616668544B2B85BA8D1A /* Icon-Small.png in Resources */,
+				6DED46E04B1A4B59A30F0D0B /* Icon-Small@2x.png in Resources */,
+				6EA2156703544DF99F841A5B /* avatar_placeholder.png in Resources */,
+				DD2C154D668A4C30B2DBFB62 /* back_icon.png in Resources */,
+				FD491EB0DF8C4E9094067AFB /* extra.png in Resources */,
+				1E3104A0D2C44ECF86B5213D /* extra_1.png in Resources */,
+				61B7AD0F014B49F7A7574883 /* extra_2.png in Resources */,
+				69D86C2B3CD542878FC69C33 /* extra_3.png in Resources */,
+				45A2F1CAD6D1461A81FBF2B6 /* iPhone 1024x768.png in Resources */,
+				DCB431E5D7AB4BA4BB8214AC /* iPhone 1536x2048.png in Resources */,
+				61ECE05BAAEA443EB1686F85 /* iPhone 2048x1536.png in Resources */,
+				2D7369543E714D69911573BE /* iPhone 2048x2732.png in Resources */,
+				057B35F99C1C45978EA059A4 /* iPhone 2732x2048.png in Resources */,
+				A4ACE2771CAB6E8300B33F93 /* Images.xcassets in Resources */,
+				CA4BC1A85BA0443FB4CD600F /* iPhone 640x1136.png in Resources */,
+				C20549506B3B49869CCF5DF1 /* iPhone 640x960.png in Resources */,
+				A517473279A04D3295A98AE9 /* iPhone 768x1024.png in Resources */,
+				84ECFE8B076A4B68BF4F3387 /* icon-1024x1024.png in Resources */,
+				0B617E899ECD425D9E8C81C1 /* icon-1024x1024@2x.png in Resources */,
+				C1E5BB0F84384D0A8C9C629B /* icon-1024x1024@3x.png in Resources */,
+				3600B12179FC49BC943B367C /* icon-120x120.png in Resources */,
+				B9606714EB4F40938F9157AA /* icon-120x120@2x.png in Resources */,
+				E9DBCE8D968E482F9C6208DE /* icon-120x120@3x.png in Resources */,
+				9A5252F9BA864778B021E8E1 /* icon-152x152.png in Resources */,
+				91A2F812ED6840968A44D99B /* icon-152x152@2x.png in Resources */,
+				C51E13313861431E817626D9 /* icon-152x152@3x.png in Resources */,
+				9CA901AE782A4E4F88182ABA /* icon-167x167.png in Resources */,
+				15B1E8872ECA4E3C9AFD24F8 /* icon-167x167@2x.png in Resources */,
+				12E6342B84B445A89A87BD91 /* icon-167x167@3x.png in Resources */,
+				828E1CBE1BF349419B82496E /* icon-180x180.png in Resources */,
+				99353A6E06C14B79A44B0674 /* icon-180x180@2x.png in Resources */,
+				5EFE0A40F2D94E92AFCF0A90 /* icon-180x180@3x.png in Resources */,
+				448FE29D18B3470CA0C04683 /* icon-29.png in Resources */,
+				96CE5C2690F24804911C86ED /* icon-29@2x.png in Resources */,
+				269C9D5EC9864FCFA77A9EBA /* icon-29@3x.png in Resources */,
+				CE7FB216B6BF48EA9C1C2AA8 /* icon-40.png in Resources */,
+				CBE8400BB3B7477D9408D1C4 /* icon-40@2x.png in Resources */,
+				527CEA1A782F43F5B5212BEF /* icon-40@3x.png in Resources */,
+				2C2BE682724F4883B06F7D0A /* icon-57.png in Resources */,
+				453661CF8D57420A8B12D206 /* icon-57@2x.png in Resources */,
+				2467FBE06BCF4776AA4CA626 /* icon-60.png in Resources */,
+				14A4394C34E248F2B4E23BD2 /* icon-60@2x.png in Resources */,
+				6A1E1525E4BB464098BD69A7 /* icon-60@3x.png in Resources */,
+				A7E0EB53D45647DCA2A134D2 /* icon-72.png in Resources */,
+				86F92C8635344ED5ADD5A13E /* icon-72@2x.png in Resources */,
+				4A073E0438704F728DA46766 /* icon-72@3x.png in Resources */,
+				A84A0B978FDD409990686302 /* icon-76.png in Resources */,
+				6E06F2AAE09148A292C8AEE4 /* icon-76@2x.png in Resources */,
+				D9784E7783174D8592D7670D /* icon-76@3x.png in Resources */,
+				BD7C1608D3FB4715B6C34A02 /* icon-83.5x83.5.png in Resources */,
+				03BE8DF252824D16972426D4 /* icon-83.5x83.5@2x.png in Resources */,
+				07FB583B872E4F0FB38A2447 /* icon.png in Resources */,
+				3AB12757E98C470B869C7E67 /* icon@2x.png in Resources */,
+				59C6D0E8ABF14533B3C9C9FC /* logo.png in Resources */,
+				29D336C6C4794ADEA3E217D6 /* logo_white.png in Resources */,
+				C3EE5E05AD4D4A25AE1136D2 /* menu_icon.png in Resources */,
+				24FCB1204D23488C8B44A6A3 /* qr_code.png in Resources */,
+				82DF76476E064BA0B4F39E3F /* stage.png in Resources */,
+				0624E0544A124F66AC422BA6 /* stage_dark.png in Resources */,
+				5205D893378844F3A7C4AB0F /* statue_batman.png in Resources */,
+				7345A777571146438CF3B3C8 /* statue_superman.png in Resources */,
+				6652E852AEA1458BAF25AA5E /* top_fader.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE1131CAA58500008BC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4CEE13F1CAA5A130008BC32 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE11F1CAA58510008BC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		162FA3DC67FD4B0ED9712DDC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B02001E61B20317BE70E604 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFEDB3114AF77FAEE792E364 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PreBuild";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-pre-build\"";
+			showEnvVarsInLog = 0;
+		};
+		CD3EAD351B05FF060042DBFC /* NativeScript PostBuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PostBuild";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-post-build\"";
+			showEnvVarsInLog = 0;
+		};
+		CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "NativeScript PreLink";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/internal/nativescript-pre-link\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		858B83F218CA22B800AB12DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD62955D1BB2678900AE3A93 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4CEE11D1CAA58510008BC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4CEE1431CAA5E910008BC32 /* ShowProductController.swift in Sources */,
+				A4CEE13D1CAA597F0008BC32 /* ProductRow.swift in Sources */,
+				A4CEE1291CAA58510008BC32 /* ExtensionDelegate.swift in Sources */,
+				A4CEE1271CAA58510008BC32 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A47735C11CAB727700A4BBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4CEE1141CAA58500008BC32 /* iWatch */;
+			targetProxy = A47735C01CAB727700A4BBA8 /* PBXContainerItemProxy */;
+		};
+		A47735C31CAB727900A4BBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4CEE1201CAA58510008BC32 /* iWatch Extension */;
+			targetProxy = A47735C21CAB727900A4BBA8 /* PBXContainerItemProxy */;
+		};
+		A4CEE1241CAA58510008BC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4CEE1201CAA58510008BC32 /* iWatch Extension */;
+			targetProxy = A4CEE1231CAA58510008BC32 /* PBXContainerItemProxy */;
+		};
+		A4CEE1411CAA5B870008BC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 858B83EF18CA22B800AB12DE /* Mirage iPhone */;
+			targetProxy = A4CEE1401CAA5B870008BC32 /* PBXContainerItemProxy */;
+		};
+		A4CEE1471CAA61560008BC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4CEE1141CAA58500008BC32 /* iWatch */;
+			targetProxy = A4CEE1461CAA61560008BC32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		858B833A18CA111C00AB12DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				858B833B18CA111C00AB12DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9B8C6A21ACEDEEB00547416 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9B8C6A31ACEDEEB00547416 /* en */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		858B835818CA111C00AB12DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Debug;
+		};
+		858B835918CA111C00AB12DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Release;
+		};
+		858B843118CA22B800AB12DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Soap Studio company Limited (VQZ8ML3NVK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Soap Studio company Limited (VQZ8ML3NVK)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../../lib/iOS\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mirageapp/mirageapp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/mirageapp/mirageapp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soap.tumbler;
+				PRODUCT_NAME = mirageapp;
+				PROVISIONING_PROFILE = "60ba87ca-6eb6-4b90-a09d-e0e37e5c6457";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		858B843218CA22B800AB12DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Soap Studio company Limited (VQZ8ML3NVK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Soap Studio company Limited (VQZ8ML3NVK)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../../lib/iOS\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mirageapp/mirageapp-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/mirageapp/mirageapp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soap.tumbler;
+				PRODUCT_NAME = mirageapp;
+				PROVISIONING_PROFILE = "60ba87ca-6eb6-4b90-a09d-e0e37e5c6457";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A4CEE1311CAA58510008BC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "iWatch Extension/iWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "iWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soap.tumbler.mirage3d-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		A4CEE1321CAA58510008BC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "iWatch Extension/iWatch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "iWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soap.tumbler.mirage3d-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		A4CEE1351CAA58510008BC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = iWatch/iWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = iWatch_Extension;
+				INFOPLIST_FILE = iWatch/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soap.tumbler.mirage3d-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		A4CEE1361CAA58510008BC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = iWatch/iWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = iWatch_Extension;
+				INFOPLIST_FILE = iWatch/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soap.tumbler.mirage3d-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		858B832918CA111C00AB12DE /* Build configuration list for PBXProject "mirageapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				858B835818CA111C00AB12DE /* Debug */,
+				858B835918CA111C00AB12DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "Mirage iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				858B843118CA22B800AB12DE /* Debug */,
+				858B843218CA22B800AB12DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4CEE1301CAA58510008BC32 /* Build configuration list for PBXNativeTarget "iWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4CEE1311CAA58510008BC32 /* Debug */,
+				A4CEE1321CAA58510008BC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4CEE1341CAA58510008BC32 /* Build configuration list for PBXNativeTarget "iWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4CEE1351CAA58510008BC32 /* Debug */,
+				A4CEE1361CAA58510008BC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 858B832618CA111C00AB12DE /* Project object */;
+}
