@@ -1,0 +1,54 @@
+.stage {
+    background-image: url('res://stage');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+    padding: 25px;
+}
+
+.container {
+    background-color: #E977AF;
+    padding: 30px;
+}
+
+.label {
+    color: white;
+    text-align: center;
+}
+
+.top {
+    font-size: 15px;
+}
+
+.bottom {
+    font-size: 25px;
+}
+
+.center {
+    text-align: center;
+}
+
+.enabled {
+    width: 100%;
+    background-color: white;
+    color: #E977AF;
+    font-size: 20px;
+    border-radius: 2;
+    height: 20%;
+    margin: 5% 0 0 0;
+}
+
+.disabled{
+    color: #e9cbd4;
+    background-color: #e9b1ce;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 2;
+    height: 20%;
+    margin: 5% 0 0 0;
+}
+
+TextField {
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,4 @@
+<Page actionBarHidden="true" navigatedTo="pageNavigatedTo" unloaded="pageUnloaded">
+    <GridLayout id="container" rows="*">
+    </GridLayout>
+</Page>

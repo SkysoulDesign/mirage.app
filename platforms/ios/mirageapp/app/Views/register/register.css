@@ -1,0 +1,80 @@
+Page {
+    background-color: #f0f0f5;
+    color: #E977AF;
+}
+
+.logo {
+    margin: 20px
+}
+
+.form {
+    background-color: white;
+    padding: 15px;
+}
+
+.field {
+    height: 60px;
+}
+
+TextField {
+    font-size: 16px;
+    margin: 5px 0 0 0;
+    padding: 3px;
+}
+
+Button {
+    background-color: #39B54A;
+    width: 100%;
+    margin: 5px;
+    border-radius: 2;
+    font-size: 20px;
+    color: white;
+    height: 70px;
+}
+
+Label {
+    margin: 3px;
+}
+
+.gender-container {
+    text-align: center;
+    padding: 10px;
+    margin: 5px 5px;
+    background-color: #efefef;
+    border-radius: 2;
+}
+
+.gender-container--selected {
+    text-align: center;
+    color: white;
+    background-color: #E977AF;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 2;
+}
+
+.drop-down {
+    /*margin: 3px;*/
+    font-size: 20px;
+}
+
+.terms-container {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #efefef;
+    border-radius: 2;
+}
+
+.terms-container--accepted {
+    color: white;
+    background-color: #E977AF;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 2;
+}
+
+.terms-label-note {
+    font-size: 8px;
+    font-weight: bold;
+}
+
