@@ -18,13 +18,24 @@ class ShowProductController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var productName: WKInterfaceLabel!
     //@IBOutlet var productDescription: WKInterfaceLabel!
     
+    @IBOutlet var playVideoButton: WKInterfaceButton!
+    
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+
         print(message);
+
+        /* Video Completed */
+        if((message["completed"]) != nil){
+            playVideoButton.setEnabled(true)
+        }
+
     }
     
     @IBAction func playVideo() {
         
         print("playing video", extraID);
+        
+        playVideoButton.setEnabled(false)
         
         if(session.iOSDeviceNeedsUnlockAfterRebootForReachability){
             print("device not reachible");

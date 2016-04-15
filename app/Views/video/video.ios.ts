@@ -4,6 +4,7 @@ import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view';
 import {api, navigate, platform, video} from "../../Modules/Helpers";
+import {Mirage as App} from "../../app" ;
 
 var changePage = true;
 var moviePlayer;
@@ -11,7 +12,6 @@ var moviePlayer;
 export function pageNavigatedTo(args) {
 
     //orientationModule.orientationCleanup();
-
     if (!changePage)
         return;
 
@@ -73,6 +73,9 @@ export function pageUnloaded(args) {
     moviePlayer.stop();
     changePage = true;
     console.log("unloaded");
+
+    App.iWatch.sendMessage({completed: true});
+    //App.iWatch.isPlaying = false;
 }
 
 

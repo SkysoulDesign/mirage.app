@@ -35,7 +35,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             /* Error Message*/
             if((message["error"]) != nil){             
                 print(message["error"]);
-            }
+            }            
+            
             
             /* Received Products */
             if((message["products"]) != nil){

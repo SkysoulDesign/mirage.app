@@ -47,7 +47,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
     public tapOpenMenu() {
 
         var sideDrawer = topmost().getViewById("sideDrawer");
-        sideDrawer.toggleDrawerState();
+            sideDrawer.toggleDrawerState();
 
     }
 

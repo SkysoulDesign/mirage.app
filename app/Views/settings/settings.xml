@@ -24,6 +24,8 @@
                              selectedIndex="{{ selectedLanguage }}"/>
             </GridLayout>
 
+            <Button text="{{ CHANGE_PASSWORD }}" tap="{{ tapChangePassword }}" cssClass="changePass-button"/>
+
             <!--<GridLayout cssClass="item" columns="*,*">-->
                 <!--<Label cssClass="item-content" text="{{ NEWS_LETTER }}" col="0"/>-->
                 <!--<Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>-->

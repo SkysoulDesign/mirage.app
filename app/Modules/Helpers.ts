@@ -12,6 +12,7 @@ import platformModule = require("platform");
 import {BackstackEntry} from "ui/frame";
 import dialogs = require("ui/dialogs");
 import {ApiUserInterface} from "../Interfaces/ApiUserInterface";
+import connectivity = require("connectivity");
 
 /**
  * Extend Object
@@ -485,6 +486,42 @@ export class general {
 export class video {
 
     /**
+     * Play Video
+     * @param id
+     */
+    public static play(id:number|string) {
+
+        var context = {context: id},
+            connectionType = connectivity.getConnectionType();
+
+        switch (connectionType) {
+
+            case connectivity.connectionType.none:
+                dialogs.alert("You need an active connection in order to execute this action.");
+                break;
+
+            case connectivity.connectionType.wifi:
+                navigate.to('video', context);
+                break;
+
+            case connectivity.connectionType.mobile:
+
+                dialogs.confirm({
+                    title: "Alert",
+                    message: "You are currently using your mobile data, it is recommended to execute this action through wifi.",
+                    okButtonText: "Continue Anyway",
+                    cancelButtonText: "Cancel",
+                }).then(result => {
+                    if (result) navigate.to('video', context)
+                });
+
+                break;
+
+        }
+
+    }
+
+    /**
      * Return the video URL
      * @param extraID
      * @returns {string}
@@ -492,7 +529,7 @@ export class video {
     public static getURI(extraID:number) {
         return api.getBaseWithToken('api/video', {
             extra: extraID,
-            'aspect': platform.getRatio()
+            aspect: platform.getRatio()
         });
     }
 

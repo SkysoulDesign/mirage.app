@@ -1,5 +1,5 @@
 import application = require("application");
-import {database, navigate, view} from "./Helpers";
+import {database, navigate, view, video} from "./Helpers";
 import orientationModule = require("nativescript-screen-orientation");
 
 export class iWatch {
@@ -73,8 +73,6 @@ export class iWatch {
 
         var cache = database.query('api.login.codes');
 
-        console.dir(JSON.stringify(cache));
-
         /**
          * If there is no cache in the iOS throws login error
          */
@@ -100,8 +98,7 @@ export class iWatch {
     public playIOSVideo(extraID:Number) {
 
         orientationModule.setCurrentOrientation("portrait", function () {
-            console.log("play video on ios" + extraID);
-            navigate.to('video', {context: extraID.toString()});
+            video.play(extraID.toString())
         });
 
     }

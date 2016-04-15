@@ -1,13 +1,10 @@
-import {Observable, EventData} from "data/observable";
-import {ObservableArray} from "data/observable-array";
-import {api, navigate, cache,view} from "../Modules/Helpers";
-import {BaseModel} from "./BaseModel";
+import {EventData} from "data/observable";
+import {api, navigate, cache} from "../Modules/Helpers";
 import {Button} from "ui/button";
 import {Page} from "ui/page";
-import StackLayout = org.nativescript.widgets.StackLayout;
-import listPickerModule = require("ui/list-picker");
 import {LocalizedModel} from "./LocalizedModel";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
+import OpenUrl = require( "nativescript-openurl" );
 
 export class RegisterPageModel extends LocalizedModel implements LocalizedModelInterface {
 
@@ -15,124 +12,16 @@ export class RegisterPageModel extends LocalizedModel implements LocalizedModelI
     private registerButton:Button;
 
     /**
-     * Constructor
-     */
-    constructor() {
-        super();
-    }
-
-    /**
      * Setup
      */
-    public setup() {
-        /**
-         * Defaults
-         */
-        //this.defaults();
-
-        /**
-         * Binders
-         */
-        //this.bindCountries();
-        //this.bindAges();
-    }
+    public setup() {}
 
     /**
      * Localize Model
-     * @returns {string[]}
+     * @returns string[]
      */
     public localize() {
-        return ['USERNAME', 'REGISTER', 'PASSWORD', 'PASSWORD_CONFIRM', 'EMAIL'];
-    }
-
-    /**
-     * Set the defaults
-     */
-    private defaults() {
-        //this.set('newsletter', true);
-    }
-
-    /**
-     * Bind Countries to Model
-     */
-    private bindCountries() {
-
-
-        //var container = <StackLayout>this.page.getViewById('countriesContainer');
-        //var listPicker = new listPickerModule.ListPicker();
-        //listPicker.items = ['africa', 'brazil', 'china', 'uberenita'];
-        //listPicker.selectedIndex = 2;
-        //container.addChild(listPicker);
-        //
-        //var page = this.page;
-        //container.on('tap', function () {
-        //
-        //    page.showModal(view('modal-countries'), container, function () {
-        //        console.log('test')
-        //    }, false);
-        //
-        //});
-
-        /**
-         * Countries USING THIS
-         * @type {ObservableArray<string>}
-         */
-        //var countriesArray = this.getObservableAsArray('countries', function (data, countriesArray) {
-        //    for (var item in data) countriesArray.setItem(data[item].id, data[item].name)
-        //});
-        //
-        //this.set('countries', countriesArray);
-        //this.set('selectedCountry', 45); //45 China
-
-    }
-
-    /**
-     * Bind Ages to Model
-     */
-    private bindAges() {
-
-        /**
-         * Ages
-         * @type {ObservableArray<string>}
-         */
-        //var agesArray = this.getObservableAsArray('ages', function (data, agesArray) {
-        //    for (var item in data) agesArray.setItem(data[item].id, data[item].from + ' - ' + data[item].to)
-        //});
-        //
-        //this.set('ages', agesArray);
-        //this.set('selectedAge', 3);
-
-    }
-
-    /**
-     * Convert Observable to ObservableArray
-     * @param name
-     * @param setData
-     * @returns {"data/observable-array".ObservableArray}
-     */
-    private getObservableAsArray(name:string, setData:(data, modelArray:ObservableArray<{}>)=>void):ObservableArray<{}> {
-
-        /**
-         * Fetch Model List
-         */
-        var model = api.fetch(name);
-        var modelArray = new ObservableArray();
-
-        /**
-         * Set on Startup
-         */
-        if (model.get('data'))
-            setData(model.get('data'), modelArray);
-
-        /**
-         * Set on Fetch from server
-         */
-        model.on(Observable.propertyChangeEvent, function (data) {
-            setData(data.object.get('data'), modelArray)
-        });
-
-        return modelArray;
-
+        return ['USERNAME', 'REGISTER', 'PASSWORD', 'PASSWORD_CONFIRM', 'EMAIL', 'TERMS'];
     }
 
     /**
@@ -153,11 +42,6 @@ export class RegisterPageModel extends LocalizedModel implements LocalizedModelI
                 password: this.get('password'),
                 password_confirmation: this.get('password_confirmation'),
                 email: this.get('email'),
-                //gender: this.get('gender'),
-                //country_id: this.get('selectedCountry'),
-                //age_id: this.get('selectedAge'),
-                //newsletter: this.get('newsletter'),
-                //terms: this.get('agreement'),
             };
 
         var onSuccess = function (data) {
@@ -197,24 +81,8 @@ export class RegisterPageModel extends LocalizedModel implements LocalizedModelI
     /**
      * Toggle Terms
      */
-    public toggleAgreement() {
-        this.toggle('agreement');
-    }
-
-    /**
-     * Toggle Newsletter
-     */
-    public toggleNewsletter() {
-        this.toggle('newsletter');
-    }
-
-    /**
-     * Toggle Booleans
-     * @param name
-     */
-    private toggle(name:string):void {
-        this.set(name, !this.get(name));
+    public tapAgreement() {
+        OpenUrl("http://www.soapstudio.com/terms-and-conditions");
     }
 
 }
-

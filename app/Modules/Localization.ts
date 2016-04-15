@@ -26,7 +26,9 @@ export class Localization {
             'PROFILE': 'Profile',
             'LANGUAGE': 'Language',
             'NEWS_LETTER': 'Newsletter',
-            'LOGOUT': 'LOG OUT'
+            'LOGOUT': 'LOG OUT',
+            'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
+            'CHANGE_PASSWORD': 'Change Password'
         }
     }
 
@@ -53,7 +55,9 @@ export class Localization {
             'PROFILE': '图鉴',
             'LANGUAGE': '语言',
             'NEWS_LETTER': '通讯',
-            'LOGOUT': '退出'
+            'LOGOUT': '退出',
+            'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
+            'CHANGE_PASSWORD': 'Change Password'
         }
     }
 
@@ -80,7 +84,9 @@ export class Localization {
             'PROFILE': '圖鑒',
             'LANGUAGE': '語言',
             'NEWS_LETTER': '通讯',
-            'LOGOUT': '登出'
+            'LOGOUT': '登出',
+            'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
+            'CHANGE_PASSWORD': 'Change Password'
         }
     }
 
@@ -107,7 +113,9 @@ export class Localization {
             'PROFILE': '商品情報',
             'LANGUAGE': '言語',
             'NEWS_LETTER': 'ニュースレター',
-            'LOGOUT': 'ログアウト'
+            'LOGOUT': 'ログアウト',
+            'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
+            'CHANGE_PASSWORD': 'Change Password'
         }
     }
 

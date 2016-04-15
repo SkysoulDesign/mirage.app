@@ -45,3 +45,12 @@ Page {
     color: white;
     height: 70px;
 }
+
+.changePass-button {
+    background-color: #C7C7CC;
+    width: 100%;
+    margin: 5px;
+    border-radius: 2;
+    font-size: 20px;
+    height: 70px;
+}

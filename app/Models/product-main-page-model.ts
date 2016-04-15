@@ -1,5 +1,5 @@
 import {Observable} from "data/observable";
-import {navigate, api, file, parseURL} from "../Modules/Helpers";
+import {navigate, api, file, parseURL, video} from "../Modules/Helpers";
 import {ApiUserInterface, ApiExtraInterface} from "../Interfaces/ApiUserInterface";
 import stackModule = require("ui/layouts/stack-layout");
 import imageModule = require('ui/image');
@@ -95,7 +95,7 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
         var components = this.components,
             profile_tab_container = this.page.getViewById('profile_container'),
             figure_container = this.page.getViewById('product_container');
-            figure_container.addChild(components.figure.image);
+        figure_container.addChild(components.figure.image);
 
         var extra_container = <stackModule.StackLayout>this.page.getViewById('extras_container');
 
@@ -124,15 +124,15 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
         console.dir(this.codes);
 
         var stack = new stackModule.StackLayout();
-            stack.className = 'details-header-container';
+        stack.className = 'details-header-container';
 
         var title = new LabelModule.Label();
-            title.className = 'header-title';
-            title.text = this.codes.product.name;
+        title.className = 'header-title';
+        title.text = this.codes.product.name;
 
         var sub_title = new LabelModule.Label();
-            sub_title.className = 'header-description';
-            sub_title.text = this.codes.code;
+        sub_title.className = 'header-description';
+        sub_title.text = this.codes.code;
 
         var image = new imageModule.Image();
 
@@ -141,9 +141,9 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
         });
 
         var description = new LabelModule.Label();
-            description.className = 'content-description';
-            description.text = profile.description;
-            description.textWrap = true;
+        description.className = 'content-description';
+        description.text = profile.description;
+        description.textWrap = true;
 
         stack.addChild(title);
         stack.addChild(sub_title);
@@ -172,7 +172,7 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
 
         comp.grid.className = 'card-container';
         comp.grid.on(GestureTypes.tap, function () {
-            navigate.to('video', {context: extra.id})
+            video.play(extra.id);
         });
 
         comp.loading.busy = true;

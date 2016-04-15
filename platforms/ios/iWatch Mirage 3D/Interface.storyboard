@@ -21,7 +21,7 @@
                                     <group key="rootItem" width="1" alignment="left" id="8b4-5d-ffk">
                                         <items>
                                             <label width="1" alignment="center" verticalAlignment="center" text="Superman Stand Version I" textAlignment="center" numberOfLines="0" id="392-c9-cVP">
-                                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                             </label>
                                         </items>
@@ -72,6 +72,7 @@
                         </mask>
                     </variation>
                     <connections>
+                        <outlet property="playVideoButton" destination="kRf-gM-0Id" id="dBR-3H-PXk"/>
                         <outlet property="productDescription" destination="opc-WB-LhK" id="svS-OX-ZW0"/>
                         <outlet property="productName" destination="4wd-iV-E5I" id="MPq-aL-4E6"/>
                     </connections>

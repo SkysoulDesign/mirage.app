@@ -37,11 +37,9 @@
                 <!--<Label text="Age Group"/>-->
                 <!--<dd:DropDown cssClass="drop-down" items="{{ ages }}" selectedIndex="{{ selectedAge }}"/>-->
 
-                <!--<StackLayout cssClass="{{ agreement ?  'terms-container&#45;&#45;accepted' : 'terms-container' }}"-->
-                             <!--tap="{{ toggleAgreement }}">-->
-                    <!--<Label cssClass="terms-label-note" text="TAP TO SELECT"/>-->
-                    <!--<Label text="I Agree with Terms and Condition." textWrap="true"/>-->
-                <!--</StackLayout>-->
+                <StackLayout cssClass="terms-container" tap="{{ tapAgreement }}">
+                    <Label text="{{ TERMS }}" textWrap="true"/>
+                </StackLayout>
 
                 <!--<StackLayout cssClass="{{ newsletter ?  'terms-container&#45;&#45;accepted' : 'terms-container' }}"-->
                              <!--tap="{{ toggleNewsletter }}">-->
