@@ -1,18 +1,59 @@
 {
-  "name": "nativescript-barcodescanner",
-  "version": "1.2.2",
+  "_args": [
+    [
+      "nativescript-barcodescanner@1.3.3",
+      "/Users/Milewski/Documents/Rafael/Code/mirage-app"
+    ]
+  ],
+  "_from": "nativescript-barcodescanner@1.3.3",
+  "_id": "nativescript-barcodescanner@1.3.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nativescript-barcodescanner",
+  "_nodeVersion": "4.2.2",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-barcodescanner-1.3.3.tgz_1461438421629_0.062337884679436684"
+  },
+  "_npmUser": {
+    "email": "eddyverbruggen@gmail.com",
+    "name": "eddyverbruggen"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "nativescript-barcodescanner",
+    "raw": "nativescript-barcodescanner@1.3.3",
+    "rawSpec": "1.3.3",
+    "scope": null,
+    "spec": "1.3.3",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.3.tgz",
+  "_shasum": "b588b137a4296452b39a8121fbe9ddcb8ae7f1fd",
+  "_shrinkwrap": null,
+  "_spec": "nativescript-barcodescanner@1.3.3",
+  "_where": "/Users/Milewski/Documents/Rafael/Code/mirage-app",
+  "author": {
+    "email": "eddyverbruggen@gmail.com",
+    "name": "Eddy Verbruggen"
+  },
+  "bugs": {
+    "url": "https://github.com/eddyverbruggen/nativescript-barcodescanner/issues"
+  },
+  "dependencies": {},
   "description": "Scan QR/barcodes with a {N} app.",
-  "main": "barcodescanner.js",
-  "nativescript": {
-    "platforms": {
-      "android": "1.3.0",
-      "ios": "1.2.3"
-    }
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "b588b137a4296452b39a8121fbe9ddcb8ae7f1fd",
+    "tarball": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.3.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eddyverbruggen/nativescript-barcodescanner.git"
-  },
+  "gitHead": "f387fe4b8252150a21d005409df4ad36865b550f",
+  "homepage": "https://github.com/eddyverbruggen/nativescript-barcodescanner",
   "keywords": [
     "NativeScript",
     "Barcode",
@@ -32,44 +73,30 @@
     "UPCA",
     "UPCE"
   ],
-  "author": {
-    "name": "Eddy Verbruggen",
-    "email": "eddyverbruggen@gmail.com"
-  },
   "license": {
     "type": "MIT",
     "url": "https://github.com/eddyverbruggen/nativescript-barcodescanner/blob/master/LICENSE"
   },
-  "bugs": {
-    "url": "https://github.com/eddyverbruggen/nativescript-barcodescanner/issues"
-  },
-  "homepage": "https://github.com/eddyverbruggen/nativescript-barcodescanner",
-  "gitHead": "238c4f35f6ecfca44a07438baa60e36e7774d29b",
-  "_id": "nativescript-barcodescanner@1.2.2",
-  "scripts": {},
-  "_shasum": "b3edd07357af2cc768ad3f5b8874d8dbf4f19601",
-  "_from": "nativescript-barcodescanner@>=1.2.1 <2.0.0",
-  "_npmVersion": "2.14.7",
-  "_nodeVersion": "4.2.2",
-  "_npmUser": {
-    "name": "eddyverbruggen",
-    "email": "eddyverbruggen@gmail.com"
-  },
-  "dist": {
-    "shasum": "b3edd07357af2cc768ad3f5b8874d8dbf4f19601",
-    "tarball": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.2.2.tgz"
-  },
+  "main": "barcodescanner.js",
   "maintainers": [
     {
-      "name": "eddyverbruggen",
-      "email": "eddyverbruggen@gmail.com"
+      "email": "eddyverbruggen@gmail.com",
+      "name": "eddyverbruggen"
     }
   ],
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/nativescript-barcodescanner-1.2.2.tgz_1459509781761_0.8981643882580101"
+  "name": "nativescript-barcodescanner",
+  "nativescript": {
+    "platforms": {
+      "android": "1.3.0",
+      "ios": "1.2.3"
+    }
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.2.2.tgz",
-  "readme": "ERROR: No README data found!"
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyverbruggen/nativescript-barcodescanner.git"
+  },
+  "scripts": {},
+  "version": "1.3.3"
 }

@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		03E08AC620FE40138082A391 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B9B0C4051CF24F5CB6382B6D /* icon-76.png */; };
 		05208C848AEF482F9607931E /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4E077024914C94A90F0222 /* Icon-Small.png */; };

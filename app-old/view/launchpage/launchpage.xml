@@ -1,5 +1,0 @@
-<page loaded="pageLoaded" android:actionBarHidden="true">>
-	<GridLayout >
-		<Image src="~/image/soap.png" stretch="fill" />
-	</GridLayout>
-</page>

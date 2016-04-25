@@ -1,56 +1,85 @@
 {
-  "name": "nativescript-drop-down",
-  "version": "1.2.3",
+  "_args": [
+    [
+      "nativescript-drop-down@1.2.4",
+      "/Users/Milewski/Documents/Rafael/Code/mirage-app"
+    ]
+  ],
+  "_from": "nativescript-drop-down@1.2.4",
+  "_id": "nativescript-drop-down@1.2.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/nativescript-drop-down",
+  "_nodeVersion": "5.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-drop-down-1.2.4.tgz_1461346795486_0.7523314370773733"
+  },
+  "_npmUser": {
+    "email": "peter@tangrasoft.com",
+    "name": "pstaev"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "nativescript-drop-down",
+    "raw": "nativescript-drop-down@1.2.4",
+    "rawSpec": "1.2.4",
+    "scope": null,
+    "spec": "1.2.4",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-drop-down/-/nativescript-drop-down-1.2.4.tgz",
+  "_shasum": "07bb7f99de3eb1bfd8b4a69998e68b7fa15d4aed",
+  "_shrinkwrap": null,
+  "_spec": "nativescript-drop-down@1.2.4",
+  "_where": "/Users/Milewski/Documents/Rafael/Code/mirage-app",
+  "author": {
+    "email": "peter@tangrasoft.com",
+    "name": "Peter Staev"
+  },
+  "bugs": {
+    "url": "https://github.com/PeterStaev/NativeScript-Drop-Down/issues"
+  },
+  "dependencies": {},
   "description": "A NativeScript DropDown widget.",
-  "main": "drop-down.js",
-  "nativescript": {
-    "platforms": {
-      "ios": "1.5.0",
-      "android": "1.5.0"
-    }
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "07bb7f99de3eb1bfd8b4a69998e68b7fa15d4aed",
+    "tarball": "https://registry.npmjs.org/nativescript-drop-down/-/nativescript-drop-down-1.2.4.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PeterStaev/NativeScript-Drop-Down.git"
-  },
+  "homepage": "https://github.com/PeterStaev/NativeScript-Drop-Down#readme",
   "keywords": [
     "NativeScript",
     "DropDown",
     "Spinner",
     "tangra"
   ],
-  "author": {
-    "name": "Peter Staev",
-    "email": "peter@tangrasoft.com"
-  },
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/PeterStaev/NativeScript-Drop-Down/issues"
-  },
-  "homepage": "https://github.com/PeterStaev/NativeScript-Drop-Down",
-  "_id": "nativescript-drop-down@1.2.3",
-  "_shasum": "c499c837bb3869b9cbb6d38fb7daea9204f81260",
-  "_from": "nativescript-drop-down@>=1.2.3 <2.0.0",
-  "_npmVersion": "1.4.9",
-  "_npmUser": {
-    "name": "pstaev",
-    "email": "peter.staev@gmail.com"
-  },
+  "main": "drop-down.js",
   "maintainers": [
     {
-      "name": "pstaev",
-      "email": "peter.staev@gmail.com"
+      "email": "peter.staev@gmail.com",
+      "name": "pstaev"
     }
   ],
-  "dist": {
-    "shasum": "c499c837bb3869b9cbb6d38fb7daea9204f81260",
-    "tarball": "http://registry.npmjs.org/nativescript-drop-down/-/nativescript-drop-down-1.2.3.tgz"
+  "name": "nativescript-drop-down",
+  "nativescript": {
+    "platforms": {
+      "android": "1.5.0",
+      "ios": "1.5.0"
+    }
   },
-  "_npmOperationalInternal": {
-    "host": "packages-9-west.internal.npmjs.com",
-    "tmp": "tmp/nativescript-drop-down-1.2.3.tgz_1456316247121_0.4166145466733724"
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterStaev/NativeScript-Drop-Down.git"
   },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/nativescript-drop-down/-/nativescript-drop-down-1.2.3.tgz",
-  "readme": "ERROR: No README data found!"
+  "scripts": {},
+  "version": "1.2.4"
 }

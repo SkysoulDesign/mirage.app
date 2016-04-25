@@ -4,7 +4,6 @@ import {NavigatedData} from "ui/page";
 import {cache, api, navigate, general} from "../../Modules/Helpers";
 import dialogs = require("ui/dialogs");
 import application = require('application');
-import {Mirage as App} from "../../app" ;
 import orientationModule = require("nativescript-screen-orientation");
 
 export function pageNavigatedFrom() {
@@ -14,8 +13,8 @@ export function pageNavigatedFrom() {
 export function pageNavigatedTo(args:NavigatedData) {
 
     orientationModule.setCurrentOrientation("portrait", function () {
-        console.log('page reset to portrait')
 
+        console.log('page reset to portrait');
 
         if (args.isBackNavigation)
             return;
@@ -47,5 +46,7 @@ export function pageNavigatedTo(args:NavigatedData) {
         general.refreshCache(data => {
             api.fetch('products', {});
         });
+        
     })
+
 }

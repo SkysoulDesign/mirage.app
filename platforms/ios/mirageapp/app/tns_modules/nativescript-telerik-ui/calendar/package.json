@@ -1,3 +1,0 @@
-{ "name" : "calendar",
-  "main" : "calendar.js",
-  "typings" : "./calendar.d.ts" }

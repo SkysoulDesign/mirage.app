@@ -399,7 +399,11 @@ export class lang {
      */
     public static deviceLanguage() {
 
-        var language = platformModule.device.language.slice(0, 2);
+        let acceptedLanguages = ['en', 'zh', 'ja'],
+            language = platformModule.device.language.slice(0, 2);
+
+        if (acceptedLanguages.indexOf(language) == -1)
+            return 'en';
 
         /**
          * Check if its chinese

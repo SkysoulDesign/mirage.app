@@ -4,6 +4,12 @@ declare module "nativescript-barcodescanner" {
      */
     export interface ScanOptions {
       /**
+       * A comma sep. string of barcode types: "QR_CODE,PDF_417"
+       * Default: empty, so all types of codes can be scanned.
+       */
+      formats?: string;
+
+      /**
        * The label of the button used to close the scanner.
        * Default: "Close".
        * iOS only.
@@ -30,6 +36,13 @@ declare module "nativescript-barcodescanner" {
        * Android only (on iOS the button is always shown).
        */
       showFlipCameraButton?: boolean;
+
+      /**
+       * Optionally lock the orientation to 'portrait' or 'landscape'.
+       * Default: "sensor", which follows the current device rotation.
+       * Android only.
+       */
+      orientation?: string;
     }
 
     export function available(): Promise<boolean>;

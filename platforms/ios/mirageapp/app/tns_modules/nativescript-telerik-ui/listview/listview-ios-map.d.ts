@@ -18,6 +18,11 @@ declare enum TKListViewItemAnimation {
     TKListViewItemAnimationSlide
 }
 
+declare enum TKListViewReorderMode {
+    TKListViewReorderModeWithHandle,
+    TKListViewReorderModeWithLongPress
+}
+
 declare enum TKListViewSelectionBehavior {
     TKListViewSelectionBehaviorNone,
     TKListViewSelectionBehaviorPress,
@@ -182,8 +187,8 @@ declare class TKListView extends UIView implements UICollectionViewDataSource, U
 
     public reloadData();
 
-    public insertItemsAtIndexPaths(indexPaths:any);
-    public deleteItemsAtIndexPaths(indexPaths:any);
+    public insertItemsAtIndexPaths(indexPaths: any);
+    public deleteItemsAtIndexPaths(indexPaths: any);
 
     public selectItemAtIndexPath(indexPath: NSIndexPath);
     public deselectItemAtIndexPath(indexPath: NSIndexPath);
@@ -246,3 +251,5 @@ interface TKListViewDataSource extends NSObject {
     numberOfSectionsInListView(listView: TKListView): number;
     listViewViewForSupplementaryElementOfKindAtIndexPath(listView: TKListView, kind: NSString, indexPath: NSIndexPath): TKListViewReusableCell;
 }
+
+
