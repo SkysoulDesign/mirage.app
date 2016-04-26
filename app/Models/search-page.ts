@@ -68,6 +68,7 @@ export class SearchPageModel extends LocalizedModel implements LocalizedModelInt
                      * @type {string}
                      */
                     hasMatch = true;
+                    
                 }
 
             }
@@ -93,7 +94,6 @@ export class SearchPageModel extends LocalizedModel implements LocalizedModelInt
 
         this.listView.className = "result-view";
         this.listView.rowHeight = 100;
-        this.listView.minHeight = 1000;
 
         this.listView.items = _this.result;
 

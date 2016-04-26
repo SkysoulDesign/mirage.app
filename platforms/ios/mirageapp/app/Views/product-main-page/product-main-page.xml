@@ -74,9 +74,10 @@
                     </StackLayout>
 
                     <StackLayout cssClass="drawer-menu-content">
-                        <Label cssClass="drawer-menu" text="News" tap="{{ tapNews }}"/>
-                        <Label cssClass="drawer-menu" text="About SOAP Studio" tap="{{ tapSoap }}"/>
-                        <Label cssClass="drawer-menu" text="Settings" tap="{{ tapSetting }}"/>
+                        <Label cssClass="drawer-menu" text="{{ NEWS }}" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="{{ SEARCH }}" tap="{{ tapSearch }}"/>
+                        <Label cssClass="drawer-menu" text="{{ ABOUT_SOAP }}" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="{{ SETTING }}" tap="{{ tapSetting }}"/>
                     </StackLayout>
 
                 </StackLayout>

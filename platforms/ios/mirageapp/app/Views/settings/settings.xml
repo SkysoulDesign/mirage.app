@@ -18,7 +18,7 @@
         <StackLayout cssClass="settings-container" row="1">
 
             <GridLayout cssClass="item" columns="*,*">
-                <Label cssClass="item-content" text="{{ LANGUAGE }}" tap="tapLanguage" col="0"/>
+                <Label cssClass="item-content" text="{{ LANGUAGE }}" col="0"/>
                 <dd:DropDown id="dropdown" cssClass="item-content right"
                              col="1" items="{{ languages }}"
                              selectedIndex="{{ selectedLanguage }}"/>
