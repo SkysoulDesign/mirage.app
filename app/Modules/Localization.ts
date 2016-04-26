@@ -28,7 +28,10 @@ export class Localization {
             'NEWS_LETTER': 'Newsletter',
             'LOGOUT': 'LOG OUT',
             'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
-            'CHANGE_PASSWORD': 'Change Password'
+            'CHANGE_PASSWORD': 'Change Password',
+            'SEARCH': 'Search',
+            'SEARCH_BY': 'Search by',
+            'RESULTS': 'Results'
         }
     }
 
@@ -57,7 +60,10 @@ export class Localization {
             'NEWS_LETTER': '通讯',
             'LOGOUT': '退出',
             'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
-            'CHANGE_PASSWORD': 'Change Password'
+            'CHANGE_PASSWORD': 'Change Password',
+            'SEARCH': 'Search',
+            'SEARCH_BY': 'Search by',
+            'RESULTS': 'Results',
         }
     }
 
@@ -86,7 +92,10 @@ export class Localization {
             'NEWS_LETTER': '通讯',
             'LOGOUT': '登出',
             'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
-            'CHANGE_PASSWORD': 'Change Password'
+            'CHANGE_PASSWORD': 'Change Password',
+            'SEARCH': 'Search',
+            'SEARCH_BY': 'Search by',
+            'RESULTS': 'Results'
         }
     }
 
@@ -115,7 +124,10 @@ export class Localization {
             'NEWS_LETTER': 'ニュースレター',
             'LOGOUT': 'ログアウト',
             'TERMS': 'By clicking submit you are agreeing to the Terms and Conditions.',
-            'CHANGE_PASSWORD': 'Change Password'
+            'CHANGE_PASSWORD': 'Change Password',
+            'SEARCH': 'Search',
+            'SEARCH_BY': 'Search by',
+            'RESULTS': 'Results'
         }
     }
 

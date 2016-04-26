@@ -113,7 +113,7 @@ export class ProductMainPageModel extends LocalizedModelWithNavigation implement
      * @returns {string[]}
      */
     public localize() {
-        return ['VIDEO_HOLOGRAM', 'PROFILE'];
+        return ['VIDEO_HOLOGRAM', 'PROFILE', 'SETTING', 'ABOUT_SOAP', 'NEWS', 'SEARCH'];
     }
 
     /**

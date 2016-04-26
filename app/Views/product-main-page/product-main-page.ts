@@ -1,11 +1,7 @@
 import {ProductMainPageModel} from "../../Models/product-main-page-model";
 import {Page} from 'ui/page';
-import {StackLayout} from "ui/layouts/stack-layout";
 import orientationModule = require("nativescript-screen-orientation");
-import {cache, navigate} from "../../Modules/Helpers";
-import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 import {NavigatedData} from "ui/page";
-import {ApiUrlInterface} from "../../Interfaces/ApiUrlInterface";
 import {ApiCodesInterface} from "../../Interfaces/ApiUserInterface";
 
 export function pageNavigatedTo(args:NavigatedData) {

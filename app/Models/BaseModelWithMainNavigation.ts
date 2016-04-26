@@ -1,9 +1,7 @@
 import {BaseModel} from "./BaseModel";
-import {navigate, general,cache} from "../Modules/Helpers";
-import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
-import OpenUrl = require( "nativescript-openurl" );
+import {navigate, general, cache} from "../Modules/Helpers";
+import {openUrl} from  "utils/utils" ;
 import {topmost} from "ui/frame";
-import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
 import {ApiCodesInterface, ApiUserInterface} from "../Interfaces/ApiUserInterface";
 
 export class BaseModelWithMainNavigation extends BaseModel {
@@ -12,12 +10,14 @@ export class BaseModelWithMainNavigation extends BaseModel {
      * Initialize defaults screen names
      */
     constructor() {
+
         super();
 
         var user:ApiUserInterface = cache.get('login');
 
         this.set('username', user.username);
         this.set('email', user.email);
+
     }
 
     /**
@@ -32,6 +32,13 @@ export class BaseModelWithMainNavigation extends BaseModel {
      */
     public tapRegisterProduct() {
         navigate.to('register-product');
+    }
+
+    /**
+     * Open Navigate Search
+     */
+    public tapSearch() {
+        navigate.to('search');
     }
 
     /**
@@ -62,7 +69,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
      * Open Camera to soap
      */
     public tapSoap() {
-        OpenUrl("http://www.soapstudio.com");
+        openUrl("http://www.soapstudio.com");
     };
 
     /**

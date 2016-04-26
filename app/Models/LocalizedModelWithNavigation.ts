@@ -1,8 +1,5 @@
-import {Observable} from "data/observable";
-import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
-import {BaseModel} from "./BaseModel";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
-import {cache, api, config, file, lang} from "../Modules/Helpers";
+import {lang} from "../Modules/Helpers";
 import {Localization} from "../Modules/Localization";
 import {BaseModelWithMainNavigation} from "./BaseModelWithMainNavigation";
 

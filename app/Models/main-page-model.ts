@@ -11,7 +11,6 @@ import {ApiUrlInterface} from "../Interfaces/ApiUrlInterface";
 import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
 import {Page} from "ui/page";
 import application = require('application')
-import {BaseModel} from "./BaseModel";
 import progressModule = require("ui/progress");
 import {StackLayout} from "ui/layouts/stack-layout";
 import {LocalizedModelInterface} from "../Interfaces/LocalizedModelInterface";
@@ -39,7 +38,7 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
     /**
      * Setup
      */
-    private setup() {
+    public setup() {
 
         var user:ApiUserInterface = cache.get('login'),
             progress = {
@@ -73,7 +72,7 @@ export class MainPageModel extends LocalizedModelWithNavigation implements Local
      * @returns {string[]}
      */
     public localize() {
-        return ['SETTING', 'ABOUT_SOAP', 'NEWS', 'MY_COLLECTION', 'MAIN_PAGE_TITLE'];
+        return ['SETTING', 'ABOUT_SOAP', 'NEWS', 'MY_COLLECTION', 'MAIN_PAGE_TITLE', 'SEARCH'];
     }
 
     private createImage(code:ApiCodesInterface):ImageModule.Image {

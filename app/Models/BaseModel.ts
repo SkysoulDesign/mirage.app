@@ -3,7 +3,16 @@ import {BaseModelInterface} from "../Interfaces/BaseModelInterface";
 
 export class BaseModel extends Observable implements BaseModelInterface {
 
+    /**
+     * Is Initialized
+     * @type {boolean}
+     */
     private initialized:boolean = false;
+
+    /**
+     * public Setup
+     */
+    abstract setup();
 
     /**
      * Bind everything on this model

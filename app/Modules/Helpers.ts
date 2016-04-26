@@ -399,10 +399,13 @@ export class lang {
      */
     public static deviceLanguage() {
 
-        let acceptedLanguages = ['en', 'zh', 'ja'],
-            language = platformModule.device.language.slice(0, 2);
+        /**
+         * Language
+         * @type {string}
+         */
+        let language = platformModule.device.language.slice(0, 2);
 
-        if (acceptedLanguages.indexOf(language) == -1)
+        if (this.languagesCode.indexOf(language) == -1)
             return 'en';
 
         /**
