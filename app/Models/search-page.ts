@@ -10,6 +10,7 @@ import {Image} from "ui/image";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {ItemEventData} from "ui/list-view";
 import {ObservableArray} from "data/observable-array";
+import {Stretch} from "ui/enums";
 
 export class SearchPageModel extends LocalizedModel implements LocalizedModelInterface {
 
@@ -68,7 +69,7 @@ export class SearchPageModel extends LocalizedModel implements LocalizedModelInt
                      * @type {string}
                      */
                     hasMatch = true;
-                    
+
                 }
 
             }
@@ -146,6 +147,8 @@ export class SearchPageModel extends LocalizedModel implements LocalizedModelInt
 
         name.className = 'result-product-name';
         image.className = 'result-product-image';
+        image.stretch = Stretch.aspectFit;
+
         stackLayout.className = 'result-container';
         stackLayout.orientation = 'horizontal';
 
@@ -153,6 +156,7 @@ export class SearchPageModel extends LocalizedModel implements LocalizedModelInt
         stackLayout.addChild(name);
 
         return stackLayout;
+
     }
 
     /**

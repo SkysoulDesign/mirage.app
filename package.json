@@ -1,25 +1,26 @@
 {
-	"nativescript": {
-		"id": "com.soap.tumbler",
-		"tns-android": {
-			"version": "1.7.1"
-		},
-		"tns-ios": {
-			"version": "1.7.1"
-		}
-	},
-	"dependencies": {
-		"nativescript-barcodescanner": "^1.2.1",
-		"nativescript-drop-down": "^1.2.3",
-		"nativescript-iqkeyboardmanager": "^1.0.1",
-		"nativescript-screen-orientation": "^1.0.2",
-		"nativescript-status-bar": "^1.0.1",
-		"nativescript-telerik-ui": "^0.2.4",
-		"tns-core-modules": "^1.6.2",
-		"typescript": "^1.8.9"
-	},
-	"devDependencies": {
-		"nativescript-dev-typescript": "^0.3.0",
-		"typescript": "^1.8.7"
-	}
+  "nativescript": {
+    "id": "com.soap.tumbler",
+    "tns-android": {
+      "version": "2.0"
+    },
+    "tns-ios": {
+      "version": "2.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-barcodescanner": "^1.2.1",
+    "nativescript-dev-typescript": "^0.3.2",
+    "nativescript-drop-down": "^1.2.5",
+    "nativescript-iqkeyboardmanager": "^1.0.1",
+    "nativescript-screen-orientation": "^1.0.2",
+    "nativescript-status-bar": "^1.0.1",
+    "nativescript-telerik-ui": "^0.2.4",
+    "tns-core-modules": "^1.7.1",
+    "typescript": "^1.8.9"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "^0.3.0",
+    "typescript": "^1.8.7"
+  }
 }

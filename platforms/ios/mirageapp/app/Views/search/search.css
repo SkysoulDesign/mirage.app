@@ -37,7 +37,7 @@ Page {
 }
 
 .search-bar {
-    margin: 5px;
+    /*margin: 5px;*/
 }
 
 .search-result-label {
@@ -50,6 +50,7 @@ Page {
 
 .result-product-image {
     vertical-align: center;
+    height: 80px;
     margin: 10px;
 }
 
