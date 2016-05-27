@@ -1,6 +1,7 @@
 import application = require("application");
 import platform = require("platform");
-import {database, navigate, view, video} from "./Helpers";
+import {Cache as cache} from "../Classes/Cache";
+import {Video as video} from "../Classes/Video";
 import orientationModule = require("nativescript-screen-orientation");
 
 export class iWatch {
@@ -83,7 +84,7 @@ export class iWatch {
 
         console.log("sending cache");
 
-        var cache = database.query('api.login.codes');
+        var cache = cache.get('codes', []);
 
         /**
          * If there is no cache in the iOS throws login error

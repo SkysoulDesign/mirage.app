@@ -1,21 +1,12 @@
-import {SignInPageModel} from "../../Models/sign-in-page-model";
 import {Page} from 'ui/page';
 import {NavigatedData} from "ui/page";
-import application = require("application");
+import {SignInPageModel} from "./sign-in-model";
 
-export function pageNavigatedTo(args:NavigatedData) {
+let page:Page,
+    model = new SignInPageModel();
 
-    if (args.isBackNavigation)
-        return;
-
-    var page = <Page>args.object,
-        model = new SignInPageModel(),
-        loginButton = page.getViewById('login_button');
-
-    page.bindingContext = model.init({
-        page: page,
-        loginButton: loginButton
-    });
-
+export function loaded(args:NavigatedData) {
+    page = <Page>args.object;
+    page.bindingContext = model
 }
 

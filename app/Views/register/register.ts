@@ -1,17 +1,14 @@
-import {RegisterPageModel} from "../../Models/register-page-model";
 import {Page} from 'ui/page';
-import placeholder = require("ui/placeholder");
-import listPickerModule = require("ui/list-picker");
+import {RegisterModel} from "./register-model";
+import {NavigatedData} from "ui/page";
 
-export function pageLoaded(args) {
+/**
+ * Page Loaded
+ * @param args
+ */
+export function loaded(args:NavigatedData) {
 
-    var page = <Page>args.object,
-        model = new RegisterPageModel(),
-        registerButton = page.getViewById('register_btn');
-
-        page.bindingContext = model.init({
-            page: page,
-            registerButton: registerButton
-        });
+    let page = <Page>args.object;
+        page.bindingContext = new RegisterModel(page);
 
 }

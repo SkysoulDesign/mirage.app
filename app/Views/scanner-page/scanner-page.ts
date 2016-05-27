@@ -1,12 +1,9 @@
 import barcodeScanner = require("nativescript-barcodescanner");
 import dialogs = require( "ui/dialogs");
-import {Page} from "ui/page";
-import {ShownModallyData} from "ui/page";
 import {NavigatedData} from "ui/page";
-import {navigate} from "../../Modules/Helpers";
-import {EventData} from "data/observable";
+import {Navigator as navigate} from "../../Classes/Navigator";
 
-export function pageNavigatedTo(args:NavigatedData) {
+export function navigatedTo(args:NavigatedData) {
 
     if (args.isBackNavigation)
         return navigate.back();
@@ -15,7 +12,7 @@ export function pageNavigatedTo(args:NavigatedData) {
 
             if (!available) {
 
-                return dialogs.alert("QRCode scanning is not available on your device").then(function () {
+                return dialogs.alert("QRCode scanning is not available on your device").then(()=> {
                     navigate.back()
                 });
 

@@ -1,51 +1,52 @@
 import {CreateViewEventData} from "ui/placeholder";
 import {Page} from "ui/page";
-import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
-import VideoView = android.widget.VideoView;
 import orientationModule = require("nativescript-screen-orientation");
 import statusBar = require("nativescript-status-bar");
-import {api, platform, video as videoHelper} from "../../Modules/Helpers";
-import activityIndicatorModule = require("ui/activity-indicator");
+import {Video as video} from "../../Classes/Video";
+import {NavigatedData} from "ui/page";
+import {Color} from "color";
+import {StackLayout} from "ui/layouts/stack-layout";
+import {ActivityIndicator} from "ui/activity-indicator";
 
-var videoNATIVE;
+let page, container, videoView,
+    loading = new ActivityIndicator();
 
-export function pageLoaded(){
-    orientationModule.orientationCleanup();
-}
+export function loaded(args:NavigatedData) {
 
-export function pageNavigatedTo(args) {
+    page = <Page>args.object;
+    container = <StackLayout>page.getViewById('container');
 
-    var page = <Page>args.object,
-        video = page.getViewById('video_player'),
-        container = page.getViewById('container'),
-        id = page.navigationContext;
+    /**
+     * Add Loading to the screen
+     */
+    if (!container.getChildIndex(loading)) {
+        loading.width = 100;
+        loading.height = 100;
+        loading.color = new Color('green');
+        container.addChild(loading);
+    }
 
     /**
      * hide Status Bar
      */
     statusBar.hide();
 
-    var indicator = new activityIndicatorModule.ActivityIndicator();
-        indicator.busy = true;
-        indicator.width = 100;
-        indicator.height = 100;
-        indicator.color = 'green';
+}
 
-    container.addChild(indicator);
+export function navigatedTo() {
 
-    orientationModule.setCurrentOrientation("landscape", function () {
+    loading.busy = true;
 
-        var videoView:VideoView = videoNATIVE,
-            uri = videoHelper.getURL(id);
+    orientationModule.setCurrentOrientation("landscape", () => {
 
-        var controller = new android.widget.MediaController(videoView.getContext());
-
-        var listener = android.media.MediaPlayer.OnPreparedListener.extend({
-            onPrepared(player){
-                indicator.busy = false;
-                player.start();
-            }
-        });
+        let uri = video.getURL(page.navigationContext),
+            controller = new android.widget.MediaController(videoView.getContext()),
+            listener = android.media.MediaPlayer.OnPreparedListener.extend({
+                onPrepared(player){
+                    loading.busy = false;
+                    player.start();
+                }
+            });
 
         videoView.setMediaController(controller);
         videoView.setVideoURI(uri);
@@ -57,11 +58,13 @@ export function pageNavigatedTo(args) {
 
 }
 
-export function onNavigatingFrom() {
-    orientationModule.orientationCleanup();
+export function navigatingFrom() {
+    orientationModule.setCurrentOrientation("portrait", () => {
+        orientationModule.orientationCleanup();
+    });
 }
 
-export function createVideoView(args:CreateViewEventData) {
-    args.view = videoNATIVE = new android.widget.VideoView(args.context);
+export function createView(args:CreateViewEventData) {
+    args.view = videoView = new android.widget.VideoView(args.context);
 }
 

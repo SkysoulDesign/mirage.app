@@ -1,15 +1,16 @@
-import {LoginModel} from "../../Models/login-page-model";
 import {Page} from 'ui/page';
 import {NavigatedData} from "ui/page";
+import {LoginModel} from "./login-model";
 
-export function pageNavigatedTo(args:NavigatedData) {
+var model = new LoginModel();
 
-    if (args.isBackNavigation)
-        return;
-
-    var model = new LoginModel();
+/**
+ * Page Loaded
+ * @param args
+ */
+export function loaded(args:NavigatedData) {
 
     var page = <Page>args.object;
-        page.bindingContext = model.init({page:page});
+        page.bindingContext = model;
 
 }

@@ -1,26 +1,19 @@
 import application = require("application");
 import frameModule = require("ui/frame");
-import {Config} from "./Modules/Config";
-import {Navigator} from "./Modules/Navigator";
-import {Api} from "./Modules/Api";
-import {Database} from "./Modules/Database";
 import {view} from "./Modules/Helpers";
 import fontModule = require("ui/styling/font");
 import {iWatch as Watch} from "./Modules/iWatch";
+import orientation = require("nativescript-screen-orientation");
+import {topmost} from "ui/frame";
 
 /**
  * Mirage App
  */
 export namespace Mirage {
 
-    export var config = new Config();
-
     /**
      * Helpers
      */
-    export var navigate = new Navigator();
-    export var api = new Api();
-    export var database = new Database();
     export var iWatch = application.ios ? new Watch() : null;
 
     /**
@@ -32,7 +25,7 @@ export namespace Mirage {
          * Main View Variable
          * @type string
          */
-        private view:string = "main-page"; //launch-page
+        private view:string = "main-page";
 
         /**
          * Initialize The Application
@@ -57,6 +50,17 @@ export namespace Mirage {
          */
         public start() {
 
+            /**
+             * Force device orientation to be Portrait
+             */
+            application.on(application.orientationChangedEvent, function (args:application.OrientationChangedEventData) {
+                if (args.newValue === 'landscape' && topmost().currentPage.id != 'video') {
+                    orientation.setCurrentOrientation("portrait", () => {
+                        console.log('forced changing it back')
+                    })
+                }
+            });
+
             application.start({moduleName: view(this.view)});
             application.cssFile = './app.css';
 
@@ -70,4 +74,4 @@ export namespace Mirage {
  * Start App
  * @type {Mirage.App}
  */
-var app = new Mirage.App();
+let app = new Mirage.App();

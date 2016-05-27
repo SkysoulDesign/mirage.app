@@ -1,7 +1,7 @@
 {
   "name": "tns-template-hello-world",
   "main": "app.js",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "author": {
     "name": "Telerik",
     "email": "support@telerik.com"
@@ -29,6 +29,6 @@
     "v8Flags": "--expose_gc"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "tns-template-hello-world@1.6.0",
-  "_from": "tns-template-hello-world@1.6.0"
+  "_id": "tns-template-hello-world@2.0.0",
+  "_from": "tns-template-hello-world@2.0.0"
 }

@@ -1,30 +1,40 @@
-import {ProductMainPageModel} from "../../Models/product-main-page-model";
 import {Page} from 'ui/page';
-import orientationModule = require("nativescript-screen-orientation");
 import {NavigatedData} from "ui/page";
-import {ApiCodesInterface} from "../../Interfaces/ApiUserInterface";
+import {ProductMainPageModel} from "./product-main-page-model";
 
-export function pageNavigatedTo(args:NavigatedData) {
+let page:Page;
 
-    /**
-     * Clean up orientation
-     */
-    orientationModule.orientationCleanup();
+/**
+ * Page loaded
+ */
+export function loaded(args:NavigatedData) {
 
-    if (args.isBackNavigation)
-        return;
-
-    var page = <Page>args.object,
-        codes = <ApiCodesInterface>page.navigationContext,
-        model = new ProductMainPageModel();
-
-    page.bindingContext = model.init({
-        page: page,
-        codes: codes
-    });
+    page = <Page>args.object;
+    page.bindingContext = new ProductMainPageModel(page, page.navigationContext);
 
 }
 
-export function pageNavigatedFrom() {
-    orientationModule.orientationCleanup();
+/**
+ * NavigateTo
+ * @param args
+ */
+export function navigatedTo(args:NavigatedData) {
+    // page = <Page>args.object;
+    // console.log('on navigate To');
+    // console.dir(page, page.navigationContext);
+
+    // /**
+    //  * Clean up orientation
+    //  */
+    // orientationModule.orientationCleanup();
+    //
+    // if (args.isBackNavigation)
+    //     return;
+
+    // model.bind(page.navigationContext);
+
 }
+
+// export function pageNavigatedFrom() {
+//     orientationModule.orientationCleanup();
+// }

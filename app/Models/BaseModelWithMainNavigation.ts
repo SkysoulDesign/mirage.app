@@ -1,10 +1,15 @@
-import {BaseModel} from "./BaseModel";
-import {navigate, general, cache} from "../Modules/Helpers";
 import {openUrl} from  "utils/utils" ;
 import {topmost} from "ui/frame";
-import {ApiCodesInterface, ApiUserInterface} from "../Interfaces/ApiUserInterface";
+import {Observable} from "data/observable";
+import {ApiUserInterface, ApiCodesInterface} from "../Interfaces/ApiUserInterface";
+import {Navigator as navigate} from "../Classes/Navigator";
+import {Cache as cache} from "../Classes/Cache";
+import {RadSideDrawer} from "nativescript-telerik-ui/sidedrawer/index";
 
-export class BaseModelWithMainNavigation extends BaseModel {
+/**
+ * Base Model
+ */
+export class BaseModelWithMainNavigation extends Observable {
 
     /**
      * Initialize defaults screen names
@@ -13,7 +18,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
 
         super();
 
-        var user:ApiUserInterface = cache.get('login');
+        var user = <ApiUserInterface>cache.get('user', {});
 
         this.set('username', user.username);
         this.set('email', user.email);
@@ -42,18 +47,11 @@ export class BaseModelWithMainNavigation extends BaseModel {
     }
 
     /**
-     * Use getAddProductAction from General Helper
-     */
-    public tapAddProduct() {
-        general.getAddProductAction();
-    }
-
-    /**
      * Open Menu
      */
     public tapOpenMenu() {
 
-        var sideDrawer = topmost().getViewById("sideDrawer");
+        let sideDrawer = <RadSideDrawer>topmost().getViewById("sideDrawer");
             sideDrawer.toggleDrawerState();
 
     }
@@ -62,7 +60,7 @@ export class BaseModelWithMainNavigation extends BaseModel {
      * Open Camera to soap
      */
     public tapProduct(code:ApiCodesInterface) {
-        navigate.to('product-main-page', {context: code});
+        navigate.to('product-main-page', {context: code, backstackVisible: false});
     };
 
     /**
@@ -83,7 +81,9 @@ export class BaseModelWithMainNavigation extends BaseModel {
      * Open Camera to settings
      */
     public tapSetting() {
-        navigate.to("settings");
+        navigate.to("settings", {
+            backstackVisible:false
+        });
     };
 
 }

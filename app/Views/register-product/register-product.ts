@@ -1,26 +1,43 @@
 import {Page} from 'ui/page';
-import {RegisterProductPageModel} from "../../Models/register-product-page-model";
-import {navigate} from "../../Modules/Helpers";
+import {Navigator as navigate} from "../../Classes/Navigator";
 import {NavigatedData} from "ui/page";
+import {RegisterProductModel} from "./register-product-model";
 
-export function pageNavigatedTo(args:NavigatedData) {
+let page:Page, figure, registerButton;
 
-    var page = <Page>args.object;
+/**
+ * Page Loaded
+ * @param args
+ */
+export function loaded(args:NavigatedData) {
+
+    page = <Page>args.object;
+    page.bindingContext = new RegisterProductModel(page);
+
+}
+
+/**
+ * NavigatedTo
+ * @param args
+ */
+export function navigatedTo(args:NavigatedData) {
 
     if (!args.isBackNavigation && !page.navigationContext)
         return navigate.to('scanner-page');
 
-    var model = new RegisterProductPageModel(),
-        input = page.getViewById('code_input'),
-        image = page.getViewById('figure'),
-        registerButton = page.getViewById('register_button');
+    console.log("Context from scanner");
 
-    page.bindingContext = model.init({
-        page: page,
-        input: input,
-        registerButton: registerButton,
-        image: image,
-        scannedCode: page.navigationContext
-    });
+    page.bindingContext.set('code', page.navigationContext);
+
+    /**
+     * Init Needed Components
+     */
+    // model.initComponents(figure, registerButton);
+
+    /**
+     * Set Page context as product code in case it is coming from the scanner
+     */
+    // model.set('code', );
 
 }
+

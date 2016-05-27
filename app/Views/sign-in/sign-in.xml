@@ -1,4 +1,6 @@
-<Page navigatedTo="pageNavigatedTo"
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="navigatedTo"
       android:actionBarHidden="true">
 
     <GridLayout rows="*, *">

@@ -1,13 +1,12 @@
-import {ApiExtraInterface} from "../../Interfaces/ApiUserInterface";
-//import orientationModule = require("nativescript-screen-orientation");
 import app = require('application');
 import {Page} from 'ui/page';
 import {View} from 'ui/core/view';
-import {api, navigate, platform, video} from "../../Modules/Helpers";
+import {Navigator as navigate} from "../../Classes/Navigator";
+import {Video as video} from "../../Classes/Video";
 import {Mirage as App} from "../../app" ;
 
-var changePage = true;
-var moviePlayer;
+let changePage = true,
+    moviePlayer;
 
 export function pageNavigatedTo(args) {
 
@@ -76,6 +75,10 @@ export function pageUnloaded(args) {
 
     App.iWatch.sendMessage({completed: true});
     //App.iWatch.isPlaying = false;
+}
+
+export function onNavigatingFrom() {
+    orientationModule.orientationCleanup();
 }
 
 

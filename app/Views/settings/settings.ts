@@ -1,15 +1,10 @@
-import {SettingsPageModel} from "../../Models/settings-page-model";
 import {Page} from 'ui/page';
 import {NavigatedData} from "ui/page";
+import {SettingsModel} from "./settings-model";
 
-export function pageNavigatedTo(args:NavigatedData) {
-
-    if (args.isBackNavigation)
-        return;
-
-    var model = new SettingsPageModel();
-
+export function loaded(args:NavigatedData) {
+    
     var page = <Page>args.object;
-        page.bindingContext = model.init({page: page});
+        page.bindingContext =  new SettingsModel(page);
 
 }

@@ -31,7 +31,22 @@ export class Localization {
             'CHANGE_PASSWORD': 'Change Password',
             'SEARCH': 'Search',
             'SEARCH_BY': 'Search by',
-            'RESULTS': 'Results'
+            'RESULTS': 'Results',
+
+            /**
+             * New
+             */
+            "ATTENTION": 'Attention',
+            "NO_PRODUCTS": "You currently don't have any registered product, please add one to start using the app.",
+            "CONFIRM_CHANGE_LANGUAGE": "Are you sure you want to change the language to: ",
+            "RESTART_APP": 'Please restart the app to apply the changes.',
+            "OKAY": 'Okay.',
+            "PRODUCT_CODE": 'Product Code',
+            "PRODUCT_NAME": 'Product Name',
+            "NEED_INTERNET": "You need an active connection in order to execute this action.",
+            "RECOMMEND_WIFI": "You are currently using your mobile data, it is recommended to execute this action through wifi.",
+            "CONTINUE": "Continue",
+            "CANCEL": "Cancel",
         }
     }
 
@@ -64,6 +79,17 @@ export class Localization {
             'SEARCH': 'Search',
             'SEARCH_BY': 'Search by',
             'RESULTS': 'Results',
+
+            /**
+             * New
+             */
+            "ATTENTION": 'Attention',
+            "NO_PRODUCTS": "You currently don't have any registered product, please add one to start using the app.",
+            "CONFIRM_CHANGE_LANGUAGE": "Are you sure you want to change the language to: ",
+            "RESTART_APP": 'Please restart the app to apply the changes.',
+            "OKAY": 'Okay.',
+            "PRODUCT_CODE": 'Product Code',
+            "PRODUCT_NAME": 'Product Name'
         }
     }
 
@@ -95,7 +121,18 @@ export class Localization {
             'CHANGE_PASSWORD': 'Change Password',
             'SEARCH': 'Search',
             'SEARCH_BY': 'Search by',
-            'RESULTS': 'Results'
+            'RESULTS': 'Results',
+
+            /**
+             * New
+             */
+            "ATTENTION": 'Attention',
+            "NO_PRODUCTS": "You currently don't have any registered product, please add one to start using the app.",
+            "CONFIRM_CHANGE_LANGUAGE": "Are you sure you want to change the language to: ",
+            "RESTART_APP": 'Please restart the app to apply the changes.',
+            "OKAY": 'Okay.',
+            "PRODUCT_CODE": 'Product Code',
+            "PRODUCT_NAME": 'Product Name'
         }
     }
 
@@ -127,7 +164,18 @@ export class Localization {
             'CHANGE_PASSWORD': 'Change Password',
             'SEARCH': 'Search',
             'SEARCH_BY': 'Search by',
-            'RESULTS': 'Results'
+            'RESULTS': 'Results',
+
+            /**
+             * New
+             */
+            "ATTENTION": 'Attention',
+            "NO_PRODUCTS": "You currently don't have any registered product, please add one to start using the app.",
+            "CONFIRM_CHANGE_LANGUAGE": "Are you sure you want to change the language to: ",
+            "RESTART_APP": 'Please restart the app to apply the changes.',
+            "OKAY": 'Okay.',
+            "PRODUCT_CODE": 'Product Code',
+            "PRODUCT_NAME": 'Product Name'
         }
     }
 

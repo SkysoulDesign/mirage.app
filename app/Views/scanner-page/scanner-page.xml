@@ -1,4 +1,5 @@
-<Page navigatedTo="pageNavigatedTo"
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      navigatedTo="navigatedTo"
       actionBarHidden="true">
 
 </Page>
