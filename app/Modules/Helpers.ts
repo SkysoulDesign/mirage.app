@@ -4,6 +4,7 @@ import imageSource = require("image-source");
 import application = require("application");
 import platformModule = require("platform");
 import dialogs = require("ui/dialogs");
+import {ImageFormat} from "ui/enums";
 
 import {ImageSource} from "image-source";
 
@@ -93,9 +94,7 @@ export var getKeyByValue = (object:any, value:any):{} => {
  * @param source
  * @returns {string}
  */
-export var toBase64 = (source:ImageSource):string => {
-    return "data:image/png;base64," + source.toBase64String();
-};
+export var toBase64 = (source:ImageSource):string => "data:image/png;base64," + source.toBase64String(ImageFormat.png);
 
 /**
  * Check if object is a string

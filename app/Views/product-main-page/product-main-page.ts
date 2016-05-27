@@ -13,28 +13,3 @@ export function loaded(args:NavigatedData) {
     page.bindingContext = new ProductMainPageModel(page, page.navigationContext);
 
 }
-
-/**
- * NavigateTo
- * @param args
- */
-export function navigatedTo(args:NavigatedData) {
-    // page = <Page>args.object;
-    // console.log('on navigate To');
-    // console.dir(page, page.navigationContext);
-
-    // /**
-    //  * Clean up orientation
-    //  */
-    // orientationModule.orientationCleanup();
-    //
-    // if (args.isBackNavigation)
-    //     return;
-
-    // model.bind(page.navigationContext);
-
-}
-
-// export function pageNavigatedFrom() {
-//     orientationModule.orientationCleanup();
-// }

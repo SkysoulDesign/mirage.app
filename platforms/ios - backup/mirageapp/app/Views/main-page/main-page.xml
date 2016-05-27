@@ -1,0 +1,83 @@
+<Page
+        loaded="pageLoaded"
+        navigatedTo="pageNavigatedTo"
+        navigatedFrom="pageNavigatedFrom"
+        xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+        xmlns="http://www.nativescript.org/tns.xsd"
+        actionBarHidden="true">
+
+    <drawer:RadSideDrawer id="sideDrawer">
+
+        <drawer:RadSideDrawer.mainContent>
+
+            <GridLayout rows="80,*5,*2">
+
+                <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+
+                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                           horizontalAlignment="center" verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
+
+                    <Label cssClass="mirage-label" col="1" horizontalAlignment="left"
+                           verticalAlignment="center"/>
+
+                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                           verticalAlignment="center"
+                           stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
+
+                </GridLayout>
+
+                <ScrollView orientation="horizontal" row="1">
+                    <StackLayout id="product_layout" cssClass="stage-dark" orientation="horizontal">
+                    </StackLayout>
+                </ScrollView>
+
+                <StackLayout row="2" cssClass="progress-container">
+
+                    <Label text="{{ MAIN_PAGE_TITLE }}" cssClass="mini-label"/>
+                    <Label text="{{ MY_COLLECTION }}" cssClass="large-label"/>
+
+                    <StackLayout id="progress_container">
+
+                    </StackLayout>
+
+                    <Label text="{{ progress_text }}" cssClass="progress-text"/>
+
+                </StackLayout>
+
+            </GridLayout>
+
+        </drawer:RadSideDrawer.mainContent>
+
+        <drawer:RadSideDrawer.drawerContent>
+
+            <GridLayout cssClass="drawer-container" rows="3*,*">
+
+                <StackLayout row="0">
+
+                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
+                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                        <StackLayout verticalAlignment="center">
+                            <Label text="{{ username }}"/>
+                            <Label text="{{ email }}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout cssClass="drawer-menu-content">
+                        <Label cssClass="drawer-menu" text="{{ NEWS }}" tap="{{ tapNews }}"/>
+                        <Label cssClass="drawer-menu" text="{{ SEARCH }}" tap="{{ tapSearch }}"/>
+                        <Label cssClass="drawer-menu" text="{{ ABOUT_SOAP }}" tap="{{ tapSoap }}"/>
+                        <Label cssClass="drawer-menu" text="{{ SETTING }}" tap="{{ tapSetting }}"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+
+            </GridLayout>
+
+        </drawer:RadSideDrawer.drawerContent>
+
+    </drawer:RadSideDrawer>
+
+</Page>

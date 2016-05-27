@@ -9,7 +9,7 @@ import bindable = require("ui/core/bindable");
 * into a main part and a menu part whereby the menu part is shown upon a swipe
 * gesture using a transition effect.
 */
-export class RadSideDrawer {
+export class RadSideDrawer extends view.View{
 
     android: any;
     ios: any;
@@ -51,6 +51,11 @@ export class RadSideDrawer {
      * Gets or sets a boolean value that determines if drawer can be opened or closed with gestures.
      */
     gesturesEnabled: boolean;
+    
+    /**
+     * Gets or sets a boolean value that determines if drawer can should above or below action bar.
+     */
+    showOverNavigation: boolean;
 
     /**
     * When called, closes the SideDrawer if it is open.
@@ -96,6 +101,11 @@ export class RadSideDrawer {
     * Identifies the {@link gesturesEnabled} dependency property.
     */
     public static gesturesEnabledProperty: dependencyObservable.Property;
+    
+    /**
+    * Identifies the {@link showOverNavigation} dependency property.
+    */
+    public static showOverNavigationProperty: dependencyObservable.Property;
 }
 
 /**

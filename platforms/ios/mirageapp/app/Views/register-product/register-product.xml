@@ -1,13 +1,17 @@
-<Page navigatedTo="pageNavigatedTo" android:actionBarHidden="true" android:fitsSystemWindows="true">
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="navigatedTo"
+      android:actionBarHidden="true"
+      android:fitsSystemWindows="true">
 
     <GridLayout rows="3*,4*">
 
         <GridLayout row="0" class="stage">
-            <Image id="figure" row="0" src="{{ product_image }}"/>
+            <Image id="figure" row="0"/>
             <ActivityIndicator busy="{{ isLoading }}"/>
         </GridLayout>
 
-        <GridLayout row="1"  class="container" rows="*,*,*">
+        <GridLayout row="1" class="container" rows="*,*,*">
 
             <StackLayout row="0">
                 <Label class="label top" text="{{ INPUT_TEXT }}"/>

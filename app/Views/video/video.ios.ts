@@ -4,17 +4,20 @@ import {View} from 'ui/core/view';
 import {Navigator as navigate} from "../../Classes/Navigator";
 import {Video as video} from "../../Classes/Video";
 import {Mirage as App} from "../../app" ;
+import {NavigatedData} from "ui/page";
+import orientationModule = require("nativescript-screen-orientation");
 
 let changePage = true,
     moviePlayer;
 
-export function pageNavigatedTo(args) {
+export function navigatedTo(args:NavigatedData) {
 
-    //orientationModule.orientationCleanup();
+    // orientationModule.setCurrentOrientation("landscape", () => {
+
     if (!changePage)
         return;
 
-    var page = <Page>args.object,
+    let page = <Page>args.object,
         videoContainer:View = page.getViewById('container'),
         url = video.getURL(page.navigationContext);
 
@@ -38,37 +41,39 @@ export function pageNavigatedTo(args) {
 
     moviePlayer.play();
 
-    var exitFullScreen = function () {
-        UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation");
-    };
+    let exitFullScreen = function () {
+            UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation");
+        },
+        enterFullScreen = function () {
+            changePage = false;
+            UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
+        };
 
-    var enterFullScreen = function () {
-        changePage = false;
-        UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
-    };
-
-    enterFullScreen();
-
-    var observer = app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback() {
-        enterFullScreen();
+    app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback() {
+        // enterFullScreen();
         moviePlayer.play();
         console.log("MPMoviePlayerDidEnterFullscreenNotification");
     });
 
-    var observer1 = app.ios.addNotificationObserver(MPMoviePlayerWillExitFullscreenNotification, function onReceiveCallback() {
-        exitFullScreen();
+    app.ios.addNotificationObserver(MPMoviePlayerWillExitFullscreenNotification, function onReceiveCallback() {
+        // exitFullScreen();
         console.log("MPMoviePlayerDidExitFullscreenNotification");
     });
 
-    var observer2 = app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback() {
+    app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback() {
         exitFullScreen();
         moviePlayer.stop();
         navigate.back();
     });
 
+    enterFullScreen();
+
+    // });
+
 }
 
-export function pageUnloaded(args) {
+export function unloaded(args) {
+
     moviePlayer.stop();
     changePage = true;
     console.log("unloaded");
@@ -77,9 +82,9 @@ export function pageUnloaded(args) {
     //App.iWatch.isPlaying = false;
 }
 
-export function onNavigatingFrom() {
-    orientationModule.orientationCleanup();
-}
+// export function navigatingFrom() {
+//     orientationModule.orientationCleanup();
+// }
 
 
 

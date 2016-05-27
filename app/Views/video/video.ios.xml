@@ -1,7 +1,9 @@
-<Page actionBarHidden="true"
-      navigatedTo="pageNavigatedTo"
-      navigatingFrom="onNavigatingFrom"
-      unloaded="pageUnloaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      actionBarHidden="true"
+      id="video"
+      navigatedTo="navigatedTo"
+      navigatingFrom="navigatingFrom"
+      unloaded="unloaded">
     <GridLayout id="container" rows="*">
     </GridLayout>
 </Page>

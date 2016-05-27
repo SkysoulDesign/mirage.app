@@ -1,7 +1,8 @@
 <Page xmlns:drawer="nativescript-telerik-ui/sidedrawer"
-      navigatedTo="pageNavigatedTo"
-      navigatingFrom="pageNavigatedFrom"
       xmlns="http://www.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="navigatedTo"
+      navigatingFrom="navigatingFrom"
       android:actionBarHidden="true">
 
     <drawer:RadSideDrawer id="sideDrawer">
@@ -10,24 +11,24 @@
 
             <GridLayout rows="80,3*,*3">
 
-                <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+                <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
 
-                    <Image cssClass="menu-icon" col="0" src="res://menu_icon"
+                    <Image class="menu-icon" col="0" src="res://menu_icon"
                            horizontalAlignment="center" verticalAlignment="center"
                            stretch="aspectFit" tap="{{ tapOpenMenu }}"/>
 
-                    <Label text="{{ title }}" cssClass="mirage-label" col="1" horizontalAlignment="left"
+                    <Label text="{{ title }}" class="mirage-label" col="1" horizontalAlignment="left"
                            verticalAlignment="center"/>
 
-                    <Image cssClass="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
+                    <Image class="qr_code-icon" col="2" src="res://qr_code" horizontalAlignment="center"
                            verticalAlignment="center"
                            stretch="aspectFit" tap="{{ tapScanQRCode }}"/>
 
                 </GridLayout>
 
-                <GridLayout id="product_container" cssClass="stage-dark" row="1">
-                    <!--<Image cssClass="statue" col="0" src="res://statue_batman" stretch="aspectFit"/>-->
-                </GridLayout>
+                <StackLayout id="product_container" class="stage-dark" row="1">
+                    <Image class="statue"/>
+                </StackLayout>
 
                 <TabView row="2">
                     <TabView.items>
@@ -45,8 +46,14 @@
                             <TabViewItem.view>
                                 <StackLayout>
                                     <ScrollView>
-                                        <StackLayout id="profile_container" cssClass="details-container">
-
+                                        <StackLayout id="profile_container" class="details-container">
+                                            <Image id="profile_poster"/>
+                                            <StackLayout class="details-header-container">
+                                                <Label id="profile_title" class="header-title"/>
+                                                <Label id="profile_sub_title" class="header-description"/>
+                                            </StackLayout>
+                                            <Label id="profile_description" class="content-description"
+                                                   textWrap="true"/>
                                         </StackLayout>
                                     </ScrollView>
                                 </StackLayout>
@@ -61,28 +68,28 @@
 
         <drawer:RadSideDrawer.drawerContent>
 
-            <GridLayout cssClass="drawer-container" rows="3*,*">
+            <GridLayout class="drawer-container" rows="3*,*">
 
                 <StackLayout row="0">
 
-                    <StackLayout orientation="horizontal" cssClass="drawer-header" verticalAlignment="center">
-                        <Image cssClass="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
+                    <StackLayout orientation="horizontal" class="drawer-header" verticalAlignment="center">
+                        <Image class="drawer-header-avatar" src="res://avatar_placeholder" stretch="aspectFit"/>
                         <StackLayout verticalAlignment="center">
                             <Label text="{{ username }}"/>
                             <Label text="{{ email }}"/>
                         </StackLayout>
                     </StackLayout>
 
-                    <StackLayout cssClass="drawer-menu-content">
-                        <Label cssClass="drawer-menu" text="{{ NEWS }}" tap="{{ tapNews }}"/>
-                        <Label cssClass="drawer-menu" text="{{ SEARCH }}" tap="{{ tapSearch }}"/>
-                        <Label cssClass="drawer-menu" text="{{ ABOUT_SOAP }}" tap="{{ tapSoap }}"/>
-                        <Label cssClass="drawer-menu" text="{{ SETTING }}" tap="{{ tapSetting }}"/>
+                    <StackLayout class="drawer-menu-content">
+                        <Label class="drawer-menu" text="{{ NEWS }}" tap="{{ tapNews }}"/>
+                        <Label class="drawer-menu" text="{{ SEARCH }}" tap="{{ tapSearch }}"/>
+                        <Label class="drawer-menu" text="{{ ABOUT_SOAP }}" tap="{{ tapSoap }}"/>
+                        <Label class="drawer-menu" text="{{ SETTING }}" tap="{{ tapSetting }}"/>
                     </StackLayout>
 
                 </StackLayout>
 
-                <Image cssClass="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
+                <Image class="drawer-logo" row="1" src="res://logo" stretch="aspectFit"/>
 
             </GridLayout>
 

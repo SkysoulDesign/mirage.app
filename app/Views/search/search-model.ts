@@ -143,6 +143,7 @@ export class SearchModel extends Observable {
     public addProduct(code:ApiCodesInterface) {
 
         api.fetchImage(api.getBase() + code.product.image, function (source) {
+            console.log(toBase64(source))
             result.push({
                 name: code.product.name,
                 source: toBase64(source),

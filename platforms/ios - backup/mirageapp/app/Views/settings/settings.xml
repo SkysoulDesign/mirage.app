@@ -1,0 +1,40 @@
+<Page navigatedTo="pageNavigatedTo"
+      android:actionBarHidden="true"
+      xmlns:dd="nativescript-drop-down">
+
+    <GridLayout rows="80,*5,*2">
+
+        <GridLayout cssClass="action-bar-container" row="0" columns="1*,5*,1*">
+
+            <Image cssClass="menu-icon" col="0" src="res://back_icon"
+                   horizontalAlignment="center" verticalAlignment="center"
+                   stretch="aspectFit" tap="{{ tapBack }}"/>
+
+            <Label text="{{ SETTING }}" cssClass="action-bar-label" col="1" horizontalAlignment="left"
+                   verticalAlignment="center"/>
+
+        </GridLayout>
+
+        <StackLayout cssClass="settings-container" row="1">
+
+            <GridLayout cssClass="item" columns="*,*">
+                <Label cssClass="item-content" text="{{ LANGUAGE }}" col="0"/>
+                <dd:DropDown id="dropdown" cssClass="item-content right"
+                             col="1" items="{{ languages }}"
+                             selectedIndex="{{ selectedLanguage }}"/>
+            </GridLayout>
+
+            <Button text="{{ CHANGE_PASSWORD }}" tap="{{ tapChangePassword }}" cssClass="changePass-button"/>
+
+            <!--<GridLayout cssClass="item" columns="*,*">-->
+                <!--<Label cssClass="item-content" text="{{ NEWS_LETTER }}" col="0"/>-->
+                <!--<Switch cssClass="item-content right" checked="{{ newsletterToggle }}" col="1"/>-->
+            <!--</GridLayout>-->
+
+            <Button text="{{ LOGOUT }}" tap="{{ tapLogout }}" cssClass="logout-button"/>
+
+        </StackLayout>
+
+    </GridLayout>
+
+</Page>

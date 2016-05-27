@@ -1,48 +1,53 @@
 {
   "_args": [
     [
-      "nativescript-telerik-ui@1.0.1",
+      {
+        "name": "nativescript-telerik-ui",
+        "raw": "nativescript-telerik-ui@1.1.1",
+        "rawSpec": "1.1.1",
+        "scope": null,
+        "spec": "1.1.1",
+        "type": "version"
+      },
       "/Users/Milewski/Documents/Rafael/Code/mirage-app"
     ]
   ],
-  "_from": "nativescript-telerik-ui@1.0.1",
-  "_id": "nativescript-telerik-ui@1.0.1",
+  "_from": "nativescript-telerik-ui@1.1.1",
+  "_id": "nativescript-telerik-ui@1.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/nativescript-telerik-ui",
-  "_nodeVersion": "4.2.2",
+  "_nodeVersion": "4.4.0",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/nativescript-telerik-ui-1.0.1.tgz_1459437792676_0.5631743448320776"
+    "tmp": "tmp/nativescript-telerik-ui-1.1.1.tgz_1462892469387_0.6742737356107682"
   },
   "_npmUser": {
     "email": "deyan.ginev@telerik.com",
     "name": "dginev"
   },
-  "_npmVersion": "2.14.7",
+  "_npmVersion": "2.14.20",
   "_phantomChildren": {},
   "_requested": {
     "name": "nativescript-telerik-ui",
-    "raw": "nativescript-telerik-ui@1.0.1",
-    "rawSpec": "1.0.1",
+    "raw": "nativescript-telerik-ui@1.1.1",
+    "rawSpec": "1.1.1",
     "scope": null,
-    "spec": "1.0.1",
+    "spec": "1.1.1",
     "type": "version"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-telerik-ui/-/nativescript-telerik-ui-1.0.1.tgz",
-  "_shasum": "87fdb4237f375b1392d22b33fb2de0c87fc84c52",
+  "_resolved": "https://registry.npmjs.org/nativescript-telerik-ui/-/nativescript-telerik-ui-1.1.1.tgz",
+  "_shasum": "a4b692b87b86aaf93a6e678fe346b548fe0792da",
   "_shrinkwrap": null,
-  "_spec": "nativescript-telerik-ui@1.0.1",
+  "_spec": "nativescript-telerik-ui@1.1.1",
   "_where": "/Users/Milewski/Documents/Rafael/Code/mirage-app",
   "author": {
     "name": "Telerik AD"
   },
-  "dependencies": {
-    "tns-core-modules": "^1.6.0"
-  },
+  "dependencies": {},
   "description": "Telerik UI for NativeScript is a set of rich-ui, cross-platform components based on the native iOS and Android libraries provided by Telerik.",
   "devDependencies": {
     "del": "^1.2.0",
@@ -60,8 +65,8 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "87fdb4237f375b1392d22b33fb2de0c87fc84c52",
-    "tarball": "https://registry.npmjs.org/nativescript-telerik-ui/-/nativescript-telerik-ui-1.0.1.tgz"
+    "shasum": "a4b692b87b86aaf93a6e678fe346b548fe0792da",
+    "tarball": "https://registry.npmjs.org/nativescript-telerik-ui/-/nativescript-telerik-ui-1.1.1.tgz"
   },
   "keywords": [
     "nativescript",
@@ -98,8 +103,8 @@
   ],
   "name": "nativescript-telerik-ui",
   "nativescript": {
-    "android": "^1.6.1",
-    "ios": "^1.6.0"
+    "android": "2.0.0",
+    "ios": "2.0.0"
   },
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
@@ -110,5 +115,5 @@
   "scripts": {
     "preinstall": "node ./scripts/eula_prompt.js"
   },
-  "version": "1.0.1"
+  "version": "1.1.1"
 }

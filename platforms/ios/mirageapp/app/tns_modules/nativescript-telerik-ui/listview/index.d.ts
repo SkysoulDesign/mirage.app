@@ -21,6 +21,36 @@ export enum ListViewScrollDirection {
 }
 
 /**
+ * Defines the different view types that {@link RadListView} can display in various scenarios.
+ */
+export enum ListViewViewTypes {
+    /**
+     * Identifies a view created using the {@link headerItemTemplate} value.
+     */
+    HeaderView,
+    
+    /**
+     * Identifies a view created using the {@link itemTemplate} value.
+     */
+    ItemView,
+    
+    /**
+     * Identifies a view created using the {@link footerItemTemplate} value.
+     */
+    FooterView,
+    
+    /**
+     * Identifies a view created using the {@link loadOnDemandItemTemplate} value.
+     */
+    LoadOnDemandView,
+    
+    /**
+     * Identifies a view created using the {@link itemSwipeTemplate} value.
+     */
+    ItemSwipeView,
+}
+
+/**
  * Defines the possible values for the {@link reorderMode} property
  * of {@link RadListView}.
  */
@@ -370,7 +400,7 @@ export class RadListView extends viewModule.View {
     /**
      * This event is continuously fired while the user is swiping an item. The event
      * arguments expose an instance of the {@link ListViewEventData}. An
-     * additional 'data' property of the arguments exposes an instance of the {@link SwipeData}
+     * additional 'data' property of the arguments exposes an instance of the {@link SwipeOffsets}
      * class containing information about the swipe progress.
      */
     static itemSwipeProgressChangedEvent: string;
@@ -379,7 +409,7 @@ export class RadListView extends viewModule.View {
     /**
      * This event is fired when the user has finished swiping an item. The event
      * arguments expose an instance of the {@link ListViewEventData}. An
-     * additional 'data' property of the arguments exposes an instance of the {@link SwipeData}
+     * additional 'data' property of the arguments exposes an instance of the {@link SwipeOffsets}
      * class containing information about the swipe progress.
      */
     static itemSwipeProgressEndedEvent: string;

@@ -3,7 +3,7 @@
       loaded="loaded"
       navigatedTo="navigatedTo"
       navigatingFrom="navigatingFrom"
-      android:actionBarHidden="true">
+      actionBarHidden="true">
 
     <GridLayout id="container" width="*" height="*">
         <Placeholder id="video_player" creatingView="createView"/>
