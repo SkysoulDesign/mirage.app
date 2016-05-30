@@ -13,3 +13,5 @@
 
 *.lock
 *.xcconfig
+/platforms/Assets/
+/platforms/ios-working/

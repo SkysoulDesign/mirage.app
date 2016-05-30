@@ -1,0 +1,6 @@
+framework module Pods_mirageapp {
+  umbrella header "Pods-mirageapp-umbrella.h"
+
+  export *
+  module * { export * }
+}

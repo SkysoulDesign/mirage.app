@@ -2,7 +2,6 @@ import application = require("application");
 import platform = require("platform");
 import {Cache as cache} from "../Classes/Cache";
 import {Video as video} from "../Classes/Video";
-import orientationModule = require("nativescript-screen-orientation");
 
 export class iWatch {
 
@@ -67,6 +66,7 @@ export class iWatch {
     public sendMessage(message:{}) {
 
         console.log("sending message");
+        console.dir(message);
 
         if (!this.isSupported) return;
 
@@ -84,15 +84,15 @@ export class iWatch {
 
         console.log("sending cache");
 
-        var cache = cache.get('codes', []);
+        var codes = cache.get('codes', null);
 
         /**
          * If there is no cache in the iOS throws login error
          */
-        if (cache === null)
+        if (codes === null)
             return this.sendError("please login first");
 
-        this.sendMessage({products: cache});
+        this.sendMessage({products: codes});
 
     }
 
@@ -109,11 +109,7 @@ export class iWatch {
      * @param extraID
      */
     public playIOSVideo(extraID:Number) {
-
-        orientationModule.setCurrentOrientation("portrait", function () {
-            video.play(extraID.toString())
-        });
-
+        video.play(extraID.toString());
     }
 
 }

@@ -5,6 +5,7 @@ import {Navigator as navigate} from "./Navigator";
 import dialogs = require("ui/dialogs");
 import {Api as api} from "./Api";
 import {Device as device} from "./Device";
+import orientationModule = require("nativescript-screen-orientation");
 
 /**
  * File Class
@@ -27,7 +28,7 @@ export class Video {
                 break;
 
             case connectivity.connectionType.wifi:
-                navigate.to('video', context);
+                this.process(context);
                 break;
 
             case connectivity.connectionType.mobile:
@@ -38,13 +39,21 @@ export class Video {
                     okButtonText: Localizator.get('CONTINUE'),
                     cancelButtonText: Localizator.get('CANCEL'),
                 }).then(result => {
-                    if (result) navigate.to('video', context)
+                    if (result) this.process(context);
                 });
 
                 break;
 
         }
 
+    }
+
+    /**
+     * Play Video
+     * @param context
+     */
+    private static process(context:any) {
+        navigate.to('video', context);
     }
 
     /**

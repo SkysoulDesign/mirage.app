@@ -241,7 +241,7 @@ export class Api {
     public static refresh(success?:(data:ApiUserInterface)=>void, error?:(error:any) => void) {
 
         this.fetch('checkLogin', {}, function (user:ApiUserInterface) {
-
+           
             cache.set('api-token', user.api_token);
             cache.set('codes', user.codes);
             cache.set('user', except(user, ['api_token', 'codes']));

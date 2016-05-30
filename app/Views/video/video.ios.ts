@@ -12,7 +12,6 @@ let changePage = true,
 
 export function navigatedTo(args:NavigatedData) {
 
-    // orientationModule.setCurrentOrientation("landscape", () => {
 
     if (!changePage)
         return;
@@ -68,8 +67,6 @@ export function navigatedTo(args:NavigatedData) {
 
     enterFullScreen();
 
-    // });
-
 }
 
 export function unloaded(args) {
@@ -83,7 +80,9 @@ export function unloaded(args) {
 }
 
 // export function navigatingFrom() {
-//     orientationModule.orientationCleanup();
+//     orientationModule.setCurrentOrientation("portrait", () => {
+//         orientationModule.orientationCleanup();
+//     });
 // }
 
 

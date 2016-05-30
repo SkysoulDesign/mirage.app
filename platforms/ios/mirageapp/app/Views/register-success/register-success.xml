@@ -1,7 +1,0 @@
-<Page loaded="pageLoaded">
-	<GridLayout rows="*,auto,auto,auto,*">
-		<Label row="1" text="注册成功"/>
-		<Label row="2" text="此产品的全息影像" cssClass="lable-1"/>
-		<Label row="3" text="已自动存入阁下账号" cssClass="lable-1"/>
-	</GridLayout>
-</Page>

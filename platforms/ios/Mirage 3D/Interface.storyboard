@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="iWatch_Extension">
+                    <items>
+                        <table alignment="left" id="UxW-bP-ymX">
+                            <items>
+                                <tableRow identifier="ProductRow" id="0hB-cz-kFI" customClass="ProductRow" customModule="iWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="8b4-5d-ffk">
+                                        <items>
+                                            <label width="136" height="38.5" alignment="left" text="Hello World" textAlignment="center" id="392-c9-cVP"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="productName" destination="392-c9-cVP" id="4Bn-GZ-1Xn"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="UxW-bP-ymX" id="Bw7-jg-j8a"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="435" y="357"/>
+        </scene>
+        <!--ShowProductController-->
+        <scene sceneID="Ouz-qA-fyK">
+            <objects>
+                <controller identifier="ShowProductController" id="qHJ-VP-4H4" customClass="ShowProductController" customModule="iWatch_Extension">
+                    <items>
+                        <label width="136" height="43.5" alignment="left" text="Hello World" textAlignment="center" id="4wd-iV-E5I"/>
+                    </items>
+                    <connections>
+                        <outlet property="productName" destination="4wd-iV-E5I" id="MPq-aL-4E6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="435" y="626"/>
+        </scene>
+    </scenes>
+</document>

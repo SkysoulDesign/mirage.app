@@ -13,10 +13,6 @@ import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 
 let page:Page;
 
-// export function navigatedFrom() {
-//     orientationModule.orientationCleanup();
-// }
-
 /**
  * On Page Loaded
  */
@@ -44,26 +40,12 @@ export function loaded(args:NavigatedData) {
      * Refresh Session Data
      */
     api.refresh(function (data:ApiUserInterface) {
+        let codes = cache.get('codes', []);
+        
         if (application.ios)
             App.iWatch.sendMessage({
-                products: data.codes
+                products: codes
             });
     });
-
-    /**
-     * Check if User Token is Valid.
-     * Otherwise redirect user to login page
-     * Use Http.request
-     */
-    // general.refreshCache(data => {
-    //     api.fetch('products', {});
-    // });
-
-
-}
-
-export function navigatedTo(args:NavigatedData) {
-
-    // orientationModule.setCurrentOrientation("portrait", function () {
 
 }

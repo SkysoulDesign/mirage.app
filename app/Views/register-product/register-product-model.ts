@@ -74,7 +74,7 @@ export class RegisterProductModel extends Observable {
                 },
                 onCached = function (source:ImageSource) {
                     figurine.imageSource = source;
-                    console.log(args.value.toString())
+                    console.log(args.value.toString());
                     self.tapRegister(args.value.toString());
                 },
                 onSuccess = function ({code, image}) {
@@ -91,7 +91,7 @@ export class RegisterProductModel extends Observable {
 
                     self.set('isLoading', false);
                     figurine.imageSource = file.load(filename);
-                    console.log(args.value.toString())
+                    console.log(args.value.toString());
                     self.tapRegister(args.value.toString());
 
                 },
@@ -123,10 +123,7 @@ export class RegisterProductModel extends Observable {
     public tapRegister(c = null) {
 
         let self = this,
-            code = c ? c : this.get('code');
-
-        console.log('going code')
-        console.log(code)
+            code = c ? c : this.get('code').toString();
 
         self.disableButton();
 
