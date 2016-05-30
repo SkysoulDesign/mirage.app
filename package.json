@@ -1,6 +1,6 @@
 {
 	"nativescript": {
-		"id": "com.soapstudio.cms.mirage",
+		"id": "com.soap.tumbler",
 		"tns-android": {
 			"version": "2.0.0"
 		},

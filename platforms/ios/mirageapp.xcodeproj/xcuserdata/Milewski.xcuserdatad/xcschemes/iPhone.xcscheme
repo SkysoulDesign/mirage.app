@@ -17,7 +17,7 @@
                BlueprintIdentifier = "858B83EF18CA22B800AB12DE"
                BuildableName = "mirageapp.app"
                BlueprintName = "iPhone"
-               ReferencedContainer = "container:Mirage 3D.xcodeproj">
+               ReferencedContainer = "container:mirageapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "858B83EF18CA22B800AB12DE"
             BuildableName = "mirageapp.app"
             BlueprintName = "iPhone"
-            ReferencedContainer = "container:Mirage 3D.xcodeproj">
+            ReferencedContainer = "container:mirageapp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "858B83EF18CA22B800AB12DE"
             BuildableName = "mirageapp.app"
             BlueprintName = "iPhone"
-            ReferencedContainer = "container:Mirage 3D.xcodeproj">
+            ReferencedContainer = "container:mirageapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "858B83EF18CA22B800AB12DE"
             BuildableName = "mirageapp.app"
             BlueprintName = "iPhone"
-            ReferencedContainer = "container:Mirage 3D.xcodeproj">
+            ReferencedContainer = "container:mirageapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

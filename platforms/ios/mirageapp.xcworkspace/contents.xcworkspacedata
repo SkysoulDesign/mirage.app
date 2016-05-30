@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Milewski/Documents/Rafael/Code/mirage-app/platforms/ios/Mirage 3D.xcodeproj">
+      location = "group:mirageapp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
