@@ -72,7 +72,7 @@ export class Localizator {
      * Get all Languages as [english, korean, japanese...]
      * @returns array
      */
-    public static getLanguagesAsArray():[] {
+    public static getLanguagesAsArray():string[] {
         let lang = [];
         for (let index in languages) lang.push(languages[index])
         return lang;
@@ -111,7 +111,7 @@ export class Localizator {
          */
         let language = device.language.slice(0, 2);
 
-        console.dit('selecting language ' + language);
+        console.dir('selecting language ' + language);
 
         if (!languages.hasOwnProperty(language))
             return defaultLanguage;
