@@ -61,6 +61,7 @@ export class RegisterModel extends Observable {
              * Cache the Data to the user info
              */
             cache.set('api-token', user.api_token);
+            cache.set('codes', user.codes);
             cache.set('user', except(user, ['api_token', 'codes']));
 
             console.log('success');

@@ -10,6 +10,7 @@ import {ImageSource} from "image-source";
 import {Image} from "ui/image";
 import {Button} from "ui/button";
 import {Page} from "ui/page";
+import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 
 let page,
     registerButton, figurine;
@@ -143,11 +144,11 @@ export class RegisterProductModel extends Observable {
                 /**
                  * Re-Fetch user info and cache it
                  */
-                api.fetch('checkLogin', {}, ({codes}) => {
+                api.fetch('checkLogin', {}, (user:ApiUserInterface) => {
 
                     console.log('codes Received');
 
-                    cache.set('codes', codes);
+                    cache.set('codes', user.codes);
 
                     self.set('isLoading', false);
 

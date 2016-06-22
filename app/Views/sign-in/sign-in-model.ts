@@ -5,7 +5,6 @@ import {Navigator as navigate} from "../../Classes/Navigator";
 import {Cache as cache} from "../../Classes/Cache";
 import {Api as api} from "../../Classes/Api";
 import {topmost} from "ui/frame";
-import {ApiUrlInterface} from "../../Interfaces/ApiUrlInterface";
 import {except} from "../../Modules/Helpers";
 import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 

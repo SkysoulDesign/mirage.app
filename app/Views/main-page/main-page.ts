@@ -13,6 +13,7 @@ import {ApiUserInterface} from "../../Interfaces/ApiUserInterface";
 
 let page:Page;
 
+
 /**
  * On Page Loaded
  */
@@ -24,14 +25,21 @@ export function loaded(args:NavigatedData) {
     if (!cache.has('api-token'))
         return navigate.to("login", {clearHistory: true});
 
-    if (cache.get('codes', []).length === 0)
-        return dialogs.confirm({
-            title: Localizator.get("ATTENTION"),
-            message: Localizator.get("NO_PRODUCTS"),
-            cancelButtonText: "okay, guide me through"
-        }).then(result => {
-            navigate.to('register-product');
-        });
+}
+
+/**
+ * On Page Loaded
+ */
+export function navigatedTo(args:NavigatedData) {
+
+    // if (cache.get('codes', []).length === 0)
+    //     return dialogs.confirm({
+    //         title: Localizator.get("ATTENTION"),
+    //         message: Localizator.get("NO_PRODUCTS"),
+    //         cancelButtonText: "okay, guide me through"
+    //     }).then(result => {
+    //         navigate.to('register-product');
+    //     });
 
     page = <Page>args.object;
     page.bindingContext = new MainPageModel(page);
@@ -40,6 +48,7 @@ export function loaded(args:NavigatedData) {
      * Refresh Session Data
      */
     api.refresh(function (data:ApiUserInterface) {
+
         let codes = cache.get('codes', []);
         
         if (application.ios)
