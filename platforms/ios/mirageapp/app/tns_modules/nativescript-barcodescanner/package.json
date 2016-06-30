@@ -1,6 +1,6 @@
 {
   "name": "nativescript-barcodescanner",
-  "version": "1.3.3",
+  "version": "1.3.5",
   "description": "Scan QR/barcodes with a {N} app.",
   "main": "barcodescanner.js",
   "nativescript": {
@@ -44,10 +44,10 @@
     "url": "https://github.com/eddyverbruggen/nativescript-barcodescanner/issues"
   },
   "homepage": "https://github.com/eddyverbruggen/nativescript-barcodescanner",
-  "gitHead": "f387fe4b8252150a21d005409df4ad36865b550f",
-  "_id": "nativescript-barcodescanner@1.3.3",
+  "gitHead": "1fa46b9cf12fb2b3781f60f94148de4866c23f83",
+  "_id": "nativescript-barcodescanner@1.3.5",
   "scripts": {},
-  "_shasum": "b588b137a4296452b39a8121fbe9ddcb8ae7f1fd",
+  "_shasum": "ee0b27d47fc2d2c66f9cb0e635120d5f1d39c4be",
   "_from": "nativescript-barcodescanner@>=1.2.1 <2.0.0",
   "_npmVersion": "2.14.7",
   "_nodeVersion": "4.2.2",
@@ -56,8 +56,8 @@
     "email": "eddyverbruggen@gmail.com"
   },
   "dist": {
-    "shasum": "b588b137a4296452b39a8121fbe9ddcb8ae7f1fd",
-    "tarball": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.3.tgz"
+    "shasum": "ee0b27d47fc2d2c66f9cb0e635120d5f1d39c4be",
+    "tarball": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.5.tgz"
   },
   "maintainers": [
     {
@@ -67,9 +67,9 @@
   ],
   "_npmOperationalInternal": {
     "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/nativescript-barcodescanner-1.3.3.tgz_1461438421629_0.062337884679436684"
+    "tmp": "tmp/nativescript-barcodescanner-1.3.5.tgz_1467029004243_0.3100173329003155"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.3.tgz",
+  "_resolved": "https://registry.npmjs.org/nativescript-barcodescanner/-/nativescript-barcodescanner-1.3.5.tgz",
   "readme": "ERROR: No README data found!"
 }

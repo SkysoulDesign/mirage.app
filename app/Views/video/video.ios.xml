@@ -2,6 +2,7 @@
       actionBarHidden="true"
       id="video"
       navigatedTo="navigatedTo"
+      loaded="loaded"
       navigatingFrom="navigatingFrom"
       unloaded="unloaded">
     <GridLayout id="container" rows="*">

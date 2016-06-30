@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="navigatedTo"
+      android:actionBarHidden="true">
+
+    <GridLayout rows="*, *">
+
+        <Image row="0" cssClass="logo" src="res://logo" stretch="aspectFit"/>
+
+        <StackLayout cssClass="form" row="1">
+            <TextField class="field" text="{{ username }}" hint="{{ USER_OR_EMAIL }}"/>
+            <TextField class="field" text="{{ password }}" hint="{{ PASSWORD }}" secure="true"/>
+            <Button id="login_button" text="{{ LOGIN }}" row="2" tap="{{ tapSignIn }}"/>
+            <ActivityIndicator busy="{{ isLoading }}"/>
+        </StackLayout>
+
+    </GridLayout>
+
+</Page>

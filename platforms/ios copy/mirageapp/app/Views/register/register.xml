@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="loaded"
+      xmlns:dd="nativescript-drop-down"
+      android:actionBarHidden="true">
+
+    <GridLayout rows="100,*">
+
+        <Image row="0" class="logo" src="res://logo" stretch="aspectFit" horizontalAlign="center"/>
+
+        <ScrollView row="1">
+
+            <StackLayout class="form">
+
+                <TextField class="field" text="{{ username }}" hint="{{ USERNAME }}"/>
+                <TextField class="field" text="{{ password }}" hint="{{ PASSWORD }}" secure="true"/>
+                <TextField class="field" text="{{ password_confirmation }}" hint="{{ PASSWORD_CONFIRM }}"
+                           secure="true"/>
+                <TextField class="field" text="{{ email }}" hint="{{ EMAIL }}"/>
+
+                <StackLayout class="terms-container" tap="{{ tapAgreement }}">
+                    <Label text="{{ TERMS }}" textWrap="true"/>
+                </StackLayout>
+
+                <Button id="register_btn" text="{{ REGISTER }}" tap="{{ tapRegister }}"/>
+
+                <ActivityIndicator busy="{{ isLoading }}"/>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </GridLayout>
+
+</Page>

@@ -1,0 +1,45 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:dd="nativescript-drop-down"
+      loaded="loaded"
+      android:actionBarHidden="true">
+
+    <GridLayout rows="80,*5,auto">
+
+        <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+
+            <Image class="menu-icon" col="0" src="res://back_icon"
+                   horizontalAlignment="center" verticalAlignment="center"
+                   stretch="aspectFit" tap="{{ tapBack }}"/>
+
+            <Label text="{{ SEARCH }}" class="action-bar-label" col="1" horizontalAlignment="left"
+                   verticalAlignment="center"/>
+
+        </GridLayout>
+
+        <StackLayout id="container" class="search-container" row="1">
+
+            <GridLayout class="item" columns="*,*">
+                <Label class="item-content" text="{{ SEARCH_BY }}" tap="tapSearchBy" col="0"/>
+                <dd:DropDown id="dropdown" class="item-content right"
+                             col="1" items="{{ types }}"
+                             selectedIndex="{{ selectedType }}"/>
+            </GridLayout>
+
+            <SearchBar class="search-bar" id="searchBar"/>
+
+            <ListView id="listView" class="result-view" items="{{ result }}" rowHeight="100">
+                <ListView.itemTemplate>
+                    <StackLayout class="result-container" orientation="horizontal">
+                        <Image src="{{ source }}" class="result-product-image" stretch="aspectFit"/>
+                        <Label text="{{ name }}" class="result-product-name"/>
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+
+            <Label class="search-result-label" text="{{ RESULTS }}"/>
+
+        </StackLayout>
+
+    </GridLayout>
+
+</Page>

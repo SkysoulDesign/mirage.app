@@ -1,0 +1,36 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:dd="nativescript-drop-down"
+      android:actionBarHidden="true"
+      loaded="loaded">
+
+    <GridLayout rows="80,*5,*2">
+
+        <GridLayout class="action-bar-container" row="0" columns="1*,5*,1*">
+
+            <Image class="menu-icon" col="0" src="res://back_icon"
+                   horizontalAlignment="center" verticalAlignment="center"
+                   stretch="aspectFit" tap="{{ tapBack }}"/>
+
+            <Label text="{{ SETTING }}" class="action-bar-label" col="1" horizontalAlignment="left"
+                   verticalAlignment="center"/>
+
+        </GridLayout>
+
+        <StackLayout class="settings-container" row="1">
+
+            <GridLayout class="item" columns="*,*">
+                <Label class="item-content" text="{{ LANGUAGE }}" col="0"/>
+                <dd:DropDown id="dropdown" class="item-content right"
+                             col="1" items="{{ languages }}"
+                             selectedIndex="{{ selectedLanguage }}"/>
+            </GridLayout>
+
+            <Button text="{{ CHANGE_PASSWORD }}" tap="{{ tapChangePassword }}" class="changePass-button"/>
+
+            <Button text="{{ LOGOUT }}" tap="{{ tapLogout }}" class="logout-button"/>
+
+        </StackLayout>
+
+    </GridLayout>
+
+</Page>

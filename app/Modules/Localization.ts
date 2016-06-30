@@ -47,6 +47,8 @@ export class Localization {
             "RECOMMEND_WIFI": "You are currently using your mobile data, it is recommended to execute this action through wifi.",
             "CONTINUE": "Continue",
             "CANCEL": "Cancel",
+            "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
         }
     }
 
@@ -89,7 +91,9 @@ export class Localization {
             "RESTART_APP": 'Please restart the app to apply the changes.',
             "OKAY": 'Okay.',
             "PRODUCT_CODE": 'Product Code',
-            "PRODUCT_NAME": 'Product Name'
+            "PRODUCT_NAME": 'Product Name',
+            "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
         }
     }
 
@@ -132,7 +136,9 @@ export class Localization {
             "RESTART_APP": 'Please restart the app to apply the changes.',
             "OKAY": 'Okay.',
             "PRODUCT_CODE": 'Product Code',
-            "PRODUCT_NAME": 'Product Name'
+            "PRODUCT_NAME": 'Product Name',
+            "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
         }
     }
 
@@ -175,7 +181,9 @@ export class Localization {
             "RESTART_APP": 'Please restart the app to apply the changes.',
             "OKAY": 'Okay.',
             "PRODUCT_CODE": 'Product Code',
-            "PRODUCT_NAME": 'Product Name'
+            "PRODUCT_NAME": 'Product Name',
+            "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
         }
     }
 

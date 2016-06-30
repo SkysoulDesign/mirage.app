@@ -1,12 +1,12 @@
 import {ImageMetaDataInterface} from "../Interfaces/ImageMetaDataInterface";
+import {ImageFormat} from "ui/enums";
+import {ImageSource} from "image-source";
 import fs = require("file-system");
 import imageSource = require("image-source");
 import application = require("application");
 import platformModule = require("platform");
 import dialogs = require("ui/dialogs");
-import {ImageFormat} from "ui/enums";
-
-import {ImageSource} from "image-source";
+import app = require("application");
 
 /**
  * Extend Object
@@ -112,6 +112,18 @@ export var isString = (a:any):boolean => {
  */
 export var isArray = (a:any):boolean => {
     return Array.isArray(a);
+};
+
+/**
+ * Check if is android app
+ * @returns {boolean}
+ */
+export var isAndroid = function ():Boolean {
+    return app.android ? true : false;
+};
+
+export var isIOS = function ():Boolean {
+    return app.ios ? true : false;
 };
 
 /**

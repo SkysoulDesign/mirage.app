@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+               BlueprintIdentifier = "A493F51A1D2537CF004054B2"
                BuildableName = "Mirage 3D.app"
                BlueprintName = "Mirage 3D"
                ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "858B83EF18CA22B800AB12DE"
                BuildableName = "mirageapp.app"
-               BlueprintName = "iPhone"
+               BlueprintName = "mirageapp"
                ReferencedContainer = "container:mirageapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A4EA9FE71CFC218200382839"
+               BlueprintIdentifier = "A493F5261D2537CF004054B2"
                BuildableName = "Mirage 3D Extension.appex"
                BlueprintName = "Mirage 3D Extension"
                ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+            BlueprintIdentifier = "A493F51A1D2537CF004054B2"
             BuildableName = "Mirage 3D.app"
             BlueprintName = "Mirage 3D"
             ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -86,7 +86,7 @@
          RemotePath = "/mirageapp">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+            BlueprintIdentifier = "A493F51A1D2537CF004054B2"
             BuildableName = "Mirage 3D.app"
             BlueprintName = "Mirage 3D"
             ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -95,7 +95,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+            BlueprintIdentifier = "A493F51A1D2537CF004054B2"
             BuildableName = "Mirage 3D.app"
             BlueprintName = "Mirage 3D"
             ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -117,7 +117,7 @@
          RemotePath = "/mirageapp">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+            BlueprintIdentifier = "A493F51A1D2537CF004054B2"
             BuildableName = "Mirage 3D.app"
             BlueprintName = "Mirage 3D"
             ReferencedContainer = "container:mirageapp.xcodeproj">
@@ -126,7 +126,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A4EA9FDB1CFC218200382839"
+            BlueprintIdentifier = "A493F51A1D2537CF004054B2"
             BuildableName = "Mirage 3D.app"
             BlueprintName = "Mirage 3D"
             ReferencedContainer = "container:mirageapp.xcodeproj">

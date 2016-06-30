@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="pageNavigatedTo"
+      actionBarHidden="true">
+
+    <GridLayout rows="3*, 3*, 5*, *">
+
+        <Image row="0" class="logo" src="res://logo" stretch="aspectFit" horizontalAlign="center"/>
+
+        <StackLayout class="form" row="1" orientation="vertical">
+            <Button text="{{ LOGIN }}" tap="{{ tapSignIn }}" class="button big"/>
+            <Button text="{{ REGISTER }}" tap="{{ tapRegister }}" class="button small"/>
+        </StackLayout>
+
+        <Image class="extra" row="2" src="res://extra" stretch="aspectFit" horizontalAlign="center"/>
+
+        <label row="3" class="all-rights" textWrap="true" text="All rights reserved by Soap Studio Company Limited."/>
+
+    </GridLayout>
+
+</Page>

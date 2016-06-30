@@ -2,6 +2,7 @@
       loaded="loaded"
       navigatedTo="navigatedTo"
       navigatedFrom="navigatedFrom"
+      navigatingFrom="navigatingFrom"
       xmlns:drawer="nativescript-telerik-ui/sidedrawer"
       actionBarHidden="true">
 

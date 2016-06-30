@@ -5,7 +5,9 @@ import {Navigator as navigate} from "./Navigator";
 import dialogs = require("ui/dialogs");
 import {Api as api} from "./Api";
 import {Device as device} from "./Device";
-import orientationModule = require("nativescript-screen-orientation");
+import {ApiExtraInterface} from "../Interfaces/ApiUserInterface";
+import http = require("http");
+import fs = require("file-system");
 
 /**
  * File Class
@@ -16,10 +18,42 @@ export class Video {
      * Play Video
      * @param id
      */
-    public static play(id:number|string) {
+    public static play(extra:ApiExtraInterface, callback?:Function, error?:Function) {
 
-        var context = {context: id},
-            connectionType = connectivity.getConnectionType();
+        let filePath = fs.path.join(
+            fs.knownFolders.documents().path, extra.video
+        );
+
+        if (fs.File.exists(filePath)) {
+            callback()
+            return this.process({
+                context: filePath
+            })
+        }
+
+        let connectionType = connectivity.getConnectionType(),
+            getFile = () => {
+
+                dialogs.alert(Localizator.get('DOWNLOAD_BACKGROUND'));
+
+                http.getFile(this.getURI(extra.id), filePath).then(video => {
+                    console.log('file downloaded')
+
+                    callback()
+
+                    dialogs.confirm(Localizator.get('CONTINUE_PLAYING_THE_VIDEO')).then(result => {
+
+                        if (result) this.process({
+                            context: filePath
+                        })
+
+                    })
+
+                }, function (e) {
+                    error()
+                    console.log('error downloading file')
+                });
+            }
 
         switch (connectionType) {
 
@@ -28,7 +62,7 @@ export class Video {
                 break;
 
             case connectivity.connectionType.wifi:
-                this.process(context);
+                getFile();
                 break;
 
             case connectivity.connectionType.mobile:
@@ -39,13 +73,28 @@ export class Video {
                     okButtonText: Localizator.get('CONTINUE'),
                     cancelButtonText: Localizator.get('CANCEL'),
                 }).then(result => {
-                    if (result) this.process(context);
+                    if (result) getFile();
                 });
 
                 break;
 
         }
 
+    }
+
+    /**
+     * Check if file is cached
+     *
+     * @param video
+     * @returns {boolean}
+     */
+    public static cached(video:string):boolean {
+
+        let filePath = fs.path.join(
+            fs.knownFolders.documents().path, video
+        );
+
+        return fs.File.exists(filePath);
     }
 
     /**
@@ -72,15 +121,13 @@ export class Video {
      * Get native URL OBject
      * @param extraID
      */
-    public static getURL(extraID:number):any {
-
-        var uri = this.getURI(extraID);
+    public static getURL(path:string):any {
 
         if (application.ios)
-            return NSURL.URLWithString(uri);
+            return NSURL.fileURLWithPath(path);
 
         if (application.android)
-            return android.net.Uri.parse(uri);
+            return android.net.Uri.parse(path);
 
     }
 

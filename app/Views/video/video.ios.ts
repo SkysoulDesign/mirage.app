@@ -5,13 +5,11 @@ import {Navigator as navigate} from "../../Classes/Navigator";
 import {Video as video} from "../../Classes/Video";
 import {Mirage as App} from "../../app" ;
 import {NavigatedData} from "ui/page";
-import orientationModule = require("nativescript-screen-orientation");
 
 let changePage = true,
     moviePlayer;
 
 export function navigatedTo(args:NavigatedData) {
-
 
     if (!changePage)
         return;
@@ -19,6 +17,8 @@ export function navigatedTo(args:NavigatedData) {
     let page = <Page>args.object,
         videoContainer:View = page.getViewById('container'),
         url = video.getURL(page.navigationContext);
+
+    global.leaving = false;
 
     videoContainer.requestLayout();
 
@@ -45,7 +45,7 @@ export function navigatedTo(args:NavigatedData) {
         },
         enterFullScreen = function () {
             changePage = false;
-            UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeRight), "orientation");
+            UIDevice.currentDevice().setValueForKey(NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeLeft), "orientation");
         };
 
     app.ios.addNotificationObserver(MPMoviePlayerDidEnterFullscreenNotification, function onReceiveCallback() {
@@ -60,6 +60,7 @@ export function navigatedTo(args:NavigatedData) {
     });
 
     app.ios.addNotificationObserver(MPMoviePlayerPlaybackDidFinishNotification, function onReceiveCallback() {
+        global.leaving = true;
         exitFullScreen();
         moviePlayer.stop();
         navigate.back();
@@ -80,9 +81,7 @@ export function unloaded(args) {
 }
 
 // export function navigatingFrom() {
-//     orientationModule.setCurrentOrientation("portrait", () => {
-//         orientationModule.orientationCleanup();
-//     });
+//     orientationModule.orientationCleanup();
 // }
 
 

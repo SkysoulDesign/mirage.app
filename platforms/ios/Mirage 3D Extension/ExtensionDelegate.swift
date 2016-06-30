@@ -2,7 +2,7 @@
 //  ExtensionDelegate.swift
 //  Mirage 3D Extension
 //
-//  Created by Rafael on 5/30/16.
+//  Created by Rafael on 6/30/16.
 //  Copyright © 2016 Telerik. All rights reserved.
 //
 

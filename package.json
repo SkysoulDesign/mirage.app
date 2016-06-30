@@ -16,7 +16,7 @@
 		"nativescript-status-bar": "^1.0.1",
 		"nativescript-telerik-ui": "^0.2.4",
 		"tns-core-modules": "^2.0.1",
-		"tns-platform-declarations": "^2.0.1"
+		"tns-platform-declarations": "^2.0.0"
 	},
 	"devDependencies": {
 		"babel-traverse": "6.9.0",

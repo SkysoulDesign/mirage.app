@@ -48,6 +48,8 @@ export function navigatedTo() {
                 }
             });
 
+        console.dir(uri);
+
         videoView.setMediaController(controller);
         videoView.setVideoURI(uri);
         videoView.setZOrderOnTop(true);

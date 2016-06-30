@@ -1,10 +1,16 @@
 import application = require("application");
 import frameModule = require("ui/frame");
-import {view} from "./Modules/Helpers";
+import {view, isIOS, isAndroid} from "./Modules/Helpers";
 import fontModule = require("ui/styling/font");
 import {iWatch as Watch} from "./Modules/iWatch";
 import orientation = require("nativescript-screen-orientation");
 import {topmost} from "ui/frame";
+
+/**
+ * Fix For Rotation lock on ios
+ * @type {boolean}
+ */
+global.leaving = false;
 
 /**
  * Mirage App
@@ -54,11 +60,31 @@ export namespace Mirage {
              * Force device orientation to be Portrait
              */
             application.on(application.orientationChangedEvent, function (args:application.OrientationChangedEventData) {
+
+                if (!topmost().currentPage)
+                    return;
+
                 if (args.newValue === 'landscape' && topmost().currentPage.id != 'video') {
-                    orientation.setCurrentOrientation("portrait", () => {
-                        console.log('forced changing it back')
-                    })
+
+                    if (isIOS)
+                        UIDevice.currentDevice().setValueForKey(
+                            NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation"
+                        );
+
+                    if (isAndroid)
+                        orientation.setCurrentOrientation("portrait", () => {
+                            console.log('forced changing it back')
+                        })
                 }
+
+                if (isIOS && args.newValue === 'portrait' &&
+                    topmost().currentPage.id === 'video' &&
+                    global.leaving === false) {
+                    UIDevice.currentDevice().setValueForKey(
+                        NSNumber.numberWithInteger(UIInterfaceOrientationLandscapeLeft), "orientation"
+                    );
+                }
+
             });
 
             application.start({moduleName: view(this.view)});

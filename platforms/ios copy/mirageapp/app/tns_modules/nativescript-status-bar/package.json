@@ -1,0 +1,51 @@
+{
+  "name": "nativescript-status-bar",
+  "version": "1.0.1",
+  "description": "A simple NativeScript plugin for controlling status bar visibility.",
+  "main": "status-bar.js",
+  "nativescript": {
+    "platforms": {
+      "ios": "1.5.2",
+      "android": "1.5.2"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterStaev/NativeScript-Status-Bar.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "StatusBar",
+    "tangra"
+  ],
+  "author": {
+    "name": "Peter Staev",
+    "email": "peter@tangrasoft.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/PeterStaev/NativeScript-Status-Bar/issues"
+  },
+  "homepage": "https://github.com/PeterStaev/NativeScript-Status-Bar",
+  "_id": "nativescript-status-bar@1.0.1",
+  "_shasum": "7269b5b49c7a3911fc57e2e6c2f0d4ff69be8f6b",
+  "_from": "nativescript-status-bar@>=1.0.1 <2.0.0",
+  "_npmVersion": "1.4.9",
+  "_npmUser": {
+    "name": "pstaev",
+    "email": "peter.staev@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "pstaev",
+      "email": "peter.staev@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "7269b5b49c7a3911fc57e2e6c2f0d4ff69be8f6b",
+    "tarball": "http://registry.npmjs.org/nativescript-status-bar/-/nativescript-status-bar-1.0.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nativescript-status-bar/-/nativescript-status-bar-1.0.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

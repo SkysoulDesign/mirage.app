@@ -22,12 +22,6 @@ declare module android {
             }
         }
     }
-    module widget{
-        class FrameLayout{
-            constructor(context: any);
-            addView(view: any);
-        }
-    }
 }
 declare module com {
     module telerik {
@@ -116,7 +110,6 @@ declare module com {
                 }
                 class ListViewAdapter {
                     constructor(items);
-                    notifySwipeExecuteFinished();
                     remove(item: any): boolean;
                     add(item: any);
                     add(index: number, item: any);
@@ -129,12 +122,10 @@ declare module com {
                     getItemCount(): number;
                 }
                 class ListViewBehavior {
-                    nsOwner;
+
                 }
                 class RadListView {
                     constructor(context: any);
-                    setHeaderView(view: any);
-                    setFooterView(view: any);
                     setAdapter(adapter: ListViewDataSourceAdapter);
                     setLayoutManager(layout: any); //LayoutManager
                     setItemAnimator(animator: any);
@@ -152,7 +143,7 @@ declare module com {
                     setSelectionOnTouch(mode: telerik.widget.list.SelectionBehavior.SelectionOnTouch);
                     addListener(listener: telerik.widget.list.SelectionBehavior.SelectionChangedListener);
                     removeListener(listener: telerik.widget.list.SelectionBehavior.SelectionChangedListener);
-                    selectedItems(): any;
+                    selectedItems():any;
                     changeIsSelected(index: number, value: boolean);
                 }
                 class ItemReorderBehavior extends ListViewBehavior {
@@ -163,8 +154,6 @@ declare module com {
                 class SwipeExecuteBehavior extends ListViewBehavior {
                     constructor();
                     addListener(listener: com.telerik.widget.list.SwipeExecuteBehavior.SwipeExecuteListener);
-                    setSwipeLimitStart(value: number);
-                    setSwipeLimitEnd(value: number);
                     removeListener(listener: com.telerik.widget.list.SwipeExecuteBehavior.SwipeExecuteListener);
                     setSwipeOffset(swipeOffset: number);
                     setAutoDissolve(autoDissolve: boolean);
@@ -176,7 +165,6 @@ declare module com {
                 }
                 class LoadOnDemandBehavior extends ListViewBehavior {
                     constructor();
-                    constructor(view1: any, view2: any);
                     setMaxRemainingItems(count: number);
                     setMode(mode: com.telerik.widget.list.LoadOnDemandBehavior.LoadOnDemandMode);
                     addListener(listener: com.telerik.widget.list.LoadOnDemandBehavior.LoadOnDemandListener);
@@ -197,10 +185,6 @@ declare module com {
                     constructor(view: any); //android.view.View
                     getItem(index: number);
                     nsView: any;
-                }
-
-                class ReorderWithHandlesBehavior extends com.telerik.widget.list.ItemReorderBehavior {
-                    constructor(viewId: number);
                 }
             }
         }

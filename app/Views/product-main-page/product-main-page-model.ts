@@ -105,9 +105,9 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
     private bindFigure() {
 
         let figure = <Image>containers.product.getChildAt(0);
-            figure.imageSource = file.load(
-                parseURL(context.product.image).filename
-            );
+        figure.imageSource = file.load(
+            parseURL(context.product.image).filename
+        );
 
     }
 
@@ -132,8 +132,19 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
         image.className = 'card-bg';
         container.className = 'card-container';
 
+        if (!video.cached(extra.video)) {
+            image.opacity = .3;
+        }
+
         container.on(GestureTypes.tap, () => {
-            video.play(extra.id);
+
+            container.isUserInteractionEnabled = false;
+
+            video.play(extra, function () {
+                image.isUserInteractionEnabled = true;
+                image.opacity = 1;
+            });
+
         });
 
         loading.busy = true;
