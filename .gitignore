@@ -7,8 +7,8 @@
 *.js
 *.map
 /.idea
-/Resources
-/mirage-key.keystore
+#/Resources
+#/mirage-key.keystore
 .DS_Store
 
 *.lock
