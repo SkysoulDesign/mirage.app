@@ -12,6 +12,7 @@ import {Image} from "ui/image";
 import {ImageSource} from "image-source";
 import {GestureTypes} from "ui/gestures";
 import {BaseModelWithMainNavigation} from "../../Models/BaseModelWithMainNavigation";
+import dialogs = require("ui/dialogs");
 
 let page, context:ApiCodesInterface, containers;
 
@@ -133,7 +134,7 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
         container.className = 'card-container';
 
         if (!video.cached(extra.video)) {
-            image.opacity = .3;
+            container.opacity = .3;
         }
 
         container.on(GestureTypes.tap, () => {
@@ -141,8 +142,12 @@ export class ProductMainPageModel extends BaseModelWithMainNavigation {
             container.isUserInteractionEnabled = false;
 
             video.play(extra, function () {
-                image.isUserInteractionEnabled = true;
-                image.opacity = 1;
+                container.isUserInteractionEnabled = true;
+                container.opacity = 1;
+            }, function () {
+                container.isUserInteractionEnabled = true;
+                container.opacity = .3;
+                dialogs.alert(Localizator.get('DOWNLOAD_FAILED'));
             });
 
         });

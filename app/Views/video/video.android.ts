@@ -7,6 +7,8 @@ import {NavigatedData} from "ui/page";
 import {Color} from "color";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {ActivityIndicator} from "ui/activity-indicator";
+import placeholderModule = require("ui/placeholder");
+import utils = require("utils/utils");
 
 let page, container, videoView,
     loading = new ActivityIndicator();
@@ -67,6 +69,7 @@ export function navigatingFrom() {
 }
 
 export function createView(args:CreateViewEventData) {
-    args.view = videoView = new android.widget.VideoView(args.context);
+    args.view = videoView = new android.widget.VideoView(
+        utils.ad.getApplicationContext()
+    );
 }
-

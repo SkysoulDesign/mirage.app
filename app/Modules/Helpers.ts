@@ -4,9 +4,8 @@ import {ImageSource} from "image-source";
 import fs = require("file-system");
 import imageSource = require("image-source");
 import application = require("application");
-import platformModule = require("platform");
+import {device, platformNames} from "platform";
 import dialogs = require("ui/dialogs");
-import app = require("application");
 
 /**
  * Extend Object
@@ -119,11 +118,11 @@ export var isArray = (a:any):boolean => {
  * @returns {boolean}
  */
 export var isAndroid = function ():Boolean {
-    return app.android ? true : false;
+    return device.os === platformNames.android;
 };
 
 export var isIOS = function ():Boolean {
-    return app.ios ? true : false;
+    return device.os === platformNames.ios;
 };
 
 /**

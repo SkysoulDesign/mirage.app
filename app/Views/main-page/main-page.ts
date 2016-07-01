@@ -3,7 +3,6 @@ import {NavigatedData} from "ui/page";
 import {Cache as cache} from '../../Classes/Cache';
 import {Navigator as navigate} from '../../Classes/Navigator';
 import dialogs = require("ui/dialogs");
-import application = require("application");
 import {MainPageModel} from "./main-page-model";
 import {Api as api} from "../../Classes/Api";
 import {Mirage as App} from "../../app";
@@ -14,7 +13,7 @@ let page:Page;
 
 export function loaded() {
 
-    if (application.ios) {
+    if (isIOS()) {
         UIDevice.currentDevice().setValueForKey(
             NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation"
         );
@@ -52,7 +51,7 @@ export function navigatedTo(args:NavigatedData) {
 
         let codes = cache.get('codes', []);
 
-        if (application.ios)
+        if (isIOS())
             App.iWatch.sendMessage({
                 products: codes
             });

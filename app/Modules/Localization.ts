@@ -48,7 +48,8 @@ export class Localization {
             "CONTINUE": "Continue",
             "CANCEL": "Cancel",
             "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
-            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?',
+            "DOWNLOAD_FAILED": 'Oops, download failed. please try again.'
         }
     }
 
@@ -93,7 +94,8 @@ export class Localization {
             "PRODUCT_CODE": 'Product Code',
             "PRODUCT_NAME": 'Product Name',
             "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
-            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?',
+            "DOWNLOAD_FAILED": 'Oops, download failed. please try again.'
         }
     }
 
@@ -138,7 +140,8 @@ export class Localization {
             "PRODUCT_CODE": 'Product Code',
             "PRODUCT_NAME": 'Product Name',
             "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
-            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?',
+            "DOWNLOAD_FAILED": 'Oops, download failed. please try again.'
         }
     }
 
@@ -183,7 +186,8 @@ export class Localization {
             "PRODUCT_CODE": 'Product Code',
             "PRODUCT_NAME": 'Product Name',
             "DOWNLOAD_BACKGROUND": 'Downloading video in background, please wait.',
-            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?'
+            "CONTINUE_PLAYING_THE_VIDEO": 'Download finished. Do you want to play the video now?',
+            "DOWNLOAD_FAILED": 'Oops, download failed. please try again.'
         }
     }
 

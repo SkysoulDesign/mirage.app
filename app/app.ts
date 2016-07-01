@@ -66,18 +66,18 @@ export namespace Mirage {
 
                 if (args.newValue === 'landscape' && topmost().currentPage.id != 'video') {
 
-                    if (isIOS)
+                    if (isIOS())
                         UIDevice.currentDevice().setValueForKey(
                             NSNumber.numberWithInteger(UIInterfaceOrientationPortrait), "orientation"
                         );
 
-                    if (isAndroid)
+                    if (isAndroid())
                         orientation.setCurrentOrientation("portrait", () => {
                             console.log('forced changing it back')
                         })
                 }
 
-                if (isIOS && args.newValue === 'portrait' &&
+                if (isIOS() && args.newValue === 'portrait' &&
                     topmost().currentPage.id === 'video' &&
                     global.leaving === false) {
                     UIDevice.currentDevice().setValueForKey(
