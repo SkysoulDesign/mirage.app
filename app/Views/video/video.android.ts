@@ -8,7 +8,6 @@ import {Color} from "color";
 import {StackLayout} from "ui/layouts/stack-layout";
 import {ActivityIndicator} from "ui/activity-indicator";
 import placeholderModule = require("ui/placeholder");
-import utils = require("utils/utils");
 
 let page, container, videoView,
     loading = new ActivityIndicator();
@@ -43,20 +42,17 @@ export function navigatedTo() {
 
         let uri = video.getURL(page.navigationContext),
             controller = new android.widget.MediaController(videoView.getContext()),
-            listener = android.media.MediaPlayer.OnPreparedListener.extend({
+            listener = new android.media.MediaPlayer.OnPreparedListener({
                 onPrepared(player){
                     loading.busy = false;
                     player.start();
                 }
             });
 
-        console.dir(uri);
-
         videoView.setMediaController(controller);
         videoView.setVideoURI(uri);
-        videoView.setZOrderOnTop(true);
         videoView.requestFocus();
-        videoView.setOnPreparedListener(new listener());
+        videoView.setOnPreparedListener(listener);
 
     });
 
@@ -70,6 +66,6 @@ export function navigatingFrom() {
 
 export function createView(args:CreateViewEventData) {
     args.view = videoView = new android.widget.VideoView(
-        utils.ad.getApplicationContext()
+        args.context
     );
 }
